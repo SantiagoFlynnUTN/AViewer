@@ -1,0 +1,94 @@
+Public Sub Render()
+'*****************************************************
+'****** Coded by Menduz (lord.yo.wo@gmail.com) *******
+'*****************************************************
+If blur Then
+    D3DDevice.SetRenderTarget superTex, stencil, 0
+    D3DDevice.Clear 0, ByVal 0, D3DCLEAR_TARGET Or D3DCLEAR_ZBUFFER, 0, 1#, 0
+    D3DDevice.SetRenderTarget D3DbackBuffer, zTarget, 0
+Else
+    D3DDevice.Clear 1, MainBufferRect, D3DCLEAR_TARGET, vbBlack, 1#, 0
+End If
+    ShowNextFrame
+    
+    If blur Then
+        D3DDevice.SetTexture 0, Tex
+        D3DDevice.SetTextureStageState 0, D3DTSS_ALPHAARG1, D3DTA_TFACTOR
+        D3DDevice.SetRenderState D3DRS_TEXTUREFACTOR, D3DColorARGB(blur_factor, 255, 255, 255)
+        D3DDevice.SetRenderState D3DRS_ALPHABLENDENABLE, 1
+        D3DDevice.SetRenderState D3DRS_SRCBLEND, D3DBLEND_SRCALPHA
+        D3DDevice.SetRenderState D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA
+        D3DDevice.DrawPrimitiveUP D3DPT_TRIANGLESTRIP, 2, vertList(0), Len(vertList(0))
+    End If
+
+    If DrgDrp And DrgDrpEnPi > 0 Then
+        'Si estamos D&D tenemos que limpiar el ibuff, si el item esta pasando x el inventario
+        'es necesario ir actualizandolo en un orden q los fps lo permitan.
+        'En este caso presentamos ambas cosas juntas.
+            D3DDevice.Clear 1, iBuffRECT, D3DCLEAR_TARGET, vbBlack, 1#, 0 'Limpiamos el buffer del inv
+            I8.Update 'Dibujamos todo, si estan juntos ya nos va a dibujar el item tb.
+    ElseIf DrgDrp And DrgDrpEnPi = 0 Then
+        'Aca solo mandamos a dibujar el dragged.
+        I8.CrearSlotVertexDRG
+    End If
+    If DrgDrp And DrgDrpEnPi = 1 Then
+    'UMBRAL.
+    D3DDevice.Present iBuffRECT, windowRECT, 0, ByVal 0 'Presentamos el inventario.
+    ElseIf DrgDrp And DrgDrpEnPi = 2 Then
+        D3DDevice.Present iBuffRECT, windowRECT, 0, ByVal 0 'Solo presentamos el inventario.
+    End If
+
+
+D3DDevice.BeginScene
+
+
+
+    If Estado_Clima = eEstadoClima.Lluvia_leve Then
+        Engine.Clima_RenderRain
+    ElseIf Estado_Clima = eEstadoClima.Nieve Then
+        Engine.Clima_RenderSnow
+    ElseIf Estado_Clima = eEstadoClima.Niebla Then
+        Engine.Clima_RenderFog
+    ElseIf Estado_Clima = eEstadoClima.NieblaEspecial Or Estado_Clima = eEstadoClima.Nublado Then
+        Engine.Clima_RenderSpecialFog
+    ElseIf Estado_Clima = eEstadoClima.Relampagos Then
+        Engine.Clima_RenderLighting
+    ElseIf Estado_Clima = eEstadoClima.TormentaArena Then
+        Engine.Clima_RenderSandStorm
+    End If
+   
+    Call Dialogos.Render
+    Call DialogosClanes.Draw
+    If RightMenu.Visible Then RenderMenu 1
+    If num_Buffs > 0 Then RenderBuffs
+    If Conteo >= 0 Then Draw_RAWGrhindex 27850 + Conteo, 200, 200
+    If num_Chirimbolos > 0 Then Engine.Chirimbolos_Render
+    
+    
+
+D3DDevice.EndScene
+
+'If DrgDrp Then
+'D3DDevice.Present iBuffRECT, windowRECT, 0, ByVal 0
+'End If
+'ShowMAINSCREEN.
+'Debug.Print DrgDrpEnPi & "_" & DrgDrp
+
+D3DDevice.Present MainBufferRect, MainViewRect, 0, ByVal 0
+
+
+    If fpsLastCheck + 1000 < DirectX.TickCount Then
+        FPS = FramesPerSecCounter
+        FramesPerSecCounter = 1
+        fpsLastCheck = DirectX.TickCount
+    Else
+        FramesPerSecCounter = FramesPerSecCounter + 1
+    End If
+
+'D3DDevice.Present ByVal 0, ByVal 0, frmMain.PicInv.hWnd, ByVal 0
+'lFrameLimiter = GetTickCount
+'FramesPerSecCounter = FramesPerSecCounter + 1
+timerElapsedTime = GetElapsedTime()
+timerTicksPerFrame = timerElapsedTime * engineBaseSpeed
+particletimer = timerElapsedTime * 0.05
+End Sub

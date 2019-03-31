@@ -1,0 +1,15 @@
+[INIT]
+Num=5
+[1]
+Indice_Particula=58 'level increase
+[2]
+Indice_Particula=22 'sacrifice burn
+[3]
+Indice_Particula=57 'anvilmar teleport
+life=-1
+[4]
+Indice_Particula=61 'kahlimdor teleport
+life=-1
+[5]
+Indice_Particula=65 'revives
+

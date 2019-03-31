@@ -1,0 +1,246 @@
+Nihil Ved
+Te has curado del envenenamiento.
+te ha curado del envenenamiento.
+Has curado el envenenamiento a
+Cura cualquier tipo de envenenamiento.
+Curar Veneno
+Ohl Vor Pek
+
+lanzó destello mágico sobre vos.
+Has lanzado destello mágico sobre
+Hechizo ofensivo que provoca 1 a 5 puntos de daño a la víctima.
+Destello Mágico
+Cörp Sanc
+Te has curado algunas heridas moderadas.
+te ha curado algunas heridas moderadas.
+Has sanado a
+Hechizo de curacion moderado, restaura entre 20 y 25 puntos de salud.
+Curar Heridas Moderadas
+Serp Xon In
+Te has envenenado.
+te ha envenenado.
+Has envenenado a
+Envenenamiento, puedo provocar la muerte si no se contraresta a tiempo.
+Envenenar
+Sen Corpüs Sanctis
+Te has curado algunas heridas.
+te ha curado algunas heridas.
+Has sanado a
+Curar heridas mortales, restaura entre 100 y 200 puntos de salud.
+Curar Heridas Mortales
+Vax Pe'r
+Has lanzado flecha mágica sobre ti.
+lanzó flecha mágica sobre vos.
+Has lanzado flecha mágica sobre
+Hechizo ofensivo magico que provoca de 7 a 14 puntos de daño a la victima.
+Flecha Mágica
+Hoax Vorp
+Te has paralizado.
+te ha paralizado.
+Has paralizado a
+Dejas a la victima inmovil por 20 segundos.
+Paralizar
+Vax In Tar
+Has lanzado fuego mágico sobre ti.
+lanzó fuego mágico sobre vos.
+Has lanzado fuego mágico sobre
+Hechizo ofensivo magico que provoca de 29 a 33 puntos de daño a la victima.
+Fuego Mágico
+Är Prop s'uo
+Te has inmovilizado.
+te ha inmovilizado.
+Has paralizado a
+Inmovilizas durante un corto periodo a la victima.
+Inmovilizar
+An Hoax Vorp
+Te has removido la parálisis.
+te ha removido la parálisis.
+Le has removido la parálisis a
+Remueves cualquier impedimiento al movimiento que hayas sufrido
+Remover parálisis
+Ahil Knä Xär
+Te has resucitado.
+te ha resucitado.
+Has resucitado a
+Vuelves a la vida a un espiritu caido.
+Resucitar
+NYEL AYAN ÑGOL
+Te has lanzado manto de hierro.
+te ha lanzado manto de hierro.
+Has lanzado manto de hierro sobre
+Liberas tu mana, la cual se condensa y adquiere la dureza del metal.
+Manto de hierro
+IrIvOy'i
+Te has lanzado Regeneracion clerical.
+te ha lanzado Regeneracion clerical.
+Has lanzado Regeneracion clerical sobre
+El sacerdote pide ayuda a su deidad para sanar sus heridas mas rapidamente.
+Regeneracion Clerical
+
+Te has lanzado invisibilidad.
+lanzó invisibilidad sobre vos.
+Has lanzado invisibilidad sobre
+Te vuelves invisible al ojo de todos.
+Invisibilidad
+En Vax On Tar
+Has lanzado Tormenta de fuego sobre ti.
+lanzó Tormenta de Fuego sobre vos.
+Has lanzado Tormenta de Fuego sobre
+Hechizo de daño que provoca de 35 a 41 puntos de daño
+Tormenta de Fuego
+Vorago Voragînîs
+Has lanzado Un Huracan sobre ti.
+lanzó Viento Huracanado sobre vos.
+Has lanzado Viento Huracanado sobre
+Hechizo ofensivo que solo puede ser aprendido por bardos, causa de 80 a 83 puntos de daño a la victima
+Viento Huracanado
+Sombrüs Insurrect
+Has lanzado Insurrecion Sombria sobre ti.
+lanzó Insurrecion Sombria sobre ti.
+Has lanzado Insurrecion Sombria sobre
+Hechizo ofensivo que solo puede ser aprendido por magos. Causa de 98 a 103 puntos de daño a la victima.
+Insurrecion Sombria
+Yup A'Inc
+Has lanzado celeridad sobre ti.
+ha lanzado celeridad sobre ti.
+Has lanzado celeridad sobre
+Aumenta la agilidad del usuario que recibe el hechizo.
+Celeridad
+Async Yup A'Inc
+Has lanzado torpeza sobre ti.
+ha lanzado torpeza sobre ti.
+Has lanzado torpeza sobre
+Reduce la agilidad de la victima.
+Torpeza
+Ar A'kron
+Has lanzado fuerza sobre ti.
+ha lanzado fuerza sobre ti.
+Has lanzado fuerza sobre
+Aumenta la fuerza del objetivo.
+Fuerza
+Xoom varp
+Has lanzado Debilidad sobre ti.
+ha lanzado Debilidad sobre ti.
+Has lanzado Debilidad sobre
+Reduce la fuerza de la víctima.
+Debilidad
+PhIra EcRÄY
+Has lanzado Rafaga Ardiente sobre ti.
+lanzó Rafaga Ardiente sobre ti.
+Has lanzado Rafaga Ardiente sobre
+Hechizo ofensivo que solo puede ser aprendido por clerigos. Causa 80 a 84 puntos de daño a la victima.
+Ráfaga Ardiente
+T'HY KOOOL
+Has lanzado Descarga Eléctrica sobre ti.
+lanzó Descarga Eléctrica sobre ti.
+Has lanzado Descarga Eléctrica sobre
+Hechizo de daño que provoca de 50 a 53 puntos de daño a la victima.
+Descarga Eléctrica
+Gelis Custödiaê
+Te has congelado.
+te aprisiono en hielo.
+Has Congelado a
+Hechizo ofensivo que solo puede ser aprendido por clerigos. Causa de 80 a 84 puntos de daño a la victima.
+Prisión Gélida
+Rahma Nañarak O'al
+Has lanzado Apocalípsis sobre ti.
+lanzó Apocalípsis sobre ti.
+Has lanzado Apocalípsis sobre
+Hechizo ofensivo que solo puede ser aprendido por magos. Causa de 78 a 83 puntos de daño a la victima.
+Apocalípsis
+Fir Yur'rax
+
+
+Has invocado un elemental de fuego.
+Invoca un elemental de fuego, que recibe y causa daño, solo puede ser aprendido por druidas.
+Elemental de Fuego
+Wata Mantra'rax
+
+
+Has invocado un elemental de agua.
+Invoca un elemental de agua capas de curar tus heridas, solo puede ser aprendido por druidas.
+Elemental de Agua
+ArLa It
+
+
+Has lanzado Relampago sobre
+Hechizo de daño causante de gran daño a la criatura.
+Relampago
+Warpus
+Te has transportado.
+te ha transportado.
+Estas creando un portal a Kahlimdor
+Crea un portal capas de transportante a la ciudad de Kahlimdor
+Teletransportar Kahlimdor
+OHGK PATER BEX VISYBLI
+
+lanzó remover invisibilidad sobre vos.
+Has lanzado remover invisibilidad
+Revela a todos los objetivos que no puede ser vistos.
+Remover Invisibilidad
+Warpus
+Te has transportado.
+te ha transportado.
+Estas creando un portal a Anvilmar
+Crea un portal capas de transportante a la ciudad de Anvilmar.
+Teletransportar Anvilmar
+Draggar Flamius
+Has lanzado Llama de Dragón sobre ti.
+lanzó Llama de Dragón sobre ti.
+Has lanzado Llama de Dragón sobre
+Solo puede ser aprendido por los divinos asesinos 90 a 95 puntos de daño a la victima.
+Llama de Dragón
+Al in Fers
+Has lanzado Inferno sobre ti.
+lanzó Inferno sobre ti.
+Has lanzado Inferno sobre
+Hechizo de daño que solo puede ser aprendido por asesinos, provoca de88 a 94 puntos de daño a la victima.
+Inferno
+Cimim Ux Maïo
+Generas una ilusión de tu apariencia actual.
+se ha mimetizado contigo.
+Te has mimetizado con
+Asimila momentáneamente tu apariencia a la del usuario a quien se lo lances.
+Mimetismo
+Sanctis Flemiu
+Has lanzado Fuego Divino sobre ti.
+lanzó Fuego Divino sobre ti.
+Has lanzado Fuego Divino sobre
+Hechizo de daño que solo puede ser aprendido por los paladines, causa de 85 a 93 puntos de daño a la victima.
+Fuego Divino
+Desmu Tempus
+Has lanzado Maldición sobre ti.
+ha lanzado Maldición sobre ti.
+Has lanzado Maldición sobre
+Maldice a la victima causandole perdida de fuerza como de agilidad
+Maldición
+Oahag Tempus
+Has lanzado Grito de Guerra sobre ti.
+ha lanzado Grito de Guerra sobre ti.
+Has lanzado Grito de Guerra sobre
+Aumenta al limite la fuerza y agilidad del objetivo
+Grito de Guerra
+Ümx P'trect Mà
+Has lanzado Burbuja defensiva sobre ti.
+lanzó Burbuja defensiva sobre ti.
+Has lanzado Burbuja de Defensa sobre
+Burbuja protectora capas de aumentar notablemente la defensa fisica del objetivo.
+Burbuja Defensiva
+Ïgnis Fûr
+Has lanzado Ira de Fuego sobre ti.
+lanzó Ira de Fuego sobre ti.
+Has lanzado Ira de Fuego sobre
+Hechizo de daño, que solo puede ser aprendido por magos, provoca de 90 a 93 puntos de daño a la victima.
+Ira de Fuego
+Wata' Cörp Sanctis
+Te has curado algunas heridas.
+te ha curado algunas heridas.
+Has sanado a
+Curar heridas graves, restaura entre 12 y 35 puntos de salud.
+Curar Heridas Elemental
+Fir' En Vax On Tar
+Has lanzado Tormenta de fuego sobre ti.
+lanzó Tormenta de Fuego sobre vos.
+Has lanzado Tormenta de Fuego sobre
+Causa 30 a 45 puntos de daño
+Tormenta de Fuego de Elemental

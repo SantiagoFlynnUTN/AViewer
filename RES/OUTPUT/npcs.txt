@@ -1,0 +1,873 @@
+Murcielago
+Lobo
+Zombie
+Esqueleto
+Goblin
+Gallo salvaje
+Lord Zombie
+Esqueleto Guerrero
+Cria de dragon
+Araña Gigante
+Murcielago
+Lobo
+Zombie
+Goblin
+Orco
+Jefe Orco
+Araña Gigante
+Escorpion
+Bandido
+Hormiga Gigante
+Beholder
+Oso pardo
+Gran Dragon Rojo
+Demonio
+Leviatán
+Bruja
+Golem
+Medusa
+Liche
+Galeón Fantasmal
+Pesadilla
+Oso Polar
+Troll
+Apocalipsis
+Espectro
+Viuda Negra
+Freezer
+Ciclope
+Aparición
+Hechicero de la Oscuridad
+Golem de Plata
+Hombre de las Cavernas
+Yeti
+Golem de Oro
+Gran Dragon Plateado
+Gran Dragón de la Oscuridad
+Unicornio
+Dragón Dorado
+Dragon
+Dragón Rojo
+Barco Fantasma
+Orco Brujo
+Hechicero de la Oscuridad
+Dragon Rojo
+Aran Ancalagon
+Guerrero de Ancalagon
+Aran Ancalagon
+Medusa Legendaria
+Trasgo Guerrero
+Noble Desterrado
+Caballo de Guerra de la Alianza
+Caballo de Guerra de la Horda
+Poseidón
+Golem de agua
+Comandante de las fuerzas de la Alianza
+Serpiente
+Soldado Imperial
+Comandante de las fuerzas de la Horda
+Orco
+Rata Gigante
+Tortuga gigante
+Duende
+Guerrero Oscuro
+Beholder Helado
+Mago Elfico
+Asesino Elfico
+Guerrero Elfico
+Abominación de las Minas
+Troll Frenético
+Bestia Infernal
+Golem de Lava
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Aldeano
+¡Hola forastero!.
+Gallo
+
+Cerdo
+
+Vaca
+
+Valyst el sacerdote
+Hola hijo mío, soy el Sacerdote de este pueblo.
+Guardia Imperial
+No permitiré que ningun Horda se acerque!
+Nowan el armero
+Bienvenido, rata de alcantarilla. Tengo algunas armas que pueden ayudarte.
+Thorkis el provisionista
+Hola aventurero, tengo la mejor mercancía para saciar tu apetito.
+Granjero de Ullathorpe
+¡Hola, tengo las mejores manzanas de la zona al mejor precio!.
+Aldeana
+¡Hola forastero! Bienvenido a nuestra humilde aldea.
+Caledonia la costurera
+¡Hola forastero! confeccionamos las mejores ropas de la zona.
+Gobernador
+Hola, soy el Gobernador ¡Bienvenido a nuestro pequeño pueblo!
+Calista la alquimista
+Hola, tengo distintos tipos de pociones mágicas para ayudarte en tus aventuras.
+Apolonio el tabernero
+¡Bienvenido a mi taberna, viajero!
+Doroteo el banquero
+Hola, bienvenido a la cadena de finanzas Goliath.
+Encargado de Aserradero
+¡Hola muchacho!, si deseas vender o comprar madera habla conmigo.
+Vendedor de propiedades.
+Compramos y vendemos las mejores propiedades de la zona.
+Moraday
+¡Hola, forastero! vendemos las mejores casas de la zona.
+Doroteo el banquero
+Hola, si quieres depositar o extraer dinero habla conmigo.
+Nowan el armero
+Eres nuevo por aqui verdad? Tengo algunas armas que podran ayudarte.
+Herrero
+Bienvenido, rata de alcantarilla.
+Sastre
+¡Hola forastero! confeccionamos las mejores ropas de la zona.
+Ben
+Tengo algunas de las frutas más frescas y saludables de todo el Mundo.
+Inigo
+¡Bienvenido al gremio de pescadores!
+Antogne
+¡Hola aventurero! Si estais hambriento habeis venido al lugar apropiador.
+Sorks
+¿¡Estas sediento!?
+Carpintero
+¡Hola muchacho!, bienvenido a mi humilde Carpintería.
+Espíritu
+¡Huye de aquí mientras puedas!
+Amil maestro de hechizos
+Bienvenido a mi pequeño negocio... Tengo algunos hechizos que podrían interesarte.
+Sarif maestro de hechizos
+Bienvenido a mi pequeño negocio... Tengo algunos hechizos que podrían interesarte.
+Ashast el herrero
+¿Te gusta mi armadura? podras conseguir esta y muchas mas si compras mis herramientas.
+Guardia Imperial
+Muerte a la Horda!
+Tellez
+¡Hola! Bienvenido al "Ulises Rezagado", ¿Qué deseas beber?
+Rohiron maestro de hechizos
+Bienvenido a mi Tienda... Tengo los hechizos mas poderosos de estas zonas.
+Rantarisk
+¡Hola, forastero! vendemos las mejores propiedades de Banderbill.
+Roksar el provisionista
+Dispongo de todo tipo de provisiones.
+Sastre
+¡Hola forastero! Confeccionamos las mejores ropas de la zona.
+Herrero
+Bienvenido, rata de alcantarilla, tengo algunas armas que pueden ayudarte en tus viajes.
+Herrero
+Bienvenido, rata de alcantarilla.
+Doroteo el banquero
+Hola, para depositar o extraer dinero habla conmigo.
+Pescador
+¡Bienvenido al gremio de pescadores!
+Leñador
+¡Hola muchacho!, si deseas vender o comprar madera habla conmigo.
+O'Riley de Anvilmar
+Soy el Maestro de armas de los Barracones de Anvilmar, si deseas entrenar duro solo debes pedirmelo.
+Turivim  maestro hechizero
+Bienvenido a mi pequeño negocio... Tengo algunos hechizos que podrían interesarte.
+Guldorf
+¡Hola, forastero! Vendemos las mejores propiedades.
+Sacerdote
+Hola hijo mío, soy el Sacerdote de este pueblo.
+Pescador
+¡Hola forastero, bienvenido a nuestro pueblo!
+Gallo
+Kikiriki
+Cerdo
+
+Vaca
+
+Pescador
+¡Hola forastero, bienvenido a nuestra hermosa isla!
+Argal
+¡Hola buen amigo! cuento con las mejores frutas de estas comarcas.
+Sastre
+¡Hola forastero! confeccionamos las mejores ropas de la zona.
+Brotherson
+Bienvenido, rata de alcantarilla, tengo algunas armas que pueden ayudarte en tus viajes.
+Alarnick, Emperador de Anvilmar
+Hola buen amigo, yo soy el Emperador de Anvilmar. Mi función es garantizar que todo marche bien en estas tierras. Si deseas enlistarte en mis tropas escribí /ENLISTAR
+Guardia Imperial
+Daré muerte a todos los miembros de la Horda
+Aguila
+
+Cuervo
+
+Hormiga
+
+Rata
+
+Oso pardo
+
+Tortuga gigante
+
+Mercader
+¡¡Hola buen amigo, compro y vendo todo tipo de mercancías!!
+Sacerdote
+Ohhh hijo mío!! que la llama de la virtud arda en tu corazón!!!
+Sacerdote
+Ohhh hijo mío!! que la llama de la virtud arda en tu corazón!!!
+Druida
+Ohhh hijo mío!! que la llama de la virtud arda en tu corazón!!!
+Druida
+Ohhh hijo mío!! que la llama de la virtud arda en tu corazón!!!
+Druida
+Ohhh hijo mío!! que la llama de la virtud arda en tu corazón!!!
+Mago
+Ohhh hijo mío!! que la llama de la virtud arda en tu corazón!!!
+Mago imperial
+Ohhh hijo mío!! que la llama de la virtud arda en tu corazón!!!
+Ely
+
+Fuego fatuo
+
+Richard
+
+Gran Aguila
+
+Elemental de agua
+
+Elemental de fuego
+
+Elemental de tierra
+
+Jabalí
+
+Tigre
+
+Pato
+
+Talabhriir, Rey de Kahlimdor
+Si deseas ser parte de la faccion elite de la Horda, escribe /ENLISTAR
+Sastre
+¡Hola forastero! confeccionamos las mejores ropas de la zona.
+Guardia Imperial
+Muerte a la Horda!
+Vendedor de propiedades.
+Compramos y vendemos las mejores propiedades de la zona.
+Guardia Imperial
+Daré muerte a la Horda
+Espiritu Indomable
+
+Mago de la Horda
+Por la Horda!
+Arquero Real
+Ningún criminal escapará de mi puntería.
+Golem De la Horda
+
+O'Riley de Arghal
+¡Hola amigo! Escribe /ENTRENAR para divertirte con estas almas malvadas que hemos domado para tu diversión en estos festejos.
+Sastre enana
+¡Ropas pequeñas al mejor precio!
+Aparicion Sombria
+¿Estas preparado para completar estas oscuras misiones?
+Guthrie la Viuda Negra
+¡Hola,sanguijuela!.¿Te interesa alguna mision que tengo para ti?
+Andrew el guerrero
+Bienvenido extraño ¿Deseas emprender alguna de estas aventuras?
+Sastre
+Saludos, bienvenido a nuestro negocio podes hablar conmigo.
+Sastre
+
+Sacerdote
+Bienvenido, soy el brujo del pueblo.
+Tord
+Aventurero ¿Estas preparado?
+Meryn del bosque
+Cumple estas misiones antes que me arrepienta de dartelas.
+Sigfrid
+¿Estas preparado para enfrentar este invierno?
+Rey del Castillo
+No me arrodillo ante nadie!
+Cirujano
+Hola yo puedo cambiar tu cara por 500 monedas de oro solo pone /CIRUJIA o haceme doble click.
+Nedran el viajero
+Saludos, si estas cansado de caminar por el mundo y queres llegar rápido a tu destino solo habla conmigo!
+Articulos para mago
+Bienvenido vendo los mejores articulos para mago.
+Gobernador
+¡¡Ayuda!!
+Demonio
+¡¡Ayuda!!
+Shie
+Bienvenido si queres renunciar a tu bando simplemente pone /RENUNCIAR. ADVERTENCIA: Una ves que renuncies te haras neutral y no podrás pertenecer a ningun bando mas.
+Carthrion proveedor de aventuras
+¡Hola! Yo me encargo de dar distintos tipos de quest y tareas a los aventureros que pasan por aca.
+Articulos para mago
+Vendemos las mejores tunicas para aprendices de mago.
+Eoweniel, Emperatriz de Anvilmar
+Hola bienvenido a nuestro Gran Reino. Habla conmigo o con mi marido para enlistarte.
+Hechizero de Clan
+a
+Arquero de Clan
+TODAVIA NO FUNCIONO
+Guerrero de Clan
+a
+Doroteo el banquero
+Bienvenido a nuestro castillo.
+Sacerdote
+Haceme doble click para ser resucitado o curado.
+Vendedora de Pociones
+Bienvenido a mi negocio.
+Gobernador Tanaris
+Bienvenido a Tanaris, si deseas ser ciudadano de esta ciudad escribi /CIUDADANIA
+Gobernador Ruvendel
+Bienvenido a Ruvendel, si deseas ser ciudadano de esta ciudad escribi /CIUDADANIA
+Gobernador Thir
+Bienvenido a Thir, si deseas ser ciudadano de esta ciudad escribi /CIUDADANIA
+Gobernador Inthak
+Bienvenido a Inthak, si deseas ser ciudadano de esta ciudad escribi /CIUDADANIA
+Guardian
+Este camino esta temporalmente bloqueado por el Gobernador de la Ciudad, ve a otra parte.
+Astan el cartógrafo
+Hola viajero, tengo un mapa muy interesante sobre un tesoro enterrado, Si lo quieres te lo vendere podemos llegar a un acuerdo!
+Guardia del Caos
+La Horda vencera a la Alianza!
+Sacerdote
+Bienvenido hijo, habla conmigo si deseas volver a la vida.
+Guardia de la Horda
+Muerte a la Alianza!
+Turpín
+¡Bienvenido, aquí encontrarás equipamiento para paladín!
+Dwalin
+¡Bienvenido, aquí encontrarás equipamiento para guerrero!
+Amergin
+¡Bienvenido, aquí encontrarás equipamiento para bardo!
+Thiene
+¡Bienvenido, aquí encontrarás equipamiento para clerigo!
+Shawyn
+¡Bienvenido, aquí encontrarás equipamiento para asesino!
+Galfan
+¡Bienvenido, aquí encontrarás equipamiento para druida!
+Cerion
+¡Bienvenido, aquí encontrarás equipamiento para cazador!
+Xahamal el comerciante
+¡Bienvenido, tengo algunas cosas que te pueden interesar!
+Cafyn
+¡Bienvenido, aquí encontrarás equipamiento para mago!
+Marmcan el mensajero
+¡Bienvenido, habla conmigo para leer tus correos!
+Kesus
+¡Bienvenido, yo tengo a cargo la boveda de tu clan!
+Lobo Domesticado
+
+Patrick
+Hola ciudadano, si tienes en tu poder los miticos artefactos de un Noble, habla conmigo y te daré tu ultima tarea.
+Archimago Faccionario
+¡No van a poder derrotarnos!
+Sacerdote
+Hola hijo mío, soy el Sacerdote de este pueblo.
+Alsis el hechizero
+Bienvenido a mi Tienda... ¡Tengo los hechizos más poderosos!
+Propiedades
+Si estas interesado tenemos las mejores y mas exclusivas propiedades disponibles en estas tierras.
+Espíritu
+
+Beta
+Hola aventurero, solo estare disponible durante la BETA.
+Beta
+Hola aventurero, solo estare disponible durante la BETA.
+Centinela
+Estoy aquí para mantener el orden.

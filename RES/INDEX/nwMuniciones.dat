@@ -1,0 +1,10 @@
+[INIT]
+Num=0
+
+[1]'Escu Pala
+Alpha=255
+Mov1=90 'norte
+Mov2=92 'derecha
+Mov3=89 'sur
+Mov4=91 'izquierda
+OverWriteGrafico=8800

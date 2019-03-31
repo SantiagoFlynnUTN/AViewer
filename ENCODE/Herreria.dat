@@ -1,0 +1,15 @@
+[INIT]
+Num=1
+
+
+[1]
+Nombre=Espada Clero Agite
+Item=14
+Nivel=1
+Tipo=1
+Bronce=40
+Plata=50
+Oro=100
+Ver=1
+
+

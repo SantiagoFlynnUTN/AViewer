@@ -1,0 +1,12 @@
+[INIT]
+Num=1
+
+[1]'Escu Pala
+Alpha=255
+Mov1=86
+Mov2=88
+Mov3=85
+Mov4=87
+OverWriteGrafico=900
+DESC=Escudo Dorado-Leon
+
