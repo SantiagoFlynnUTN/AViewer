@@ -1,5 +1,5 @@
 [INIT]
-Num=1
+Num=16
 
 [1]'Escu Pala
 Alpha=255
@@ -10,3 +10,123 @@ Mov4=87
 OverWriteGrafico=900
 DESC=Escudo Dorado-Leon
 
+[2]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=916
+ALPHA=255
+DESC=TESTT
+[3]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=902
+DESC=Escudo Asesino Torneo
+ALPHA=255
+[4]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=903
+DESC=Ecudo bardo agite
+ALPHA=255
+[5]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=904
+DESC=Escudo Bardo Torneo
+ALPHA=255
+[6]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=905
+DESC=Escudo Cazador Agite
+ALPHA=255
+[7]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=906
+DESC=Escudo Cazador Torneo
+ALPHA=0
+[8]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=907
+DESC=Escudo Clerigo Agite
+ALPHA=255
+[9]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=908
+DESC=Escudo Clerigo Torneo
+ALPHA=0
+[10]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=909
+DESC=Escudo Druida Agite
+ALPHA=0
+[11]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=910
+DESC=Escudo Druida Torneo
+ALPHA=255
+[12]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=911
+DESC=Escudo Guerrero Agite
+ALPHA=255
+[13]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=912
+DESC=Escudo Guerrero Torneo
+ALPHA=0
+[14]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=913
+DESC=Escudo Paladin Torneo
+ALPHA=255
+[15]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=914
+DESC=Escudo Asesino Agite
+ALPHA=255
+[16]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=915
+DESC=Escudo Asesino Torneo Bajo
+ALPHA=255

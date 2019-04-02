@@ -1,5 +1,5 @@
 [NW_ANIM]
-Num=238
+Num=242
 
 [ANIMACION1]'GOLEM_DE_LAVA_REPOSO_SOUTH
 Grafico=2400
@@ -2537,3 +2537,43 @@ Alto=32
 Velocidad=1
 Inicial=36
 Desc=Standar Body East Small2
+[ANIMACION239]
+Grafico=901
+NumeroFrames=6
+Columnas=6
+Filas=4
+Ancho=42
+Alto=64
+Velocidad=0,8
+Inicial=1
+Desc=Movement Shield 42x64 Sur
+[ANIMACION240]
+Grafico=901
+NumeroFrames=6
+Columnas=6
+Filas=4
+Ancho=42
+Alto=64
+Velocidad=0,8
+Inicial=7
+Desc=Movement Shield 42x64 North
+[ANIMACION241]
+Grafico=901
+NumeroFrames=5
+Columnas=6
+Filas=4
+Ancho=42
+Alto=64
+Velocidad=0,8
+Inicial=13
+Desc=Movement Shield 42x64 West
+[ANIMACION242]
+Grafico=901
+NumeroFrames=5
+Columnas=6
+Filas=4
+Ancho=42
+Alto=64
+Velocidad=0,8
+Inicial=19
+Desc=Movement Shield 42x64 East

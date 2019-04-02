@@ -1,5 +1,5 @@
 [INIT]
-Num=1
+Num=3
 
 [1]'Pala
 Alpha=255
@@ -9,3 +9,19 @@ Mov3=85
 Mov4=87
 OverWriteGrafico=850
 DESC=[ALTO]Espada Ancha Mango Rojo
+[2]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=873
+DESC=Daga Asesino Agite
+ALPHA=255
+[3]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=851
+DESC=Daga Asesino Torneo
+ALPHA=255

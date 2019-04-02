@@ -2934,9 +2934,10 @@ Size=320-0-32-32
 OverWriteGrafico=332
 Desc=Experiencia minigraph
 [722]
-Estatica=64
+Estatica=4
 Size=320-32-32-32
-OverWriteGrafico=Reciclable
+OverWriteGrafico=333
+Desc=Armadura
 [723]
 Estatica=87
 Size=320-96-32-32
