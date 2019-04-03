@@ -1,0 +1,14 @@
+fMain = 88, 88, 714, 542, , 66, 66, 692, 520, C
+dxEngine = 110, 110, 736, 564, 
+clsSurfaceManDynDX8 = 88, 88, 725, 542, 
+fCargando = 176, 176, 814, 630, , 154, 154, 792, 608, C
+ModMain = 44, 44, 933, 345, 
+ModData = 176, 176, 814, 630, 
+ModRAm = 154, 154, 1031, 510, 
+lvButtons_H = 0, 0, 0, 0, C, 44, 44, 853, 396, C
+modLvTimer = 22, 22, 938, 366, 
+fIndexador = 44, 44, 875, 416, , 66, 66, 875, 418, C
+History = 176, 176, 1053, 532, Z
+InPutform = 0, 0, 0, 0, C, 88, 88, 897, 440, C
+frmMapHandler = 0, 0, 0, 0, C, 110, 110, 919, 462, C
+modMapHandler = 0, 0, 0, 0, C
