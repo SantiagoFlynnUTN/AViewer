@@ -8,14 +8,14 @@ Mov2=88
 Mov3=85
 Mov4=87
 OverWriteGrafico=900
-DESC=Test
-[2]
-Mov1=86
-Mov2=88
-Mov3=85
-Mov4=87
-OverWriteGrafico=900
 DESC=Paladin Agite Altos
+[2]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=901
+DESC=Asesino Agite Altos
 ALPHA=255
 [3]
 MOV1=240
