@@ -1,0 +1,6 @@
+
+# ignore visual basic project workspace
+*.vbw
+
+# ignore .db files such as Thumbs.db
+*.db
