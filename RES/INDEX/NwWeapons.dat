@@ -1,5 +1,5 @@
 [INIT]
-Num=3
+Num=24
 
 [1]'Pala
 Alpha=255
@@ -24,4 +24,172 @@ MOV3=239
 MOV4=241
 OverWriteGrafico=851
 DESC=Daga Asesino Torneo
+ALPHA=255
+[4]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=852
+ALPHA=255
+DESC=Bardo Agite Espada
+[5]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=853
+DESC=Bardo Torneo Espada
+ALPHA=255
+[6]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=854
+DESC=Cazador Agite Arco
+ALPHA=255
+[7]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=855
+DESC=Cazador Agite Daga
+ALPHA=255
+[8]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=856
+DESC=Cazador Torneo Arco
+ALPHA=255
+[9]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=857
+DESC=Cazador Torneo Daga
+ALPHA=255
+[10]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=858
+DESC=Clerigo Agite Espada
+ALPHA=255
+[11]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=859
+DESC=Clerigo Torneo Espada
+ALPHA=255
+[12]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=860
+DESC=Druida Agite Baculo
+ALPHA=255
+[13]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=861
+DESC=Druida Agite Sable
+ALPHA=255
+[14]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=862
+DESC=Druida Torneo Baculo
+ALPHA=255
+[15]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=863
+DESC=Druida Torneo Sable
+ALPHA=0
+[16]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=864
+DESC=Guerrero Agite Arco
+ALPHA=255
+[17]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=865
+DESC=Guerrero Agite Espada
+ALPHA=255
+[18]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=866
+DESC=Guerrero Agite Manopla
+ALPHA=255
+[19]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=867
+DESC=Guerrero Torneo Arco
+ALPHA=255
+[20]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=868
+DESC=Guerrero Torneo Espada
+ALPHA=255
+[21]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=869
+DESC=Guerrero Torneo Manopla
+ALPHA=255
+[22]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=870
+DESC=Mago Agite Baculo
+ALPHA=255
+[23]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=871
+DESC=Mago Baculo Torneo
+ALPHA=255
+[24]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=872
+DESC=Paladin Espada Torneo
 ALPHA=255
