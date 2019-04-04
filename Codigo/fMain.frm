@@ -366,13 +366,12 @@ Begin VB.Form fMain
       TabIndex        =   47
       TabStop         =   0   'False
       Top             =   0
-      Width           =   2175
-      _ExtentX        =   3836
+      Width           =   1815
+      _ExtentX        =   3201
       _ExtentY        =   1085
       Caption         =   "Cascos"
       CapAlign        =   2
       BackStyle       =   7
-      Shape           =   2
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Times New Roman"
          Size            =   9
