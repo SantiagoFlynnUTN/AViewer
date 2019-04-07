@@ -1,5 +1,5 @@
 [INIT]
-Num=24
+Num=44
 
 [1]'Pala
 Alpha=255
@@ -192,4 +192,164 @@ MOV3=239
 MOV4=241
 OverWriteGrafico=872
 DESC=Paladin Espada Torneo
+ALPHA=255
+[25]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=874
+DESC=[BAJO] Daga Asesino Agite
+ALPHA=255
+[26]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=875
+DESC=[BAJO] Daga Asesino Torneo
+ALPHA=255
+[27]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=876
+DESC=[BAJO] Espada Bardo Agite
+ALPHA=255
+[28]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=877
+DESC=[BAJOS] Espada Bardo Torneos
+ALPHA=255
+[29]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=878
+DESC=[BAJOS] Daga Cazador Torneo
+ALPHA=255
+[30]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=879
+DESC=[BAJOS] Arco Cazador Agite
+ALPHA=255
+[31]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=880
+DESC=[BAJOS] Daga Cazador Agite
+ALPHA=255
+[32]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=881
+DESC=[BAJOS] Arco Cazador Torneo
+ALPHA=255
+[33]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=882
+DESC=[BAJOS] Espada Clerigo Agite
+ALPHA=255
+[34]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=883
+DESC=[BAJOS] Espada Clerigo Torneo
+ALPHA=255
+[35]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=884
+DESC=[BAJOS] Arco Guerrero Agite
+ALPHA=255
+[36]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=885
+DESC=[BAJOS] Espada Guerrero Agite
+ALPHA=255
+[37]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=886
+DESC=[BAJOS] Manopla Guerrero Agite
+ALPHA=255
+[38]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=887
+DESC=[BAJOS] Arco Guerrero Torneo
+ALPHA=255
+[39]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=888
+DESC=[BAJOS] Espada Guerrero Torneo
+ALPHA=255
+[40]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=889
+DESC=[BAJOS] Manopla guerrero Torneo
+ALPHA=255
+[41]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=890
+DESC=[BAJOS] Baculo Mago Agite
+ALPHA=255
+[42]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=891
+DESC=[BAJOS] Baculo Mago Torneo
+ALPHA=255
+[43]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=892
+DESC=[BAJOS] Espada Paladin Agite
+ALPHA=255
+[44]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=893
+DESC=[BAJOS] Espada Guierrero Torneo
 ALPHA=255
