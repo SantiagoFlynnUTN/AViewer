@@ -58,40 +58,40 @@ Private Declare Function GetTickCount Lib "kernel32" () As Long
 
 Private Sub Class_Terminate()
     
-    Dim I As Long
-    Dim J As Long
+    Dim i As Long
+    Dim j As Long
     
     'Destroy every surface in memory
-    For I = 0 To HASH_TABLE_SIZE - 1
-        With TexList(I)
-            For J = 1 To .surfaceCount
-                Set .SurfaceEntry(J).texture = Nothing
-            Next J
+    For i = 0 To HASH_TABLE_SIZE - 1
+        With TexList(i)
+            For j = 1 To .surfaceCount
+                Set .SurfaceEntry(j).texture = Nothing
+            Next j
             
             'Destroy the arrays
             Erase .SurfaceEntry
         End With
-    Next I
+    Next i
 End Sub
 
 Public Function GetTexture(ByVal FileName As Integer, ByRef textwidth As Long, ByRef textheight As Long) As Direct3DTexture8
-If FileName = 0 Then
+    If FileName = 0 Then
 
-Exit Function
-End If
+        Exit Function
+    End If
 
-    Dim I As Long
+    Dim i As Long
     ' Search the index on the list
     With TexList(FileName Mod HASH_TABLE_SIZE)
-        For I = 1 To .surfaceCount
-            If .SurfaceEntry(I).FileName = FileName Then
-                .SurfaceEntry(I).UltimoAcceso = GetTickCount
-                textwidth = .SurfaceEntry(I).texture_width
-                textheight = .SurfaceEntry(I).texture_height
-                Set GetTexture = .SurfaceEntry(I).texture
+        For i = 1 To .surfaceCount
+            If .SurfaceEntry(i).FileName = FileName Then
+                .SurfaceEntry(i).UltimoAcceso = GetTickCount
+                textwidth = .SurfaceEntry(i).texture_width
+                textheight = .SurfaceEntry(i).texture_height
+                Set GetTexture = .SurfaceEntry(i).texture
                 Exit Function
             End If
-        Next I
+        Next i
     End With
     'Not in memory, load it!
     Set GetTexture = CrearGrafico(FileName, textwidth, textheight)
@@ -116,7 +116,7 @@ Public Function Init(ByRef D3D8 As D3DX8, ByRef d3d_device As Direct3DDevice8, B
 End Function
 
 Private Function CrearGrafico(ByVal Archivo As Integer, ByRef texwidth As Long, ByRef textheight As Long) As Direct3DTexture8
-On Error GoTo ErrHandler
+    On Error GoTo ErrHandler
     Dim surface_desc As D3DSURFACE_DESC
     Dim texture_info As D3DXIMAGE_INFO
     Dim Index As Integer
@@ -163,12 +163,12 @@ On Error GoTo ErrHandler
             Exit Do
         End If
     Loop
-Exit Function
+    Exit Function
 ErrHandler:
-Debug.Print "ERROR EN GRHLOAD>" & Archivo & ".bmp" & Err.Description
+    Debug.Print "ERROR EN GRHLOAD>" & Archivo & ".bmp" & Err.Description
 End Function
 Public Function CrearGraficoEstatico(ByVal Archivo As Integer, ByRef Data() As Byte) As Direct3DTexture8
-On Error GoTo ErrHandler
+    On Error GoTo ErrHandler
     Dim surface_desc As D3DSURFACE_DESC
     Dim texture_info As D3DXIMAGE_INFO
     Dim Index As Integer
@@ -177,23 +177,23 @@ On Error GoTo ErrHandler
     
     Dim d As Long
     
-        With Surfaces_Entrys(Archivo)
-            'Nombre
-            .FileName = Archivo
+    With Surfaces_Entrys(Archivo)
+        'Nombre
+        .FileName = Archivo
             
-            'Ultimo acceso
-            .UltimoAcceso = GetTickCount
+        'Ultimo acceso
+        .UltimoAcceso = GetTickCount
 
-             Set .texture = mD3D.CreateTextureFromFileInMemoryEx(device, Data(0), CLng(UBound(Data) + 1), 0, 0, 1, 0, D3DFMT_A8R8G8B8 _
-             , D3DPOOL_DEFAULT, D3DX_FILTER_NONE, D3DX_FILTER_NONE, &HFF000000, texture_info, ByVal 0)
+        Set .texture = mD3D.CreateTextureFromFileInMemoryEx(device, Data(0), CLng(UBound(Data) + 1), 0, 0, 1, 0, D3DFMT_A8R8G8B8 _
+            , D3DPOOL_DEFAULT, D3DX_FILTER_NONE, D3DX_FILTER_NONE, &HFF000000, texture_info, ByVal 0)
             
                
-            .texture.GetLevelDesc 0, surface_desc
-            .texture_width = texture_info.Width
-            .texture_height = texture_info.Height
-            .Size = surface_desc.Size
-            mFreeMemoryBytes = mFreeMemoryBytes - surface_desc.Size
-        End With
+        .texture.GetLevelDesc 0, surface_desc
+        .texture_width = texture_info.Width
+        .texture_height = texture_info.Height
+        .Size = surface_desc.Size
+        mFreeMemoryBytes = mFreeMemoryBytes - surface_desc.Size
+    End With
 
     
     Do While mFreeMemoryBytes < 0
@@ -201,49 +201,49 @@ On Error GoTo ErrHandler
             Exit Do
         End If
     Loop
-Exit Function
+    Exit Function
 ErrHandler:
-Debug.Print "ERROR EN GRHLOAD>" & Archivo & ".bmp" & Err.Description
+    Debug.Print "ERROR EN GRHLOAD>" & Archivo & ".bmp" & Err.Description
 End Function
 Public Sub Release()
     Dim surface_desc As D3DSURFACE_DESC
-Dim I As Long
-Dim X As Long
-For X = 0 To HASH_TABLE_SIZE - 1
-For I = 1 To TexList(X).surfaceCount
-    If TexList(X).SurfaceEntry(I).FileName <> 0 Then
-    If TexList(X).SurfaceEntry(I).Size > 0 Then Call TexList(X).SurfaceEntry(I).texture.GetLevelDesc(0, surface_desc)
-    mFreeMemoryBytes = mFreeMemoryBytes + surface_desc.Size
-    Set TexList(X).SurfaceEntry(I).texture = Nothing
-    TexList(X).SurfaceEntry(I).FileName = 0
-    End If
-Next I
-TexList(X).surfaceCount = 0
-Next X
+    Dim i As Long
+    Dim x As Long
+    For x = 0 To HASH_TABLE_SIZE - 1
+        For i = 1 To TexList(x).surfaceCount
+            If TexList(x).SurfaceEntry(i).FileName <> 0 Then
+                If TexList(x).SurfaceEntry(i).Size > 0 Then Call TexList(x).SurfaceEntry(i).texture.GetLevelDesc(0, surface_desc)
+                mFreeMemoryBytes = mFreeMemoryBytes + surface_desc.Size
+                Set TexList(x).SurfaceEntry(i).texture = Nothing
+                TexList(x).SurfaceEntry(i).FileName = 0
+            End If
+        Next i
+        TexList(x).surfaceCount = 0
+    Next x
 End Sub
 Private Function RemoveLRU() As Boolean
     
     Dim LRUi As Long
     Dim LRUj As Long
     Dim LRUtime As Long
-    Dim I As Long
-    Dim J As Long
+    Dim i As Long
+    Dim j As Long
     Dim surface_desc As D3DSURFACE_DESC
     
     LRUtime = GetTickCount
     
     'Check out through the whole list for the least recently used
-    For I = 0 To HASH_TABLE_SIZE - 1
-        With TexList(I)
-            For J = 1 To .surfaceCount
-                If LRUtime > .SurfaceEntry(J).UltimoAcceso Then
-                    LRUi = I
-                    LRUj = J
-                    LRUtime = .SurfaceEntry(J).UltimoAcceso
+    For i = 0 To HASH_TABLE_SIZE - 1
+        With TexList(i)
+            For j = 1 To .surfaceCount
+                If LRUtime > .SurfaceEntry(j).UltimoAcceso Then
+                    LRUi = i
+                    LRUj = j
+                    LRUtime = .SurfaceEntry(j).UltimoAcceso
                 End If
-            Next J
+            Next j
         End With
-    Next I
+    Next i
     
     'Retrieve the surface desc
     Call TexList(LRUi).SurfaceEntry(LRUj).texture.GetLevelDesc(0, surface_desc)
@@ -257,9 +257,9 @@ Private Function RemoveLRU() As Boolean
         RemoveLRU = True
         
         With TexList(LRUi)
-            For J = LRUj To .surfaceCount - 1
-                .SurfaceEntry(J) = .SurfaceEntry(J + 1)
-            Next J
+            For j = LRUj To .surfaceCount - 1
+                .SurfaceEntry(j) = .SurfaceEntry(j + 1)
+            Next j
             
             .surfaceCount = .surfaceCount - 1
             If .surfaceCount Then

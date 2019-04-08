@@ -43,9 +43,13 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Private Sub PB_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
+
+End Sub
+
 Private Sub Timer1_Timer()
 
-bRunning = True
-Timer1.Enabled = False
+    bRunning = True
+    Timer1.Enabled = False
 
 End Sub
