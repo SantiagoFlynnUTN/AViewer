@@ -194,7 +194,7 @@ Public Sub Engine_Init()
 
     
 
-    'partÃ­culas
+    'partículas
     D3DDevice.SetRenderState D3DRS_POINTSIZE, Engine_FToDW(2)
     D3DDevice.SetTextureStageState 0, D3DTSS_ALPHAOP, D3DTOP_MODULATE
     D3DDevice.SetRenderState D3DRS_POINTSPRITE_ENABLE, 1
@@ -336,10 +336,6 @@ Public Sub RenderModeling()
                         Draw_Index NHelmetData(sHelmet).Frame(acHeading), 250, 250 + nBodyData(CC).OffsetY + NHelmetData(sHelmet).OffsetDibujoY, NHelmetData(sHelmet).Alpha, bNeglectNegro
                     End If
                 End If
-                If sMunicion > 0 Then
-                
-                    Draw_Anim nMunicionData(sMunicion).mMovimiento(acHeading), AcFrm, 250, 250, nMunicionData(sMunicion).OverWriteGrafico, ShouldAnim, nMunicionData(sMunicion).Alpha, bNeglectNegro, VelMov
-                End If
             Case 2
 
                 If sShield > 0 Then
@@ -358,10 +354,6 @@ Public Sub RenderModeling()
                 ElseIf bHeadTest Then
                     Draw_Index NHeadData(num_test_head).Frame(acHeading), 250, 250 + nBodyData(num_test_body).OffsetY + NHeadData(num_test_head).OffsetDibujoY, , bNeglectNegro
                 End If
-                If sMunicion > 0 Then
-                
-                    Draw_Anim nMunicionData(sMunicion).mMovimiento(acHeading), AcFrm, 250, 250, nMunicionData(sMunicion).OverWriteGrafico, ShouldAnim, nMunicionData(sMunicion).Alpha, bNeglectNegro, VelMov
-                End If
                 If sHelmet > 0 Then
                     If acHeading = E_Heading.EAST Then
                         Draw_Index NHelmetData(sHelmet).Frame(acHeading), 250 + NHelmetData(sHelmet).OffsetLat, 250 + nBodyData(CC).OffsetY + NHelmetData(sHelmet).OffsetDibujoY, NHelmetData(sHelmet).Alpha, bNeglectNegro
@@ -378,13 +370,7 @@ Public Sub RenderModeling()
 
                 End If
             Case 3
-            
-                If sMunicion > 0 Then
-                
-                    Draw_Anim nMunicionData(sMunicion).mMovimiento(acHeading), AcFrm, 250, 250, nMunicionData(sMunicion).OverWriteGrafico, ShouldAnim, nMunicionData(sMunicion).Alpha, bNeglectNegro, VelMov
-                End If
-    If sBody > 0 Then
-
+                If sBody > 0 Then
                     Draw_Anim nBodyData(sBody).mMovement(acHeading), AcFrm, 250, 250, nBodyData(sBody).OverWriteGrafico, ShouldAnim, , bNeglectNegro, VelMov
                     CC = sBody
                 ElseIf bBodyTest Then
@@ -432,10 +418,6 @@ Public Sub RenderModeling()
                 
                 ElseIf bHeadTest Then
                     Draw_Index NHeadData(num_test_head).Frame(acHeading), 250, 250 + nBodyData(num_test_body).OffsetY + NHeadData(num_test_head).OffsetDibujoY, , bNeglectNegro
-                End If
-                If sMunicion > 0 Then
-                
-                    Draw_Anim nMunicionData(sMunicion).mMovimiento(acHeading), AcFrm, 250, 250, nMunicionData(sMunicion).OverWriteGrafico, ShouldAnim, nMunicionData(sMunicion).Alpha, bNeglectNegro, VelMov
                 End If
                 If sHelmet > 0 Then
                     If acHeading = E_Heading.EAST Then
