@@ -58,8 +58,8 @@ Public indexList(0 To 5)    As Integer
 Public ibQuad               As DxVBLibA.Direct3DIndexBuffer8
 Public vbQuadIdx            As DxVBLibA.Direct3DVertexBuffer8
 Public Type TLVERTEX
-    X As Single
-    Y As Single
+    x As Single
+    y As Single
     z As Single
     rhw As Single
     color As Long
@@ -88,10 +88,10 @@ Private FramesPerSecCounter As Integer
 Private ScrollPixelsPerFrameX As Integer
 Private ScrollPixelsPerFrameY As Integer
 Public Sub Engine_Init()
-'*****************************************************
-'****** Coded by Menduz (lord.yo.wo@gmail.com) *******
-'*****************************************************
-'On Error GoTo ErrHandler:
+    '*****************************************************
+    '****** Coded by Menduz (lord.yo.wo@gmail.com) *******
+    '*****************************************************
+    'On Error GoTo ErrHandler:
 
     Dim DispMode As D3DDISPLAYMODE
     Dim DispModeBK As D3DDISPLAYMODE
@@ -134,16 +134,16 @@ Public Sub Engine_Init()
         DispMode.Format = DispModeBK.Format
     End If
     Set D3DDevice = D3d.CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, fMain.Frame1.hwnd, D3DCREATE_SOFTWARE_VERTEXPROCESSING, _
-                                                            D3DWindow)
-      MainViewRect.top = 14
-      MainViewRect.left = 4
-      MainViewRect.Bottom = MainViewRect.top + 512
-      MainViewRect.Right = MainViewRect.left + 512
-      'lean1**
-      MainBufferRect.top = 0
-      MainBufferRect.left = 0
-      MainBufferRect.Bottom = MainViewRect.Bottom - MainViewRect.top
-      MainBufferRect.Right = MainViewRect.Right - MainViewRect.left
+        D3DWindow)
+    MainViewRect.top = 14
+    MainViewRect.left = 4
+    MainViewRect.Bottom = MainViewRect.top + 512
+    MainViewRect.Right = MainViewRect.left + 512
+    'lean1**
+    MainBufferRect.top = 0
+    MainBufferRect.left = 0
+    MainBufferRect.Bottom = MainViewRect.Bottom - MainViewRect.top
+    MainBufferRect.Right = MainViewRect.Right - MainViewRect.left
       
     '// Index Buffer
     indexList(0) = 0: indexList(1) = 1: indexList(2) = 2
@@ -173,9 +173,9 @@ Public Sub Engine_Init()
     D3DDevice.SetVertexShader FVF
     
     
-D3DDevice.SetRenderState D3DRS_LIGHTING, False
+    D3DDevice.SetRenderState D3DRS_LIGHTING, False
 
-'D3DDevice.SetRenderState D3DRS_AMBIENT, D3DColorXRGB(150, 150, 150) 'The ambient value is a hex-RRGGBB code
+    'D3DDevice.SetRenderState D3DRS_AMBIENT, D3DColorXRGB(150, 150, 150) 'The ambient value is a hex-RRGGBB code
 
     D3DDevice.SetRenderState D3DRS_SRCBLEND, D3DBLEND_SRCALPHA
     
@@ -212,97 +212,97 @@ D3DDevice.SetRenderState D3DRS_LIGHTING, False
      
 
     
-Exit Sub
+    Exit Sub
 ErrHandler:
-bRunning = False
+    bRunning = False
 End Sub
 
 Public Sub RenderMain()
-On Error GoTo errr
+    On Error GoTo errr
 
-Dim CC As Integer
+    Dim CC As Integer
 
-1 D3DDevice.BeginScene
+1     D3DDevice.BeginScene
 
-6 D3DDevice.Clear 1, MainBufferRect, D3DCLEAR_TARGET, lColorFondo, 1#, 0
+6     D3DDevice.Clear 1, MainBufferRect, D3DCLEAR_TARGET, lColorFondo, 1#, 0
 
-Select Case UltimaOpcion
+    Select Case UltimaOpcion
 
-    Case eOpciones.Indices_op
+            Case eOpciones.Indices_op
     
     
-        If IxS > 0 Then
+                  If IxS > 0 Then
         
-            Draw_Index IxS, 0, 0, , bNeglectNegro
+                      Draw_Index IxS, 0, 0, , bNeglectNegro
 
 
         
-        End If
+                  End If
 
-    Case eOpciones.Animaciones_op
-        If IxS > 0 Then
+            Case eOpciones.Animaciones_op
+                  If IxS > 0 Then
         
-           If Dibujo Then Draw_Anim IxS, animCounter, 250, 250, , ShouldAnim, , bNeglectNegro, VelMov
+                      If Dibujo Then Draw_Anim IxS, animCounter, 250, 250, , ShouldAnim, , bNeglectNegro, VelMov
 
-        End If
+                  End If
         
-    Case eOpciones.Modeling_op
-        'fMain.lblFrame.Caption = AcFrm
-        'If Dibujo Then
-         '       If sBody > 0 Then
-          '          Draw_Anim nBodyData(sBody).mMovement(acHeading), AcFrm, 250, 250, nBodyData(sBody).OverWriteGrafico, ShouldAnim, , bNeglectNegro, VelMov
-          '          Cc = sBody
-          '      ElseIf bBodyTest Then
-          '          Draw_Anim nBodyData(num_test_body).mMovement(acHeading), AcFrm, 250, 250, nBodyData(num_test_body).OverWriteGrafico, ShouldAnim, , bNeglectNegro, VelMov
-          '          Cc = bBodyTest
-          '      End If
-          '      If sHead > 0 Then
-          '          Draw_Index NHeadData(sHead).Frame(acHeading), 250, 250 + nBodyData(Cc).OffsetY + NHeadData(sHead).OffsetDibujoY, , bNeglectNegro
-          '
-          '      ElseIf bHeadTest Then
-          '          Draw_Index NHeadData(num_test_head).Frame(acHeading), 250, 250 + nBodyData(num_test_body).OffsetY + NHeadData(num_test_head).OffsetDibujoY, , bNeglectNegro
-          '      End If
-          '      If sHelmet > 0 Then
-          '          If acHeading = E_Heading.EAST Then
-          '              Draw_Index NHelmetData(sHelmet).Frame(acHeading), 250 + NHelmetData(sHelmet).OffsetLat, 250 + nBodyData(Cc).OffsetY + NHelmetData(sHelmet).OffsetDibujoY, NHelmetData(sHelmet).Alpha, bNeglectNegro
-          '          ElseIf acHeading = E_Heading.WEST Then
-          '              Draw_Index NHelmetData(sHelmet).Frame(acHeading), 250 - NHelmetData(sHelmet).OffsetLat, 250 + nBodyData(Cc).OffsetY + NHelmetData(sHelmet).OffsetDibujoY, NHelmetData(sHelmet).Alpha, bNeglectNegro
-          '
-          '          Else
-          '              Draw_Index NHelmetData(sHelmet).Frame(acHeading), 250, 250 + nBodyData(Cc).OffsetY + NHelmetData(sHelmet).OffsetDibujoY, NHelmetData(sHelmet).Alpha, bNeglectNegro
-          '          End If
-          '      End If
-          '      If sShield > 0 Then
-          '          Draw_Anim nShieldDATA(sShield).mMovimiento(acHeading), AcFrm, 250, 250, nShieldDATA(sShield).OverWriteGrafico, ShouldAnim, , bNeglectNegro, VelMov
-          '
-           '     End If
-           '     If sWeapon > 0 Then
-            '        Draw_Anim nWeaponData(sWeapon).mMovimiento(acHeading), AcFrm, 250, 250, nWeaponData(sWeapon).OverWriteGrafico, ShouldAnim, , bNeglectNegro, VelMov
+            Case eOpciones.Modeling_op
+                  'fMain.lblFrame.Caption = AcFrm
+                  'If Dibujo Then
+                  '       If sBody > 0 Then
+                  '          Draw_Anim nBodyData(sBody).mMovement(acHeading), AcFrm, 250, 250, nBodyData(sBody).OverWriteGrafico, ShouldAnim, , bNeglectNegro, VelMov
+                  '          Cc = sBody
+                  '      ElseIf bBodyTest Then
+                  '          Draw_Anim nBodyData(num_test_body).mMovement(acHeading), AcFrm, 250, 250, nBodyData(num_test_body).OverWriteGrafico, ShouldAnim, , bNeglectNegro, VelMov
+                  '          Cc = bBodyTest
+                  '      End If
+                  '      If sHead > 0 Then
+                  '          Draw_Index NHeadData(sHead).Frame(acHeading), 250, 250 + nBodyData(Cc).OffsetY + NHeadData(sHead).OffsetDibujoY, , bNeglectNegro
+                  '
+                  '      ElseIf bHeadTest Then
+                  '          Draw_Index NHeadData(num_test_head).Frame(acHeading), 250, 250 + nBodyData(num_test_body).OffsetY + NHeadData(num_test_head).OffsetDibujoY, , bNeglectNegro
+                  '      End If
+                  '      If sHelmet > 0 Then
+                  '          If acHeading = E_Heading.EAST Then
+                  '              Draw_Index NHelmetData(sHelmet).Frame(acHeading), 250 + NHelmetData(sHelmet).OffsetLat, 250 + nBodyData(Cc).OffsetY + NHelmetData(sHelmet).OffsetDibujoY, NHelmetData(sHelmet).Alpha, bNeglectNegro
+                  '          ElseIf acHeading = E_Heading.WEST Then
+                  '              Draw_Index NHelmetData(sHelmet).Frame(acHeading), 250 - NHelmetData(sHelmet).OffsetLat, 250 + nBodyData(Cc).OffsetY + NHelmetData(sHelmet).OffsetDibujoY, NHelmetData(sHelmet).Alpha, bNeglectNegro
+                  '
+                  '          Else
+                  '              Draw_Index NHelmetData(sHelmet).Frame(acHeading), 250, 250 + nBodyData(Cc).OffsetY + NHelmetData(sHelmet).OffsetDibujoY, NHelmetData(sHelmet).Alpha, bNeglectNegro
+                  '          End If
+                  '      End If
+                  '      If sShield > 0 Then
+                  '          Draw_Anim nShieldDATA(sShield).mMovimiento(acHeading), AcFrm, 250, 250, nShieldDATA(sShield).OverWriteGrafico, ShouldAnim, , bNeglectNegro, VelMov
+                  '
+                  '     End If
+                  '     If sWeapon > 0 Then
+                  '        Draw_Anim nWeaponData(sWeapon).mMovimiento(acHeading), AcFrm, 250, 250, nWeaponData(sWeapon).OverWriteGrafico, ShouldAnim, , bNeglectNegro, VelMov
 
-           '     End If
+                  '     End If
           
-        'End If
-        RenderModeling
-End Select
-If Zooming Then
-5     D3DDevice.Present ZoomBufferRect, MainViewRect, 0, ByVal 0
-Else
-3     D3DDevice.Present MainBufferRect, MainViewRect, 0, ByVal 0
-End If
-4 D3DDevice.EndScene
+                  'End If
+                  RenderModeling
+    End Select
+    If Zooming Then
+5             D3DDevice.Present ZoomBufferRect, MainViewRect, 0, ByVal 0
+    Else
+3             D3DDevice.Present MainBufferRect, MainViewRect, 0, ByVal 0
+    End If
+4     D3DDevice.EndScene
 
-Exit Sub
+    Exit Sub
 errr:
 
-Debug.Print Err.Description & "_" & Erl
-D3DDevice.EndScene
+    Debug.Print Err.Description & "_" & Erl
+    D3DDevice.EndScene
 End Sub
 
 Public Sub RenderModeling()
-Dim CC As Integer
+    Dim CC As Integer
 
-        fMain.lblFrame.Caption = AcFrm
-        If Dibujo Then
+    fMain.lblFrame.Caption = AcFrm
+    If Dibujo Then
         Select Case acHeading
             Case 1 'N E S W
 
@@ -313,7 +313,7 @@ Dim CC As Integer
                 If sShield > 0 Then
                     Draw_Anim nShieldDATA(sShield).mMovimiento(acHeading), AcFrm, 250, 250, nShieldDATA(sShield).OverWriteGrafico, ShouldAnim, , bNeglectNegro, VelMov
                 End If
-                            If sBody > 0 Then
+                If sBody > 0 Then
                     Draw_Anim nBodyData(sBody).mMovement(acHeading), AcFrm, 250, 250, nBodyData(sBody).OverWriteGrafico, ShouldAnim, , bNeglectNegro, VelMov
                     CC = sBody
                 ElseIf bBodyTest Then
@@ -345,7 +345,7 @@ Dim CC As Integer
                 If sShield > 0 Then
                     Draw_Anim nShieldDATA(sShield).mMovimiento(acHeading), AcFrm, 250, 250, nShieldDATA(sShield).OverWriteGrafico, ShouldAnim, , bNeglectNegro, VelMov
                 End If
-                            If sBody > 0 Then
+                If sBody > 0 Then
                     Draw_Anim nBodyData(sBody).mMovement(acHeading), AcFrm, 250, 250, nBodyData(sBody).OverWriteGrafico, ShouldAnim, , bNeglectNegro, VelMov
                     CC = sBody
                 ElseIf bBodyTest Then
@@ -383,7 +383,7 @@ Dim CC As Integer
                 
                     Draw_Anim nMunicionData(sMunicion).mMovimiento(acHeading), AcFrm, 250, 250, nMunicionData(sMunicion).OverWriteGrafico, ShouldAnim, nMunicionData(sMunicion).Alpha, bNeglectNegro, VelMov
                 End If
-    If sBody > 0 Then
+                If sBody > 0 Then
                     Draw_Anim nBodyData(sBody).mMovement(acHeading), AcFrm, 250, 250, nBodyData(sBody).OverWriteGrafico, ShouldAnim, , bNeglectNegro, VelMov
                     CC = sBody
                 ElseIf bBodyTest Then
@@ -419,7 +419,7 @@ Dim CC As Integer
                     Draw_Anim nWeaponData(sWeapon).mMovimiento(acHeading), AcFrm, 250, 250, nWeaponData(sWeapon).OverWriteGrafico, ShouldAnim, , bNeglectNegro, VelMov
 
                 End If
-                            If sBody > 0 Then
+                If sBody > 0 Then
                     Draw_Anim nBodyData(sBody).mMovement(acHeading), AcFrm, 250, 250, nBodyData(sBody).OverWriteGrafico, ShouldAnim, , bNeglectNegro, VelMov
                     CC = sBody
                 ElseIf bBodyTest Then
@@ -456,13 +456,13 @@ Dim CC As Integer
     
 End Sub
 Private Function Engine_FToDW(F As Single) As Long
-' single > long
-Dim buf As D3DXBuffer
+    ' single > long
+    Dim buf As D3DXBuffer
     Set buf = D3DX.CreateBuffer(4)
     D3DX.BufferSetData buf, 0, 4, 1, F
     D3DX.BufferGetData buf, 0, 4, 1, Engine_FToDW
 End Function
-Private Sub Draw_Index(ByVal nIndex As Integer, ByVal X As Integer, ByVal Y As Integer, Optional ByVal Alpha_Blend As Byte = 0, Optional ByVal NeglectNegro As Boolean = False)
+Private Sub Draw_Index(ByVal nIndex As Integer, ByVal x As Integer, ByVal y As Integer, Optional ByVal Alpha_Blend As Byte = 0, Optional ByVal NeglectNegro As Boolean = False)
     Dim d3dtextures As D3D8Textures
     Dim z As Long
     Dim light_value(0 To 3) As Long
@@ -478,19 +478,19 @@ Private Sub Draw_Index(ByVal nIndex As Integer, ByVal X As Integer, ByVal Y As I
     Dim jh As Integer
     
     With EstaticData(NewIndexData(nIndex).Estatic)
-    jx = .L
-    jy = .T
-    jw = .W
-    jh = .H
-    If .tw <> 1 Then
-        z = -.tw * 16 + 16
-        X = X + z
-    End If
+        jx = .L
+        jy = .T
+        jw = .W
+        jh = .H
+        If .tw <> 1 Then
+            z = -.tw * 16 + 16
+            x = x + z
+        End If
     
-    If .th <> 1 Then
-        z = -.th * 32 + 32
-        Y = Y + z
-    End If
+        If .th <> 1 Then
+            z = -.th * 32 + 32
+            y = y + z
+        End If
     
     
     End With
@@ -498,76 +498,76 @@ Private Sub Draw_Index(ByVal nIndex As Integer, ByVal X As Integer, ByVal Y As I
     
     If d3dtextures.texwidth = 0 Or d3dtextures.texheight = 0 Then Exit Sub
     
-        With verts(2)
-            .X = X
-            .Y = Y + jh
-            .tu = jx / (d3dtextures.texwidth)
-            .tv = (jy + jh) / (d3dtextures.texheight)
-            .rhw = 1
-            .color = -1
-        End With
-        With verts(0)
-            .X = X
-            .Y = Y
-            .tu = jx / (d3dtextures.texwidth)
-            .tv = jy / (d3dtextures.texheight)
-            .rhw = 1
-            .color = -1
+    With verts(2)
+        .x = x
+        .y = y + jh
+        .tu = jx / (d3dtextures.texwidth)
+        .tv = (jy + jh) / (d3dtextures.texheight)
+        .rhw = 1
+        .color = -1
+    End With
+    With verts(0)
+        .x = x
+        .y = y
+        .tu = jx / (d3dtextures.texwidth)
+        .tv = jy / (d3dtextures.texheight)
+        .rhw = 1
+        .color = -1
 
-        End With
+    End With
         
-        With verts(3)
-            .X = X + jw
-            .Y = Y + jh
-            .tu = (jx + jw) / (d3dtextures.texwidth)
-            .tv = (jy + jh) / (d3dtextures.texheight)
-            .rhw = 1
-            .color = -1
+    With verts(3)
+        .x = x + jw
+        .y = y + jh
+        .tu = (jx + jw) / (d3dtextures.texwidth)
+        .tv = (jy + jh) / (d3dtextures.texheight)
+        .rhw = 1
+        .color = -1
 
-        End With
+    End With
         
-        With verts(1)
-            .X = X + jw
-            .Y = Y
-            .tu = (jx + jw) / (d3dtextures.texwidth)
-            .tv = jy / (d3dtextures.texheight)
-            .rhw = 1
-            .color = -1
+    With verts(1)
+        .x = x + jw
+        .y = y
+        .tu = (jx + jw) / (d3dtextures.texwidth)
+        .tv = jy / (d3dtextures.texheight)
+        .rhw = 1
+        .color = -1
 
-        End With
-        If Alpha_Blend > 0 Or NeglectNegro Then
+    End With
+    If Alpha_Blend > 0 Or NeglectNegro Then
 
-            If Not NeglectNegro Then
-                D3DDevice.SetRenderState D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA
-                'D3DDevice.SetRenderState D3DRS_SRCBLEND, D3DBLEND_SRCALPHA
-                verts(0).color = D3DColorARGB(Alpha_Blend, 255, 255, 255)
-                verts(1).color = D3DColorARGB(Alpha_Blend, 255, 255, 255)
-                verts(2).color = D3DColorARGB(Alpha_Blend, 255, 255, 255)
-                verts(3).color = D3DColorARGB(Alpha_Blend, 255, 255, 255)
+        If Not NeglectNegro Then
+            D3DDevice.SetRenderState D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA
+            'D3DDevice.SetRenderState D3DRS_SRCBLEND, D3DBLEND_SRCALPHA
+            verts(0).color = D3DColorARGB(Alpha_Blend, 255, 255, 255)
+            verts(1).color = D3DColorARGB(Alpha_Blend, 255, 255, 255)
+            verts(2).color = D3DColorARGB(Alpha_Blend, 255, 255, 255)
+            verts(3).color = D3DColorARGB(Alpha_Blend, 255, 255, 255)
                 
     
-            Else
-                D3DDevice.SetRenderState D3DRS_DESTBLEND, 2
-                D3DDevice.SetRenderState D3DRS_SRCBLEND, D3DBLEND_SRCALPHA
-            End If
-
-        End If
-    
-        'D3DDevice.DrawIndexedPrimitiveUP D3DPT_TRIANGLESTRIP, 0, 4, 2, indexList(0), D3DFMT_INDEX16, verts(0), 28
-        D3DDevice.DrawPrimitiveUP D3DPT_TRIANGLESTRIP, 2, verts(0), 28
-
-    
-        If Alpha_Blend > 0 Or NeglectNegro Then
+        Else
+            D3DDevice.SetRenderState D3DRS_DESTBLEND, 2
             D3DDevice.SetRenderState D3DRS_SRCBLEND, D3DBLEND_SRCALPHA
-            D3DDevice.SetRenderState D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA
-            Call D3DDevice.SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTOP_SELECTARG1)
-            Call D3DDevice.SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTOP_DISABLE)
+        End If
+
+    End If
+    
+    'D3DDevice.DrawIndexedPrimitiveUP D3DPT_TRIANGLESTRIP, 0, 4, 2, indexList(0), D3DFMT_INDEX16, verts(0), 28
+    D3DDevice.DrawPrimitiveUP D3DPT_TRIANGLESTRIP, 2, verts(0), 28
+
+    
+    If Alpha_Blend > 0 Or NeglectNegro Then
+        D3DDevice.SetRenderState D3DRS_SRCBLEND, D3DBLEND_SRCALPHA
+        D3DDevice.SetRenderState D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA
+        Call D3DDevice.SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTOP_SELECTARG1)
+        Call D3DDevice.SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTOP_DISABLE)
         
             
-        End If
+    End If
 End Sub
-Private Sub Draw_Anim(ByVal nIndex As Integer, ByRef Counter As Single, ByVal X As Integer, ByVal Y As Integer, Optional ByVal oGrafico As Integer = -1, Optional ByVal Animar As Boolean = True, Optional ByVal Alpha_Blend As Byte = 0, Optional ByVal NeglectNegro As Boolean = False, Optional ByVal Vel As Single)
-On Error GoTo erdrawanim
+Private Sub Draw_Anim(ByVal nIndex As Integer, ByRef Counter As Single, ByVal x As Integer, ByVal y As Integer, Optional ByVal oGrafico As Integer = -1, Optional ByVal Animar As Boolean = True, Optional ByVal Alpha_Blend As Byte = 0, Optional ByVal NeglectNegro As Boolean = False, Optional ByVal Vel As Single)
+    On Error GoTo erdrawanim
     Dim d3dtextures As D3D8Textures
     Dim light_value(0 To 3) As Long
     Dim verts(3) As TLVERTEX
@@ -605,10 +605,10 @@ On Error GoTo erdrawanim
         
         
         If VerFrame Then
-        If i <> LastCounter Then
+            If i <> LastCounter Then
                 fMain.lblfr.Caption = "FR: " & i
                 LastCounter = i
-        End If
+            End If
         End If
         If oGrafico > 0 Then
             Grf = (.Indice(i).Grafico - .Indice(1).Grafico) + oGrafico
@@ -617,191 +617,191 @@ On Error GoTo erdrawanim
         End If
         
     
-    Set d3dtextures.texture = SurfaceDB8.GetTexture(Grf, d3dtextures.texwidth, d3dtextures.texheight)
-    D3DDevice.SetTexture 0, d3dtextures.texture
+        Set d3dtextures.texture = SurfaceDB8.GetTexture(Grf, d3dtextures.texwidth, d3dtextures.texheight)
+        D3DDevice.SetTexture 0, d3dtextures.texture
     
-    Dim jx As Integer
-    Dim jy As Integer
-    Dim jw As Integer
-    Dim jh As Integer
+        Dim jx As Integer
+        Dim jy As Integer
+        Dim jw As Integer
+        Dim jh As Integer
     
-    jx = .Indice(i).X
-    jy = .Indice(i).Y
-    jh = .Height
-    jw = .Width
+        jx = .Indice(i).x
+        jy = .Indice(i).y
+        jh = .Height
+        jw = .Width
     
-    If .TileWidth <> 1 Then
-        z = -.TileWidth * 16 + 16
-        X = X + z
-    End If
+        If .TileWidth <> 1 Then
+            z = -.TileWidth * 16 + 16
+            x = x + z
+        End If
     
-    If .TileHeight <> 1 Then
-        z = -.TileHeight * 32 + 32
-        Y = Y + z
-    End If
+        If .TileHeight <> 1 Then
+            z = -.TileHeight * 32 + 32
+            y = y + z
+        End If
 
     
     End With
     
     If d3dtextures.texwidth = 0 Or d3dtextures.texheight = 0 Then Exit Sub
     
-        With verts(2)
-            .X = X
-            .Y = Y + jh
-            .tu = jx / (d3dtextures.texwidth - 1)
-            .tv = (jy + jh) / (d3dtextures.texheight - 1)
-            .rhw = 1
-            .color = -1
-            If .tu > 1 Then .tu = 1
-            If .tv > 1 Then .tv = 1
-        End With
-        With verts(0)
-            .X = X
-            .Y = Y
-            .tu = jx / (d3dtextures.texwidth - 1)
-            .tv = jy / (d3dtextures.texheight - 1)
-            .rhw = 1
-            .color = -1
-            If .tu > 1 Then .tu = 1
-            If .tv > 1 Then .tv = 1
-        End With
+    With verts(2)
+        .x = x
+        .y = y + jh
+        .tu = jx / (d3dtextures.texwidth - 1)
+        .tv = (jy + jh) / (d3dtextures.texheight - 1)
+        .rhw = 1
+        .color = -1
+        If .tu > 1 Then .tu = 1
+        If .tv > 1 Then .tv = 1
+    End With
+    With verts(0)
+        .x = x
+        .y = y
+        .tu = jx / (d3dtextures.texwidth - 1)
+        .tv = jy / (d3dtextures.texheight - 1)
+        .rhw = 1
+        .color = -1
+        If .tu > 1 Then .tu = 1
+        If .tv > 1 Then .tv = 1
+    End With
         
-        With verts(3)
-            .X = X + jw
-            .Y = Y + jh
-            .tu = (jx + jw) / (d3dtextures.texwidth - 1)
-            .tv = (jy + jh) / (d3dtextures.texheight - 1)
-            .rhw = 1
-            .color = -1
-            If .tu > 1 Then .tu = 1
-            If .tv > 1 Then .tv = 1
-        End With
+    With verts(3)
+        .x = x + jw
+        .y = y + jh
+        .tu = (jx + jw) / (d3dtextures.texwidth - 1)
+        .tv = (jy + jh) / (d3dtextures.texheight - 1)
+        .rhw = 1
+        .color = -1
+        If .tu > 1 Then .tu = 1
+        If .tv > 1 Then .tv = 1
+    End With
         
-        With verts(1)
-            .X = X + jw
-            .Y = Y
-            .tu = (jx + jw) / (d3dtextures.texwidth - 1)
-            .tv = jy / (d3dtextures.texheight - 1)
-            .rhw = 1
-            .color = -1
-            If .tu > 1 Then .tu = 1
-            If .tv > 1 Then .tv = 1
-        End With
-        If Alpha_Blend > 0 Or NeglectNegro Then
+    With verts(1)
+        .x = x + jw
+        .y = y
+        .tu = (jx + jw) / (d3dtextures.texwidth - 1)
+        .tv = jy / (d3dtextures.texheight - 1)
+        .rhw = 1
+        .color = -1
+        If .tu > 1 Then .tu = 1
+        If .tv > 1 Then .tv = 1
+    End With
+    If Alpha_Blend > 0 Or NeglectNegro Then
 
-            If Not NeglectNegro Then
-                D3DDevice.SetRenderState D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA
-            Else
-                D3DDevice.SetRenderState D3DRS_DESTBLEND, 2
-                D3DDevice.SetRenderState D3DRS_SRCBLEND, D3DBLEND_SRCALPHA
-            End If
-
-        End If
-    
-        D3DDevice.DrawIndexedPrimitiveUP D3DPT_TRIANGLESTRIP, 0, 4, 2, indexList(0), D3DFMT_INDEX16, verts(0), 28
-
-
-    
-        If Alpha_Blend > 0 Or NeglectNegro Then
-            D3DDevice.SetRenderState D3DRS_SRCBLEND, D3DBLEND_SRCALPHA
+        If Not NeglectNegro Then
             D3DDevice.SetRenderState D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA
-            Call D3DDevice.SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTOP_SELECTARG1)
-            Call D3DDevice.SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTOP_DISABLE)
+        Else
+            D3DDevice.SetRenderState D3DRS_DESTBLEND, 2
+            D3DDevice.SetRenderState D3DRS_SRCBLEND, D3DBLEND_SRCALPHA
+        End If
+
+    End If
+    
+    D3DDevice.DrawIndexedPrimitiveUP D3DPT_TRIANGLESTRIP, 0, 4, 2, indexList(0), D3DFMT_INDEX16, verts(0), 28
+
+
+    
+    If Alpha_Blend > 0 Or NeglectNegro Then
+        D3DDevice.SetRenderState D3DRS_SRCBLEND, D3DBLEND_SRCALPHA
+        D3DDevice.SetRenderState D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA
+        Call D3DDevice.SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTOP_SELECTARG1)
+        Call D3DDevice.SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTOP_DISABLE)
         
             
-        End If
-        Exit Sub
+    End If
+    Exit Sub
 erdrawanim:
 
 
 End Sub
 Public Function ShouldAnim() As Boolean
 
-If Pausa Then
-    ShouldAnim = False
-    Exit Function
-End If
-If fMain.Check1.value = 0 Then
-    Exit Function
-End If
+    If Pausa Then
+        ShouldAnim = False
+        Exit Function
+    End If
+    If fMain.Check1.value = 0 Then
+        Exit Function
+    End If
 
-ShouldAnim = True
+    ShouldAnim = True
 
 End Function
-Public Sub DibujareEnHwnd3(ByVal PIC As Long, ByVal Graf As Integer, ByVal X As Integer, ByVal Y As Integer, ByVal PRESENTO As Boolean, ByRef W As Integer, ByRef H As Integer)
+Public Sub DibujareEnHwnd3(ByVal PIC As Long, ByVal Graf As Integer, ByVal x As Integer, ByVal y As Integer, ByVal PRESENTO As Boolean, ByRef W As Integer, ByRef H As Integer)
 
-Dim DestRect As RECT
-Dim tX As Byte
-Dim tY As Byte
-Dim src_rect As RECT
-Dim d3dtextures As D3D8Textures
-Dim light_value(0 To 3) As Long
-Dim verts(3) As TLVERTEX
+    Dim DestRect As RECT
+    Dim tX As Byte
+    Dim tY As Byte
+    Dim src_rect As RECT
+    Dim d3dtextures As D3D8Textures
+    Dim light_value(0 To 3) As Long
+    Dim verts(3) As TLVERTEX
 
-Set d3dtextures.texture = SurfaceDB8.GetTexture(Graf, d3dtextures.texwidth, d3dtextures.texheight)
-D3DDevice.SetTexture 0, d3dtextures.texture
-W = d3dtextures.texwidth
-H = d3dtextures.texheight
+    Set d3dtextures.texture = SurfaceDB8.GetTexture(Graf, d3dtextures.texwidth, d3dtextures.texheight)
+    D3DDevice.SetTexture 0, d3dtextures.texture
+    W = d3dtextures.texwidth
+    H = d3dtextures.texheight
 
 
-  X = X
-  Y = Y
+    x = x
+    y = y
 
-   src_rect.top = 0
-   src_rect.left = 0
-   src_rect.Right = d3dtextures.texwidth
-   src_rect.Bottom = d3dtextures.texheight
+    src_rect.top = 0
+    src_rect.left = 0
+    src_rect.Right = d3dtextures.texwidth
+    src_rect.Bottom = d3dtextures.texheight
     
     
-   DestRect.top = Y
-   DestRect.left = X
-   DestRect.Bottom = Y + src_rect.Bottom - src_rect.top
-   DestRect.Right = X + src_rect.Right - src_rect.left
-   If src_rect.Bottom <= 0 Or src_rect.Right <= 0 Or src_rect.left = src_rect.Right Or src_rect.top = src_rect.Bottom Then Exit Sub
+    DestRect.top = y
+    DestRect.left = x
+    DestRect.Bottom = y + src_rect.Bottom - src_rect.top
+    DestRect.Right = x + src_rect.Right - src_rect.left
+    If src_rect.Bottom <= 0 Or src_rect.Right <= 0 Or src_rect.left = src_rect.Right Or src_rect.top = src_rect.Bottom Then Exit Sub
    
    
-   D3DDevice.Clear 1, DestRect, D3DCLEAR_TARGET, &H0, ByVal 0, 0
-   D3DDevice.BeginScene
+    D3DDevice.Clear 1, DestRect, D3DCLEAR_TARGET, &H0, ByVal 0, 0
+    D3DDevice.BeginScene
 
 
 
-        With verts(2)
-            .X = X
-            .Y = Y + d3dtextures.texheight
-            .tu = 0 / (d3dtextures.texwidth)
-            .tv = (0 + d3dtextures.texheight) / (d3dtextures.texheight)
-            .rhw = 1
-            .color = -1
-        End With
-        With verts(0)
-            .X = X
-            .Y = Y
-            .tu = 0 / (d3dtextures.texwidth)
-            .tv = 0 / (d3dtextures.texheight)
-            .rhw = 1
-            .color = -1
+    With verts(2)
+        .x = x
+        .y = y + d3dtextures.texheight
+        .tu = 0 / (d3dtextures.texwidth)
+        .tv = (0 + d3dtextures.texheight) / (d3dtextures.texheight)
+        .rhw = 1
+        .color = -1
+    End With
+    With verts(0)
+        .x = x
+        .y = y
+        .tu = 0 / (d3dtextures.texwidth)
+        .tv = 0 / (d3dtextures.texheight)
+        .rhw = 1
+        .color = -1
 
-        End With
+    End With
         
-        With verts(3)
-            .X = X + d3dtextures.texwidth
-            .Y = Y + d3dtextures.texheight
-            .tu = (0 + d3dtextures.texwidth) / (d3dtextures.texwidth)
-            .tv = (0 + d3dtextures.texheight) / (d3dtextures.texheight)
-            .rhw = 1
-            .color = -1
+    With verts(3)
+        .x = x + d3dtextures.texwidth
+        .y = y + d3dtextures.texheight
+        .tu = (0 + d3dtextures.texwidth) / (d3dtextures.texwidth)
+        .tv = (0 + d3dtextures.texheight) / (d3dtextures.texheight)
+        .rhw = 1
+        .color = -1
 
-        End With
+    End With
         
-        With verts(1)
-            .X = X + d3dtextures.texwidth
-            .Y = Y
-            .tu = (0 + d3dtextures.texwidth) / (d3dtextures.texwidth)
-            .tv = 0 / (d3dtextures.texheight)
-            .rhw = 1
-            .color = -1
+    With verts(1)
+        .x = x + d3dtextures.texwidth
+        .y = y
+        .tu = (0 + d3dtextures.texwidth) / (d3dtextures.texwidth)
+        .tv = 0 / (d3dtextures.texheight)
+        .rhw = 1
+        .color = -1
 
-        End With
+    End With
     
    
 
@@ -812,88 +812,88 @@ H = d3dtextures.texheight
 
 
 
-   D3DDevice.EndScene
+    D3DDevice.EndScene
    
 
    
-   If PRESENTO Then D3DDevice.Present src_rect, DestRect, PIC, ByVal 0
+    If PRESENTO Then D3DDevice.Present src_rect, DestRect, PIC, ByVal 0
 
 
 End Sub
-Public Sub DibujareEnHwndIndex(ByVal PIC As Long, ByVal Grafico As Integer, ByVal L As Integer, ByVal T As Integer, ByVal W As Integer, ByVal H As Integer, ByVal X As Integer, ByVal Y As Integer, ByVal PRESENTO As Boolean, ByRef Wi As Integer, ByRef Hi As Integer)
+Public Sub DibujareEnHwndIndex(ByVal PIC As Long, ByVal Grafico As Integer, ByVal L As Integer, ByVal T As Integer, ByVal W As Integer, ByVal H As Integer, ByVal x As Integer, ByVal y As Integer, ByVal PRESENTO As Boolean, ByRef Wi As Integer, ByRef Hi As Integer)
 
-Dim DestRect As RECT
-Dim tX As Byte
-Dim tY As Byte
-Dim src_rect As RECT
-Dim d3dtextures As D3D8Textures
-Dim light_value(0 To 3) As Long
-Dim verts(3) As TLVERTEX
+    Dim DestRect As RECT
+    Dim tX As Byte
+    Dim tY As Byte
+    Dim src_rect As RECT
+    Dim d3dtextures As D3D8Textures
+    Dim light_value(0 To 3) As Long
+    Dim verts(3) As TLVERTEX
 
-Set d3dtextures.texture = SurfaceDB8.GetTexture(Grafico, d3dtextures.texwidth, d3dtextures.texheight)
-D3DDevice.SetTexture 0, d3dtextures.texture
-Wi = d3dtextures.texwidth
-Hi = d3dtextures.texheight
+    Set d3dtextures.texture = SurfaceDB8.GetTexture(Grafico, d3dtextures.texwidth, d3dtextures.texheight)
+    D3DDevice.SetTexture 0, d3dtextures.texture
+    Wi = d3dtextures.texwidth
+    Hi = d3dtextures.texheight
 
 
-  X = X
-  Y = Y
+    x = x
+    y = y
 
-   src_rect.top = T
-   src_rect.left = L
-   src_rect.Right = L + W
-   src_rect.Bottom = T + H
+    src_rect.top = T
+    src_rect.left = L
+    src_rect.Right = L + W
+    src_rect.Bottom = T + H
     
     
-   DestRect.top = Y
-   DestRect.left = X
-   DestRect.Bottom = Y + src_rect.Bottom - src_rect.top
-   DestRect.Right = X + src_rect.Right - src_rect.left
-   If src_rect.Bottom <= 0 Or src_rect.Right <= 0 Or src_rect.left = src_rect.Right Or src_rect.top = src_rect.Bottom Then Exit Sub
+    DestRect.top = y
+    DestRect.left = x
+    DestRect.Bottom = y + src_rect.Bottom - src_rect.top
+    DestRect.Right = x + src_rect.Right - src_rect.left
+    If src_rect.Bottom <= 0 Or src_rect.Right <= 0 Or src_rect.left = src_rect.Right Or src_rect.top = src_rect.Bottom Then Exit Sub
    
    
-   D3DDevice.Clear 1, DestRect, D3DCLEAR_TARGET, &H0, ByVal 0, 0
-   D3DDevice.BeginScene
+    D3DDevice.Clear 1, DestRect, D3DCLEAR_TARGET, &H0, ByVal 0, 0
+    D3DDevice.BeginScene
 
 
 
-        With verts(2)
-            .X = X
-            .Y = Y + W
-            .tu = L / (d3dtextures.texwidth)
-            .tv = (T + H) / (d3dtextures.texheight)
-            .rhw = 1
-            .color = -1
-        End With
-        With verts(0)
-            .X = X
-            .Y = Y
-            .tu = L / (d3dtextures.texwidth)
-            .tv = T / (d3dtextures.texheight)
-            .rhw = 1
-            .color = -1
+    With verts(2)
+        .x = x
+        .y = y + W
+        .tu = L / (d3dtextures.texwidth)
+        .tv = (T + H) / (d3dtextures.texheight)
+        .rhw = 1
+        .color = -1
+    End With
+    With verts(0)
+        .x = x
+        .y = y
+        .tu = L / (d3dtextures.texwidth)
+        .tv = T / (d3dtextures.texheight)
+        .rhw = 1
+        .color = -1
 
-        End With
+    End With
         
-        With verts(3)
-            .X = X + W
-            .Y = Y + H
-            .tu = (L + W) / (d3dtextures.texwidth)
-            .tv = (T + H) / (d3dtextures.texheight)
-            .rhw = 1
-            .color = -1
+    With verts(3)
+        .x = x + W
+        .y = y + H
+        .tu = (L + W) / (d3dtextures.texwidth)
+        .tv = (T + H) / (d3dtextures.texheight)
+        .rhw = 1
+        .color = -1
 
-        End With
+    End With
         
-        With verts(1)
-            .X = X + W
-            .Y = Y
-            .tu = (L + W) / (d3dtextures.texwidth)
-            .tv = 0 / (H)
-            .rhw = 1
-            .color = -1
+    With verts(1)
+        .x = x + W
+        .y = y
+        .tu = (L + W) / (d3dtextures.texwidth)
+        .tv = 0 / (H)
+        .rhw = 1
+        .color = -1
 
-        End With
+    End With
     
    
 
@@ -904,11 +904,11 @@ Hi = d3dtextures.texheight
 
 
 
-   D3DDevice.EndScene
+    D3DDevice.EndScene
    
 
    
-   If PRESENTO Then D3DDevice.Present src_rect, DestRect, PIC, ByVal 0
+    If PRESENTO Then D3DDevice.Present src_rect, DestRect, PIC, ByVal 0
 
 
 End Sub

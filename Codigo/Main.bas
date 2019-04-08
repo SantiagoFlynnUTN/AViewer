@@ -12,10 +12,10 @@ Public Modeling_Type As Byte
 Public LastCheckKeys As Long
 Public Enum E_Heading
 
-      NORTH = 1
-      EAST = 2
-      SOUTH = 3
-      WEST = 4
+    NORTH = 1
+    EAST = 2
+    SOUTH = 3
+    WEST = 4
 
 End Enum
 Public IxS As Integer
@@ -27,7 +27,7 @@ Public FpsLastCheck As Long
 Public FPS As Integer
 
 Public Sub CerrarOpcion(ByVal Index As Integer)
-IxS = 0
+    IxS = 0
     With fMain
         .cOpc(Index).value = False
         .Lista(Index).Visible = False
@@ -51,65 +51,65 @@ IxS = 0
     End Select
 End Sub
 Public Sub AbrirOpcion(ByVal Index As Integer)
-Dim i As Long
+    Dim i As Long
     With fMain
         .Lista(Index).Visible = True
     
     
     
     
-    Select Case Index
-        Case eOpciones.Indices_op
-        Case eOpciones.Animaciones_op
-            .CmdSAve.Visible = True
-            .frAnim.Visible = True
-        Case eOpciones.Modeling_op
-            .fModeling.Visible = True
-            .cCasco.AddItem "Ningun Casco"
-            If Num_Helmets > 0 Then
-                For i = 1 To Num_Helmets
-                    fMain.cCasco.AddItem NHelmetData(i).Desc & "(" & i & ")"
-                Next i
-            End If
-            .cCabeza.AddItem "Ninguna Cabeza"
-            If Num_Heads > 0 Then
-                For i = 1 To Num_Heads
-                    fMain.cCabeza.AddItem NHeadData(i).Desc & "(" & i & ")"
-                Next i
-            End If
-            .cBody.AddItem "Ningun Cuerpo"
-            If NumNewBodys > 0 Then
-                For i = 1 To NumNewBodys
-                    fMain.cBody.AddItem nBodyData(i).Desc & "(" & i & ")"
-                Next i
-            End If
-            .cArma.AddItem "Ningun Arma"
-            If NumNewWeapons > 0 Then
-                For i = 1 To NumNewWeapons
-                    fMain.cArma.AddItem nWeaponData(i).Desc & "(" & i & ")"
-                Next i
+        Select Case Index
+            Case eOpciones.Indices_op
+            Case eOpciones.Animaciones_op
+                .CmdSAve.Visible = True
+                .frAnim.Visible = True
+            Case eOpciones.Modeling_op
+                .fModeling.Visible = True
+                .cCasco.AddItem "Ningun Casco"
+                If Num_Helmets > 0 Then
+                    For i = 1 To Num_Helmets
+                        fMain.cCasco.AddItem NHelmetData(i).Desc & "(" & i & ")"
+                    Next i
+                End If
+                .cCabeza.AddItem "Ninguna Cabeza"
+                If Num_Heads > 0 Then
+                    For i = 1 To Num_Heads
+                        fMain.cCabeza.AddItem NHeadData(i).Desc & "(" & i & ")"
+                    Next i
+                End If
+                .cBody.AddItem "Ningun Cuerpo"
+                If NumNewBodys > 0 Then
+                    For i = 1 To NumNewBodys
+                        fMain.cBody.AddItem nBodyData(i).Desc & "(" & i & ")"
+                    Next i
+                End If
+                .cArma.AddItem "Ningun Arma"
+                If NumNewWeapons > 0 Then
+                    For i = 1 To NumNewWeapons
+                        fMain.cArma.AddItem nWeaponData(i).Desc & "(" & i & ")"
+                    Next i
             
-            End If
-            .cEscudo.AddItem "Ningun Escudo"
-            If NumNewShields > 0 Then
-                For i = 1 To NumNewShields
-                    fMain.cEscudo.AddItem nShieldDATA(i).Desc & "(" & i & ")"
-                Next i
-            End If
-            .cMuni.AddItem "Ninguna Municion"
-            If NumNewM > 0 Then
-                For i = 1 To NumNewM
-                    fMain.cMuni.AddItem nMunicionData(i).Desc & "(" & i & ")"
-                Next i
-            End If
-        Case eOpciones.Particulas_op
-        Case eOpciones.Fx_op
-        Case eOpciones.Meditaciones_op
+                End If
+                .cEscudo.AddItem "Ningun Escudo"
+                If NumNewShields > 0 Then
+                    For i = 1 To NumNewShields
+                        fMain.cEscudo.AddItem nShieldDATA(i).Desc & "(" & i & ")"
+                    Next i
+                End If
+                .cMuni.AddItem "Ninguna Municion"
+                If NumNewM > 0 Then
+                    For i = 1 To NumNewM
+                        fMain.cMuni.AddItem nMunicionData(i).Desc & "(" & i & ")"
+                    Next i
+                End If
+            Case eOpciones.Particulas_op
+            Case eOpciones.Fx_op
+            Case eOpciones.Meditaciones_op
 
             
 
                 
-    End Select
+        End Select
     End With
     
     
@@ -119,94 +119,94 @@ End Sub
 
 Sub Main()
 
-fCargando.Show
-DoEvents
-
-'Cargamos la data que define el max del pb.
-Num_Heads = Val(GetVar(App.Path & "\RES\INDEX\NewHeads.dat", "INIT", "NUM"))
-Num_Helmets = Val(GetVar(App.Path & "\RES\INDEX\NewHelmets.dat", "INIT", "NUM"))
-numNewIndex = Val(GetVar(App.Path & "\RES\INDEX\NewIndex.dat", "INIT", "num"))
-numNewEstatic = Val(GetVar(App.Path & "\RES\INDEX\NewEstatics.dat", "INIT", "num"))
-Num_NwAnim = Val(GetVar(App.Path & "\RES\INDEX\NewAnim.dat", "NW_ANIM", "NUM"))
-NumNewBodys = Val(GetVar(App.Path & "\RES\INDEX\NewBody.dat", "INIT", "num"))
-NumNewShields = Val(GetVar(App.Path & "\RES\INDEX\Nwshields.dat", "INIT", "num"))
-NumNewWeapons = Val(GetVar(App.Path & "\RES\INDEX\NwWeapons.dat", "INIT", "num"))
-NumNewM = Val(GetVar(App.Path & "\RES\INDEX\NwMuniciones.dat", "INIT", "num"))
-NumNewCapas = Val(GetVar(App.Path & "\RES\INDEX\NwCapa.dat", "INIT", "num"))
-
-fCargando.PB.Max = 5 + numNewIndex + numNewEstatic + Num_NwAnim + Num_Heads + Num_Helmets + NumNewShields + NumNewWeapons + NumNewM + NumNewCapas + NumNewBodys
-'/
-
-fCargando.lblestado.Caption = "Iniciando Engine..."
-DoEvents
-dxEngine.Engine_Init
-fCargando.PB = fCargando.PB + 5
-DoEvents
-
-fCargando.lblestado.Caption = "Cargando Estaticos..."
-DoEvents
-ModData.Load_NewEstatics
-
-fCargando.lblestado.Caption = "Cargando Indices..."
-DoEvents
-ModData.Load_NewIndex
-DoEvents
-
-fCargando.lblestado.Caption = "Cargando animaciones..."
-DoEvents
-ModData.Load_NewAnimation
-DoEvents
-
-fCargando.lblestado.Caption = "Cargando Heads..."
-DoEvents
-ModData.Load_NewHeads
-DoEvents
-
-fCargando.lblestado.Caption = "Cargando cuerpos..."
-DoEvents
-ModData.Load_NewBodys
-DoEvents
-
-fCargando.lblestado.Caption = "Cargando cascos..."
-DoEvents
-ModData.Load_NewHelmets
-DoEvents
-
-fCargando.lblestado.Caption = "Cargando escudos..."
-DoEvents
-ModData.Load_NewShields
-DoEvents
-
-fCargando.lblestado.Caption = "Cargando armas..."
-DoEvents
-ModData.Load_NewWeapons
-DoEvents
-
-fCargando.lblestado.Caption = "Cargando municiones..."
-DoEvents
-ModData.Load_NwMuniciones
-DoEvents
-
-fCargando.lblestado.Caption = "Cargando capas..."
-DoEvents
-ModData.Load_NwCapas
-DoEvents
-num_test_body = Test_body_def
-fMain.m_c_elegir.Caption = "Cuerpo Prueba: " & num_test_body
-num_test_head = Test_Head_Def
-fMain.m_z_elegir.Caption = "Cabeza Prueba: " & num_test_head
-'Terminamos la carga.
-fCargando.Timer1.Enabled = True
-
-Do Until bRunning
+    fCargando.Show
     DoEvents
-Loop
-Dibujo = True
-VelMod = 1
-acHeading = 3
-fMain.Show
-Unload fCargando
-MainLoop
+
+    'Cargamos la data que define el max del pb.
+    Num_Heads = Val(GetVar(App.Path & "\RES\INDEX\NewHeads.dat", "INIT", "NUM"))
+    Num_Helmets = Val(GetVar(App.Path & "\RES\INDEX\NewHelmets.dat", "INIT", "NUM"))
+    numNewIndex = Val(GetVar(App.Path & "\RES\INDEX\NewIndex.dat", "INIT", "num"))
+    numNewEstatic = Val(GetVar(App.Path & "\RES\INDEX\NewEstatics.dat", "INIT", "num"))
+    Num_NwAnim = Val(GetVar(App.Path & "\RES\INDEX\NewAnim.dat", "NW_ANIM", "NUM"))
+    NumNewBodys = Val(GetVar(App.Path & "\RES\INDEX\NewBody.dat", "INIT", "num"))
+    NumNewShields = Val(GetVar(App.Path & "\RES\INDEX\Nwshields.dat", "INIT", "num"))
+    NumNewWeapons = Val(GetVar(App.Path & "\RES\INDEX\NwWeapons.dat", "INIT", "num"))
+    NumNewM = Val(GetVar(App.Path & "\RES\INDEX\NwMuniciones.dat", "INIT", "num"))
+    NumNewCapas = Val(GetVar(App.Path & "\RES\INDEX\NwCapa.dat", "INIT", "num"))
+
+    fCargando.PB.Max = 5 + numNewIndex + numNewEstatic + Num_NwAnim + Num_Heads + Num_Helmets + NumNewShields + NumNewWeapons + NumNewM + NumNewCapas + NumNewBodys
+    '/
+
+    fCargando.lblestado.Caption = "Iniciando Engine..."
+    DoEvents
+    dxEngine.Engine_Init
+    fCargando.PB = fCargando.PB + 5
+    DoEvents
+
+    fCargando.lblestado.Caption = "Cargando Estaticos..."
+    DoEvents
+    ModData.Load_NewEstatics
+
+    fCargando.lblestado.Caption = "Cargando Indices..."
+    DoEvents
+    ModData.Load_NewIndex
+    DoEvents
+
+    fCargando.lblestado.Caption = "Cargando animaciones..."
+    DoEvents
+    ModData.Load_NewAnimation
+    DoEvents
+
+    fCargando.lblestado.Caption = "Cargando Heads..."
+    DoEvents
+    ModData.Load_NewHeads
+    DoEvents
+
+    fCargando.lblestado.Caption = "Cargando cuerpos..."
+    DoEvents
+    ModData.Load_NewBodys
+    DoEvents
+
+    fCargando.lblestado.Caption = "Cargando cascos..."
+    DoEvents
+    ModData.Load_NewHelmets
+    DoEvents
+
+    fCargando.lblestado.Caption = "Cargando escudos..."
+    DoEvents
+    ModData.Load_NewShields
+    DoEvents
+
+    fCargando.lblestado.Caption = "Cargando armas..."
+    DoEvents
+    ModData.Load_NewWeapons
+    DoEvents
+
+    fCargando.lblestado.Caption = "Cargando municiones..."
+    DoEvents
+    ModData.Load_NwMuniciones
+    DoEvents
+
+    fCargando.lblestado.Caption = "Cargando capas..."
+    DoEvents
+    ModData.Load_NwCapas
+    DoEvents
+    num_test_body = Test_body_def
+    fMain.m_c_elegir.Caption = "Cuerpo Prueba: " & num_test_body
+    num_test_head = Test_Head_Def
+    fMain.m_z_elegir.Caption = "Cabeza Prueba: " & num_test_head
+    'Terminamos la carga.
+    fCargando.Timer1.Enabled = True
+
+    Do Until bRunning
+        DoEvents
+    Loop
+    Dibujo = True
+    VelMod = 1
+    acHeading = 3
+    fMain.Show
+    Unload fCargando
+    MainLoop
 End Sub
 
 Public Sub MainLoop()
@@ -255,33 +255,33 @@ End Sub
 
 Public Function GetRaza(ByVal i As Byte) As String
 
-Select Case i
-    Case 0
-        GetRaza = "Fantasma"
-    Case 1
-        GetRaza = "Human"
-    Case 2
-        GetRaza = "Elf"
-    Case 3
-        GetRaza = "Elfo Oscur"
-    Case 5
-        GetRaza = "Enan"
-    Case 4
-        GetRaza = "Gnom"
-End Select
+    Select Case i
+        Case 0
+            GetRaza = "Fantasma"
+        Case 1
+            GetRaza = "Human"
+        Case 2
+            GetRaza = "Elf"
+        Case 3
+            GetRaza = "Elfo Oscur"
+        Case 5
+            GetRaza = "Enan"
+        Case 4
+            GetRaza = "Gnom"
+    End Select
 End Function
 Public Function GetLastLetter(ByVal i As Byte) As String
 
-If i = 1 Then
-    GetLastLetter = "o"
-ElseIf i = 2 Then
-    GetLastLetter = "a"
-End If
+    If i = 1 Then
+        GetLastLetter = "o"
+    ElseIf i = 2 Then
+        GetLastLetter = "a"
+    End If
 
     
 End Function
 Public Sub CheckKeys()
 
-Select Case UltimaOpcion
-End Select
+    Select Case UltimaOpcion
+    End Select
 End Sub
