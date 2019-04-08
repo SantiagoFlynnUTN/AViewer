@@ -45,6 +45,7 @@ Public Sub CerrarOpcion(ByVal Index As Integer)
             fMain.cEscudo.Clear
             fMain.cArma.Clear
             fMain.fCabezas.Visible = False
+            fMain.cMuni.Clear
             
             
     End Select
@@ -87,21 +88,25 @@ Public Sub AbrirOpcion(ByVal Index As Integer)
                     For i = 1 To NumNewWeapons
                         fMain.cArma.AddItem nWeaponData(i).Desc & "(" & i & ")"
                     Next i
-            
-                End If
-                .cEscudo.AddItem "Ningun Escudo"
-                If NumNewShields > 0 Then
-                    For i = 1 To NumNewShields
-                        fMain.cEscudo.AddItem nShieldDATA(i).Desc & "(" & i & ")"
-                    Next i
-                End If
-            Case eOpciones.Particulas_op
-            Case eOpciones.Fx_op
-            Case eOpciones.Meditaciones_op
+           
+              End If
+              .cEscudo.AddItem "Ningun Escudo"
+              If NumNewShields > 0 Then
+                  For i = 1 To NumNewShields
+                      fMain.cEscudo.AddItem nShieldDATA(i).Desc & "(" & i & ")"
+                  Next i
+              End If
+              .cMuni.AddItem "Ninguna Municion"
+              If NumNewM > 0 Then
+                  For i = 1 To NumNewM
+                      fMain.cMuni.AddItem nMunicionData(i).Desc & "(" & i & ")"
+                  Next i
+              End If
+          Case eOpciones.Particulas_op
+          Case eOpciones.Fx_op
+          Case eOpciones.Meditaciones_op
 
-            
 
-                
         End Select
     End With
     
@@ -112,47 +117,88 @@ End Sub
 
 Sub Main()
 
-    fCargando.Show
-    DoEvents
 
-    'Cargamos la data que define el max del pb.
-    Num_Heads = Val(GetVar(App.Path & "\RES\INDEX\NewHeads.dat", "INIT", "NUM"))
-    Num_Helmets = Val(GetVar(App.Path & "\RES\INDEX\NewHelmets.dat", "INIT", "NUM"))
-    numNewIndex = Val(GetVar(App.Path & "\RES\INDEX\NewIndex.dat", "INIT", "num"))
-    numNewEstatic = Val(GetVar(App.Path & "\RES\INDEX\NewEstatics.dat", "INIT", "num"))
-    Num_NwAnim = Val(GetVar(App.Path & "\RES\INDEX\NewAnim.dat", "NW_ANIM", "NUM"))
-    NumNewBodys = Val(GetVar(App.Path & "\RES\INDEX\NewBody.dat", "INIT", "num"))
-    NumNewShields = Val(GetVar(App.Path & "\RES\INDEX\Nwshields.dat", "INIT", "num"))
-    NumNewWeapons = Val(GetVar(App.Path & "\RES\INDEX\NwWeapons.dat", "INIT", "num"))
-    NumNewM = Val(GetVar(App.Path & "\RES\INDEX\NwMunicion.dat", "INIT", "num"))
-    NumNewCapas = Val(GetVar(App.Path & "\RES\INDEX\NwCapa.dat", "INIT", "num"))
+fCargando.Show
+DoEvents
 
-    fCargando.PB.Max = 5 + numNewIndex + numNewEstatic + Num_NwAnim + Num_Heads + Num_Helmets + NumNewShields + NumNewWeapons + NumNewM + NumNewCapas + NumNewBodys
-    '/
+'Cargamos la data que define el max del pb.
+Num_Heads = Val(GetVar(App.Path & "\RES\INDEX\NewHeads.dat", "INIT", "NUM"))
+Num_Helmets = Val(GetVar(App.Path & "\RES\INDEX\NewHelmets.dat", "INIT", "NUM"))
+numNewIndex = Val(GetVar(App.Path & "\RES\INDEX\NewIndex.dat", "INIT", "num"))
+numNewEstatic = Val(GetVar(App.Path & "\RES\INDEX\NewEstatics.dat", "INIT", "num"))
+Num_NwAnim = Val(GetVar(App.Path & "\RES\INDEX\NewAnim.dat", "NW_ANIM", "NUM"))
+NumNewBodys = Val(GetVar(App.Path & "\RES\INDEX\NewBody.dat", "INIT", "num"))
+NumNewShields = Val(GetVar(App.Path & "\RES\INDEX\Nwshields.dat", "INIT", "num"))
+NumNewWeapons = Val(GetVar(App.Path & "\RES\INDEX\NwWeapons.dat", "INIT", "num"))
+NumNewM = Val(GetVar(App.Path & "\RES\INDEX\NwMuniciones.dat", "INIT", "num"))
+NumNewCapas = Val(GetVar(App.Path & "\RES\INDEX\NwCapa.dat", "INIT", "num"))
 
-    fCargando.lblestado.Caption = "Iniciando Engine..."
-    DoEvents
-    dxEngine.Engine_Init
-    fCargando.PB = fCargando.PB + 5
-    DoEvents
+fCargando.PB.Max = 5 + numNewIndex + numNewEstatic + Num_NwAnim + Num_Heads + Num_Helmets + NumNewShields + NumNewWeapons + NumNewM + NumNewCapas + NumNewBodys
+'/
 
-    fCargando.lblestado.Caption = "Cargando Estaticos..."
-    DoEvents
-    ModData.Load_NewEstatics
+fCargando.lblestado.Caption = "Iniciando Engine..."
+DoEvents
+dxEngine.Engine_Init
+fCargando.PB = fCargando.PB + 5
+DoEvents
 
-    fCargando.lblestado.Caption = "Cargando Indices..."
-    DoEvents
-    ModData.Load_NewIndex
-    DoEvents
+fCargando.lblestado.Caption = "Cargando Estaticos..."
+DoEvents
+ModData.Load_NewEstatics
 
-    fCargando.lblestado.Caption = "Cargando animaciones..."
-    DoEvents
-    ModData.Load_NewAnimation
-    DoEvents
+fCargando.lblestado.Caption = "Cargando Indices..."
+DoEvents
+ModData.Load_NewIndex
+DoEvents
 
-    fCargando.lblestado.Caption = "Cargando Heads..."
-    DoEvents
-    ModData.Load_NewHeads
+fCargando.lblestado.Caption = "Cargando animaciones..."
+DoEvents
+ModData.Load_NewAnimation
+DoEvents
+
+fCargando.lblestado.Caption = "Cargando Heads..."
+DoEvents
+ModData.Load_NewHeads
+DoEvents
+
+fCargando.lblestado.Caption = "Cargando cuerpos..."
+DoEvents
+ModData.Load_NewBodys
+DoEvents
+
+fCargando.lblestado.Caption = "Cargando cascos..."
+DoEvents
+ModData.Load_NewHelmets
+DoEvents
+
+fCargando.lblestado.Caption = "Cargando escudos..."
+DoEvents
+ModData.Load_NewShields
+DoEvents
+
+fCargando.lblestado.Caption = "Cargando armas..."
+DoEvents
+ModData.Load_NewWeapons
+DoEvents
+
+fCargando.lblestado.Caption = "Cargando municiones..."
+DoEvents
+ModData.Load_NwMuniciones
+DoEvents
+
+fCargando.lblestado.Caption = "Cargando capas..."
+DoEvents
+ModData.Load_NwCapas
+DoEvents
+num_test_body = Test_body_def
+fMain.m_c_elegir.Caption = "Cuerpo Prueba: " & num_test_body
+num_test_head = Test_Head_Def
+fMain.m_z_elegir.Caption = "Cabeza Prueba: " & num_test_head
+'Terminamos la carga.
+fCargando.Timer1.Enabled = True
+
+Do Until bRunning
+
     DoEvents
 
     fCargando.lblestado.Caption = "Cargando cuerpos..."

@@ -297,6 +297,9 @@ Begin VB.Form fIndexador
    End
    Begin VB.Menu mInd 
       Caption         =   "Indexar"
+      Begin VB.Menu mnuMunicion 
+         Caption         =   "Nueva Municion"
+      End
       Begin VB.Menu m_NuevoCasco 
          Caption         =   "Nuevo Casco"
       End
@@ -448,7 +451,7 @@ Private Sub cmdIndex_Click()
         ReDim Preserve NewIndexData(1 To numNewIndex)
         WriteVar App.Path & "\RES\INDEX\NewIndex.dat", "INIT", "NUM", CStr(numNewIndex)
     ElseIf Val(Text11.Text) > numNewIndex + 1 Then
-        MsgBox "Est�s dejando indices sin usar."
+        MsgBox "Estás dejando indices sin usar."
         Exit Sub
     End If
 
@@ -711,13 +714,54 @@ Private Sub Command3_Click()
         Label5.Caption = "Norte: "
         Label5.ForeColor = vbWhite
 
-        Label6.Caption = "Este: "
-        Label6.ForeColor = vbWhite
-        Label7.Caption = "Sur: "
-        Label7.ForeColor = vbWhite
-        Label13.Caption = "Oeste: "
-        Label13.ForeColor = vbWhite
-        fCabezas.Visible = False
+Label6.Caption = "Este: "
+Label6.ForeColor = vbWhite
+Label7.Caption = "Sur: "
+Label7.ForeColor = vbWhite
+Label13.Caption = "Oeste: "
+Label13.ForeColor = vbWhite
+fCabezas.Visible = False
+ElseIf qIndexo = 6 Then
+
+
+If AcInd <= NumNewM Then
+
+nMunicionData(AcInd).mMovimiento(1) = AcFr(1)
+nMunicionData(AcInd).mMovimiento(2) = AcFr(2)
+nMunicionData(AcInd).mMovimiento(3) = AcFr(3)
+nMunicionData(AcInd).mMovimiento(4) = AcFr(4)
+
+
+Else
+ReDim Preserve nMunicionData(1 To NumNewM + 1)
+NumNewM = NumNewM + 1
+WriteVar App.Path & "\RES\INDEX\NwMuniciones.dat", "INIT", "NUM", CStr(NumNewM)
+nMunicionData(AcInd).mMovimiento(1) = AcFr(1)
+nMunicionData(AcInd).mMovimiento(2) = AcFr(2)
+nMunicionData(AcInd).mMovimiento(3) = AcFr(3)
+nMunicionData(AcInd).mMovimiento(4) = AcFr(4)
+
+
+
+
+End If
+
+WriteVar App.Path & "\RES\INDEX\NwMuniciones.dat", CStr(AcInd), "MOV1", CStr(AcFr(1))
+WriteVar App.Path & "\RES\INDEX\NwMuniciones.dat", CStr(AcInd), "MOV2", CStr(AcFr(2))
+WriteVar App.Path & "\RES\INDEX\NwMuniciones.dat", CStr(AcInd), "MOV3", CStr(AcFr(3))
+WriteVar App.Path & "\RES\INDEX\NwMuniciones.dat", CStr(AcInd), "MOV4", CStr(AcFr(4))
+
+Label5.Caption = "Norte: "
+Label5.ForeColor = vbWhite
+
+Label6.Caption = "Este: "
+Label6.ForeColor = vbWhite
+Label7.Caption = "Sur: "
+Label7.ForeColor = vbWhite
+Label13.Caption = "Oeste: "
+Label13.ForeColor = vbWhite
+fCabezas.Visible = False
+
 
     End If
 
@@ -738,38 +782,50 @@ Private Sub Command4_Click()
         AcInd = NumNewShields + 1
         Command3.Enabled = True
     
-        If MsgBox("�Deseas utilizar la animaci�n standard para Escudos?", vbOKCancel) = vbOK Then
-            AcFr(1) = Standard_Escudo_North
-            AcFr(2) = Standard_Escudo_East
-            AcFr(3) = Standard_Escudo_South
-            AcFr(4) = Standard_Escudo_West
-        End If
-    ElseIf qIndexo = 5 Then
-        Text5.Text = NumNewWeapons + 1
-        AcInd = NumNewWeapons + 1
-        If MsgBox("�Deseas utilizar la animaci�n standard para Armas?", vbOKCancel) = vbOK Then
-            AcFr(1) = Standard_Arma_North
-            AcFr(2) = Standard_Arma_East
-            AcFr(3) = Standard_Arma_South
-            AcFr(4) = Standard_Arma_West
-        End If
-        Command3.Enabled = True
-    ElseIf qIndexo = 3 Then
-        Text5.Text = NumNewBodys + 1
-        AcInd = NumNewBodys + 1
-        Command3.Enabled = True
-        If MsgBox("�Deseas utilizar la animaci�n standard para cuerpos?", vbOKCancel) = vbOK Then
-            If MsgBox("�Deseas utilizar animacion peque�a?", vbYesNo) = vbYes Then
-                If MsgBox("�Deseas utilizar la animacion peque�a de arriba?", vbYesNo) = vbYes Then
-                    AcFr(1) = Standard_Cuerpo_North_Small
-                    AcFr(2) = Standard_Cuerpo_East_Small
-                    AcFr(3) = Standard_Cuerpo_South_Small
-                    AcFr(4) = Standard_Cuerpo_West_Small
-                Else
-                    AcFr(1) = Standard_Cuerpo_North_Small2
-                    AcFr(2) = Standard_Cuerpo_East_Small2
-                    AcFr(3) = Standard_Cuerpo_South_Small2
-                    AcFr(4) = Standard_Cuerpo_West_Small2
+
+    If MsgBox("¿Deseas utilizar la animación standard para Escudos?", vbOKCancel) = vbOK Then
+        AcFr(1) = Standard_Escudo_North
+        AcFr(2) = Standard_Escudo_East
+        AcFr(3) = Standard_Escudo_South
+        AcFr(4) = Standard_Escudo_West
+    End If
+ElseIf qIndexo = 5 Then
+    Text5.Text = NumNewWeapons + 1
+    AcInd = NumNewWeapons + 1
+    If MsgBox("¿Deseas utilizar la animación standard para Armas?", vbOKCancel) = vbOK Then
+        AcFr(1) = Standard_Arma_North
+        AcFr(2) = Standard_Arma_East
+        AcFr(3) = Standard_Arma_South
+        AcFr(4) = Standard_Arma_West
+    End If
+    Command3.Enabled = True
+    
+ElseIf qIndexo = 6 Then
+    Text5.Text = NumNewM + 1
+    AcInd = NumNewM + 1
+    If MsgBox("¿Deseas utilizar la animación standard para Armas?", vbOKCancel) = vbOK Then
+        AcFr(1) = Standard_Arma_North
+        AcFr(2) = Standard_Arma_East
+        AcFr(3) = Standard_Arma_South
+        AcFr(4) = Standard_Arma_West
+    End If
+    Command3.Enabled = True
+ElseIf qIndexo = 3 Then
+    Text5.Text = NumNewBodys + 1
+    AcInd = NumNewBodys + 1
+    Command3.Enabled = True
+    If MsgBox("¿Deseas utilizar la animación standard para cuerpos?", vbOKCancel) = vbOK Then
+        If MsgBox("¿Deseas utilizar animacion pequeña?", vbYesNo) = vbYes Then
+            If MsgBox("¿Deseas utilizar la animacion pequeña de arriba?", vbYesNo) = vbYes Then
+            AcFr(1) = Standard_Cuerpo_North_Small
+            AcFr(2) = Standard_Cuerpo_East_Small
+            AcFr(3) = Standard_Cuerpo_South_Small
+            AcFr(4) = Standard_Cuerpo_West_Small
+            Else
+            AcFr(1) = Standard_Cuerpo_North_Small2
+            AcFr(2) = Standard_Cuerpo_East_Small2
+            AcFr(3) = Standard_Cuerpo_South_Small2
+            AcFr(4) = Standard_Cuerpo_West_Small2
             
                 End If
         
@@ -791,7 +847,7 @@ Private Sub Label13_Click()
         Label13.ForeColor = vbYellow
     ElseIf qIndexo >= 3 And qIndexo <= 5 Then
         qFr = 4
-        Call InPutform.Parse("Selecciona la animaci�n deseada.", 0)
+        Call InPutform.Parse("Selecciona la animación deseada.", 0)
 
 
     End If
@@ -803,7 +859,7 @@ Private Sub Label5_Click()
         Label5.ForeColor = vbYellow
     ElseIf qIndexo >= 3 And qIndexo <= 5 Then
         qFr = 1
-        Call InPutform.Parse("Selecciona la animaci�n deseada.", 0)
+        Call InPutform.Parse("Selecciona la animación deseada.", 0)
 
     End If
 End Sub
@@ -814,7 +870,7 @@ Private Sub Label6_Click()
         Label6.ForeColor = vbYellow
     ElseIf qIndexo >= 3 And qIndexo <= 5 Then
         qFr = 2
-        Call InPutform.Parse("Selecciona la animaci�n deseada.", 0)
+        Call InPutform.Parse("Selecciona la animación deseada.", 0)
 
 
     End If
@@ -826,7 +882,7 @@ Private Sub Label7_Click()
         Label7.ForeColor = vbYellow
     ElseIf qIndexo >= 3 And qIndexo <= 5 Then
         qFr = 3
-        Call InPutform.Parse("Selecciona la animaci�n deseada.", 0)
+        Call InPutform.Parse("Selecciona la animación deseada.", 0)
 
     End If
 End Sub
@@ -875,6 +931,14 @@ Private Sub miCabeza_Click()
     qIndexo = 1
 End Sub
 
+Private Sub mnuMunicion_Click()
+    qIndexo = 6
+    fCabezas.Visible = True
+    fCabezas.Caption = "Municiones"
+    Indexando = 1
+    Command3.Enabled = False
+End Sub
+
 Private Sub Text10_KeyUp(KeyCode As Integer, Shift As Integer)
     If KeyCode = vbKeyReturn Then
         Actual.Cls
@@ -920,51 +984,67 @@ Private Sub Text5_KeyUp(KeyCode As Integer, Shift As Integer)
                     Label13.Caption = "Oeste: " & AcFr(4)
                 End If
         
-            Case 3 'Cuerpos
-                If AcInd > NumNewBodys Then
-                    AcInd = NumNewBodys + 1
-                    Text5.Text = AcInd
-                Else
-                    AcFr(1) = nBodyData(AcInd).mMovement(1)
-                    AcFr(2) = nBodyData(AcInd).mMovement(2)
-                    AcFr(3) = nBodyData(AcInd).mMovement(3)
-                    AcFr(4) = nBodyData(AcInd).mMovement(4)
-                    Label5.Caption = "Norte: " & AcFr(1)
-                    Label6.Caption = "Este: " & AcFr(2)
-                    Label7.Caption = "Sur: " & AcFr(3)
-                    Label13.Caption = "Oeste: " & AcFr(4)
-                End If
-            Case 4 'Escudos
-                If AcInd > NumNewShields Then
-                    AcInd = NumNewShields + 1
-                    Text5.Text = AcInd
-                Else
-                    AcFr(1) = nShieldDATA(AcInd).mMovimiento(1)
-                    AcFr(2) = nShieldDATA(AcInd).mMovimiento(2)
-                    AcFr(3) = nShieldDATA(AcInd).mMovimiento(3)
-                    AcFr(4) = nShieldDATA(AcInd).mMovimiento(4)
-                    Label5.Caption = "Norte: " & AcFr(1)
-                    Label6.Caption = "Este: " & AcFr(2)
-                    Label7.Caption = "Sur: " & AcFr(3)
-                    Label13.Caption = "Oeste: " & AcFr(4)
-                End If
-            Case 5 'Armas
-                If AcInd > NumNewWeapons Then
-                    AcInd = NumNewWeapons + 1
-                    Text5.Text = AcInd
-                Else
-                    AcFr(1) = nWeaponData(AcInd).mMovimiento(1)
-                    AcFr(2) = nWeaponData(AcInd).mMovimiento(2)
-                    AcFr(3) = nWeaponData(AcInd).mMovimiento(3)
-                    AcFr(4) = nWeaponData(AcInd).mMovimiento(4)
-                    Label5.Caption = "Norte: " & AcFr(1)
-                    Label6.Caption = "Este: " & AcFr(2)
-                    Label7.Caption = "Sur: " & AcFr(3)
-                    Label13.Caption = "Oeste: " & AcFr(4)
-                End If
-        End Select
-        Command3.Enabled = True
-        
+        Case 3 'Cuerpos
+            If AcInd > NumNewBodys Then
+                AcInd = NumNewBodys + 1
+                Text5.Text = AcInd
+            Else
+                AcFr(1) = nBodyData(AcInd).mMovement(1)
+                AcFr(2) = nBodyData(AcInd).mMovement(2)
+                AcFr(3) = nBodyData(AcInd).mMovement(3)
+                AcFr(4) = nBodyData(AcInd).mMovement(4)
+                Label5.Caption = "Norte: " & AcFr(1)
+                Label6.Caption = "Este: " & AcFr(2)
+                Label7.Caption = "Sur: " & AcFr(3)
+                Label13.Caption = "Oeste: " & AcFr(4)
+            End If
+        Case 4 'Escudos
+            If AcInd > NumNewShields Then
+                AcInd = NumNewShields + 1
+                Text5.Text = AcInd
+            Else
+                AcFr(1) = nShieldDATA(AcInd).mMovimiento(1)
+                AcFr(2) = nShieldDATA(AcInd).mMovimiento(2)
+                AcFr(3) = nShieldDATA(AcInd).mMovimiento(3)
+                AcFr(4) = nShieldDATA(AcInd).mMovimiento(4)
+                Label5.Caption = "Norte: " & AcFr(1)
+                Label6.Caption = "Este: " & AcFr(2)
+                Label7.Caption = "Sur: " & AcFr(3)
+                Label13.Caption = "Oeste: " & AcFr(4)
+            End If
+        Case 5 'Armas
+            If AcInd > NumNewWeapons Then
+                AcInd = NumNewWeapons + 1
+                Text5.Text = AcInd
+            Else
+                AcFr(1) = nWeaponData(AcInd).mMovimiento(1)
+                AcFr(2) = nWeaponData(AcInd).mMovimiento(2)
+                AcFr(3) = nWeaponData(AcInd).mMovimiento(3)
+                AcFr(4) = nWeaponData(AcInd).mMovimiento(4)
+                Label5.Caption = "Norte: " & AcFr(1)
+                Label6.Caption = "Este: " & AcFr(2)
+                Label7.Caption = "Sur: " & AcFr(3)
+                Label13.Caption = "Oeste: " & AcFr(4)
+            End If
+        Case 6 ' Municiones
+            If AcInd > NumNewM Then
+                AcInd = NumNewM + 1
+                Text5.Text = AcInd
+            Else
+                AcFr(1) = nMunicionData(AcInd).mMovimiento(1)
+                AcFr(2) = nMunicionData(AcInd).mMovimiento(2)
+                AcFr(3) = nMunicionData(AcInd).mMovimiento(3)
+                AcFr(4) = nMunicionData(AcInd).mMovimiento(4)
+                Label5.Caption = "Norte: " & AcFr(1)
+                Label6.Caption = "Este: " & AcFr(2)
+                Label7.Caption = "Sur: " & AcFr(3)
+                Label13.Caption = "Oeste: " & AcFr(4)
+                
+            End If
+            
+    End Select
+            Command3.Enabled = True
+
     End If
 
 
