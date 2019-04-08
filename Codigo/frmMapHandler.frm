@@ -338,9 +338,9 @@ Dim UltimoSelecto As Integer
 Private Sub CmdAnalizar_Click()
 
  
-modMapHandler.Analizar File1.Path & "\" & File1.List(File1.ListIndex), lTempIndex, lTempEstatic, lblnumindex, lblnumEstatic
+    modMapHandler.Analizar File1.Path & "\" & File1.List(File1.ListIndex), lTempIndex, lTempEstatic, lblnumindex, lblnumEstatic
 
-CmdAnalizar.Enabled = False
+    CmdAnalizar.Enabled = False
 
 End Sub
 
@@ -356,12 +356,12 @@ Private Sub File1_Click()
 End Sub
 
 Private Sub Form_Load()
-UltimoSelecto = -1
-File1.Path = App.Path & "\TempMapas\"
+    UltimoSelecto = -1
+    File1.Path = App.Path & "\TempMapas\"
 End Sub
 
 Private Sub lblTeHeight_Click()
-Dim Valor As Integer
+    Dim Valor As Integer
     '>>>> Modifica Height.
     If lTempEstatic.ListIndex > -1 Then
         Valor = Val(InputBox("Escribe el nuevo Height para el estatic.", "Estatic - Height", modMapHandler.Estatic_rHeight(lTempEstatic.ListIndex + 1)))
@@ -371,7 +371,7 @@ Dim Valor As Integer
 End Sub
 
 Private Sub lblTeLeft_Click()
-Dim Valor As Integer
+    Dim Valor As Integer
     '>>>> Modifica left.
     If lTempEstatic.ListIndex > -1 Then
         Valor = Val(InputBox("Escribe el nuevo LEFT para el estatic.", "Estatic - Left", modMapHandler.Estatic_rLeft(lTempEstatic.ListIndex + 1)))
@@ -383,7 +383,7 @@ Dim Valor As Integer
 End Sub
 
 Private Sub lblTeTop_Click()
-Dim Valor As Integer
+    Dim Valor As Integer
     '>>>> Modifica top.
     If lTempEstatic.ListIndex > -1 Then
         Valor = Val(InputBox("Escribe el nuevo TOP para el estatic.", "Estatic - Top", modMapHandler.Estatic_rTop(lTempEstatic.ListIndex + 1)))
@@ -393,7 +393,7 @@ Dim Valor As Integer
 End Sub
 
 Private Sub lblTeWidth_Click()
-Dim Valor As Integer
+    Dim Valor As Integer
     '>>>> Modifica w.
     If lTempEstatic.ListIndex > -1 Then
         Valor = Val(InputBox("Escribe el nuevo WIDTH para el estatic.", "Estatic - Width", modMapHandler.Estatic_rWidth(lTempEstatic.ListIndex + 1)))
@@ -403,7 +403,7 @@ Dim Valor As Integer
 End Sub
 
 Private Sub lbltiDinamic_Click()
-Dim Valor As Integer
+    Dim Valor As Integer
     If lTempIndex.ListIndex > -1 Then
         Valor = Val(InputBox("Escribe el numero de Dinamic", "Dinamic", modMapHandler.Index_rDinamic(lTempIndex.ListIndex + 1)))
         lbltiDinamic.Caption = Valor
@@ -411,13 +411,13 @@ Dim Valor As Integer
 End Sub
 
 Private Sub lbltiEstatic_Click()
-Dim Valor As Integer
+    Dim Valor As Integer
     If lTempIndex.ListIndex > -1 Then
         Valor = Val(InputBox("Escribe el numero de estatic", "Estatic", modMapHandler.Index_rEstatic(lTempIndex.ListIndex + 1)))
         modMapHandler.Index_wEstatic lTempIndex.ListIndex + 1, Valor
         lbltiEstatic.Caption = Valor
     End If
-Dim S As String
+    Dim S As String
     If modMapHandler.Index_rEstatic(lTempIndex.ListIndex + 1) > 0 Then
         If modMapHandler.Index_rTemp(lTempIndex.ListIndex + 1) = 1 Then
             S = " Left: " & modMapHandler.Estatic_rLeft(0, modMapHandler.Index_rEstatic(lTempIndex.ListIndex + 1)) & vbCrLf & _
@@ -427,23 +427,23 @@ Dim S As String
         
         Else
             With EstaticData(modMapHandler.Index_rEstatic(lTempIndex.ListIndex + 1))
-            S = " Left: " & .L & vbCrLf & _
-            " Top: " & .T & vbCrLf & _
-            " Width: " & .W & vbCrLf & vbCrLf & _
-            " Height: " & .H
+                S = " Left: " & .L & vbCrLf & _
+                    " Top: " & .T & vbCrLf & _
+                    " Width: " & .W & vbCrLf & vbCrLf & _
+                    " Height: " & .H
             
             
             End With
         
         End If
-                    lbltiEstatic.ToolTipText = S
+        lbltiEstatic.ToolTipText = S
 
     End If
     
 End Sub
 
 Private Sub lbltiGrafico_Click()
-Dim Valor As Integer
+    Dim Valor As Integer
     If lTempIndex.ListIndex > -1 Then
         Valor = Val(InputBox("Escribe el numero de Grafico", "Estatic", modMapHandler.Index_rGrafico(lTempIndex.ListIndex + 1)))
         modMapHandler.Index_wGrafico lTempIndex.ListIndex + 1, Valor
@@ -452,7 +452,7 @@ Dim Valor As Integer
 End Sub
 
 Private Sub lbltiTemp_Click()
-Dim Valor As Integer
+    Dim Valor As Integer
     If lTempIndex.ListIndex > -1 Then
         Valor = Val(InputBox("1=Estatic Temporal / 0= Estatic No temporal", "Temp Estatic", modMapHandler.Index_rTemp(lTempIndex.ListIndex + 1)))
         lbltiTemp.Caption = Valor

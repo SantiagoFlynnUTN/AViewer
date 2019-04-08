@@ -366,13 +366,12 @@ Begin VB.Form fMain
       TabIndex        =   47
       TabStop         =   0   'False
       Top             =   0
-      Width           =   2175
-      _ExtentX        =   3836
+      Width           =   1815
+      _ExtentX        =   3201
       _ExtentY        =   1085
       Caption         =   "Cascos"
       CapAlign        =   2
       BackStyle       =   7
-      Shape           =   2
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Times New Roman"
          Size            =   9
@@ -881,7 +880,7 @@ Private Sub cCabeza_Click()
 End Sub
 
 Private Sub cCasco_Click()
-       sHelmet = cCasco.ListIndex
+    sHelmet = cCasco.ListIndex
     If sHelmet > 0 Then MostrarVer 2
     
 End Sub
@@ -901,7 +900,7 @@ Private Sub CmdSAve_Click()
 End Sub
 
 Private Sub Combo1_Click()
-If Combo1.ListIndex > -1 Then NHeadData(sHead).Raza = Combo1.ListIndex
+    If Combo1.ListIndex > -1 Then NHeadData(sHead).Raza = Combo1.ListIndex
 
 End Sub
 
@@ -912,63 +911,63 @@ Private Sub Combo2_Click()
 End Sub
 
 Private Sub Command1_Click()
-If Modeling_Type = 2 Then
-    WriteVar App.Path & "\RES\INDEX\NewHeads.dat", "HEAD" & sHead, "OFFSET_DIBUJO", CStr(NHeadData(sHead).OffsetDibujoY)
-    WriteVar App.Path & "\RES\INDEX\NewHeads.dat", "HEAD" & sHead, "OFFSET_OJOS", CStr(NHeadData(sHead).OffsetOjos)
-    WriteVar App.Path & "\RES\INDEX\NewHeads.dat", "HEAD" & sHead, "RAZA", CStr(NHeadData(sHead).Raza)
-    WriteVar App.Path & "\RES\INDEX\NewHeads.dat", "HEAD" & sHead, "GENERO", CStr(NHeadData(sHead).Genero)
-    WriteVar App.Path & "\RES\INDEX\NewHeads.dat", "HEAD" & sHead, "DESC", CStr(NHeadData(sHead).Desc)
+    If Modeling_Type = 2 Then
+        WriteVar App.Path & "\RES\INDEX\NewHeads.dat", "HEAD" & sHead, "OFFSET_DIBUJO", CStr(NHeadData(sHead).OffsetDibujoY)
+        WriteVar App.Path & "\RES\INDEX\NewHeads.dat", "HEAD" & sHead, "OFFSET_OJOS", CStr(NHeadData(sHead).OffsetOjos)
+        WriteVar App.Path & "\RES\INDEX\NewHeads.dat", "HEAD" & sHead, "RAZA", CStr(NHeadData(sHead).Raza)
+        WriteVar App.Path & "\RES\INDEX\NewHeads.dat", "HEAD" & sHead, "GENERO", CStr(NHeadData(sHead).Genero)
+        WriteVar App.Path & "\RES\INDEX\NewHeads.dat", "HEAD" & sHead, "DESC", CStr(NHeadData(sHead).Desc)
     
-    fMain.cCabeza.List(fMain.cCabeza.ListIndex) = "[" & GetRaza(NHeadData(sHead).Raza) & IIf(NHeadData(sHead).Raza > 0, GetLastLetter(NHeadData(sHead).Genero), vbNullString) & "] - " & NHeadData(sHead).Desc & "(" & sHead & ")"
-ElseIf Modeling_Type = 3 Then
-    WriteVar App.Path & "\RES\INDEX\NewHelmets.dat", "HELMET" & IxS, "OFFSET_DIBUJO", CStr(NHelmetData(IxS).OffsetDibujoY)
-    WriteVar App.Path & "\RES\INDEX\NewHelmets.dat", "HELMET" & IxS, "DESC", CStr(NHelmetData(IxS).Desc)
-    WriteVar App.Path & "\RES\INDEX\NewHelmets.dat", "HELMET" & IxS, "ALPHA", CStr(NHelmetData(IxS).Alpha)
-    WriteVar App.Path & "\RES\INDEX\NewHelmets.dat", "HELMET" & IxS, "OFFSET_LAT", CStr(NHelmetData(IxS).OffsetLat)
+        fMain.cCabeza.List(fMain.cCabeza.ListIndex) = "[" & GetRaza(NHeadData(sHead).Raza) & IIf(NHeadData(sHead).Raza > 0, GetLastLetter(NHeadData(sHead).Genero), vbNullString) & "] - " & NHeadData(sHead).Desc & "(" & sHead & ")"
+    ElseIf Modeling_Type = 3 Then
+        WriteVar App.Path & "\RES\INDEX\NewHelmets.dat", "HELMET" & IxS, "OFFSET_DIBUJO", CStr(NHelmetData(IxS).OffsetDibujoY)
+        WriteVar App.Path & "\RES\INDEX\NewHelmets.dat", "HELMET" & IxS, "DESC", CStr(NHelmetData(IxS).Desc)
+        WriteVar App.Path & "\RES\INDEX\NewHelmets.dat", "HELMET" & IxS, "ALPHA", CStr(NHelmetData(IxS).Alpha)
+        WriteVar App.Path & "\RES\INDEX\NewHelmets.dat", "HELMET" & IxS, "OFFSET_LAT", CStr(NHelmetData(IxS).OffsetLat)
         
-    fMain.cCasco.List(fMain.cCasco.ListIndex) = NHelmetData(sHelmet).Desc & "(" & sHelmet & ")"
-ElseIf Modeling_Type = 4 Then
-    WriteVar App.Path & "\RES\INDEX\NwShields.dat", CStr(sShield), "OverWriteGrafico", CStr(nShieldDATA(sShield).OverWriteGrafico)
-    WriteVar App.Path & "\RES\INDEX\NwShields.dat", CStr(sShield), "DESC", CStr(nShieldDATA(sShield).Desc)
-    WriteVar App.Path & "\RES\INDEX\NwShields.dat", CStr(sShield), "ALPHA", CStr(nShieldDATA(sShield).Alpha)
+        fMain.cCasco.List(fMain.cCasco.ListIndex) = NHelmetData(sHelmet).Desc & "(" & sHelmet & ")"
+    ElseIf Modeling_Type = 4 Then
+        WriteVar App.Path & "\RES\INDEX\NwShields.dat", CStr(sShield), "OverWriteGrafico", CStr(nShieldDATA(sShield).OverWriteGrafico)
+        WriteVar App.Path & "\RES\INDEX\NwShields.dat", CStr(sShield), "DESC", CStr(nShieldDATA(sShield).Desc)
+        WriteVar App.Path & "\RES\INDEX\NwShields.dat", CStr(sShield), "ALPHA", CStr(nShieldDATA(sShield).Alpha)
 
-    fMain.cEscudo.List(fMain.cEscudo.ListIndex) = nShieldDATA(sShield).Desc & "(" & sShield & ")"
+        fMain.cEscudo.List(fMain.cEscudo.ListIndex) = nShieldDATA(sShield).Desc & "(" & sShield & ")"
     
-ElseIf Modeling_Type = 5 Then
-    WriteVar App.Path & "\RES\INDEX\NwWeapons.dat", CStr(sWeapon), "OverWriteGrafico", CStr(nWeaponData(sWeapon).OverWriteGrafico)
-    WriteVar App.Path & "\RES\INDEX\NwWeapons.dat", CStr(sWeapon), "DESC", CStr(nWeaponData(sWeapon).Desc)
-    WriteVar App.Path & "\RES\INDEX\NwWeapons.dat", CStr(sWeapon), "ALPHA", CStr(nWeaponData(sWeapon).Alpha)
-    fMain.cArma.List(fMain.cArma.ListIndex) = nWeaponData(sWeapon).Desc & "(" & sWeapon & ")"
-ElseIf Modeling_Type = 1 Then
-    fMain.cBody.List(fMain.cBody.ListIndex) = nBodyData(sBody).Desc & "(" & sBody & ")"
-    WriteVar App.Path & "\RES\INDEX\NewBody.dat", CStr(sBody), "DESC", nBodyData(sBody).Desc
-    WriteVar App.Path & "\RES\INDEX\NewBody.dat", CStr(sBody), "OverWriteGrafico", CStr(nBodyData(sBody).OverWriteGrafico)
-    WriteVar App.Path & "\RES\INDEX\NewBody.dat", CStr(sBody), "OffsetY", CStr(nBodyData(sBody).OffsetY)
-End If
+    ElseIf Modeling_Type = 5 Then
+        WriteVar App.Path & "\RES\INDEX\NwWeapons.dat", CStr(sWeapon), "OverWriteGrafico", CStr(nWeaponData(sWeapon).OverWriteGrafico)
+        WriteVar App.Path & "\RES\INDEX\NwWeapons.dat", CStr(sWeapon), "DESC", CStr(nWeaponData(sWeapon).Desc)
+        WriteVar App.Path & "\RES\INDEX\NwWeapons.dat", CStr(sWeapon), "ALPHA", CStr(nWeaponData(sWeapon).Alpha)
+        fMain.cArma.List(fMain.cArma.ListIndex) = nWeaponData(sWeapon).Desc & "(" & sWeapon & ")"
+    ElseIf Modeling_Type = 1 Then
+        fMain.cBody.List(fMain.cBody.ListIndex) = nBodyData(sBody).Desc & "(" & sBody & ")"
+        WriteVar App.Path & "\RES\INDEX\NewBody.dat", CStr(sBody), "DESC", nBodyData(sBody).Desc
+        WriteVar App.Path & "\RES\INDEX\NewBody.dat", CStr(sBody), "OverWriteGrafico", CStr(nBodyData(sBody).OverWriteGrafico)
+        WriteVar App.Path & "\RES\INDEX\NewBody.dat", CStr(sBody), "OffsetY", CStr(nBodyData(sBody).OffsetY)
+    End If
 
 End Sub
 
 Private Sub Command10_Click()
 
-If UltimaOpcion = eOpciones.Animaciones_op Then
-    animCounter = animCounter - 1
-    Exit Sub
-End If
+    If UltimaOpcion = eOpciones.Animaciones_op Then
+        animCounter = animCounter - 1
+        Exit Sub
+    End If
 
-If acHeading = E_Heading.WEST Then AcFrm = AcFrm + 1
+    If acHeading = E_Heading.WEST Then AcFrm = AcFrm + 1
 
-acHeading = E_Heading.WEST
+    acHeading = E_Heading.WEST
 End Sub
 
 Private Sub Command11_Click()
-If UltimaOpcion = eOpciones.Animaciones_op Then
-    animCounter = animCounter + 1
-    Exit Sub
-End If
+    If UltimaOpcion = eOpciones.Animaciones_op Then
+        animCounter = animCounter + 1
+        Exit Sub
+    End If
 
-If acHeading = E_Heading.EAST Then AcFrm = AcFrm + 1
+    If acHeading = E_Heading.EAST Then AcFrm = AcFrm + 1
 
-acHeading = E_Heading.EAST
+    acHeading = E_Heading.EAST
 End Sub
 
 Private Sub Command2_Click()
@@ -995,99 +994,99 @@ Private Sub Command2_Click()
 End Sub
 
 Private Sub Command3_Click()
-            fMain.fCabezas.Visible = True
-            fMain.fCabezas.Caption = "Escudos"
-            fMain.Text8.Text = vbNullString
-            fMain.Text9.Text = vbNullString
-            fMain.Combo1.Visible = False
-            fMain.Combo2.Visible = False
-            fMain.Label9.Caption = "Transparencia:"
-            fMain.Text11.Visible = True
-            fMain.Text8.Visible = False
-            Label8.Visible = False
-            Label10.Visible = False
-            Label11.Visible = False
-                        Label9.Visible = True
-            Text10.Visible = True
-            fMain.Label13.Visible = True
-            Modeling_Type = 5
-            Label13.Caption = "Grafico:"
-            Text10.Text = nWeaponData(sWeapon).Alpha
-            Text9.Text = nWeaponData(sWeapon).Desc
-            Text11.Text = nWeaponData(sWeapon).OverWriteGrafico
+    fMain.fCabezas.Visible = True
+    fMain.fCabezas.Caption = "Escudos"
+    fMain.Text8.Text = vbNullString
+    fMain.Text9.Text = vbNullString
+    fMain.Combo1.Visible = False
+    fMain.Combo2.Visible = False
+    fMain.Label9.Caption = "Transparencia:"
+    fMain.Text11.Visible = True
+    fMain.Text8.Visible = False
+    Label8.Visible = False
+    Label10.Visible = False
+    Label11.Visible = False
+    Label9.Visible = True
+    Text10.Visible = True
+    fMain.Label13.Visible = True
+    Modeling_Type = 5
+    Label13.Caption = "Grafico:"
+    Text10.Text = nWeaponData(sWeapon).Alpha
+    Text9.Text = nWeaponData(sWeapon).Desc
+    Text11.Text = nWeaponData(sWeapon).OverWriteGrafico
 End Sub
 
 Private Sub Command4_Click()
-            fMain.fCabezas.Visible = True
-            fMain.fCabezas.Caption = "Escudos"
-            fMain.Text8.Text = vbNullString
-            fMain.Text9.Text = vbNullString
-            fMain.Combo1.Visible = False
-            fMain.Combo2.Visible = False
-            fMain.Label9.Caption = "Transparencia:"
-            fMain.Text11.Visible = True
-            fMain.Label13.Visible = True
-            fMain.Text8.Visible = False
-            Label8.Visible = False
-            Label10.Visible = False
-            Label11.Visible = False
-            Label9.Visible = True
-            Text10.Visible = True
-            Modeling_Type = 4
-            Label13.Caption = "Grafico:"
-            Text10.Text = nShieldDATA(sShield).Alpha
-            Text9.Text = nShieldDATA(sShield).Desc
-            Text11.Text = nShieldDATA(sShield).OverWriteGrafico
+    fMain.fCabezas.Visible = True
+    fMain.fCabezas.Caption = "Escudos"
+    fMain.Text8.Text = vbNullString
+    fMain.Text9.Text = vbNullString
+    fMain.Combo1.Visible = False
+    fMain.Combo2.Visible = False
+    fMain.Label9.Caption = "Transparencia:"
+    fMain.Text11.Visible = True
+    fMain.Label13.Visible = True
+    fMain.Text8.Visible = False
+    Label8.Visible = False
+    Label10.Visible = False
+    Label11.Visible = False
+    Label9.Visible = True
+    Text10.Visible = True
+    Modeling_Type = 4
+    Label13.Caption = "Grafico:"
+    Text10.Text = nShieldDATA(sShield).Alpha
+    Text9.Text = nShieldDATA(sShield).Desc
+    Text11.Text = nShieldDATA(sShield).OverWriteGrafico
             
             
 End Sub
 
 Private Sub Command5_Click()
-            Label13.Caption = "Offset Lat:"
-            fMain.fCabezas.Visible = True
-            fMain.fCabezas.Caption = "Cascos"
-            fMain.Text8.Text = vbNullString
-            fMain.Text9.Text = vbNullString
-            fMain.Combo1.Visible = False
-            fMain.Combo2.Visible = False
-            fMain.Label9.Caption = "Transparencia:"
-            fMain.Text11.Visible = True
-            fMain.Label13.Visible = True
-            Modeling_Type = 3
-            fMain.Text8.Visible = True
-            Label9.Visible = True
-            Text10.Visible = True
+    Label13.Caption = "Offset Lat:"
+    fMain.fCabezas.Visible = True
+    fMain.fCabezas.Caption = "Cascos"
+    fMain.Text8.Text = vbNullString
+    fMain.Text9.Text = vbNullString
+    fMain.Combo1.Visible = False
+    fMain.Combo2.Visible = False
+    fMain.Label9.Caption = "Transparencia:"
+    fMain.Text11.Visible = True
+    fMain.Label13.Visible = True
+    Modeling_Type = 3
+    fMain.Text8.Visible = True
+    Label9.Visible = True
+    Text10.Visible = True
             
-            Label10.Visible = False
-            Label11.Visible = False
-            Label8.Visible = True
+    Label10.Visible = False
+    Label11.Visible = False
+    Label8.Visible = True
 End Sub
 Private Sub MostrarVer(ByVal quemuestro As Byte)
 
     Select Case quemuestro
         Case 0
             Label12.Visible = True
-    Text9.Visible = True
-    Text8.Visible = True
-    Label8.Visible = True
-    Label8.Caption = "Offset Y"
-    Label13.Caption = "Grafico:"
-    Label13.Visible = True
-    Text11.Visible = True
-    Combo1.Visible = False
-    Combo2.Visible = False
-    fCabezas.Visible = True
-    Text10.Visible = False
-    Label9.Visible = False
-    Label10.Visible = False
-    Label11.Visible = False
-    Modeling_Type = 1
-    Text8.Text = nBodyData(sBody).OffsetY
-    Text11.Text = nBodyData(sBody).OverWriteGrafico
-    Text9.Text = nBodyData(sBody).Desc
-    Case 1
-        Modeling_Type = 2
-    Label13.Caption = "Offset Lat:"
+            Text9.Visible = True
+            Text8.Visible = True
+            Label8.Visible = True
+            Label8.Caption = "Offset Y"
+            Label13.Caption = "Grafico:"
+            Label13.Visible = True
+            Text11.Visible = True
+            Combo1.Visible = False
+            Combo2.Visible = False
+            fCabezas.Visible = True
+            Text10.Visible = False
+            Label9.Visible = False
+            Label10.Visible = False
+            Label11.Visible = False
+            Modeling_Type = 1
+            Text8.Text = nBodyData(sBody).OffsetY
+            Text11.Text = nBodyData(sBody).OverWriteGrafico
+            Text9.Text = nBodyData(sBody).Desc
+        Case 1
+            Modeling_Type = 2
+            Label13.Caption = "Offset Lat:"
             fMain.fCabezas.Visible = True
             fMain.fCabezas.Caption = "Cabezas"
             fMain.Combo1.AddItem "Fantasma"
@@ -1112,17 +1111,17 @@ Private Sub MostrarVer(ByVal quemuestro As Byte)
             
             fMain.Text11.Visible = False
             fMain.Label13.Visible = False
-                    fMain.Text8.Visible = True
-                    fMain.Text8.Text = NHeadData(sHead).OffsetDibujoY
-                    fMain.Text9.Text = NHeadData(sHead).Desc
-                    fMain.Combo1.ListIndex = NHeadData(sHead).Raza
-                    fMain.Combo2.ListIndex = NHeadData(sHead).Genero - 1
+            fMain.Text8.Visible = True
+            fMain.Text8.Text = NHeadData(sHead).OffsetDibujoY
+            fMain.Text9.Text = NHeadData(sHead).Desc
+            fMain.Combo1.ListIndex = NHeadData(sHead).Raza
+            fMain.Combo2.ListIndex = NHeadData(sHead).Genero - 1
                     
-Label8.Visible = True
+            Label8.Visible = True
             Label10.Visible = True
             Label11.Visible = True
 
-Case 2
+        Case 2
             Label13.Caption = "Offset Lat:"
             fMain.fCabezas.Visible = True
             fMain.fCabezas.Caption = "Cascos"
@@ -1141,7 +1140,7 @@ Case 2
             Label10.Visible = False
             Label11.Visible = False
             Label8.Visible = True
-Case 3
+        Case 3
             fMain.fCabezas.Visible = True
             fMain.fCabezas.Caption = "Escudos"
             fMain.Text8.Text = vbNullString
@@ -1164,7 +1163,7 @@ Case 3
             Text11.Text = nShieldDATA(sShield).OverWriteGrafico
             
         Case 4
-                    fMain.fCabezas.Visible = True
+            fMain.fCabezas.Visible = True
             fMain.fCabezas.Caption = "Escudos"
             fMain.Text8.Text = vbNullString
             fMain.Text9.Text = vbNullString
@@ -1176,7 +1175,7 @@ Case 3
             Label8.Visible = False
             Label10.Visible = False
             Label11.Visible = False
-                        Label9.Visible = True
+            Label9.Visible = True
             Text10.Visible = True
             fMain.Label13.Visible = True
             Modeling_Type = 5
@@ -1191,39 +1190,39 @@ End Sub
 Private Sub Command6_Click()
     Modeling_Type = 2
     Label13.Caption = "Offset Lat:"
-            fMain.fCabezas.Visible = True
-            fMain.fCabezas.Caption = "Cabezas"
-            fMain.Combo1.AddItem "Fantasma"
-            fMain.Combo1.AddItem "Humano"
-            fMain.Combo1.AddItem "Elfo"
-            fMain.Combo1.AddItem "Elfo Oscuro"
-            fMain.Combo1.AddItem "Gnomo"
-            fMain.Combo1.AddItem "Enano"
-            fMain.Combo2.AddItem "Hombre"
-            fMain.Combo2.AddItem "Mujer"
-            fMain.Combo1.ListIndex = -1
-            fMain.Combo2.ListIndex = -1
-            fMain.Text8.Text = vbNullString
-            fMain.Text10.Text = vbNullString
-            fMain.Text9.Text = vbNullString
-            fMain.Combo1.Visible = True
-            fMain.Combo2.Visible = True
-            fMain.Label9.Caption = "Offset Ojos:"
-            Label9.Visible = True
-            Text10.Visible = True
-            Text10.Text = NHeadData(sHead).OffsetOjos
+    fMain.fCabezas.Visible = True
+    fMain.fCabezas.Caption = "Cabezas"
+    fMain.Combo1.AddItem "Fantasma"
+    fMain.Combo1.AddItem "Humano"
+    fMain.Combo1.AddItem "Elfo"
+    fMain.Combo1.AddItem "Elfo Oscuro"
+    fMain.Combo1.AddItem "Gnomo"
+    fMain.Combo1.AddItem "Enano"
+    fMain.Combo2.AddItem "Hombre"
+    fMain.Combo2.AddItem "Mujer"
+    fMain.Combo1.ListIndex = -1
+    fMain.Combo2.ListIndex = -1
+    fMain.Text8.Text = vbNullString
+    fMain.Text10.Text = vbNullString
+    fMain.Text9.Text = vbNullString
+    fMain.Combo1.Visible = True
+    fMain.Combo2.Visible = True
+    fMain.Label9.Caption = "Offset Ojos:"
+    Label9.Visible = True
+    Text10.Visible = True
+    Text10.Text = NHeadData(sHead).OffsetOjos
             
-            fMain.Text11.Visible = False
-            fMain.Label13.Visible = False
-                    fMain.Text8.Visible = True
-                    fMain.Text8.Text = NHeadData(sHead).OffsetDibujoY
-                    fMain.Text9.Text = NHeadData(sHead).Desc
-                    fMain.Combo1.ListIndex = NHeadData(sHead).Raza
-                    fMain.Combo2.ListIndex = NHeadData(sHead).Genero - 1
+    fMain.Text11.Visible = False
+    fMain.Label13.Visible = False
+    fMain.Text8.Visible = True
+    fMain.Text8.Text = NHeadData(sHead).OffsetDibujoY
+    fMain.Text9.Text = NHeadData(sHead).Desc
+    fMain.Combo1.ListIndex = NHeadData(sHead).Raza
+    fMain.Combo2.ListIndex = NHeadData(sHead).Genero - 1
                     
-Label8.Visible = True
-            Label10.Visible = True
-            Label11.Visible = True
+    Label8.Visible = True
+    Label10.Visible = True
+    Label11.Visible = True
 End Sub
 
 Private Sub Command7_Click()
@@ -1244,15 +1243,15 @@ Private Sub Command7_Click()
 End Sub
 
 Private Sub Command8_Click()
-If acHeading = E_Heading.SOUTH Then AcFrm = AcFrm + 1
+    If acHeading = E_Heading.SOUTH Then AcFrm = AcFrm + 1
 
-acHeading = E_Heading.SOUTH
+    acHeading = E_Heading.SOUTH
 End Sub
 
 Private Sub Command9_Click()
-If acHeading = E_Heading.NORTH Then AcFrm = AcFrm + 1
+    If acHeading = E_Heading.NORTH Then AcFrm = AcFrm + 1
                                                     
-acHeading = E_Heading.NORTH
+    acHeading = E_Heading.NORTH
 End Sub
 
 Private Sub cOpc_Click(Index As Integer)
@@ -1262,7 +1261,7 @@ Private Sub cOpc_Click(Index As Integer)
         End If
         AbrirOpcion Index
         UltimaOpcion = Index
-        Else
+    Else
         CerrarOpcion UltimaOpcion
         UltimaOpcion = -1
     End If
@@ -1290,18 +1289,18 @@ Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
         fMain.lblVel.Caption = "VELOCIDAD: " & VelMod
     End If
     If KeyCode = vbKeyRight Then
-    acHeading = E_Heading.EAST
-ElseIf KeyCode = vbKeyLeft Then
-    acHeading = E_Heading.WEST
-ElseIf KeyCode = vbKeyUp Then
-    acHeading = E_Heading.NORTH
-ElseIf KeyCode = vbKeyDown Then
-    acHeading = E_Heading.SOUTH
-End If
+        acHeading = E_Heading.EAST
+    ElseIf KeyCode = vbKeyLeft Then
+        acHeading = E_Heading.WEST
+    ElseIf KeyCode = vbKeyUp Then
+        acHeading = E_Heading.NORTH
+    ElseIf KeyCode = vbKeyDown Then
+        acHeading = E_Heading.SOUTH
+    End If
 End Sub
 
 Private Sub Form_Load()
-Dim p As Long
+    Dim p As Long
     UltimaOpcion = -1
     For p = 0 To cOpc.UBound
         cOpc(p).value = False
@@ -1310,7 +1309,7 @@ Dim p As Long
 End Sub
 
 Private Sub Form_Unload(Cancel As Integer)
-bRunning = False
+    bRunning = False
 End Sub
 
 Private Sub Frame1_Click()
@@ -1318,70 +1317,70 @@ Private Sub Frame1_Click()
 
 End Sub
 Public Sub SetZoom(ByVal BTN As Integer)
-Dim aW As Integer
-Dim aH As Integer
-Dim zW As Integer
-Dim zH As Integer
-Dim ExV As Integer
+    Dim aW As Integer
+    Dim aH As Integer
+    Dim zW As Integer
+    Dim zH As Integer
+    Dim ExV As Integer
 
-ExV = ZoomV
-If BTN = vbRightButton Then
-    ZoomV = ZoomV - 1
-    If ZoomV <= 1 Then
-        ZoomV = 1
-        ZoomBufferRect.left = MainBufferRect.left
-        ZoomBufferRect.top = MainBufferRect.top
-        ZoomBufferRect.Bottom = MainBufferRect.Bottom
-        ZoomBufferRect.Right = MainBufferRect.Right
-        ZoomX = 0
-        ZoomY = 0
+    ExV = ZoomV
+    If BTN = vbRightButton Then
+        ZoomV = ZoomV - 1
+        If ZoomV <= 1 Then
+            ZoomV = 1
+            ZoomBufferRect.left = MainBufferRect.left
+            ZoomBufferRect.top = MainBufferRect.top
+            ZoomBufferRect.Bottom = MainBufferRect.Bottom
+            ZoomBufferRect.Right = MainBufferRect.Right
+            ZoomX = 0
+            ZoomY = 0
         
+            Exit Sub
+        End If
+    ElseIf BTN = vbLeftButton Then
+        ZoomV = ZoomV + 1
+    ElseIf BTN = 0 Then
+        If ZoomV = 0 Then
+            ZoomV = 1
+            ZoomBufferRect.left = MainBufferRect.left
+            ZoomBufferRect.top = MainBufferRect.top
+            ZoomBufferRect.Bottom = MainBufferRect.Bottom
+            ZoomBufferRect.Right = MainBufferRect.Right
+            ZoomX = 0
+            ZoomY = 0
+        End If
         Exit Sub
+
     End If
-ElseIf BTN = vbLeftButton Then
-    ZoomV = ZoomV + 1
-ElseIf BTN = 0 Then
-    If ZoomV = 0 Then
-        ZoomV = 1
-        ZoomBufferRect.left = MainBufferRect.left
-        ZoomBufferRect.top = MainBufferRect.top
-        ZoomBufferRect.Bottom = MainBufferRect.Bottom
-        ZoomBufferRect.Right = MainBufferRect.Right
-        ZoomX = 0
-        ZoomY = 0
-    End If
-Exit Sub
-
-End If
 
 
 
-aW = MainBufferRect.Right - MainBufferRect.left
-aH = MainBufferRect.Bottom - MainBufferRect.top
+    aW = MainBufferRect.Right - MainBufferRect.left
+    aH = MainBufferRect.Bottom - MainBufferRect.top
 
-zW = aW / ZoomV
-zH = aH / ZoomV
-ZoomX = (ZoomX + ((fX / Screen.TwipsPerPixelX) / ExV)) - (zW * 0.5)
-ZoomY = (ZoomY + ((fY / Screen.TwipsPerPixelY) / ExV)) - (zH * 0.5)
+    zW = aW / ZoomV
+    zH = aH / ZoomV
+    ZoomX = (ZoomX + ((fX / Screen.TwipsPerPixelX) / ExV)) - (zW * 0.5)
+    ZoomY = (ZoomY + ((fY / Screen.TwipsPerPixelY) / ExV)) - (zH * 0.5)
 
 
-ZoomBufferRect.left = ZoomX
-ZoomBufferRect.Right = ZoomX + zW
+    ZoomBufferRect.left = ZoomX
+    ZoomBufferRect.Right = ZoomX + zW
 
-ZoomBufferRect.top = ZoomY
-ZoomBufferRect.Bottom = ZoomY + zH
+    ZoomBufferRect.top = ZoomY
+    ZoomBufferRect.Bottom = ZoomY + zH
 
 
 
 End Sub
 
-Private Sub Frame1_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
-    fX = X
-    fY = Y
+Private Sub Frame1_MouseMove(Button As Integer, Shift As Integer, x As Single, y As Single)
+    fX = x
+    fY = y
     
 End Sub
 
-Private Sub Frame1_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub Frame1_MouseUp(Button As Integer, Shift As Integer, x As Single, y As Single)
     If Zooming Then
         SetZoom Button
     End If
@@ -1394,15 +1393,15 @@ Private Sub Lista_Click(Index As Integer)
     Select Case UltimaOpcion
     
         Case eOpciones.Animaciones_op
-        If IxS > 0 Then
-            Text2.Text = Replace(CStr(NewAnimationData(IxS).Velocidad), ",", ".")
-            Text3.Text = NewAnimationData(IxS).NumFrames
-            Text4.Text = NewAnimationData(IxS).Columnas & "-" & NewAnimationData(IxS).Filas
-            Text5.Text = NewAnimationData(IxS).Width & "-" & NewAnimationData(IxS).Height
-            Text6.Text = NewAnimationData(IxS).Grafico
-            Text7.Text = NewAnimationData(IxS).Initial
-            Text12.Text = NewAnimationData(IxS).Desc
-        End If
+            If IxS > 0 Then
+                Text2.Text = Replace(CStr(NewAnimationData(IxS).Velocidad), ",", ".")
+                Text3.Text = NewAnimationData(IxS).NumFrames
+                Text4.Text = NewAnimationData(IxS).Columnas & "-" & NewAnimationData(IxS).Filas
+                Text5.Text = NewAnimationData(IxS).Width & "-" & NewAnimationData(IxS).Height
+                Text6.Text = NewAnimationData(IxS).Grafico
+                Text7.Text = NewAnimationData(IxS).Initial
+                Text12.Text = NewAnimationData(IxS).Desc
+            End If
         
 
     End Select
@@ -1444,7 +1443,7 @@ Private Sub m_c_activado_Click()
 End Sub
 
 Private Sub m_c_elegir_Click()
-Dim Cuerpo As Integer
+    Dim Cuerpo As Integer
     Cuerpo = InputBox("Selecciona el cuerpo de prueba.", "TestBody", num_test_body)
     If Cuerpo > 0 And Cuerpo <= NumNewBodys Then
         num_test_body = Cuerpo
@@ -1477,7 +1476,7 @@ Private Sub m_g_NeglectNegro_Click()
 End Sub
 
 Private Sub m_i_Open_Click()
-fIndexador.Show
+    fIndexador.Show
 End Sub
 
 Private Sub m_mapHandler_Click()
@@ -1492,7 +1491,7 @@ Private Sub m_z_Activado_Click()
 End Sub
 
 Private Sub m_z_elegir_Click()
-Dim Cuerpo As Integer
+    Dim Cuerpo As Integer
     Cuerpo = InputBox("Selecciona la cabeza de prueba.", "TestHead", num_test_head)
     If Cuerpo > 0 And Cuerpo <= Num_Heads Then
         num_test_head = Cuerpo
@@ -1501,21 +1500,21 @@ Dim Cuerpo As Integer
 End Sub
 
 Private Sub Text1_KeyUp(KeyCode As Integer, Shift As Integer)
-If KeyCode = vbKeyReturn Then
-VelMov = Val(Text1)
-End If
+    If KeyCode = vbKeyReturn Then
+        VelMov = Val(Text1)
+    End If
 End Sub
 
 Private Sub Text10_KeyUp(KeyCode As Integer, Shift As Integer)
     If KeyCode = vbKeyReturn Then
         If Modeling_Type = 2 Then
-        NHeadData(sHead).OffsetOjos = Val(Text10.Text)
+            NHeadData(sHead).OffsetOjos = Val(Text10.Text)
         ElseIf Modeling_Type = 3 Then
-        NHelmetData(sHelmet).Alpha = Val(Text10.Text)
+            NHelmetData(sHelmet).Alpha = Val(Text10.Text)
         ElseIf Modeling_Type = 4 Then
-        nShieldDATA(sShield).Alpha = Val(Text10.Text)
+            nShieldDATA(sShield).Alpha = Val(Text10.Text)
         ElseIf Modeling_Type = 5 Then
-        nWeaponData(sWeapon).Alpha = Val(Text10.Text)
+            nWeaponData(sWeapon).Alpha = Val(Text10.Text)
         
         End If
 
@@ -1540,147 +1539,147 @@ Private Sub Text11_KeyUp(KeyCode As Integer, Shift As Integer)
 End Sub
 
 Private Sub Text12_KeyUp(KeyCode As Integer, Shift As Integer)
-If KeyCode = vbKeyReturn Then
-If IxS > 0 Then
-    NewAnimationData(IxS).Desc = (Text12)
-    fMain.Lista(UltimaOpcion).List(fMain.Lista(UltimaOpcion).ListIndex) = NewAnimationData(IxS).Desc & " (" & IxS & ")"
-End If
-End If
+    If KeyCode = vbKeyReturn Then
+        If IxS > 0 Then
+            NewAnimationData(IxS).Desc = (Text12)
+            fMain.Lista(UltimaOpcion).List(fMain.Lista(UltimaOpcion).ListIndex) = NewAnimationData(IxS).Desc & " (" & IxS & ")"
+        End If
+    End If
 
 End Sub
 
 Private Sub Text2_KeyUp(KeyCode As Integer, Shift As Integer)
-If KeyCode = vbKeyReturn Then
-If IxS > 0 Then
-    NewAnimationData(IxS).Velocidad = Val(Text2)
-End If
-End If
+    If KeyCode = vbKeyReturn Then
+        If IxS > 0 Then
+            NewAnimationData(IxS).Velocidad = Val(Text2)
+        End If
+    End If
 
 End Sub
 
 Private Sub Text3_KeyUp(KeyCode As Integer, Shift As Integer)
-If KeyCode = vbKeyReturn Then
-Dim p As Long
-Dim K As Long
-Dim grafcounter As Integer
+    If KeyCode = vbKeyReturn Then
+        Dim p As Long
+        Dim K As Long
+        Dim grafcounter As Integer
 
-If IxS > 0 Then
-    With NewAnimationData(IxS)
+        If IxS > 0 Then
+            With NewAnimationData(IxS)
     
-    .NumFrames = Val(Text3)
-    If .NumFrames > 0 Then
-        ReDim Preserve NewAnimationData(IxS).Indice(1 To .NumFrames)
-        If .NumFrames = 0 Or .Columnas = 0 Or .Filas = 0 Then Exit Sub
-            If .Initial = 0 Then .Initial = 1
-        K = .Initial - 1
-        If K >= (CInt(.Columnas) * CInt(.Filas)) Then
-            K = K Mod (CInt(.Columnas) * CInt(.Filas))
+                .NumFrames = Val(Text3)
+                If .NumFrames > 0 Then
+                    ReDim Preserve NewAnimationData(IxS).Indice(1 To .NumFrames)
+                    If .NumFrames = 0 Or .Columnas = 0 Or .Filas = 0 Then Exit Sub
+                    If .Initial = 0 Then .Initial = 1
+                    K = .Initial - 1
+                    If K >= (CInt(.Columnas) * CInt(.Filas)) Then
+                        K = K Mod (CInt(.Columnas) * CInt(.Filas))
+                    End If
+                    ReDim .Indice(1 To .NumFrames)
+                    grafcounter = .Grafico
+                    For p = 1 To .NumFrames
+                        K = K + 1
+                        .Indice(p).x = (((K - 1) Mod .Columnas) * .Width)
+                        .Indice(p).y = ((Int((K - 1) / .Columnas)) * .Height)
+                        .Indice(p).Grafico = grafcounter
+                        If (K Mod (CInt(.Columnas) * CInt(.Filas))) = 0 And ((K + 1) - .Initial) < .NumFrames Then
+                            grafcounter = grafcounter + 1
+                            K = 0
+                        End If
+                    Next p
+                End If
+            End With
         End If
-        ReDim .Indice(1 To .NumFrames)
-        grafcounter = .Grafico
-        For p = 1 To .NumFrames
-            K = K + 1
-            .Indice(p).X = (((K - 1) Mod .Columnas) * .Width)
-            .Indice(p).Y = ((Int((K - 1) / .Columnas)) * .Height)
-            .Indice(p).Grafico = grafcounter
-            If (K Mod (CInt(.Columnas) * CInt(.Filas))) = 0 And ((K + 1) - .Initial) < .NumFrames Then
-                grafcounter = grafcounter + 1
-                K = 0
-            End If
-        Next p
-        End If
-    End With
-End If
-End If
+    End If
 End Sub
 
 Private Sub Text4_KeyUp(KeyCode As Integer, Shift As Integer)
-If KeyCode = vbKeyReturn Then
-If IxS > 0 Then
-    NewAnimationData(IxS).Columnas = Val(ReadField(1, Text4, Asc("-")))
-    NewAnimationData(IxS).Filas = Val(ReadField(2, Text4, Asc("-")))
+    If KeyCode = vbKeyReturn Then
+        If IxS > 0 Then
+            NewAnimationData(IxS).Columnas = Val(ReadField(1, Text4, Asc("-")))
+            NewAnimationData(IxS).Filas = Val(ReadField(2, Text4, Asc("-")))
     
-End If
-End If
+        End If
+    End If
 End Sub
 
 Private Sub Text5_KeyUp(KeyCode As Integer, Shift As Integer)
-If KeyCode = vbKeyReturn Then
-If IxS > 0 Then
-    NewAnimationData(IxS).Width = Val(ReadField(1, Text5, Asc("-")))
-    NewAnimationData(IxS).Height = Val(ReadField(2, Text5, Asc("-")))
+    If KeyCode = vbKeyReturn Then
+        If IxS > 0 Then
+            NewAnimationData(IxS).Width = Val(ReadField(1, Text5, Asc("-")))
+            NewAnimationData(IxS).Height = Val(ReadField(2, Text5, Asc("-")))
     
-End If
-End If
+        End If
+    End If
 End Sub
 
 Private Sub Text6_KeyUp(KeyCode As Integer, Shift As Integer)
-If KeyCode = vbKeyReturn Then
-Dim p As Long
-Dim K As Long
-Dim grafcounter As Integer
+    If KeyCode = vbKeyReturn Then
+        Dim p As Long
+        Dim K As Long
+        Dim grafcounter As Integer
 
-If IxS > 0 Then
+        If IxS > 0 Then
 
-        With NewAnimationData(IxS)
-        If .NumFrames = 0 Then Exit Sub
-        If .Columnas = 0 Or .Filas = 0 Then Exit Sub
-    .Grafico = Val(Text6)
-        If .Initial = 0 Then .Initial = 1
-    K = .Initial - 1
-    If K >= (CInt(.Columnas) * CInt(.Filas)) Then
-        K = K Mod (CInt(.Columnas) * CInt(.Filas))
-    End If
-    ReDim .Indice(1 To .NumFrames)
-    grafcounter = .Grafico
-    For p = 1 To .NumFrames
-        K = K + 1
-        .Indice(p).X = (((K - 1) Mod .Columnas) * .Width)
-        .Indice(p).Y = ((Int((K - 1) / .Columnas)) * .Height)
-        .Indice(p).Grafico = grafcounter
-        If (K Mod (CInt(.Columnas) * CInt(.Filas))) = 0 And ((K + 1) - .Initial) < .NumFrames Then
-            grafcounter = grafcounter + 1
-            K = 0
-        End If
-    Next p
-    End With
+            With NewAnimationData(IxS)
+                If .NumFrames = 0 Then Exit Sub
+                If .Columnas = 0 Or .Filas = 0 Then Exit Sub
+                .Grafico = Val(Text6)
+                If .Initial = 0 Then .Initial = 1
+                K = .Initial - 1
+                If K >= (CInt(.Columnas) * CInt(.Filas)) Then
+                    K = K Mod (CInt(.Columnas) * CInt(.Filas))
+                End If
+                ReDim .Indice(1 To .NumFrames)
+                grafcounter = .Grafico
+                For p = 1 To .NumFrames
+                    K = K + 1
+                    .Indice(p).x = (((K - 1) Mod .Columnas) * .Width)
+                    .Indice(p).y = ((Int((K - 1) / .Columnas)) * .Height)
+                    .Indice(p).Grafico = grafcounter
+                    If (K Mod (CInt(.Columnas) * CInt(.Filas))) = 0 And ((K + 1) - .Initial) < .NumFrames Then
+                        grafcounter = grafcounter + 1
+                        K = 0
+                    End If
+                Next p
+            End With
     
+        End If
     End If
-End If
 
 End Sub
 
 Private Sub Text7_KeyUp(KeyCode As Integer, Shift As Integer)
 
-If KeyCode = vbKeyReturn Then
-Dim K As Long
-Dim p As Long
-Dim grafcounter As Long
-If IxS > 0 Then
-With NewAnimationData(IxS)
-    If .NumFrames = 0 Then Exit Sub
-    .Initial = Val(Text7)
-    If .Initial = 0 Then .Initial = 1
-    K = .Initial - 1
-    If K >= (CInt(.Columnas) * CInt(.Filas)) Then
-        K = K Mod (CInt(.Columnas) * CInt(.Filas))
-    End If
+    If KeyCode = vbKeyReturn Then
+        Dim K As Long
+        Dim p As Long
+        Dim grafcounter As Long
+        If IxS > 0 Then
+            With NewAnimationData(IxS)
+                If .NumFrames = 0 Then Exit Sub
+                .Initial = Val(Text7)
+                If .Initial = 0 Then .Initial = 1
+                K = .Initial - 1
+                If K >= (CInt(.Columnas) * CInt(.Filas)) Then
+                    K = K Mod (CInt(.Columnas) * CInt(.Filas))
+                End If
 
-    grafcounter = .Grafico
-        ReDim .Indice(1 To .NumFrames)
-    For p = 1 To .NumFrames
-        K = K + 1
-        .Indice(p).X = (((K - 1) Mod .Columnas) * .Width)
-        .Indice(p).Y = ((Int((K - 1) / .Columnas)) * .Height)
-        .Indice(p).Grafico = grafcounter
-        If (K Mod (CInt(.Columnas) * CInt(.Filas))) = 0 And ((K + 1) - .Initial) < .NumFrames Then
-            grafcounter = grafcounter + 1
-            K = 0
+                grafcounter = .Grafico
+                ReDim .Indice(1 To .NumFrames)
+                For p = 1 To .NumFrames
+                    K = K + 1
+                    .Indice(p).x = (((K - 1) Mod .Columnas) * .Width)
+                    .Indice(p).y = ((Int((K - 1) / .Columnas)) * .Height)
+                    .Indice(p).Grafico = grafcounter
+                    If (K Mod (CInt(.Columnas) * CInt(.Filas))) = 0 And ((K + 1) - .Initial) < .NumFrames Then
+                        grafcounter = grafcounter + 1
+                        K = 0
+                    End If
+                Next p
+            End With
         End If
-    Next p
-    End With
-End If
-End If
+    End If
 
 End Sub
 
@@ -1699,9 +1698,9 @@ End Sub
 Private Sub Text9_KeyUp(KeyCode As Integer, Shift As Integer)
     If KeyCode = vbKeyReturn Then
         If Modeling_Type = 2 Then
-        NHeadData(sHead).Desc = Text9.Text
+            NHeadData(sHead).Desc = Text9.Text
         ElseIf Modeling_Type = 3 Then
-        NHelmetData(sHelmet).Desc = Text9.Text
+            NHelmetData(sHelmet).Desc = Text9.Text
         ElseIf Modeling_Type = 4 Then
             nShieldDATA(sShield).Desc = Text9.Text
         ElseIf Modeling_Type = 5 Then

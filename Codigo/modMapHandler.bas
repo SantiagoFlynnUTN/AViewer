@@ -26,46 +26,46 @@ Dim NTE As Integer
 
 
 Public Sub Analizar(ByVal Path As String, ByRef ListIndex As ListBox, ByRef ListEstatic As ListBox, ByRef lblnti As Label, ByRef lblnte As Label)
-Dim X As Long
-Dim Y As Long
+    Dim x As Long
+    Dim y As Long
 
 
-Dim K As Long
-'Cargamos los indices.
-Call Cargar_Temporal_Dats(left$(Path, Len(Path) - 7) & "TempIndex", TI, TE, NTI, NTE)
+    Dim K As Long
+    'Cargamos los indices.
+    Call Cargar_Temporal_Dats(left$(Path, Len(Path) - 7) & "TempIndex", TI, TE, NTI, NTE)
 
         
-'Cargamos los listbox
-ListIndex.Clear
-ListEstatic.Clear
-For K = 1 To NTI
-    ListIndex.AddItem TI(K) & " - [" & TempIndex(TI(K)).OverWriteGrafico & "]"
-Next K
-For K = 1 To NTE
-    ListEstatic.AddItem TE(K)
-Next K
-ListIndex.ListIndex = -1
-ListEstatic.ListIndex = -1
+    'Cargamos los listbox
+    ListIndex.Clear
+    ListEstatic.Clear
+    For K = 1 To NTI
+        ListIndex.AddItem TI(K) & " - [" & TempIndex(TI(K)).OverWriteGrafico & "]"
+    Next K
+    For K = 1 To NTE
+        ListEstatic.AddItem TE(K)
+    Next K
+    ListIndex.ListIndex = -1
+    ListEstatic.ListIndex = -1
 
-lblnti.Caption = NTI
-lblnte.Caption = NTE
+    lblnti.Caption = NTI
+    lblnte.Caption = NTE
 
 
 End Sub
 Public Sub VerEstatic_Info(ByVal Indice As Integer, ByRef lblIndex As Label, ByRef lblLeft As Label, ByRef lblTop As Label, ByRef lblwidth As Label, ByRef lblheight As Label, ByRef lblRep As Label)
 
-If Indice <= NTE Then
-    If TE(Indice) <= nTempEstatic Then
-        With TempEstatic(TE(Indice))
-            lblIndex.Caption = TE(Indice)
-            lblLeft.Caption = .L
-            lblTop.Caption = .T
-            lblwidth.Caption = .W
-            lblheight.Caption = .H
-            lblRep.Caption = .Replace
-        End With
+    If Indice <= NTE Then
+        If TE(Indice) <= nTempEstatic Then
+            With TempEstatic(TE(Indice))
+                lblIndex.Caption = TE(Indice)
+                lblLeft.Caption = .L
+                lblTop.Caption = .T
+                lblwidth.Caption = .W
+                lblheight.Caption = .H
+                lblRep.Caption = .Replace
+            End With
+        End If
     End If
-End If
 End Sub
 Public Sub VerIndex_Grafico(ByVal Indice As Integer, ByRef Picture As PictureBox, Optional ByVal GraficoW As Integer, Optional ByVal GraficoH As Integer, Optional ByVal Index As Integer)
     If Index = 0 Then
@@ -107,9 +107,9 @@ Public Sub VerIndex_Info(ByVal Indice As Integer, ByRef lblIndex As Label, ByRef
 
 End Sub
 Public Sub Cargar_Temporal_Dats(ByVal Path As String, ByRef TI() As Integer, ByRef TE() As Integer, ByVal NumTempIndex As Integer, ByVal NumTempEstatic As Integer)
-Dim K As Long
-Dim LTE As Integer
-Dim LTI As Integer
+    Dim K As Long
+    Dim LTE As Integer
+    Dim LTI As Integer
     'Cargamos la cantidad
     NTI = Val(GetVar(Path, "INIT", "NumTI"))
     NTE = Val(GetVar(Path, "INIT", "NumTE"))

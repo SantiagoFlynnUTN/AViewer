@@ -55,39 +55,39 @@ Private PT As Byte
 
 
 Private Sub Command1_Click(Index As Integer)
-If Index = 1 Then
-Unload Me
-ElseIf Index = 0 Then
-    Select Case PT
+    If Index = 1 Then
+        Unload Me
+    ElseIf Index = 0 Then
+        Select Case PT
     
-        Case eParse.ep_Animacion
-            If Combo1.ListIndex = -1 Then
-                MsgBox "Selecciona una animación."
-                Exit Sub
-            End If
-            Call fIndexador.ParseAcFr(fIndexador.qFr, Combo1.ListIndex + 1)
-            Select Case fIndexador.qFr
-                Case 1
-                    fIndexador.Label5.ForeColor = vbWhite
-                    fIndexador.Label5.Caption = "Norte: " & fIndexador.GetAcFr(fIndexador.qFr)
-                Case 2
-                    fIndexador.Label6.ForeColor = vbWhite
-                    fIndexador.Label6.Caption = "Este: " & fIndexador.GetAcFr(fIndexador.qFr)
-                Case 3
-                    fIndexador.Label7.ForeColor = vbWhite
-                    fIndexador.Label7.Caption = "Sur: " & fIndexador.GetAcFr(fIndexador.qFr)
-                Case 4
-                    fIndexador.Label13.ForeColor = vbWhite
-                    fIndexador.Label13.Caption = "Oeste: " & fIndexador.GetAcFr(fIndexador.qFr)
-            End Select
+            Case eParse.ep_Animacion
+                If Combo1.ListIndex = -1 Then
+                    MsgBox "Selecciona una animación."
+                    Exit Sub
+                End If
+                Call fIndexador.ParseAcFr(fIndexador.qFr, Combo1.ListIndex + 1)
+                Select Case fIndexador.qFr
+                    Case 1
+                        fIndexador.Label5.ForeColor = vbWhite
+                        fIndexador.Label5.Caption = "Norte: " & fIndexador.GetAcFr(fIndexador.qFr)
+                    Case 2
+                        fIndexador.Label6.ForeColor = vbWhite
+                        fIndexador.Label6.Caption = "Este: " & fIndexador.GetAcFr(fIndexador.qFr)
+                    Case 3
+                        fIndexador.Label7.ForeColor = vbWhite
+                        fIndexador.Label7.Caption = "Sur: " & fIndexador.GetAcFr(fIndexador.qFr)
+                    Case 4
+                        fIndexador.Label13.ForeColor = vbWhite
+                        fIndexador.Label13.Caption = "Oeste: " & fIndexador.GetAcFr(fIndexador.qFr)
+                End Select
             
-    End Select
-    Unload Me
-End If
+        End Select
+        Unload Me
+    End If
 End Sub
 
 Public Sub Parse(ByVal Mensaje As String, ByVal Tipo As Byte)
-Dim i As Long
+    Dim i As Long
     lbl.Caption = Mensaje
     
     Select Case Tipo
