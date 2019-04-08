@@ -494,10 +494,12 @@ Public Sub Load_NewWeapons()
 End Sub
 Public Sub Load_NwMuniciones()
 
-Dim S As String
-Dim i As Long
-Dim z As Long
-S = App.Path & "\RES\INDEX\NwMuniciones.dat"
+
+
+    Dim S As String
+    Dim i As Long
+    Dim z As Long
+    S = App.Path & "\RES\INDEX\NwMunicion.dat"
 
 
     If NumNewM > 0 Then
