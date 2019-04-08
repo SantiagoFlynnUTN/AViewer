@@ -1,10 +1,26 @@
 [INIT]
-Num=0
-
-[1]'Escu Pala
-Alpha=255
-Mov1=90 'norte
-Mov2=92 'derecha
-Mov3=89 'sur
-Mov4=91 'izquierda
-OverWriteGrafico=8800
+Num=3
+[1]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=894
+DESC=Flechas cazador Agite
+ALPHA=255
+[2]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=895
+DESC=Flechas Guerrero Agite
+ALPHA=255
+[3]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=896
+DESC=Flecha Guerrero Torneo
+ALPHA=255
