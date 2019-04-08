@@ -503,6 +503,21 @@ Begin VB.Form fMain
       Top             =   4800
       Visible         =   0   'False
       Width           =   3615
+      Begin VB.CommandButton Command12 
+         Caption         =   "Ver"
+         Height          =   255
+         Left            =   3000
+         TabIndex        =   78
+         Top             =   2160
+         Width           =   495
+      End
+      Begin VB.ComboBox cMuni 
+         Height          =   315
+         Left            =   840
+         TabIndex        =   77
+         Top             =   2160
+         Width           =   2175
+      End
       Begin VB.CommandButton Command6 
          Caption         =   "Ver"
          Height          =   255
@@ -577,6 +592,14 @@ Begin VB.Form fMain
          TabIndex        =   57
          Top             =   360
          Width           =   2175
+      End
+      Begin VB.Label Label20 
+         Caption         =   "Muni:"
+         Height          =   255
+         Left            =   120
+         TabIndex        =   76
+         Top             =   2160
+         Width           =   1095
       End
       Begin VB.Label Label18 
          Caption         =   "Casco:"
@@ -900,6 +923,12 @@ Private Sub CmdSAve_Click()
     End Select
 End Sub
 
+Private Sub cMuni_Click()
+    sMunicion = cMuni.ListIndex
+    If sMunicion > 0 Then MostrarVer 6
+    
+End Sub
+
 Private Sub Combo1_Click()
 If Combo1.ListIndex > -1 Then NHeadData(sHead).Raza = Combo1.ListIndex
 
@@ -939,6 +968,13 @@ ElseIf Modeling_Type = 5 Then
     WriteVar App.Path & "\RES\INDEX\NwWeapons.dat", CStr(sWeapon), "DESC", CStr(nWeaponData(sWeapon).Desc)
     WriteVar App.Path & "\RES\INDEX\NwWeapons.dat", CStr(sWeapon), "ALPHA", CStr(nWeaponData(sWeapon).Alpha)
     fMain.cArma.List(fMain.cArma.ListIndex) = nWeaponData(sWeapon).Desc & "(" & sWeapon & ")"
+ElseIf Modeling_Type = 6 Then
+    WriteVar App.Path & "\RES\INDEX\NwMuniciones.dat", CStr(sMunicion), "OverWriteGrafico", CStr(nMunicionData(sMunicion).OverWriteGrafico)
+    WriteVar App.Path & "\RES\INDEX\NwMuniciones.dat", CStr(sMunicion), "DESC", CStr(nMunicionData(sMunicion).Desc)
+    WriteVar App.Path & "\RES\INDEX\NwMuniciones.dat", CStr(sMunicion), "ALPHA", CStr(nMunicionData(sMunicion).Alpha)
+    fMain.cMuni.List(fMain.cMuni.ListIndex) = nMunicionData(sMunicion).Desc & "(" & sMunicion & ")"
+
+
 ElseIf Modeling_Type = 1 Then
     fMain.cBody.List(fMain.cBody.ListIndex) = nBodyData(sBody).Desc & "(" & sBody & ")"
     WriteVar App.Path & "\RES\INDEX\NewBody.dat", CStr(sBody), "DESC", nBodyData(sBody).Desc
@@ -969,6 +1005,29 @@ End If
 If acHeading = E_Heading.EAST Then AcFrm = AcFrm + 1
 
 acHeading = E_Heading.EAST
+End Sub
+
+Private Sub Command12_Click()
+            fMain.fCabezas.Visible = True
+            fMain.fCabezas.Caption = "Municiones"
+            fMain.Text8.Text = vbNullString
+            fMain.Text9.Text = vbNullString
+            fMain.Combo1.Visible = False
+            fMain.Combo2.Visible = False
+            fMain.Label9.Caption = "Transparencia:"
+            fMain.Text11.Visible = True
+            fMain.Text8.Visible = False
+            Label8.Visible = False
+            Label10.Visible = False
+            Label11.Visible = False
+            Label9.Visible = True
+            Text10.Visible = True
+            fMain.Label13.Visible = True
+            Modeling_Type = 6
+            Label13.Caption = "Grafico:"
+            Text10.Text = nMunicionData(sWeapon).Alpha
+            Text9.Text = nMunicionData(sWeapon).Desc
+            Text11.Text = nMunicionData(sWeapon).OverWriteGrafico
 End Sub
 
 Private Sub Command2_Click()
@@ -1165,7 +1224,7 @@ Case 3
             
         Case 4
                     fMain.fCabezas.Visible = True
-            fMain.fCabezas.Caption = "Escudos"
+            fMain.fCabezas.Caption = "Armas"
             fMain.Text8.Text = vbNullString
             fMain.Text9.Text = vbNullString
             fMain.Combo1.Visible = False
@@ -1184,7 +1243,27 @@ Case 3
             Text10.Text = nWeaponData(sWeapon).Alpha
             Text9.Text = nWeaponData(sWeapon).Desc
             Text11.Text = nWeaponData(sWeapon).OverWriteGrafico
-        
+        Case 6
+                    fMain.fCabezas.Visible = True
+            fMain.fCabezas.Caption = "Municiones"
+            fMain.Text8.Text = vbNullString
+            fMain.Text9.Text = vbNullString
+            fMain.Combo1.Visible = False
+            fMain.Combo2.Visible = False
+            fMain.Label9.Caption = "Transparencia:"
+            fMain.Text11.Visible = True
+            fMain.Text8.Visible = False
+            Label8.Visible = False
+            Label10.Visible = False
+            Label11.Visible = False
+                        Label9.Visible = True
+            Text10.Visible = True
+            fMain.Label13.Visible = True
+            Modeling_Type = 6
+            Label13.Caption = "Grafico:"
+            Text10.Text = nMunicionData(sMunicion).Alpha
+            Text9.Text = nMunicionData(sMunicion).Desc
+            Text11.Text = nMunicionData(sMunicion).OverWriteGrafico
     End Select
     
 End Sub
@@ -1516,6 +1595,8 @@ Private Sub Text10_KeyUp(KeyCode As Integer, Shift As Integer)
         nShieldDATA(sShield).Alpha = Val(Text10.Text)
         ElseIf Modeling_Type = 5 Then
         nWeaponData(sWeapon).Alpha = Val(Text10.Text)
+        ElseIf Modeling_Type = 6 Then
+        nMunicionData(sMunicion).Alpha = Val(Text10.Text)
         
         End If
 
@@ -1533,7 +1614,8 @@ Private Sub Text11_KeyUp(KeyCode As Integer, Shift As Integer)
             nWeaponData(sWeapon).OverWriteGrafico = Val(Text11.Text)
         ElseIf Modeling_Type = 1 Then
             nBodyData(sBody).OverWriteGrafico = Val(Text11.Text)
-            
+        ElseIf Modeling_Type = 6 Then
+            nMunicionData(sMunicion).OverWriteGrafico = Val(Text11.Text)
         End If
 
     End If
@@ -1708,6 +1790,8 @@ Private Sub Text9_KeyUp(KeyCode As Integer, Shift As Integer)
             nWeaponData(sWeapon).Desc = Text9.Text
         ElseIf Modeling_Type = 1 Then
             nBodyData(sBody).Desc = Text9.Text
+        ElseIf Modeling_Type = 6 Then
+            nMunicionData(sMunicion).Desc = Text9.Text
         End If
     End If
 End Sub

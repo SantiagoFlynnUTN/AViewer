@@ -499,7 +499,7 @@ Public Sub Load_NwMuniciones()
 Dim S As String
 Dim i As Long
 Dim z As Long
-S = App.Path & "\RES\INDEX\NwMunicion.dat"
+S = App.Path & "\RES\INDEX\NwMuniciones.dat"
 
 
 If NumNewM > 0 Then

@@ -297,6 +297,9 @@ Begin VB.Form fIndexador
    End
    Begin VB.Menu mInd 
       Caption         =   "Indexar"
+      Begin VB.Menu mnuMunicion 
+         Caption         =   "Nueva Municion"
+      End
       Begin VB.Menu m_NuevoCasco 
          Caption         =   "Nuevo Casco"
       End
@@ -726,6 +729,46 @@ Label7.ForeColor = vbWhite
 Label13.Caption = "Oeste: "
 Label13.ForeColor = vbWhite
 fCabezas.Visible = False
+ElseIf qIndexo = 6 Then
+
+
+If AcInd <= NumNewM Then
+
+nMunicionData(AcInd).mMovimiento(1) = AcFr(1)
+nMunicionData(AcInd).mMovimiento(2) = AcFr(2)
+nMunicionData(AcInd).mMovimiento(3) = AcFr(3)
+nMunicionData(AcInd).mMovimiento(4) = AcFr(4)
+
+
+Else
+ReDim Preserve nMunicionData(1 To NumNewM + 1)
+NumNewM = NumNewM + 1
+WriteVar App.Path & "\RES\INDEX\NwMuniciones.dat", "INIT", "NUM", CStr(NumNewM)
+nMunicionData(AcInd).mMovimiento(1) = AcFr(1)
+nMunicionData(AcInd).mMovimiento(2) = AcFr(2)
+nMunicionData(AcInd).mMovimiento(3) = AcFr(3)
+nMunicionData(AcInd).mMovimiento(4) = AcFr(4)
+
+
+
+
+End If
+
+WriteVar App.Path & "\RES\INDEX\NwMuniciones.dat", CStr(AcInd), "MOV1", CStr(AcFr(1))
+WriteVar App.Path & "\RES\INDEX\NwMuniciones.dat", CStr(AcInd), "MOV2", CStr(AcFr(2))
+WriteVar App.Path & "\RES\INDEX\NwMuniciones.dat", CStr(AcInd), "MOV3", CStr(AcFr(3))
+WriteVar App.Path & "\RES\INDEX\NwMuniciones.dat", CStr(AcInd), "MOV4", CStr(AcFr(4))
+
+Label5.Caption = "Norte: "
+Label5.ForeColor = vbWhite
+
+Label6.Caption = "Este: "
+Label6.ForeColor = vbWhite
+Label7.Caption = "Sur: "
+Label7.ForeColor = vbWhite
+Label13.Caption = "Oeste: "
+Label13.ForeColor = vbWhite
+fCabezas.Visible = False
 
 End If
 
@@ -755,6 +798,17 @@ If qIndexo = 4 Then
 ElseIf qIndexo = 5 Then
     Text5.Text = NumNewWeapons + 1
     AcInd = NumNewWeapons + 1
+    If MsgBox("¿Deseas utilizar la animación standard para Armas?", vbOKCancel) = vbOK Then
+        AcFr(1) = Standard_Arma_North
+        AcFr(2) = Standard_Arma_East
+        AcFr(3) = Standard_Arma_South
+        AcFr(4) = Standard_Arma_West
+    End If
+    Command3.Enabled = True
+    
+ElseIf qIndexo = 6 Then
+    Text5.Text = NumNewM + 1
+    AcInd = NumNewM + 1
     If MsgBox("¿Deseas utilizar la animación standard para Armas?", vbOKCancel) = vbOK Then
         AcFr(1) = Standard_Arma_North
         AcFr(2) = Standard_Arma_East
@@ -883,6 +937,14 @@ Private Sub miCabeza_Click()
     qIndexo = 1
 End Sub
 
+Private Sub mnuMunicion_Click()
+    qIndexo = 6
+    fCabezas.Visible = True
+    fCabezas.Caption = "Municiones"
+    Indexando = 1
+    Command3.Enabled = False
+End Sub
+
 Private Sub Text10_KeyUp(KeyCode As Integer, Shift As Integer)
 If KeyCode = vbKeyReturn Then
 Actual.Cls
@@ -970,6 +1032,22 @@ If KeyCode = vbKeyReturn Then
                 Label7.Caption = "Sur: " & AcFr(3)
                 Label13.Caption = "Oeste: " & AcFr(4)
             End If
+        Case 6 ' Municiones
+            If AcInd > NumNewM Then
+                AcInd = NumNewM + 1
+                Text5.Text = AcInd
+            Else
+                AcFr(1) = nMunicionData(AcInd).mMovimiento(1)
+                AcFr(2) = nMunicionData(AcInd).mMovimiento(2)
+                AcFr(3) = nMunicionData(AcInd).mMovimiento(3)
+                AcFr(4) = nMunicionData(AcInd).mMovimiento(4)
+                Label5.Caption = "Norte: " & AcFr(1)
+                Label6.Caption = "Este: " & AcFr(2)
+                Label7.Caption = "Sur: " & AcFr(3)
+                Label13.Caption = "Oeste: " & AcFr(4)
+                
+            End If
+            
     End Select
             Command3.Enabled = True
         

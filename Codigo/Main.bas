@@ -45,6 +45,7 @@ IxS = 0
             fMain.cEscudo.Clear
             fMain.cArma.Clear
             fMain.fCabezas.Visible = False
+            fMain.cMuni.Clear
             
             
     End Select
@@ -95,6 +96,12 @@ Dim i As Long
                     fMain.cEscudo.AddItem nShieldDATA(i).Desc & "(" & i & ")"
                 Next i
             End If
+            .cMuni.AddItem "Ninguna Municion"
+            If NumNewM > 0 Then
+                For i = 1 To NumNewM
+                    fMain.cMuni.AddItem nMunicionData(i).Desc & "(" & i & ")"
+                Next i
+            End If
         Case eOpciones.Particulas_op
         Case eOpciones.Fx_op
         Case eOpciones.Meditaciones_op
@@ -124,7 +131,7 @@ Num_NwAnim = Val(GetVar(App.Path & "\RES\INDEX\NewAnim.dat", "NW_ANIM", "NUM"))
 NumNewBodys = Val(GetVar(App.Path & "\RES\INDEX\NewBody.dat", "INIT", "num"))
 NumNewShields = Val(GetVar(App.Path & "\RES\INDEX\Nwshields.dat", "INIT", "num"))
 NumNewWeapons = Val(GetVar(App.Path & "\RES\INDEX\NwWeapons.dat", "INIT", "num"))
-NumNewM = Val(GetVar(App.Path & "\RES\INDEX\NwMunicion.dat", "INIT", "num"))
+NumNewM = Val(GetVar(App.Path & "\RES\INDEX\NwMuniciones.dat", "INIT", "num"))
 NumNewCapas = Val(GetVar(App.Path & "\RES\INDEX\NwCapa.dat", "INIT", "num"))
 
 fCargando.PB.Max = 5 + numNewIndex + numNewEstatic + Num_NwAnim + Num_Heads + Num_Helmets + NumNewShields + NumNewWeapons + NumNewM + NumNewCapas + NumNewBodys
