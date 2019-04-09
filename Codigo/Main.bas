@@ -27,7 +27,7 @@ Public FpsLastCheck As Long
 Public FPS As Integer
 
 Public Sub CerrarOpcion(ByVal Index As Integer)
-    IxS = 0
+    IxS = 0 'current animation index
     With fMain
         .cOpc(Index).value = False
         .Lista(Index).Visible = False

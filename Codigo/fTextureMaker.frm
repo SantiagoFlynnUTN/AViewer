@@ -18,12 +18,12 @@ Begin VB.Form fIndexador
       Top             =   5760
       Width           =   3735
    End
-   Begin VB.Frame fCabezas 
+   Begin VB.Frame fCustoms 
       Caption         =   "Cabezas"
       Height          =   2175
       Left            =   120
       TabIndex        =   24
-      Top             =   3480
+      Top             =   3360
       Visible         =   0   'False
       Width           =   3735
       Begin VB.CommandButton Command4 
@@ -69,7 +69,7 @@ Begin VB.Form fIndexador
          BackStyle       =   0  'Transparent
          Caption         =   "Cliquea sobre el label de la direccion y luego sobre el grafico."
          Height          =   495
-         Left            =   120
+         Left            =   240
          TabIndex        =   29
          Top             =   1320
          Width           =   3495
@@ -107,23 +107,23 @@ Begin VB.Form fIndexador
          Width           =   1215
       End
    End
-   Begin VB.TextBox Text4 
+   Begin VB.TextBox EstandarHText 
       Height          =   285
-      Left            =   6960
+      Left            =   6840
       TabIndex        =   21
       Text            =   "32"
       Top             =   120
       Width           =   615
    End
-   Begin VB.TextBox Text3 
+   Begin VB.TextBox EstandarWText 
       Height          =   285
-      Left            =   5160
+      Left            =   4920
       TabIndex        =   20
       Text            =   "32"
       Top             =   120
       Width           =   615
    End
-   Begin VB.Frame Frame3 
+   Begin VB.Frame fIndice 
       Caption         =   "Indice"
       Height          =   2535
       Left            =   2280
@@ -224,7 +224,7 @@ Begin VB.Form fIndexador
          Width           =   735
       End
    End
-   Begin VB.Frame Frame1 
+   Begin VB.Frame fGrafico 
       Caption         =   " Grafico"
       Height          =   2535
       Left            =   120
@@ -279,7 +279,7 @@ Begin VB.Form fIndexador
       Top             =   600
       Width           =   7680
    End
-   Begin VB.Label Label4 
+   Begin VB.Label EstandarHLabel 
       Caption         =   "Estandar H:"
       Height          =   375
       Left            =   5880
@@ -287,7 +287,7 @@ Begin VB.Form fIndexador
       Top             =   120
       Width           =   1095
    End
-   Begin VB.Label Label3 
+   Begin VB.Label EstandarWLabel 
       Caption         =   "Estandar W:"
       Height          =   375
       Left            =   3960
@@ -297,6 +297,9 @@ Begin VB.Form fIndexador
    End
    Begin VB.Menu mInd 
       Caption         =   "Indexar"
+      Begin VB.Menu mNuevoEstatico 
+         Caption         =   "Nuevo Estatico"
+      End
       Begin VB.Menu mnuMunicion 
          Caption         =   "Nueva Municion"
       End
@@ -407,8 +410,8 @@ Private Sub Actual_MouseUp(Button As Integer, Shift As Integer, x As Single, y A
                     End With
                 End If
             Next z
-            tw = Val(Text3.Text)
-            th = Val(Text4.Text)
+            tw = Val(EstandarWText.Text)
+            th = Val(EstandarHText.Text)
             If z > numNewIndex Then
                 'No esta indexado.
                 tX = iX \ tw
@@ -524,7 +527,7 @@ End Sub
 Private Sub Command2_Click()
     Indexando = 0
     qIndexo = 0
-    fCabezas.Visible = False
+    fCustoms.Visible = False
     Label5.Caption = "Norte: "
     Label5.ForeColor = vbWhite
 
@@ -576,7 +579,7 @@ Private Sub Command3_Click()
         Label7.ForeColor = vbWhite
         Label13.Caption = "Oeste: "
         Label13.ForeColor = vbWhite
-        fCabezas.Visible = False
+        fCustoms.Visible = False
     ElseIf qIndexo = 2 Then
         If AcInd <= Num_Helmets Then
 
@@ -614,7 +617,7 @@ Private Sub Command3_Click()
         Label7.ForeColor = vbWhite
         Label13.Caption = "Oeste: "
         Label13.ForeColor = vbWhite
-        fCabezas.Visible = False
+        fCustoms.Visible = False
     ElseIf qIndexo = 3 Then
         If AcInd <= NumNewBodys Then
 
@@ -652,7 +655,7 @@ Private Sub Command3_Click()
         Label7.ForeColor = vbWhite
         Label13.Caption = "Oeste: "
         Label13.ForeColor = vbWhite
-        fCabezas.Visible = False
+        fCustoms.Visible = False
     ElseIf qIndexo = 4 Then
         If AcInd <= NumNewShields Then
 
@@ -690,7 +693,7 @@ Private Sub Command3_Click()
         Label7.ForeColor = vbWhite
         Label13.Caption = "Oeste: "
         Label13.ForeColor = vbWhite
-        fCabezas.Visible = False
+        fCustoms.Visible = False
     ElseIf qIndexo = 5 Then
         If AcInd <= NumNewWeapons Then
 
@@ -728,7 +731,7 @@ Private Sub Command3_Click()
         Label7.ForeColor = vbWhite
         Label13.Caption = "Oeste: "
         Label13.ForeColor = vbWhite
-        fCabezas.Visible = False
+        fCustoms.Visible = False
     ElseIf qIndexo = 6 Then
 
 
@@ -768,7 +771,7 @@ Private Sub Command3_Click()
         Label7.ForeColor = vbWhite
         Label13.Caption = "Oeste: "
         Label13.ForeColor = vbWhite
-        fCabezas.Visible = False
+        fCustoms.Visible = False
 
     End If
 
@@ -895,54 +898,83 @@ End Sub
 
 Private Sub m_n_Arma_Click()
     qIndexo = 5
-    fCabezas.Visible = True
-    fCabezas.Caption = "Armas"
+    fCustoms.Visible = True
+    fCustoms.Caption = "Armas"
     Indexando = 1
     Command3.Enabled = False
+    OcultarGrafAndIndexForms
 End Sub
 
 Private Sub m_n_Cuerpo_Click()
     qIndexo = 3
-    fCabezas.Visible = True
-    fCabezas.Caption = "Cuerpos"
+    fCustoms.Visible = True
+    fCustoms.Caption = "Cuerpos"
     Indexando = 1
     Command3.Enabled = False
-    
+    OcultarGrafAndIndexForms
 End Sub
 
 Private Sub m_n_Escudo_Click()
     qIndexo = 4
     Text5.Text = vbNullString
-    fCabezas.Visible = True
-    fCabezas.Caption = "Escudos"
+    fCustoms.Visible = True
+    fCustoms.Caption = "Escudos"
     Command3.Enabled = False
     Indexando = 1
+    OcultarGrafAndIndexForms
 End Sub
 
 Private Sub m_NuevoCasco_Click()
-    fCabezas.Visible = True
-    fCabezas.Caption = "Cascos"
+    fCustoms.Visible = True
+    fCustoms.Caption = "Cascos"
     Text5.Text = Num_Helmets + 1
     AcInd = Num_Helmets + 1
     Indexando = 1
     qIndexo = 2
+    OcultarGrafAndIndexForms
 End Sub
 
 Private Sub miCabeza_Click()
-    fCabezas.Visible = True
-    fCabezas.Caption = "Cabezas"
+    fCustoms.Visible = True
+    fCustoms.Caption = "Cabezas"
     Text5.Text = Num_Heads + 1
     AcInd = Num_Heads + 1
     Indexando = 1
     qIndexo = 1
+    OcultarGrafAndIndexForms
 End Sub
 
 Private Sub mnuMunicion_Click()
     qIndexo = 6
-    fCabezas.Visible = True
-    fCabezas.Caption = "Municiones"
+    fCustoms.Visible = True
+    fCustoms.Caption = "Municiones"
     Indexando = 1
     Command3.Enabled = False
+    OcultarGrafAndIndexForms
+End Sub
+
+Private Sub mNuevoEstatico_Click()
+    fCustoms.Visible = False
+    MostrarGrafAndIndexForms
+End Sub
+
+
+Private Sub OcultarGrafAndIndexForms()
+    fGrafico.Visible = False
+    fIndice.Visible = False
+    EstandarWLabel.Visible = False
+    EstandarWText.Visible = False
+    EstandarHLabel.Visible = False
+    EstandarHText.Visible = False
+End Sub
+
+Private Sub MostrarGrafAndIndexForms()
+    fGrafico.Visible = True
+    fIndice.Visible = True
+    EstandarWLabel.Visible = True
+    EstandarWText.Visible = True
+    EstandarHLabel.Visible = True
+    EstandarHText.Visible = True
 End Sub
 
 Private Sub Text10_KeyUp(KeyCode As Integer, Shift As Integer)
@@ -952,6 +984,7 @@ Private Sub Text10_KeyUp(KeyCode As Integer, Shift As Integer)
         setcelda
     End If
 End Sub
+
 
 Private Sub Text5_KeyUp(KeyCode As Integer, Shift As Integer)
     If KeyCode = vbKeyReturn Then
