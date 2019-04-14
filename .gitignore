@@ -4,3 +4,6 @@
 
 # ignore .db files such as Thumbs.db
 *.db
+
+# google drive files
+desktop.ini

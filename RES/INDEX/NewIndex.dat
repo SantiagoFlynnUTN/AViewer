@@ -1,5 +1,5 @@
 [INIT]
-Num=4249
+Num=4262
 
 [1] ' Casco south
 Dinamica=
@@ -16949,3 +16949,55 @@ Overwritegrafico=38
 Estatica=111
 Overwritegrafico=38
 
+[4250]
+Estatica=26
+OverWriteGrafico=333
+Desc=bardo agite
+[4251]
+Estatica=42
+OverWriteGrafico=333
+Desc=guerrero agite
+[4252]
+Estatica=46
+OverWriteGrafico=333
+Desc=guerre torneo
+[4253]
+Estatica=1
+OverWriteGrafico=333
+Desc=druida agite
+[4254]
+Estatica=23
+OverWriteGrafico=333
+Desc=druida torneo
+[4255]
+Estatica=39
+OverWriteGrafico=333
+Desc=mago agite
+[4256]
+Estatica=43
+OverWriteGrafico=333
+Desc=mago torneo
+[4257]
+Estatica=40
+OverWriteGrafico=333
+Desc=caza agite
+[4258]
+Estatica=44
+OverWriteGrafico=333
+Desc=caza torneo
+[4259]
+Estatica=24
+OverWriteGrafico=333
+Desc=ase agite
+[4260]
+Estatica=2
+OverWriteGrafico=333
+Desc=ase torneo
+[4261]
+Estatica=3
+OverWriteGrafico=333
+Desc=pala torneo
+[4262]
+Estatica=25
+OverWriteGrafico=333
+Desc=pala torneo
