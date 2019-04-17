@@ -1,5 +1,5 @@
 [INIT]
-Num=26
+Num=27
 
 [1]
 Alpha=255
@@ -209,3 +209,11 @@ MOV4=241
 OverWriteGrafico=925
 ALPHA=255
 DESC=Paladin Torneo Bajos
+[27]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=926
+ALPHA=255
+DESC=Druida agite bajos

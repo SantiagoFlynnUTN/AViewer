@@ -1,5 +1,5 @@
 [INIT]
-Num=4264
+Num=4300
 
 [1] ' Casco south
 Dinamica=
@@ -17009,3 +17009,146 @@ Desc=clero agite
 Estatica=45
 OverWriteGrafico=333
 Desc=clero torneo
+[4265]
+Estatica=1
+OverWriteGrafico=334
+Desc=druida torneo
+[4266]
+Estatica=23
+OverWriteGrafico=334
+Desc=druida agite
+[4267]
+Estatica=25
+OverWriteGrafico=334
+Desc=pala agite
+[4268]
+Estatica=3
+OverWriteGrafico=334
+Desc=pala torneo
+[4269]
+Estatica=24
+OverWriteGrafico=334
+Desc=asesino agite
+[4270]
+Estatica=2
+OverWriteGrafico=334
+Desc=asesino torneo
+[4271]
+Estatica=46
+OverWriteGrafico=334
+Desc=bardo agite
+[4272]
+Estatica=42
+OverWriteGrafico=334
+Desc=bardo torneo
+[4273]
+Estatica=26
+OverWriteGrafico=334
+Desc=clero agite
+[4274]
+Estatica=4
+OverWriteGrafico=334
+Desc=clero torneo
+[4275]
+Estatica=43
+OverWriteGrafico=334
+Desc=guerre agite
+[4276]
+Estatica=39
+OverWriteGrafico=334
+Desc=guerre torneo
+[4277]
+Estatica=44
+OverWriteGrafico=334
+Desc=caza agite
+[4278]
+Estatica=40
+OverWriteGrafico=334
+Desc=caza torneo
+[4279]
+Estatica=46
+OverWriteGrafico=335
+Desc=bardo agite
+[4280]
+Estatica=42
+OverWriteGrafico=335
+Desc=bardo torneo
+[4281]
+Estatica=26
+OverWriteGrafico=335
+Desc=clero agite
+[4282]
+Estatica=4
+OverWriteGrafico=335
+Desc=clero torneo
+[4283]
+Estatica=43
+OverWriteGrafico=335
+Desc=druida agite
+[4284]
+Estatica=1
+OverWriteGrafico=335
+Desc=druida torneo
+[4285]
+Estatica=45
+OverWriteGrafico=335
+Desc=mago agite
+[4286]
+Estatica=41
+OverWriteGrafico=335
+Desc=mago torneo
+[4287]
+Estatica=24
+OverWriteGrafico=335
+Desc=guerre torneo
+[4288]
+Estatica=3
+OverWriteGrafico=335
+Desc=guerre agite
+[4289]
+Estatica=25
+OverWriteGrafico=335
+Desc=manopla agite
+[4290]
+Estatica=40
+OverWriteGrafico=335
+Desc=manopla torneo
+[4291]
+Estatica=39
+OverWriteGrafico=335
+Desc=druida sable agite
+[4292]
+Estatica=23
+OverWriteGrafico=335
+Desc=druida sable torneo
+[4293]
+Estatica=42
+OverWriteGrafico=336
+[4294]
+Estatica=1
+OverWriteGrafico=336
+Desc=caza agite
+[4295]
+Estatica=4
+OverWriteGrafico=336
+Desc=asesino torneo
+[4296]
+Estatica=26
+OverWriteGrafico=336
+Desc=asesino agite
+[4297]
+Estatica=43
+OverWriteGrafico=336
+Desc=paladin agite
+[4298]
+Estatica=39
+OverWriteGrafico=336
+Desc=paladin torneo
+[4299]
+Estatica=23
+OverWriteGrafico=336
+Desc=caza daga agite
+[4300]
+Estatica=46
+OverWriteGrafico=336
+Desc=daga caza torneo 
