@@ -1,5 +1,5 @@
 [INIT]
-Num=100
+Num=102
 
 [1]'Dragon alas grises
 Reposo=0
@@ -852,4 +852,20 @@ MOV3=235
 MOV4=237
 DESC=[BAJOS] Tunica druida
 OverWriteGrafico=999
+OffsetY=-30
+[101]
+MOV1=232
+MOV2=234
+MOV3=231
+MOV4=233
+DESC=caza torneo bajos
+OverWriteGrafico=1000
+OffsetY=-30
+[102]
+MOV1=236
+MOV2=238
+MOV3=235
+MOV4=237
+DESC=caza torneo bajos
+OverWriteGrafico=1000
 OffsetY=-30

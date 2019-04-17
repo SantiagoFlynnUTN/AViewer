@@ -1,5 +1,5 @@
 [INIT]
-Num=4262
+Num=4264
 
 [1] ' Casco south
 Dinamica=
@@ -17001,3 +17001,11 @@ Desc=pala torneo
 Estatica=25
 OverWriteGrafico=333
 Desc=pala torneo
+[4263]
+Estatica=41
+OverWriteGrafico=333
+Desc=clero agite
+[4264]
+Estatica=45
+OverWriteGrafico=333
+Desc=clero torneo
