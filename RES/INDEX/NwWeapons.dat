@@ -1,5 +1,5 @@
 [INIT]
-Num=44
+Num=47
 
 [1]'Pala
 Alpha=255
@@ -8,7 +8,7 @@ Mov2=88
 Mov3=85
 Mov4=87
 OverWriteGrafico=850
-DESC=[ALTO]Espada Ancha Mango Rojo
+DESC=[ALTO] Pala Agite Espada Ancha Mango Rojo
 [2]
 MOV1=240
 MOV2=242
@@ -351,5 +351,29 @@ MOV2=242
 MOV3=239
 MOV4=241
 OverWriteGrafico=893
-DESC=[BAJOS] Espada Guierrero Torneo
+DESC=[BAJOS] Espada Paladin Torneo
+ALPHA=255
+[45]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=849
+DESC=Baculo druida bajos torneo
+ALPHA=255
+[46]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=848
+DESC=Sable druida agite bajos
+ALPHA=255
+[47]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=847
+DESC=Baculo druida agite bajos
 ALPHA=255
