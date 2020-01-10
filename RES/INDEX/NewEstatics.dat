@@ -1,5 +1,5 @@
 [INIT]
-Num=558
+Num=565
 
 [1]'Casco Sur
 Left=0
@@ -2799,3 +2799,38 @@ Left=240
 Top=96
 Width=16
 Height=16
+[559]
+Left=448
+Top=352
+Width=64
+Height=64
+[560]
+Left=448
+Top=416
+Width=64
+Height=64
+[561]
+Left=448
+Top=0
+Width=64
+Height=352
+[562]
+Left=224
+Top=192
+Width=32
+Height=64
+[563]
+Left=0
+Top=160
+Width=256
+Height=96
+[564]
+Left=128
+Top=224
+Width=64
+Height=32
+[565]
+Left=128
+Top=169
+Width=53
+Height=50
