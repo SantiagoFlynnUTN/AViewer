@@ -35,7 +35,7 @@ Pirata=1.25
 Ladron=0.92
 Clerigo=0.7
 Bardo=0.90
-Mago=0.43
+Mago=0.5
 Druida=0.7
 Artesano=0.8
 Recolector=0.8
@@ -177,6 +177,8 @@ Recolector=1
 
 [EXTRA]
 PorcentajeRecuperoMana=6
+Rango_Vida=4
+OroCityTelep=300
 
 [PARTY]
 ExponenteNivelParty=1.75

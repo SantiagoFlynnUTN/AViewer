@@ -1,5 +1,5 @@
 [INIT]
-Num=4653
+Num=4655
 
 [1] ' Casco south
 Dinamica=
@@ -18583,3 +18583,11 @@ Desc=
 Estatica=100
 OverWriteGrafico=295
 Desc=
+[4654]
+Estatica=2
+OverWriteGrafico=335
+Desc=arco guerre torneo
+[4655]
+Estatica=44
+OverWriteGrafico=335
+Desc=arco guerre agite

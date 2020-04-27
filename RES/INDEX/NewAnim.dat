@@ -2544,7 +2544,7 @@ Columnas=6
 Filas=4
 Ancho=42
 Alto=64
-Velocidad=0,8
+Velocidad=1
 Inicial=1
 Desc=Movement Shield 42x64 Sur
 [ANIMACION240]
@@ -2554,7 +2554,7 @@ Columnas=6
 Filas=4
 Ancho=42
 Alto=64
-Velocidad=0,8
+Velocidad=1
 Inicial=7
 Desc=Movement Shield 42x64 North
 [ANIMACION241]
@@ -2564,7 +2564,7 @@ Columnas=6
 Filas=4
 Ancho=42
 Alto=64
-Velocidad=0,8
+Velocidad=1
 Inicial=13
 Desc=Movement Shield 42x64 West
 [ANIMACION242]
@@ -2574,6 +2574,6 @@ Columnas=6
 Filas=4
 Ancho=42
 Alto=64
-Velocidad=0,8
+Velocidad=1
 Inicial=19
 Desc=Movement Shield 42x64 East

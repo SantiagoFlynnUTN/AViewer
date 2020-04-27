@@ -1,7 +1,7 @@
 [Tanaris]
 X=55
 Y=49
-MAPA=28
+MAPA=1
 
 [Helka]
 X=52
@@ -42,3 +42,13 @@ MAPA=26
 X=79
 Y=86
 MAPA=89
+
+[Prision]
+X=78
+Y=50
+MAPA=50
+
+[Libertad]
+X=26
+Y=49
+MAPA=54

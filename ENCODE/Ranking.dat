@@ -1,18 +1,20 @@
+' DESAFIOS
+
 [1v1Consecutivo]
-Nombre=Khey Lhi
-Cant=11
+Nombre=
+Cant=0
 
 [1v1Ganados]
-Nombre=Khey Lhi
-Cant=64
+Nombre=
+Cant=0
 
 [2v2Consecutivo]
 Nombre=
 Cant=0
 
 [2v2Ganados]
-Nombre=DonRobertin
-Cant=6
+Nombre=
+Cant=0
 
 [3v3Consecutivo]
 Nombre=
@@ -22,49 +24,73 @@ Cant=0
 Nombre=
 Cant=0
 
+[4v4Consecutivo]
+Nombre=
+Cant=0
+
+[4v4Ganados]
+Nombre=
+Cant=0
+
+[5v5Consecutivo]
+Nombre=
+Cant=0
+
+[5v5Ganados]
+Nombre=
+Cant=0
+
+' CLANES
+
+[ClanCastillosTiempo]
+Nombre=
+Cant=0
+
+[ClanMasCastillos]
+Nombre=
+Cant=0
+
+[ClanCvC]
+Nombre=
+Cant=0
+
+[ClanRepu]
+Nombre=
+Cant=0
+
+' DUELOS
+
 [Duelo1v1]
-Nombre=Khey Lhi
-Cant=11
+Nombre=
+Cant=0
 
 [Duelo2v2]
-Nombre=poeruqin
-Cant=2
+Nombre=
+Cant=0
 
 [Duelo3v3]
 Nombre=
 Cant=0
 
+[Duelo4v4]
+Nombre=
+Cant=0
+
+[Duelo5v5]
+Nombre=
+Cant=0
+
+' FM
+
 [FastMatch2v2]
-Nombre=Khey Lhi
-Cant=1
+Nombre=
+Cant=0
 
-[ClanCastillosTiempo]
-Nombre=Just Resist
-Cant=894
-
-[ClanMasCastillos]
-Nombre=Eternal Wisdom
-Cant=26
-
-[ClanCvC]
-Nombre=Eternal Wisdom
-Cant=21
-
-[ClanRepu]
-Nombre=ENiGMA
-Cant=50000
-
-[Duelo1v1]
-Nombre=WARRIORx
-Cant=3
-
-[Duelo2v2]
-Nombre=magx
-Cant=5
+' EVENTOS
 
 [EventosAutomaticos]
-Nombre=DonRobert
-Cant=2
+Nombre=
+Cant=0
 
 [EventosGanados]
 Nombre=
@@ -74,6 +100,8 @@ Cant=0
 Nombre=
 Cant=0
 
+' FRAGS
+
 [Frags]
-Nombre=El Tenchi
-Cant=5006
+Nombre=
+Cant=0

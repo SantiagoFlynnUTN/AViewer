@@ -1,8 +1,4 @@
-
-[INIT]
-NUM=4
-
-[OBJ1]
+[Armadura]
 ObjIndexRecompensa=515
 CantItem=9
 ObjIndex1=197
@@ -24,7 +20,7 @@ Cantidad8=1
 ObjIndex9=511
 Cantidad9=1
 
-[OBJ2]
+[Diadema]
 ObjIndexRecompensa=512
 CantItem=9
 ObjIndex1=197
@@ -47,7 +43,7 @@ ObjIndex9=511
 Cantidad9=1
 
 
-[OBJ3]
+[Espada]
 ObjIndexRecompensa=514
 CantItem=10
 ObjIndex1=197
@@ -71,8 +67,8 @@ Cantidad9=1
 ObjIndex10=511
 Cantidad10=1
 
-[OBJ4]
-ObjIndexRecompensa=393
+[Anillo]
+ObjIndexRecompensa=513
 CantItem=7
 ObjIndex1=197
 Cantidad1=10000
@@ -91,15 +87,15 @@ Cantidad7=1
 
 
 
-
-
+[VARIOS]
+bonificador_atributo_suerte=8
 
 
 [Mapas]
-Ciudad_Noble=1
+Ciudad_Noble=26
 NumMapas=1
-Mapa1=141
+Mapa1=132
 
 [NPC]
 ' NPC HOSTIL
-Numero=557
+Numero=559
