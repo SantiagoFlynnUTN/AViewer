@@ -81,19 +81,19 @@ otCualquiera = 255
 "MINDEF"
 "MAXDEF"
 
-' Daños
+' DaÃ±os
 "Proyectil"
 "StaffPower"
 "StaffDamageBonus"
 "DanioSoloNPCs"
-"MinDañoMagico"
-"MaxDañoMagico"
+"MinDaÃ±oMagico"
+"MaxDaÃ±oMagico"
 "MaxHIT"
 "MinHIT"
 "DosManos"
 
-' Daños Efectos
-"Apuñala"
+' DaÃ±os Efectos
+"ApuÃ±ala"
 "Envenena"
 "Paraliza"
 
@@ -135,12 +135,12 @@ otCualquiera = 255
 "GP"
 
 [INIT]
-NumOBJs=220
+NumOBJs=219
 
 [OBJ1]
-Name=Báculo Mago Agite
+Name=BÃ¡culo Mago Agite
 ObjType=1
-GrhIndex=4285
+GrhIndex=619
 AnimAlto=22
 AnimBajo=41
 Crucial=1
@@ -148,8 +148,8 @@ Madera=340
 Piedras=2
 SkCarpinteria=100
 StaffPower=3
-MinDañoMagico=35
-MaxDañoMagico=40
+MinDaÃ±oMagico=35
+MaxDaÃ±oMagico=40
 MaxHIT=1
 MinHIT=1
 Valor=1
@@ -166,8 +166,8 @@ Madera=250
 Piedras=1
 SkCarpinteria=100
 StaffPower=2
-MinDañoMagico=35
-MaxDañoMagico=40
+MinDaÃ±oMagico=35
+MaxDaÃ±oMagico=40
 MaxHIT=1
 MinHIT=1
 Valor=1
@@ -189,7 +189,7 @@ CP2=3
 [OBJ4]
 Name=Espadita Bardo Agite
 ObjType=1
-GrhIndex=4279
+GrhIndex=619
 AnimAlto=4
 AnimBajo=27
 LingH=40
@@ -203,9 +203,9 @@ CP1=239
 CP2=3
 
 [OBJ5]
-Name=Empuñadura Bardo Agite
+Name=EmpuÃ±adura Bardo Agite
 ObjType=1
-GrhIndex=247
+GrhIndex=619
 AnimAlto=1
 AnimBajo=1
 LingH=30
@@ -214,7 +214,7 @@ LingO=21
 SkHerreria=100
 MaxHIT=5
 MinHIT=4
-Apuñala=1
+ApuÃ±ala=1
 Valor=1
 CP1=239
 CP2=3
@@ -236,14 +236,14 @@ CP1=253
 CP2=3
 
 [OBJ7]
-Name=Empuñadura Ase Agite
+Name=EmpuÃ±adura Ase Agite
 ObjType=1
 GrhIndex=4296
 AnimAlto=2
 AnimBajo=25
 MaxHIT=5
 MinHIT=4
-Apuñala=1
+ApuÃ±ala=1
 Valor=1
 CP1=247
 CP2=3
@@ -294,7 +294,7 @@ CP2=3
 [OBJ11]
 Name=Espada Guerre Agite
 ObjType=1
-GrhIndex=4288
+GrhIndex=619
 AnimAlto=17
 AnimBajo=36
 MaxHIT=19
@@ -327,7 +327,7 @@ TipoCraft=3
 [OBJ13]
 Name=Arco Guerre Agite
 ObjType=1
-GrhIndex=4655
+GrhIndex=619
 AnimAlto=16
 AnimBajo=35
 LVL=40
@@ -359,13 +359,13 @@ MinHIT=1
 Valor=1
 
 [OBJ15]
-Name=Báculo Mago Torneo
+Name=BÃ¡culo Mago Torneo
 ObjType=1
-GrhIndex=4286
+GrhIndex=619
 AnimAlto=23
 AnimBajo=42
-MinDañoMagico=55
-MaxDañoMagico=60
+MinDaÃ±oMagico=55
+MaxDaÃ±oMagico=60
 MaxHIT=1
 MinHIT=1
 Valor=1
@@ -378,8 +378,8 @@ ObjType=1
 GrhIndex=4284
 AnimAlto=14
 AnimBajo=45
-MinDañoMagico=55
-MaxDañoMagico=60
+MinDaÃ±oMagico=55
+MaxDaÃ±oMagico=60
 MaxHIT=1
 MinHIT=1
 Valor=1
@@ -401,7 +401,7 @@ CP2=3
 [OBJ18]
 Name=Espadita Bardo Torneo
 ObjType=1
-GrhIndex=4280
+GrhIndex=619
 AnimAlto=5
 AnimBajo=28
 MaxHIT=19
@@ -409,16 +409,17 @@ MinHIT=18
 Valor=1
 CP1=239
 CP2=3
+
 [OBJ19]
-Name=Empuñadura Bardo Torneo
+Name=EmpuÃ±adura Bardo Torneo
 ObjType=1
-GrhIndex=247
+GrhIndex=619
 AnimAlto=1
 AnimBajo=1
 StaffPower=2
 MaxHIT=7
 MinHIT=6
-Apuñala=1
+ApuÃ±ala=1
 Valor=1
 CP1=239
 CP2=3
@@ -437,14 +438,14 @@ CP1=253
 CP2=3
 
 [OBJ21]
-Name=Empuñadura Ase Torneo
+Name=EmpuÃ±adura Ase Torneo
 ObjType=1
 GrhIndex=4295
 AnimAlto=3
 AnimBajo=26
 MaxHIT=7
 MinHIT=6
-Apuñala=1
+ApuÃ±ala=1
 Valor=1
 CP1=247
 CP2=3
@@ -492,7 +493,7 @@ CP2=3
 [OBJ25]
 Name=Espada Guerre Torneo
 ObjType=1
-GrhIndex=4287
+GrhIndex=619
 AnimAlto=20
 AnimBajo=39
 MaxHIT=21
@@ -522,7 +523,7 @@ TipoCraft=3
 [OBJ27]
 Name=Arco Guerre Torneo
 ObjType=1
-GrhIndex=4654
+GrhIndex=619
 AnimAlto=19
 AnimBajo=38
 Proyectil=1
@@ -538,14 +539,14 @@ Marfil=252
 NivelProf=1
 TipoCraft=3
 [OBJ28]
-Name=Báculo pt1
+Name=BÃ¡culo pt1
 ObjType=1
 GrhIndex=619
 AnimAlto=1
 AnimBajo=1
 Crucial=1
-MinDañoMagico=2
-MaxDañoMagico=5
+MinDaÃ±oMagico=2
+MaxDaÃ±oMagico=5
 MaxHIT=1
 MinHIT=1
 Valor=1
@@ -561,7 +562,7 @@ AnimBajo=1
 Crucial=1
 MaxHIT=2
 MinHIT=1
-Apuñala=1
+ApuÃ±ala=1
 Valor=1
 CP1=247
 CP2=3
@@ -569,7 +570,7 @@ CP2=3
 [OBJ30]
 Name=Espada liviana pt1
 ObjType=1
-GrhIndex=619
+GrhIndex=4673
 AnimAlto=1
 AnimBajo=1
 Crucial=1
@@ -612,14 +613,14 @@ TipoCraft=3
 NoDecraft=1
 
 [OBJ33]
-Name=Báculo pt2
+Name=BÃ¡culo pt2
 ObjType=1
-GrhIndex=619
+GrhIndex=4666
 AnimAlto=1
 AnimBajo=1
 Crucial=1
-MinDañoMagico=10
-MaxDañoMagico=15
+MinDaÃ±oMagico=10
+MaxDaÃ±oMagico=15
 MaxHIT=1
 MinHIT=1
 Valor=1
@@ -629,13 +630,13 @@ CP2=3
 [OBJ34]
 Name=Daga pt2
 ObjType=1
-GrhIndex=619
+GrhIndex=889
 AnimAlto=1
 AnimBajo=1
 Crucial=1
 MaxHIT=3
 MinHIT=2
-Apuñala=1
+ApuÃ±ala=1
 Valor=1
 CP1=247
 CP2=3
@@ -643,7 +644,7 @@ CP2=3
 [OBJ35]
 Name=Espada liviana pt2
 ObjType=1
-GrhIndex=619
+GrhIndex=888
 AnimAlto=1
 AnimBajo=1
 Crucial=1
@@ -656,7 +657,7 @@ CP2=3
 [OBJ36]
 Name=Espada pesada pt2
 ObjType=1
-GrhIndex=619
+GrhIndex=4673
 AnimAlto=1
 AnimBajo=1
 MaxHIT=17
@@ -668,7 +669,7 @@ CP2=3
 [OBJ37]
 Name=Arco pt2
 ObjType=1
-GrhIndex=619
+GrhIndex=4672
 AnimAlto=1
 AnimBajo=1
 Crucial=1
@@ -692,7 +693,7 @@ AnimBajo=1
 Crucial=1
 MaxHIT=2
 MinHIT=1
-Apuñala=1
+ApuÃ±ala=1
 Valor=1
 CP1=247
 CP2=3
@@ -831,9 +832,9 @@ CP1=251
 CP2=3
 
 [OBJ47]
-Name=Vestimenta Común Roja
+Name=Vestimenta ComÃºn Roja
 ObjType=2
-GrhIndex=619
+GrhIndex=4663
 AnimAlto=23
 AnimBajo=25
 AnimAltoM=23
@@ -841,11 +842,11 @@ AnimBajoM=25
 Valor=1
 
 [OBJ48]
-Name=Vestimenta Común Azul
+Name=Vestimenta ComÃºn Verde
 ObjType=2
-GrhIndex=619
-AnimAlto=27
-AnimBajo=28
+GrhIndex=4659
+AnimAlto=24
+AnimBajo=26
 AnimAltoM=27
 AnimBajoM=28
 Valor=1
@@ -1021,9 +1022,9 @@ CP2=3
 [OBJ60]
 Name=Tunica pt2
 ObjType=2
-GrhIndex=619
-AnimAlto=11
-AnimBajo=11
+GrhIndex=4656
+AnimAlto=78
+AnimBajo=79
 AnimAltoM=11
 AnimBajoM=11
 Crucial=1
@@ -1036,7 +1037,7 @@ CP2=3
 [OBJ61]
 Name=Armadura liviana pt2
 ObjType=2
-GrhIndex=619
+GrhIndex=4657
 AnimAlto=11
 AnimBajo=11
 AnimAltoM=11
@@ -1051,7 +1052,7 @@ CP2=3
 [OBJ62]
 Name=Armadura pesada pt2
 ObjType=2
-GrhIndex=619
+GrhIndex=4658
 AnimAlto=11
 AnimBajo=11
 AnimAltoM=11
@@ -1482,7 +1483,7 @@ Valor=1
 CP1=59
 CP2=3
 [OBJ93]
-Name=Vestimenta Común Roja Newbie
+Name=Vestimenta ComÃºn Roja Newbie
 ObjType=2
 GrhIndex=619
 AnimAlto=23
@@ -1494,9 +1495,9 @@ Soulbound=1
 Valor=1
 
 [OBJ94]
-Name=Vestimenta Común Verde Newbie
+Name=Vestimenta ComÃºn Verde Newbie
 ObjType=2
-GrhIndex=619
+GrhIndex=4659
 AnimAlto=24
 AnimBajo=26
 AnimAltoM=24
@@ -1506,7 +1507,7 @@ Soulbound=1
 Valor=1
 
 [OBJ95]
-Name=Vestimenta Común Azul Newbie
+Name=Vestimenta ComÃºn Azul Newbie
 ObjType=2
 GrhIndex=619
 AnimAlto=27
@@ -1516,9 +1517,8 @@ AnimBajoM=28
 Newbie=1
 Soulbound=1
 Valor=1
-
 [OBJ96]
-Name=Poción Amarilla
+Name=PociÃ³n Amarilla
 NameP=Pociones Amarillas
 ObjType=4
 GrhIndex=681
@@ -1530,7 +1530,7 @@ DuracionEfecto=1200
 Valor=10
 
 [OBJ97]
-Name=Poción Azul
+Name=PociÃ³n Azul
 NameP=Pociones Azules
 ObjType=4
 GrhIndex=679
@@ -1541,8 +1541,8 @@ MinModificador=20
 Valor=4
 
 [OBJ98]
-Name=Poción Roja
-NameP=Poción Rojas
+Name=PociÃ³n Roja
+NameP=PociÃ³n Rojas
 ObjType=4
 GrhIndex=678
 Crucial=1
@@ -1552,7 +1552,7 @@ MinModificador=18
 Valor=5
 
 [OBJ99]
-Name=Poción Verde
+Name=PociÃ³n Verde
 NameP=Pociones Verdes
 ObjType=4
 GrhIndex=680
@@ -1564,7 +1564,7 @@ DuracionEfecto=1200
 Valor=12
 
 [OBJ100]
-Name=Poción Violeta
+Name=PociÃ³n Violeta
 NameP=Pociones Violetas
 ObjType=4
 GrhIndex=690
@@ -1573,7 +1573,7 @@ TipoPocion=5
 Valor=16
 
 [OBJ101]
-Name=Poción Amarilla
+Name=PociÃ³n Amarilla
 NameP=Pociones Amarillas
 ObjType=4
 GrhIndex=689
@@ -1586,8 +1586,14 @@ MinModificador=1
 DuracionEfecto=1200
 Valor=10
 
+[OBJ221]
+Name=Medalla de Bronce
+NameP=Medallas de Bronce
+ObjType=8
+Log=1
+GrhIndex=677
 [OBJ102]'NEWBIE
-Name=Poción Azul
+Name=PociÃ³n Azul
 NameP=Pociones Azules
 ObjType=4
 GrhIndex=687
@@ -1600,7 +1606,7 @@ MinModificador=20
 Valor=4
 
 [OBJ103]'NEWBIE
-Name=Poción Roja
+Name=PociÃ³n Roja
 NameP=Pociones Rojas
 ObjType=4
 GrhIndex=682
@@ -1795,7 +1801,7 @@ CP2=3
 [OBJ121]
 Name=Escudo liviano pt2
 ObjType=5
-GrhIndex=619
+GrhIndex=4668
 AnimAlto=1
 AnimBajo=1
 Crucial=1
@@ -1806,7 +1812,7 @@ CP2=3
 [OBJ122]
 Name=Escudo pesado pt2
 ObjType=5
-GrhIndex=619
+GrhIndex=4669
 AnimAlto=1
 AnimBajo=1
 Crucial=1
@@ -2079,9 +2085,9 @@ CP2=3
 [OBJ144]
 Name=Casco liviano pt2
 ObjType=6
-GrhIndex=619
-AnimAlto=1
-AnimBajo=1
+GrhIndex=886
+AnimAlto=18
+AnimBajo=18
 Crucial=1
 MINDEF=95
 MAXDEF=100
@@ -2092,9 +2098,9 @@ CP2=3
 [OBJ145]
 Name=Sombrero pt2
 ObjType=6
-GrhIndex=619
-AnimAlto=1
-AnimBajo=1
+GrhIndex=4665
+AnimAlto=21
+AnimBajo=21
 Crucial=1
 MINDEF=15
 MAXDEF=20
@@ -2105,9 +2111,9 @@ CP2=3
 [OBJ146]
 Name=Casco pesado pt2
 ObjType=6
-GrhIndex=619
-AnimAlto=1
-AnimBajo=1
+GrhIndex=4670
+AnimAlto=19
+AnimBajo=19
 Crucial=1
 MINDEF=145
 MAXDEF=150
@@ -2200,7 +2206,6 @@ GrhIndex=619
 DefensaMagicaMax=50
 DefensaMagicaMin=45
 Valor=1
-
 [OBJ156]
 Name=Anillo +3 pt2
 ObjType=7
@@ -2228,7 +2233,6 @@ GrhIndex=619
 DefensaMagicaMax=100
 DefensaMagicaMin=95
 Valor=1
-
 [OBJ159]
 Name=Copa de Oro
 NameP=Copas de oro
@@ -2323,7 +2327,7 @@ NoSeCae=1
 
 [OBJ172]
 Name=Acta de Fundacion
-NameP=Actas de fundación
+NameP=Actas de fundaciÃ³n
 ObjType=8
 Log=1
 GrhIndex=691
@@ -2391,7 +2395,7 @@ MinHIT=2
 Valor=1
 
 [OBJ179]
-Name=Galeón
+Name=GaleÃ³n
 ObjType=12
 GrhIndex=619
 AnimAlto=11
@@ -2521,15 +2525,15 @@ GrhIndex=694
 Crucial=1
 
 [OBJ196]
-Name=Leña
-NameP=Leñas 
+Name=LeÃ±a
+NameP=LeÃ±as 
 ObjType=17
 GrhIndex=662
 Valor=1
 
 [OBJ197]
-Name=Leña 2
-NameP=Leñas 2
+Name=LeÃ±a 2
+NameP=LeÃ±as 2
 ObjType=17
 GrhIndex=663
 Valor=1
@@ -2598,8 +2602,8 @@ Crucial=1
 Valor=1
 
 [OBJ207]
-Name=Hacha de Leñador
-NameP=Hachas de Leñador
+Name=Hacha de LeÃ±ador
+NameP=Hachas de LeÃ±ador
 ObjType=18
 GrhIndex=668
 Crucial=1
@@ -2608,8 +2612,8 @@ MinHIT=4
 Valor=1
 
 [OBJ208]
-Name=Caña de Pescador
-NameP=Cañas de Pescador
+Name=CaÃ±a de Pescador
+NameP=CaÃ±as de Pescador
 ObjType=18
 GrhIndex=666
 Crucial=1
@@ -2680,7 +2684,7 @@ ObjType=255
 GrhIndex=646
 Valor=1
 [OBJ217]
-Name=Salmón
+Name=SalmÃ³n
 NameP=Salmones
 ObjType=255
 GrhIndex=647

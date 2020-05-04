@@ -3,7 +3,7 @@ Begin VB.Form fIndexador
    Caption         =   "Indexador"
    ClientHeight    =   8550
    ClientLeft      =   225
-   ClientTop       =   870
+   ClientTop       =   855
    ClientWidth     =   11820
    LinkTopic       =   "Form2"
    ScaleHeight     =   570
@@ -24,7 +24,6 @@ Begin VB.Form fIndexador
       Left            =   120
       TabIndex        =   24
       Top             =   3360
-      Visible         =   0   'False
       Width           =   3735
       Begin VB.CommandButton Command4 
          Caption         =   "Nuevo"
@@ -356,14 +355,14 @@ Public Sub ParseAcFr(ByVal Index As Integer, ByVal value As Integer)
     
 End Sub
 
-Private Sub Actual_MouseUp(Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub Actual_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
 
     Dim z As Integer
 
 
 
-    iX = (x / Screen.TwipsPerPixelX)
-    iY = (y / Screen.TwipsPerPixelY)
+    iX = (X / Screen.TwipsPerPixelX)
+    iY = (Y / Screen.TwipsPerPixelY)
     Actual.Cls
     If iX < agraficow And iY < agraficoh Then
         dxEngine.DibujareEnHwnd3 Actual.hwnd, aGrafico, 0, 0, True, 0, 0
@@ -847,6 +846,10 @@ Private Sub Command4_Click()
         End If
 
     End If
+
+End Sub
+
+Private Sub fAnim_DragDrop(Source As Control, X As Single, Y As Single)
 
 End Sub
 
