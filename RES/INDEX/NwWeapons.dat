@@ -1,5 +1,5 @@
 [INIT]
-Num=47
+Num=51
 
 [1]'Pala
 Alpha=255
@@ -376,4 +376,36 @@ MOV3=239
 MOV4=241
 OverWriteGrafico=847
 DESC=Baculo druida agite bajos
+ALPHA=255
+[48]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=898
+DESC=daga bardo agite bajos
+ALPHA=255
+[49]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=899
+DESC=daga bardo torneo bajos
+ALPHA=255
+[50]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=898
+DESC=Daga bardo agite
+ALPHA=255
+[51]
+MOV1=240
+MOV2=242
+MOV3=239
+MOV4=241
+OverWriteGrafico=899
+DESC=Daga bardo torneo
 ALPHA=255

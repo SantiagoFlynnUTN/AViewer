@@ -140,7 +140,7 @@ NumOBJs=219
 [OBJ1]
 Name=Báculo Mago Agite
 ObjType=1
-GrhIndex=619
+GrhIndex=4285
 AnimAlto=22
 AnimBajo=41
 Crucial=1
@@ -189,7 +189,7 @@ CP2=3
 [OBJ4]
 Name=Espadita Bardo Agite
 ObjType=1
-GrhIndex=619
+GrhIndex=4279
 AnimAlto=4
 AnimBajo=27
 LingH=40
@@ -205,9 +205,9 @@ CP2=3
 [OBJ5]
 Name=Empuñadura Bardo Agite
 ObjType=1
-GrhIndex=619
-AnimAlto=1
-AnimBajo=1
+GrhIndex=1156
+AnimAlto=50
+AnimBajo=48
 LingH=30
 LingP=25
 LingO=21
@@ -294,7 +294,7 @@ CP2=3
 [OBJ11]
 Name=Espada Guerre Agite
 ObjType=1
-GrhIndex=619
+GrhIndex=4288
 AnimAlto=17
 AnimBajo=36
 MaxHIT=19
@@ -306,7 +306,7 @@ CP2=3
 [OBJ12]
 Name=Arco Caza Agite
 ObjType=1
-GrhIndex=619
+GrhIndex=4294
 AnimAlto=6
 AnimBajo=30
 Madera=450
@@ -327,7 +327,7 @@ TipoCraft=3
 [OBJ13]
 Name=Arco Guerre Agite
 ObjType=1
-GrhIndex=619
+GrhIndex=4654
 AnimAlto=16
 AnimBajo=35
 LVL=40
@@ -361,7 +361,7 @@ Valor=1
 [OBJ15]
 Name=Báculo Mago Torneo
 ObjType=1
-GrhIndex=619
+GrhIndex=4286
 AnimAlto=23
 AnimBajo=42
 MinDañoMagico=55
@@ -401,7 +401,7 @@ CP2=3
 [OBJ18]
 Name=Espadita Bardo Torneo
 ObjType=1
-GrhIndex=619
+GrhIndex=4280
 AnimAlto=5
 AnimBajo=28
 MaxHIT=19
@@ -413,9 +413,9 @@ CP2=3
 [OBJ19]
 Name=Empuñadura Bardo Torneo
 ObjType=1
-GrhIndex=619
-AnimAlto=1
-AnimBajo=1
+GrhIndex=1157
+AnimAlto=51
+AnimBajo=49
 StaffPower=2
 MaxHIT=7
 MinHIT=6
@@ -423,11 +423,10 @@ Apuñala=1
 Valor=1
 CP1=239
 CP2=3
-
 [OBJ20]
 Name=Espada Clero Torneo
 ObjType=1
-GrhIndex=619
+GrhIndex=4282
 AnimAlto=11
 AnimBajo=34
 StaffPower=2
@@ -436,7 +435,6 @@ MinHIT=20
 Valor=1
 CP1=253
 CP2=3
-
 [OBJ21]
 Name=Empuñadura Ase Torneo
 ObjType=1
@@ -493,7 +491,7 @@ CP2=3
 [OBJ25]
 Name=Espada Guerre Torneo
 ObjType=1
-GrhIndex=619
+GrhIndex=4287
 AnimAlto=20
 AnimBajo=39
 MaxHIT=21
@@ -504,7 +502,7 @@ CP2=3
 [OBJ26]
 Name=Arco Caza Torneo
 ObjType=1
-GrhIndex=619
+GrhIndex=4293
 AnimAlto=8
 AnimBajo=32
 Proyectil=1
@@ -523,7 +521,7 @@ TipoCraft=3
 [OBJ27]
 Name=Arco Guerre Torneo
 ObjType=1
-GrhIndex=619
+GrhIndex=4655
 AnimAlto=19
 AnimBajo=38
 Proyectil=1
@@ -594,7 +592,7 @@ CP2=3
 [OBJ32]
 Name=Arco pt1
 ObjType=1
-GrhIndex=619
+GrhIndex=4671
 AnimAlto=1
 AnimBajo=1
 Crucial=1
@@ -683,7 +681,6 @@ CP2=3
 Madera=30
 Madera2=50
 Marfil=30
-
 [OBJ38]
 Name=Espada Mata Bestias
 ObjType=1
@@ -1485,7 +1482,7 @@ CP2=3
 [OBJ93]
 Name=Vestimenta Común Roja Newbie
 ObjType=2
-GrhIndex=619
+GrhIndex=4663
 AnimAlto=23
 AnimBajo=25
 AnimAltoM=23
@@ -1822,9 +1819,9 @@ CP2=3
 [OBJ123]
 Name=Sombrero Mago Agite
 ObjType=6
-GrhIndex=619
-AnimAlto=9
-AnimBajo=9
+GrhIndex=1142
+AnimAlto=21
+AnimBajo=21
 LVL=32
 SkillSastre=90
 PielL=67
@@ -1839,7 +1836,7 @@ CP2=3
 [OBJ124]
 Name=Gorro Druida Agite
 ObjType=6
-GrhIndex=619
+GrhIndex=1022
 AnimAlto=11
 AnimBajo=11
 MINDEF=105
@@ -1847,11 +1844,10 @@ MAXDEF=110
 Valor=1
 CP1=223
 CP2=3
-
 [OBJ125]
 Name=Casco Bardo Agite
 ObjType=6
-GrhIndex=619
+GrhIndex=990
 AnimAlto=6
 AnimBajo=6
 MINDEF=185
@@ -1859,11 +1855,10 @@ MAXDEF=190
 Valor=1
 CP1=247
 CP2=3
-
 [OBJ126]
 Name=Casco Clero Agite
 ObjType=6
-GrhIndex=619
+GrhIndex=1018
 AnimAlto=15
 AnimBajo=15
 LingP=35
@@ -1874,11 +1869,10 @@ MAXDEF=150
 Valor=1
 CP1=253
 CP2=3
-
 [OBJ127]
 Name=Casco Ase Agite
 ObjType=6
-GrhIndex=619
+GrhIndex=989
 AnimAlto=4
 AnimBajo=4
 LingP=35
@@ -1889,11 +1883,10 @@ MAXDEF=150
 Valor=1
 CP1=247
 CP2=3
-
 [OBJ128]
 Name=Casco Pala Agite
 ObjType=6
-GrhIndex=619
+GrhIndex=1023
 AnimAlto=10
 AnimBajo=10
 LingP=35
@@ -1904,11 +1897,10 @@ MAXDEF=210
 Valor=1
 CP1=191
 CP2=3
-
 [OBJ129]
 Name=Casco Caza Agite
 ObjType=6
-GrhIndex=619
+GrhIndex=992
 AnimAlto=5
 AnimBajo=5
 MINDEF=205
@@ -1916,11 +1908,10 @@ MAXDEF=210
 Valor=1
 CP1=127
 CP2=3
-
 [OBJ130]
 Name=Casco Guerre Agite
 ObjType=6
-GrhIndex=619
+GrhIndex=987
 AnimAlto=3
 AnimBajo=3
 MINDEF=205
@@ -1928,11 +1919,10 @@ MAXDEF=210
 Valor=1
 CP1=251
 CP2=3
-
 [OBJ131]
-Name=Sombrero Mago Torneo
+Name=Corona Mago Torneo
 ObjType=6
-GrhIndex=619
+GrhIndex=991
 AnimAlto=2
 AnimBajo=2
 MINDEF=125
@@ -1943,7 +1933,7 @@ CP2=3
 [OBJ132]
 Name=Gorro Druida Torneo
 ObjType=6
-GrhIndex=619
+GrhIndex=1021
 AnimAlto=12
 AnimBajo=12
 MINDEF=135
@@ -1951,11 +1941,10 @@ MAXDEF=140
 Valor=1
 CP1=223
 CP2=3
-
 [OBJ133]
 Name=Casco Bardo Torneo
 ObjType=6
-GrhIndex=619
+GrhIndex=988
 AnimAlto=8
 AnimBajo=8
 MINDEF=185
@@ -1966,7 +1955,7 @@ CP2=3
 [OBJ134]
 Name=Casco Clero Torneo
 ObjType=6
-GrhIndex=619
+GrhIndex=1019
 AnimAlto=14
 AnimBajo=14
 MINDEF=185
@@ -1977,7 +1966,7 @@ CP2=3
 [OBJ135]
 Name=Casco Ase Torneo
 ObjType=6
-GrhIndex=619
+GrhIndex=1020
 AnimAlto=13
 AnimBajo=13
 MINDEF=185
@@ -1988,7 +1977,7 @@ CP2=3
 [OBJ136]
 Name=Casco Pala Torneo
 ObjType=6
-GrhIndex=619
+GrhIndex=1027
 AnimAlto=17
 AnimBajo=17
 MINDEF=255
@@ -1999,7 +1988,7 @@ CP2=3
 [OBJ137]
 Name=Casco Caza Torneo
 ObjType=6
-GrhIndex=619
+GrhIndex=1017
 AnimAlto=7
 AnimBajo=7
 MINDEF=255
@@ -2010,7 +1999,7 @@ CP2=3
 [OBJ138]
 Name=Casco Guerre Torneo
 ObjType=6
-GrhIndex=619
+GrhIndex=1026
 AnimAlto=16
 AnimBajo=16
 MINDEF=255
@@ -2047,7 +2036,7 @@ CP2=3
 [OBJ141]
 Name=Sombrero pt1
 ObjType=6
-GrhIndex=619
+GrhIndex=1143
 AnimAlto=1
 AnimBajo=1
 Crucial=1
@@ -2098,16 +2087,15 @@ CP2=3
 [OBJ145]
 Name=Sombrero pt2
 ObjType=6
-GrhIndex=4665
-AnimAlto=21
-AnimBajo=21
+GrhIndex=1143
+AnimAlto=20
+AnimBajo=20
 Crucial=1
 MINDEF=15
 MAXDEF=20
 Valor=1
 CP1=254
 CP2=3
-
 [OBJ146]
 Name=Casco pesado pt2
 ObjType=6
@@ -2124,7 +2112,7 @@ CP2=3
 [OBJ147]
 Name=Anillo +3 Agite
 ObjType=7
-GrhIndex=619
+GrhIndex=1138
 DefensaMagicaMax=250
 DefensaMagicaMin=245
 Valor=1
@@ -2134,7 +2122,7 @@ CP2=3
 [OBJ148]
 Name=Anillo +2 Agite
 ObjType=7
-GrhIndex=619
+GrhIndex=1137
 DefensaMagicaMax=200
 DefensaMagicaMin=195
 Valor=1
@@ -2144,7 +2132,7 @@ CP2=3
 [OBJ149]
 Name=Anillo +1 Agite
 ObjType=7
-GrhIndex=619
+GrhIndex=1135
 DefensaMagicaMax=150
 DefensaMagicaMin=145
 Valor=1
@@ -2152,7 +2140,7 @@ Valor=1
 [OBJ150]
 Name=Anillo +3 Torneo
 ObjType=7
-GrhIndex=619
+GrhIndex=1141
 DefensaMagicaMax=300
 DefensaMagicaMin=295
 Valor=1
@@ -2162,7 +2150,7 @@ CP2=3
 [OBJ151]
 Name=Anillo +2 Torneo
 ObjType=7
-GrhIndex=619
+GrhIndex=1140
 DefensaMagicaMax=250
 DefensaMagicaMin=245
 Valor=1
@@ -2172,7 +2160,7 @@ CP2=3
 [OBJ152]
 Name=Anillo +1 Torneo
 ObjType=7
-GrhIndex=619
+GrhIndex=1139
 DefensaMagicaMax=200
 DefensaMagicaMin=195
 Valor=1
@@ -2182,7 +2170,7 @@ CP2=3
 [OBJ153]
 Name=Anillo +3 pt1
 ObjType=7
-GrhIndex=619
+GrhIndex=1030
 DefensaMagicaMax=150
 DefensaMagicaMin=145
 Valor=1
@@ -2192,7 +2180,7 @@ CP2=3
 [OBJ154]
 Name=Anillo +2 pt1
 ObjType=7
-GrhIndex=619
+GrhIndex=1029
 DefensaMagicaMax=100
 DefensaMagicaMin=95
 Valor=1
@@ -2202,34 +2190,32 @@ CP2=3
 [OBJ155]
 Name=Anillo +1 pt1
 ObjType=7
-GrhIndex=619
+GrhIndex=1028
 DefensaMagicaMax=50
 DefensaMagicaMin=45
 Valor=1
 [OBJ156]
 Name=Anillo +3 pt2
 ObjType=7
-GrhIndex=619
+GrhIndex=1049
 DefensaMagicaMax=200
 DefensaMagicaMin=195
 Valor=1
 CP1=222
 CP2=3
-
 [OBJ157]
 Name=Anillo +2 pt2
 ObjType=7
-GrhIndex=619
+GrhIndex=1032
 DefensaMagicaMax=150
 DefensaMagicaMin=145
 Valor=1
 CP1=196
 CP2=3
-
 [OBJ158]
 Name=Anillo +1 pt2
 ObjType=7
-GrhIndex=619
+GrhIndex=1031
 DefensaMagicaMax=100
 DefensaMagicaMin=95
 Valor=1
@@ -2367,7 +2353,7 @@ Valor=1
 [OBJ177]
 Name=Barca
 ObjType=12
-GrhIndex=619
+GrhIndex=1155
 AnimAlto=11
 AnimBajo=11
 LVL=30
@@ -2378,11 +2364,10 @@ MAXDEF=15
 MaxHIT=2
 MinHIT=1
 Valor=1
-
 [OBJ178]
 Name=Galera
 ObjType=12
-GrhIndex=619
+GrhIndex=1155
 AnimAlto=11
 AnimBajo=11
 LVL=40
@@ -2397,7 +2382,7 @@ Valor=1
 [OBJ179]
 Name=Galeón
 ObjType=12
-GrhIndex=619
+GrhIndex=1155
 AnimAlto=11
 AnimBajo=11
 AnimAltoM=11
@@ -2410,11 +2395,10 @@ MAXDEF=70
 MaxHIT=4
 MinHIT=3
 Valor=1
-
 [OBJ180]
 Name=Flecha Agite
 ObjType=13
-GrhIndex=619
+GrhIndex=907
 Madera=3
 SkCarpinteria=30
 MaxHIT=2
@@ -2424,9 +2408,9 @@ CP1=123
 CP2=3
 
 [OBJ181]
-Name=Flecha
+Name=Flecha pt1
 ObjType=13
-GrhIndex=619
+GrhIndex=890
 MaxHIT=1
 MinHIT=1
 Valor=1
@@ -2435,7 +2419,7 @@ CP1=123
 [OBJ182]
 Name=Flecha Torneo
 ObjType=13
-GrhIndex=619
+GrhIndex=901
 MaxHIT=3
 MinHIT=2
 Valor=1
@@ -2445,7 +2429,7 @@ CP2=3
 [OBJ183]
 Name=Flecha Comun
 ObjType=13
-GrhIndex=619
+GrhIndex=906
 Crucial=1
 Madera=3
 MaxHIT=1
@@ -2455,9 +2439,9 @@ CP1=123
 CP2=3
 
 [OBJ184]
-Name=Flecha 
+Name=Flecha pt2
 ObjType=13
-GrhIndex=619
+GrhIndex=890
 Crucial=1
 Madera=3
 MaxHIT=2
@@ -2465,58 +2449,56 @@ MinHIT=1
 Valor=1
 CP1=123
 CP2=3
-
 [OBJ185]
 Name=Gema Plateada
 ObjType=14
-GrhIndex=619
+GrhIndex=1145
 
 [OBJ186]
 Name=Gema Azul
 ObjType=14
-GrhIndex=619
+GrhIndex=1146
 
 [OBJ187]
 Name=Gema Naranja
 ObjType=14
-GrhIndex=619
+GrhIndex=1147
 
 [OBJ188]
 Name=Gema Celeste
 ObjType=14
-GrhIndex=619
+GrhIndex=1148
 
 [OBJ189]
 Name=Gema Lila
 ObjType=14
-GrhIndex=619
+GrhIndex=1149
 
 [OBJ190]
 Name=Gema Roja
 ObjType=14
-GrhIndex=619
+GrhIndex=1150
 
 [OBJ191]
 Name=Gema Verde
 ObjType=14
-GrhIndex=619
+GrhIndex=1151
 
 [OBJ192]
 Name=Gema Violeta
 ObjType=14
-GrhIndex=619
+GrhIndex=1152
 
 [OBJ193]
 Name=Gema Negra
 ObjType=14
 Log=1
-GrhIndex=619
+GrhIndex=1153
 
 [OBJ194]
 Name=Gema Sagrada
 ObjType=14
-GrhIndex=619
-
+GrhIndex=1154
 [OBJ195]
 Name=Mapa del Tesoro
 NameP=Mapas del tesoro
@@ -2646,7 +2628,6 @@ ObjType=255
 GrhIndex=641
 Crucial=1
 Valor=1
-
 [OBJ212]
 Name=Banana
 NameP=Bananas
