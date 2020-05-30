@@ -36,5 +36,13 @@ Korgan
 Aventurero ¿Estas preparado?
 Padre Valyst
 Hola hijo mío, soy el Sacerdote de este pueblo.
+Viajero
+Elige un destino a viajar.
 Snape
 Tengo los hechizos mas poderosos de estas tierras
+Snape
+Tengo los hechizos mas poderosos de estas tierras
+Snape
+Tengo los hechizos mas poderosos de estas tierras
+Vendedora de Pociones
+¡Hola buen amigo! cuento con las mejores pociones de estas comarcas.

@@ -1,4 +1,4 @@
------------- OBJTYPES ------------
+﻿  ------------ OBJTYPES ------------
 otWeapon = 1
 otArmadura = 2
 otLlaves = 3
@@ -135,7 +135,7 @@ otCualquiera = 255
 "GP"
 
 [INIT]
-NumOBJs=219
+NumOBJs=259
 
 [OBJ1]
 Name=Báculo Mago Agite
@@ -1531,7 +1531,7 @@ Name=Poción Azul
 NameP=Pociones Azules
 ObjType=4
 GrhIndex=679
-Crucial=1
+Crucial=0
 TipoPocion=4
 MaxModificador=20
 MinModificador=20
@@ -2336,6 +2336,7 @@ LingoteIndex=256
 Valor=1
 
 [OBJ175]
+Name=Mineral de Plata
 NameP=Minerales de Plata
 ObjType=9
 GrhIndex=650
@@ -2692,3 +2693,238 @@ NameP=Medallas de Bronce
 ObjType=8
 Log=1
 GrhIndex=677
+
+[OBJ221]
+HechizoIndex=1
+ObjType=10
+Name=Curar Veneno
+Valor=100
+GrhIndex=692
+
+[OBJ222]
+HechizoIndex=2
+Name=Destello Mágico
+Valor=100
+GrhIndex=692
+
+[OBJ223]
+HechizoIndex=3
+Name=Curar Heridas Graves
+Valor=100
+GrhIndex=692
+
+[OBJ224]
+HechizoIndex=4
+Name=Envenenar
+Valor=100
+GrhIndex=692
+
+[OBJ225]
+HechizoIndex=5
+Name=Curar Heridas Mortales
+Valor=100
+GrhIndex=692
+
+[OBJ226]
+HechizoIndex=6
+Name=Flecha Mágica
+Valor=100
+GrhIndex=692
+
+[OBJ227]
+HechizoIndex=7
+Name=Paralizar
+Valor=100
+GrhIndex=692
+
+[OBJ228]
+HechizoIndex=8
+Name=Fuego Mágico
+Valor=100
+GrhIndex=692
+
+[OBJ229]
+HechizoIndex=9
+Name=Inmovilizar
+Valor=100
+GrhIndex=692
+
+[OBJ230]
+HechizoIndex=10
+Name=Remover Parálisis
+Valor=100
+GrhIndex=692
+
+[OBJ231]
+HechizoIndex=11
+Name=Resucitar
+Valor=100
+GrhIndex=692
+
+[OBJ232]
+HechizoIndex=12
+Name=Manto de Hierro
+Valor=100
+GrhIndex=692
+
+[OBJ233]
+HechizoIndex=13
+Name=Regeneración Clerical
+Valor=100
+GrhIndex=692
+
+[OBJ234]
+HechizoIndex=14
+Name=Invisibilidad
+Valor=100
+GrhIndex=692
+
+[OBJ235]
+HechizoIndex=15
+Name=Tormenta de Fuego
+Valor=100
+GrhIndex=692
+
+[OBJ236]
+HechizoIndex=16
+Name=Viento Huracanado
+Valor=100
+GrhIndex=692
+
+[OBJ237]
+HechizoIndex=17
+Name=Insurrección Sombría
+Valor=100
+GrhIndex=692
+
+[OBJ238]
+HechizoIndex=18
+Name=Celeridad
+Valor=100
+GrhIndex=692
+
+[OBJ239]
+HechizoIndex=19
+Name=Torpeza
+Valor=100
+GrhIndex=692
+
+[OBJ240]
+HechizoIndex=20
+Name=Fuerza
+Valor=100
+GrhIndex=692
+
+[OBJ241]
+HechizoIndex=21
+Name=Debilidad
+Valor=100
+GrhIndex=692
+
+[OBJ242]
+HechizoIndex=22
+Name=Ráfaga Ardiente
+Valor=100
+GrhIndex=692
+
+[OBJ243]
+HechizoIndex=23
+Name=Descarga Eléctrica
+Valor=100
+GrhIndex=692
+
+[OBJ244]
+HechizoIndex=24
+Name=Prisión Gélida
+Valor=100
+GrhIndex=692
+
+[OBJ245]
+HechizoIndex=25
+Name=Apocalípsis
+Valor=100
+GrhIndex=692
+
+[OBJ246]
+HechizoIndex=26
+Name=Elemental de Fuego
+Valor=100
+GrhIndex=692
+
+[OBJ247]
+HechizoIndex=27
+Name=Elemental de Agua
+Valor=100
+GrhIndex=692
+
+[OBJ248]
+HechizoIndex=28
+Name=Relámpago
+Valor=100
+GrhIndex=692
+
+[OBJ249]
+HechizoIndex=29
+Name=Teletransportar Kahlimdor
+Valor=100
+GrhIndex=692
+
+[OBJ250]
+HechizoIndex=30
+Name=Remover Invisibilidad
+Valor=100
+GrhIndex=692
+
+[OBJ251]
+HechizoIndex=31
+Name=Teletransportar Anvilmar
+Valor=100
+GrhIndex=692
+
+[OBJ252]
+HechizoIndex=32
+Name=Llama de Dragón
+Valor=100
+GrhIndex=692
+
+[OBJ253]
+HechizoIndex=33
+Name=Infierno
+Valor=100
+GrhIndex=692
+
+[OBJ254]
+HechizoIndex=34
+Name=Mimetismo
+Valor=100
+GrhIndex=692
+
+[OBJ255]
+HechizoIndex=35
+Name=Fuego Divino
+Valor=100
+GrhIndex=692
+
+[OBJ256]
+HechizoIndex=36
+Name=Maldición
+Valor=100
+GrhIndex=692
+
+[OBJ257]
+HechizoIndex=37
+Name=Grito de Guerra
+Valor=100
+GrhIndex=692
+
+[OBJ258]
+HechizoIndex=38
+Name=Burbuja Defensiva
+Valor=100
+GrhIndex=692
+
+[OBJ259]
+HechizoIndex=39
+Name=Ira de Fuego
+Valor=100
+GrhIndex=692
