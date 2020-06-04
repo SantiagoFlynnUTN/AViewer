@@ -2703,228 +2703,266 @@ GrhIndex=692
 
 [OBJ222]
 HechizoIndex=2
+ObjType=10
 Name=Destello Mágico
 Valor=100
 GrhIndex=692
 
 [OBJ223]
 HechizoIndex=3
+ObjType=10
 Name=Curar Heridas Graves
 Valor=100
 GrhIndex=692
 
 [OBJ224]
 HechizoIndex=4
+ObjType=10
 Name=Envenenar
 Valor=100
 GrhIndex=692
 
 [OBJ225]
 HechizoIndex=5
+ObjType=10
 Name=Curar Heridas Mortales
 Valor=100
 GrhIndex=692
 
 [OBJ226]
 HechizoIndex=6
+ObjType=10
 Name=Flecha Mágica
 Valor=100
 GrhIndex=692
 
 [OBJ227]
 HechizoIndex=7
+ObjType=10
 Name=Paralizar
 Valor=100
 GrhIndex=692
 
 [OBJ228]
 HechizoIndex=8
+ObjType=10
 Name=Fuego Mágico
 Valor=100
 GrhIndex=692
 
 [OBJ229]
 HechizoIndex=9
+ObjType=10
 Name=Inmovilizar
 Valor=100
 GrhIndex=692
 
 [OBJ230]
 HechizoIndex=10
+ObjType=10
 Name=Remover Parálisis
 Valor=100
 GrhIndex=692
 
 [OBJ231]
 HechizoIndex=11
+ObjType=10
 Name=Resucitar
 Valor=100
 GrhIndex=692
 
 [OBJ232]
 HechizoIndex=12
+ObjType=10
 Name=Manto de Hierro
 Valor=100
 GrhIndex=692
 
 [OBJ233]
 HechizoIndex=13
+ObjType=10
 Name=Regeneración Clerical
 Valor=100
 GrhIndex=692
 
 [OBJ234]
 HechizoIndex=14
+ObjType=10
 Name=Invisibilidad
 Valor=100
 GrhIndex=692
 
 [OBJ235]
 HechizoIndex=15
+ObjType=10
 Name=Tormenta de Fuego
 Valor=100
 GrhIndex=692
 
 [OBJ236]
 HechizoIndex=16
+ObjType=10
 Name=Viento Huracanado
 Valor=100
 GrhIndex=692
 
 [OBJ237]
 HechizoIndex=17
+ObjType=10
 Name=Insurrección Sombría
 Valor=100
 GrhIndex=692
 
 [OBJ238]
 HechizoIndex=18
+ObjType=10
 Name=Celeridad
 Valor=100
 GrhIndex=692
 
 [OBJ239]
 HechizoIndex=19
+ObjType=10
 Name=Torpeza
 Valor=100
 GrhIndex=692
 
 [OBJ240]
 HechizoIndex=20
+ObjType=10
 Name=Fuerza
 Valor=100
 GrhIndex=692
 
 [OBJ241]
 HechizoIndex=21
+ObjType=10
 Name=Debilidad
 Valor=100
 GrhIndex=692
 
 [OBJ242]
 HechizoIndex=22
+ObjType=10
 Name=Ráfaga Ardiente
 Valor=100
 GrhIndex=692
 
 [OBJ243]
 HechizoIndex=23
+ObjType=10
 Name=Descarga Eléctrica
 Valor=100
 GrhIndex=692
 
 [OBJ244]
 HechizoIndex=24
+ObjType=10
 Name=Prisión Gélida
 Valor=100
 GrhIndex=692
 
 [OBJ245]
 HechizoIndex=25
+ObjType=10
 Name=Apocalípsis
 Valor=100
 GrhIndex=692
 
 [OBJ246]
 HechizoIndex=26
+ObjType=10
 Name=Elemental de Fuego
 Valor=100
 GrhIndex=692
 
 [OBJ247]
 HechizoIndex=27
+ObjType=10
 Name=Elemental de Agua
 Valor=100
 GrhIndex=692
 
 [OBJ248]
 HechizoIndex=28
+ObjType=10
 Name=Relámpago
 Valor=100
 GrhIndex=692
 
 [OBJ249]
 HechizoIndex=29
+ObjType=10
 Name=Teletransportar Kahlimdor
 Valor=100
 GrhIndex=692
 
 [OBJ250]
 HechizoIndex=30
+ObjType=10
 Name=Remover Invisibilidad
 Valor=100
 GrhIndex=692
 
 [OBJ251]
 HechizoIndex=31
+ObjType=10
 Name=Teletransportar Anvilmar
 Valor=100
 GrhIndex=692
 
 [OBJ252]
 HechizoIndex=32
+ObjType=10
 Name=Llama de Dragón
 Valor=100
 GrhIndex=692
 
 [OBJ253]
 HechizoIndex=33
+ObjType=10
 Name=Infierno
 Valor=100
 GrhIndex=692
 
 [OBJ254]
 HechizoIndex=34
+ObjType=10
 Name=Mimetismo
 Valor=100
 GrhIndex=692
 
 [OBJ255]
 HechizoIndex=35
+ObjType=10
 Name=Fuego Divino
 Valor=100
 GrhIndex=692
 
 [OBJ256]
 HechizoIndex=36
+ObjType=10
 Name=Maldición
 Valor=100
 GrhIndex=692
 
 [OBJ257]
 HechizoIndex=37
+ObjType=10
 Name=Grito de Guerra
 Valor=100
 GrhIndex=692
 
 [OBJ258]
 HechizoIndex=38
+ObjType=10
 Name=Burbuja Defensiva
 Valor=100
 GrhIndex=692
 
 [OBJ259]
 HechizoIndex=39
+ObjType=10
 Name=Ira de Fuego
 Valor=100
 GrhIndex=692

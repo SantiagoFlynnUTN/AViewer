@@ -1,5 +1,5 @@
 [INIT]
-Num=573
+Num=574
 
 [1]'Casco Sur
 Left=0
@@ -2874,3 +2874,8 @@ Left=60
 Top=96
 Width=20
 Height=32
+[574]
+Left=0
+Top=128
+Width=40
+Height=64
