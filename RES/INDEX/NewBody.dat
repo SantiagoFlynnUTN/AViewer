@@ -1,5 +1,5 @@
 [INIT]
-Num=102
+Num=103
 
 [1]'Dragon alas grises
 Reposo=0
@@ -869,3 +869,11 @@ MOV4=237
 DESC=caza torneo bajos
 OverWriteGrafico=1000
 OffsetY=-30
+[103]
+MOV1=86
+MOV2=88
+MOV3=85
+MOV4=87
+DESC=[ALTOS] Tunica 5ta Alianza
+OverWriteGrafico=1001
+OffsetY=-39
