@@ -1,8 +1,11 @@
 [NW_ANIM]
-Num=242
+Num=245
+
+'offsetX= negativo <<<   positivo >>>>
+'offsetY= negativo ^ 	 positivo v
 
 [ANIMACION1]'GOLEM_DE_LAVA_REPOSO_SOUTH
-Grafico=2400
+Grafico=1100
 Filas=4
 Columnas=4
 Ancho=106
@@ -26,7 +29,7 @@ OffsetY=
 
 
 [ANIMACION3]'Dragon alas grises_Derecha
-Grafico=2401
+Grafico=1136
 Filas=2
 Columnas=2
 Ancho=180
@@ -37,7 +40,7 @@ OffsetX=
 OffsetY=
 
 [ANIMACION4]'Dragon alas grises_Izquierda
-Grafico=2404
+Grafico=1139
 Filas=2
 Columnas=2
 Ancho=180
@@ -48,7 +51,7 @@ OffsetX=
 OffsetY=
 
 [ANIMACION5]'Dragon alas grises_Sur
-Grafico=2410
+Grafico=1145
 Filas=2
 Columnas=2
 Ancho=226
@@ -59,7 +62,7 @@ OffsetX=
 OffsetY=
 
 [ANIMACION6]'Dragon alas grises_Norte
-Grafico=2407
+Grafico=1142
 Filas=2
 Columnas=2
 Ancho=216
@@ -70,7 +73,7 @@ OffsetX=
 OffsetY=
 
 [ANIMACION7]'Golem_lava_walk_east
-Grafico=2413
+Grafico=1101
 Filas=5
 Columnas=5
 Ancho=97
@@ -81,7 +84,7 @@ OffsetX=10
 OffsetY=27
 
 [ANIMACION8]'Golem_lava_walk_north
-Grafico=2414
+Grafico=1102
 Filas=4
 Columnas=3
 Ancho=130
@@ -92,7 +95,7 @@ OffsetX=5
 OffsetY=22
 
 [ANIMACION9]'Golem_lava_walk_west
-Grafico=2416
+Grafico=1104
 Filas=3
 Columnas=5
 Ancho=97
@@ -103,7 +106,7 @@ OffsetX=7
 OffsetY=30
 
 [ANIMACION10]'Golem_lava_walk_south
-Grafico=2418
+Grafico=1106
 Filas=4
 Columnas=4
 Ancho=123
@@ -114,7 +117,7 @@ OffsetX=5
 OffsetY=18
 
 [ANIMACION11]'Golem_lava_hit_east
-Grafico=2420
+Grafico=1108
 Filas=3
 Columnas=5
 Ancho=92
@@ -125,7 +128,7 @@ OffsetX=14
 OffsetY=34
 
 [ANIMACION12]'Golem_lava_hit_north
-Grafico=2421
+Grafico=1109
 Filas=4
 Columnas=3
 Ancho=148
@@ -136,7 +139,7 @@ OffsetX=1
 OffsetY=8
 
 [ANIMACION13]'Golem_lava_hit_west
-Grafico=2422
+Grafico=1110
 Filas=3
 Columnas=5
 Ancho=99
@@ -147,7 +150,7 @@ OffsetX=15
 OffsetY=34
 
 [ANIMACION14]'Golem_lava_hit_south
-Grafico=2423
+Grafico=1111
 Filas=4
 Columnas=3
 Ancho=147
@@ -158,7 +161,7 @@ OffsetX=2
 OffsetY=17
 
 [ANIMACION15]'Golem_lava_death_east
-Grafico=2424
+Grafico=1112
 Filas=3
 Columnas=4
 Ancho=123
@@ -169,7 +172,7 @@ OffsetX=3
 OffsetY=26
 
 [ANIMACION16]'Golem_lava_death_north
-Grafico=2427
+Grafico=1115
 Filas=3
 Columnas=3
 Ancho=146
@@ -180,7 +183,7 @@ OffsetX=-13
 OffsetY=43
 
 [ANIMACION17]'Golem_lava_death_west
-Grafico=2431
+Grafico=1119
 Filas=3
 Columnas=4
 Ancho=119
@@ -191,7 +194,7 @@ OffsetX=11
 OffsetY=40
 
 [ANIMACION18]'Golem_lava_death_south
-Grafico=2434
+Grafico=1122
 Filas=4
 Columnas=3
 Ancho=159
@@ -202,7 +205,7 @@ OffsetX=21
 OffsetY=30
 
 [ANIMACION19]'Golem_lava_attack_east
-Grafico=2437
+Grafico=1125
 Filas=3
 Columnas=3
 Ancho=140
@@ -213,7 +216,7 @@ OffsetX=22
 OffsetY=13
 
 [ANIMACION20]'Golem_lava_attack_north
-Grafico=2444
+Grafico=1132
 Filas=3
 Columnas=4
 Ancho=121
@@ -224,7 +227,7 @@ OffsetX=9
 OffsetY=17
 
 [ANIMACION21]'Golem_lava_attack_west
-Grafico=2439
+Grafico=1127
 Filas=3
 Columnas=3
 Ancho=142
@@ -235,7 +238,7 @@ OffsetX=15
 OffsetY=14
 
 [ANIMACION22]'Golem_lava_attack_south
-Grafico=2446
+Grafico=1134
 Filas=3
 Columnas=4
 Ancho=120
@@ -246,7 +249,7 @@ OffsetX=10
 OffsetY=27
 
 [ANIMACION23]'Golem_lava_repose_east
-Grafico=2441
+Grafico=1129
 Filas=4
 Columnas=6
 Ancho=84
@@ -257,7 +260,7 @@ OffsetX=21
 OffsetY=13
 
 [ANIMACION24]'Golem_lava_repose_north
-Grafico=2442
+Grafico=1130
 Filas=4
 Columnas=4
 Ancho=110
@@ -268,7 +271,7 @@ OffsetX=5
 OffsetY=8
 
 [ANIMACION25]'Golem_lava_repose_west
-Grafico=2443
+Grafico=1131
 Filas=4
 Columnas=5
 Ancho=89
@@ -279,7 +282,7 @@ OffsetX=7
 OffsetY=13
 
 [ANIMACION26]'Golem_lava_repose_south
-Grafico=2400
+Grafico=1100
 Filas=4
 Columnas=4
 Ancho=106
@@ -807,8 +810,8 @@ Columnas=4
 Ancho=55
 Alto=108
 NumeroFrames=15
-OffsetX=0
-OffsetY=0
+OffsetX=-18
+OffsetY=10
 Velocidad=1
 
 [ANIMACION68]'Destello mágico
@@ -854,8 +857,9 @@ Alto=78
 NumeroFrames=7
 OffsetX=0
 OffsetY=0
-Velocidad=0.8
+Velocidad=1,2
 Inicial=9
+Desc=
 [ANIMACION72]'Fuego mágico
 Grafico=143
 Filas=4
@@ -2577,3 +2581,37 @@ Alto=64
 Velocidad=1
 Inicial=19
 Desc=Movement Shield 42x64 East
+[ANIMACION243]
+Grafico=174
+NumeroFrames=12
+Columnas=3
+Filas=2
+Ancho=85
+Alto=94
+Velocidad=0.8
+Inicial=1
+Desc=Enredar Inicial
+
+[ANIMACION244]
+Grafico=176
+NumeroFrames=12
+Columnas=3
+Filas=2
+Ancho=85
+Alto=94
+Velocidad=0.8
+Inicial=13
+Desc=Enredar Final
+
+[ANIMACION245]
+Grafico=178
+NumeroFrames=18
+Columnas=3
+Filas=3
+Ancho=75
+Alto=73
+Velocidad=0.8
+Inicial=1
+Desc=Enredado
+OffsetX=4
+OffsetY=-6

@@ -170,9 +170,9 @@ Azul=120
 Rombo=1
 
 [FX30]'Inmo
-Anim=59
+Anim=243
 Offsetx=0
-Offsety=25
+Offsety=0
 
 [FX31]'Päralisis loop
 Anim=62

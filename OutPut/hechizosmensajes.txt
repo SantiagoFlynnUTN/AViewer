@@ -7,7 +7,7 @@ Curar Veneno
 Ohl Vor Pek
 
 lanzó destello mágico sobre vos.
-Hass lanzado destello mágico sobre
+Has lanzado destello mágico sobre
 Hechizo ofensivo que provoca 1 a 5 puntos de daño a la víctima.
 Destello Mágico
 Cörp Sanc
@@ -165,7 +165,7 @@ ArLa It
 
 Has lanzado Relampago sobre
 Hechizo de daño causante de gran daño a la criatura.
-Relampago
+Relámpago
 Warpus
 Te has transportado.
 te ha transportado.
