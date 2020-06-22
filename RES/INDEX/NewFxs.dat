@@ -1,5 +1,5 @@
 [Init]
-Numfx=41
+Numfx=44
 Nummeditaciones=38
 
 [FX1]'Burbuja
@@ -25,12 +25,12 @@ Offsety=
 [FX4]'Spawn
 Anim=31
 Offsetx=
-Offsety=25
+Offsety=
 
 [FX5]'Paralizar
 Anim=32
 Offsetx=
-Offsety=35
+Offsety=
 
 [FX6]'Tormenta de fuego
 Anim=33
@@ -60,7 +60,7 @@ Offsety=
 [FX11]'Curar heridas graves
 Anim=39
 Offsetx=
-Offsety=10
+Offsety=
 
 [FX12]'Calavera de fuego
 Anim=38
@@ -70,7 +70,7 @@ Offsety=
 [FX13]'Curar veneno
 Anim=43
 Offsetx=
-Offsety=-10
+Offsety=
 
 [FX14]'Portal
 Anim=45
@@ -80,7 +80,7 @@ Offsety=
 [FX15]'Viento huracanado
 Anim=50
 Offsetx=
-Offsety=10
+Offsety=
 
 [FX16]'Portal rojo
 Anim=51
@@ -109,8 +109,8 @@ Offsety=
 
 [FX21]'Grito de guerra
 Anim=57
-Offsetx=-5
-Offsety=45
+Offsetx=
+Offsety=
 
 [FX22]'Level up
 Anim=58
@@ -162,7 +162,7 @@ Azul=0
 [FX29]'Burbuja
 Anim=28
 Offsetx=0
-Offsety=12
+Offsety=
 Alpha=100
 Rojo=0
 Verde=155
@@ -176,24 +176,24 @@ Offsety=0
 
 [FX31]'Päralisis loop
 Anim=62
-Offsetx=1
-Offsety=5
+Offsetx=
+Offsety=
 AnimFinal=63
 
 [FX32]'Rafaga ardiente
 Anim=65
 Offsetx=0
-Offsety=35
+Offsety=
 
 [FX33]'flecha magica
 Anim=67
 Offsetx=0
-Offsety=-10
+Offsety=
 
 [FX34]'remover paralisis
 Anim=66
 Offsetx=0
-Offsety=20
+Offsety=
 
 [FX35]'destello mágico
 Anim=68
@@ -203,7 +203,7 @@ Offsety=0
 [FX36]'envenenar
 Anim=69
 Offsetx=0
-Offsety=25
+Offsety=
 
 [FX37]'Maldicion
 Anim=70
@@ -227,6 +227,21 @@ Offsety=0
 
 [FX41]'bomba de humo (invi silver)
 Anim=84
+Offsetx=0
+Offsety=0
+
+[FX42]'lluvia sangre
+Anim=246
+Offsetx=0
+Offsety=0
+
+[FX43]'curación milagrosa
+Anim=247
+Offsetx=0
+Offsety=0
+
+[FX44]'envenenar
+Anim=248
 Offsetx=0
 Offsety=0
 

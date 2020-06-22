@@ -1,6 +1,6 @@
 Murcielago
 Cobra
-Cobra
+Gallo
 Escorpion
 Lobo
 Araña Gigante
@@ -28,6 +28,7 @@ Beholder Helado
 Abominación de las Minas
 Troll Frenético
 Golem de Lava
+Demonio
 Doroteo
 Hola, bienvenido a la cadena de finanzas Goliath.
 Argal

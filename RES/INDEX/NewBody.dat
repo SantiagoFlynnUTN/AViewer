@@ -1,5 +1,5 @@
 [INIT]
-Num=103
+Num=106
 
 [1]'Dragon alas grises
 Reposo=0
@@ -275,10 +275,15 @@ DESC=[BAJO] Vestimenta Azul
 OverWriteGrafico=962
 OffsetY=-30
 [29]
-MOV1=113
-MOV2=114
-MOV3=112
-MOV4=115
+MOV1=113'n
+MOV2=114'e
+MOV3=112's
+MOV4=115'o
+Ataque=1
+Ataque1=134
+Ataque2=132
+Ataque3=133
+Ataque4=111
 DESC=Dragon Rojo
 OverWriteGrafico=0
 OffsetY=0
@@ -877,3 +882,28 @@ MOV4=87
 DESC=[ALTOS] Tunica 5ta Alianza
 OverWriteGrafico=1001
 OffsetY=-39
+[104]
+MOV1=232
+MOV2=234
+MOV3=231
+MOV4=233
+DESC=[BAJO] Body Arriba
+OverWriteGrafico=1002
+OffsetY=-30
+[105]
+MOV1=236
+MOV2=238
+MOV3=235
+MOV4=237
+DESC=[BAJO] Body Abajo
+OverWriteGrafico=1002
+OffsetY=-30
+[106]'Dragon Plateado
+Reposo=0
+Muerte=0
+Continuo=0
+Mov1=250 'norte
+Mov2=252 'derecha
+Mov3=249 'sur
+Mov4=251 'izquierda
+Ataque=0

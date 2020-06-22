@@ -1,5 +1,5 @@
 [NW_ANIM]
-Num=245
+Num=252
 
 'offsetX= negativo <<<   positivo >>>>
 'offsetY= negativo ^ 	 positivo v
@@ -73,7 +73,7 @@ OffsetX=
 OffsetY=
 
 [ANIMACION7]'Golem_lava_walk_east
-Grafico=1101
+Grafico=1501
 Filas=5
 Columnas=5
 Ancho=97
@@ -81,10 +81,12 @@ Alto=124
 NumeroFrames=20
 Velocidad=1.2
 OffsetX=10
-OffsetY=27
+OffsetY=17
+Inicial=1
+Desc=
 
 [ANIMACION8]'Golem_lava_walk_north
-Grafico=1102
+Grafico=1502
 Filas=4
 Columnas=3
 Ancho=130
@@ -92,10 +94,12 @@ Alto=123
 NumeroFrames=19
 Velocidad=1.2
 OffsetX=5
-OffsetY=22
+OffsetY=12
+Inicial=1
+Desc=
 
 [ANIMACION9]'Golem_lava_walk_west
-Grafico=1104
+Grafico=1504
 Filas=3
 Columnas=5
 Ancho=97
@@ -103,10 +107,12 @@ Alto=130
 NumeroFrames=20
 Velocidad=1.2
 OffsetX=7
-OffsetY=30
+OffsetY=20
+Inicial=1
+Desc=
 
 [ANIMACION10]'Golem_lava_walk_south
-Grafico=1106
+Grafico=1506
 Filas=4
 Columnas=4
 Ancho=123
@@ -114,10 +120,12 @@ Alto=112
 NumeroFrames=20
 Velocidad=1.2
 OffsetX=5
-OffsetY=18
+OffsetY=8
+Inicial=1
+Desc=
 
 [ANIMACION11]'Golem_lava_hit_east
-Grafico=1108
+Grafico=1508
 Filas=3
 Columnas=5
 Ancho=92
@@ -125,10 +133,12 @@ Alto=132
 NumeroFrames=10
 Velocidad=1.2
 OffsetX=14
-OffsetY=34
+OffsetY=24
+Inicial=1
+Desc=
 
 [ANIMACION12]'Golem_lava_hit_north
-Grafico=1109
+Grafico=1509
 Filas=4
 Columnas=3
 Ancho=148
@@ -136,10 +146,12 @@ Alto=105
 NumeroFrames=10
 Velocidad=1.2
 OffsetX=1
-OffsetY=8
+OffsetY=-2
+Inicial=1
+Desc=
 
 [ANIMACION13]'Golem_lava_hit_west
-Grafico=1110
+Grafico=1510
 Filas=3
 Columnas=5
 Ancho=99
@@ -147,10 +159,12 @@ Alto=135
 NumeroFrames=10
 Velocidad=1.2
 OffsetX=15
-OffsetY=34
+OffsetY=24
+Inicial=1
+Desc=
 
 [ANIMACION14]'Golem_lava_hit_south
-Grafico=1111
+Grafico=1511
 Filas=4
 Columnas=3
 Ancho=147
@@ -158,10 +172,12 @@ Alto=118
 NumeroFrames=10
 Velocidad=1.2
 OffsetX=2
-OffsetY=17
+OffsetY=7
+Inicial=1
+Desc=
 
 [ANIMACION15]'Golem_lava_death_east
-Grafico=1112
+Grafico=1512
 Filas=3
 Columnas=4
 Ancho=123
@@ -169,10 +185,12 @@ Alto=139
 NumeroFrames=31
 Velocidad=0.2
 OffsetX=3
-OffsetY=26
+OffsetY=16
+Inicial=1
+Desc=
 
 [ANIMACION16]'Golem_lava_death_north
-Grafico=1115
+Grafico=1515
 Filas=3
 Columnas=3
 Ancho=146
@@ -180,10 +198,12 @@ Alto=140
 NumeroFrames=31
 Velocidad=0.2
 OffsetX=-13
-OffsetY=43
+OffsetY=33
+Inicial=1
+Desc=
 
 [ANIMACION17]'Golem_lava_death_west
-Grafico=1119
+Grafico=1519
 Filas=3
 Columnas=4
 Ancho=119
@@ -191,10 +211,12 @@ Alto=139
 NumeroFrames=31
 Velocidad=0.2
 OffsetX=11
-OffsetY=40
+OffsetY=30
+Inicial=1
+Desc=
 
 [ANIMACION18]'Golem_lava_death_south
-Grafico=1122
+Grafico=1522
 Filas=4
 Columnas=3
 Ancho=159
@@ -202,10 +224,12 @@ Alto=115
 NumeroFrames=31
 Velocidad=0.2
 OffsetX=21
-OffsetY=30
+OffsetY=20
+Inicial=1
+Desc=
 
 [ANIMACION19]'Golem_lava_attack_east
-Grafico=1125
+Grafico=1525
 Filas=3
 Columnas=3
 Ancho=140
@@ -213,10 +237,12 @@ Alto=143
 NumeroFrames=15
 Velocidad=0.6
 OffsetX=22
-OffsetY=13
+OffsetY=3
+Inicial=1
+Desc=
 
 [ANIMACION20]'Golem_lava_attack_north
-Grafico=1132
+Grafico=1532
 Filas=3
 Columnas=4
 Ancho=121
@@ -224,10 +250,12 @@ Alto=152
 NumeroFrames=15
 Velocidad=0.6
 OffsetX=9
-OffsetY=17
+OffsetY=7
+Inicial=1
+Desc=
 
 [ANIMACION21]'Golem_lava_attack_west
-Grafico=1127
+Grafico=1527
 Filas=3
 Columnas=3
 Ancho=142
@@ -235,10 +263,12 @@ Alto=159
 NumeroFrames=15
 Velocidad=0.6
 OffsetX=15
-OffsetY=14
+OffsetY=4
+Inicial=1
+Desc=
 
 [ANIMACION22]'Golem_lava_attack_south
-Grafico=1134
+Grafico=1534
 Filas=3
 Columnas=4
 Ancho=120
@@ -246,10 +276,12 @@ Alto=162
 NumeroFrames=15
 Velocidad=0.6
 OffsetX=10
-OffsetY=27
+OffsetY=17
+Inicial=1
+Desc=
 
 [ANIMACION23]'Golem_lava_repose_east
-Grafico=1129
+Grafico=1529
 Filas=4
 Columnas=6
 Ancho=84
@@ -257,10 +289,12 @@ Alto=109
 NumeroFrames=15
 Velocidad=0.5
 OffsetX=21
-OffsetY=13
+OffsetY=3
+Inicial=1
+Desc=
 
 [ANIMACION24]'Golem_lava_repose_north
-Grafico=1130
+Grafico=1530
 Filas=4
 Columnas=4
 Ancho=110
@@ -268,10 +302,12 @@ Alto=106
 NumeroFrames=15
 Velocidad=0.5
 OffsetX=5
-OffsetY=8
+OffsetY=-2
+Inicial=1
+Desc=
 
 [ANIMACION25]'Golem_lava_repose_west
-Grafico=1131
+Grafico=1531
 Filas=4
 Columnas=5
 Ancho=89
@@ -279,10 +315,12 @@ Alto=113
 NumeroFrames=15
 Velocidad=0.5
 OffsetX=7
-OffsetY=13
+OffsetY=3
+Inicial=1
+Desc=
 
 [ANIMACION26]'Golem_lava_repose_south
-Grafico=1100
+Grafico=1500
 Filas=4
 Columnas=4
 Ancho=106
@@ -290,7 +328,9 @@ Alto=101
 NumeroFrames=15
 Velocidad=0.5
 OffsetX=5
-OffsetY=18
+OffsetY=8
+Inicial=1
+Desc=
 
 [ANIMACION27]'FX - BURBUJA COMPLETA
 Grafico=80
@@ -301,7 +341,7 @@ Alto=85
 NumeroFrames=40
 Velocidad=0.4
 OffsetX=0
-OffsetY=0
+OffsetY=10
 Inicial=1
 Desc=[FX] BURBUJA CREACION
 
@@ -314,7 +354,7 @@ Alto=85
 NumeroFrames=3
 Velocidad=2
 OffsetX=0
-OffsetY=0
+OffsetY=10
 Inicial=1
 Desc=[FX] BURBUJA
 
@@ -325,9 +365,9 @@ Columnas=2
 Ancho=102
 Alto=104
 NumeroFrames=7
-Velocidad=1,5
+Velocidad=1.5
 OffsetX=0
-OffsetY=0
+OffsetY=5
 Inicial=1
 Desc=[FX] RAYO
 
@@ -338,7 +378,7 @@ Columnas=3
 Ancho=70
 Alto=118
 NumeroFrames=7
-Velocidad=1,2
+Velocidad=1.2
 OffsetX=0
 OffsetY=0
 Inicial=1
@@ -353,7 +393,7 @@ Alto=128
 NumeroFrames=15
 Velocidad=1
 OffsetX=0
-OffsetY=0
+OffsetY=30
 Inicial=2
 NumFrames=15
 Width=128
@@ -369,7 +409,7 @@ Alto=128
 NumeroFrames=10
 Velocidad=1
 OffsetX=0
-OffsetY=0
+OffsetY=30
 Inicial=1
 Desc=[FX] PARALIZAR
 
@@ -382,7 +422,7 @@ Alto=128
 NumeroFrames=15
 Velocidad=0.7
 OffsetX=0
-OffsetY=0
+OffsetY=20
 Inicial=1
 Desc=[FX] LLAMARADA
 
@@ -395,7 +435,7 @@ Alto=128
 NumeroFrames=15
 Velocidad=0.7
 OffsetX=0
-OffsetY=0
+OffsetY=10
 Inicial=4
 Desc=[FX] DESCARGA
 
@@ -429,10 +469,10 @@ Filas=2
 Columnas=2
 Ancho=128
 Alto=128
-NumeroFrames=9
+NumeroFrames=10
 Velocidad=1
-OffsetX=0
-OffsetY=0
+OffsetX=4
+OffsetY=15
 Inicial=3
 NumFrames=10
 Width=128
@@ -447,8 +487,10 @@ Ancho=128
 Alto=128
 NumeroFrames=15
 Velocidad=1
-OffsetX=0
-OffsetY=0
+OffsetX=2
+OffsetY=20
+Inicial=1
+Desc=
 
 [ANIMACION39]'Curar heridas graves
 Grafico=96
@@ -459,7 +501,7 @@ Alto=128
 NumeroFrames=10
 Velocidad=1
 OffsetX=0
-OffsetY=0
+OffsetY=30
 Inicial=3
 Desc=[FX] CURAR HERIDAS
 
@@ -514,7 +556,7 @@ Ancho=32
 Alto=32
 NumeroFrames=3
 OffsetX=0
-OffsetY=0
+OffsetY=-10
 Velocidad=1.5
 Inicial=38
 Desc=[FX] CURAR VENENO
@@ -654,7 +696,7 @@ Alto=128
 Velocidad=1
 NumeroFrames=11
 OffsetX=0
-OffsetY=0
+OffsetY=20
 Inicial=4
 NumFrames=11
 Width=128
@@ -681,9 +723,10 @@ Ancho=32
 Alto=32
 NumeroFrames=3
 OffsetX=0
-OffsetY=0
+OffsetY=-10
 Velocidad=1
 Inicial=30
+Desc=
 
 [ANIMACION57]'Grito de guerra
 Grafico=120
@@ -692,10 +735,11 @@ Columnas=2
 Ancho=128
 Alto=128
 NumeroFrames=10
-OffsetX=0
-OffsetY=0
+OffsetX=-3
+OffsetY=30
 Velocidad=0.9
 Inicial=3
+Desc=
 
 [ANIMACION58]'Sangre
 Grafico=123
@@ -717,8 +761,10 @@ Ancho=128
 Alto=128
 NumeroFrames=15
 OffsetX=0
-OffsetY=0
+OffsetY=27
 Velocidad=0.6
+Inicial=1
+Desc=
 
 [ANIMACION60]'Meditacion entera 50
 Grafico=153
@@ -751,9 +797,11 @@ Columnas=5
 Ancho=50
 Alto=50
 NumeroFrames=10
-OffsetX=0
-OffsetY=0
+OffsetX=1
+OffsetY=5
 Velocidad=0.5
+Inicial=1
+Desc=
 
 [ANIMACION63]'Anillos Fin
 Grafico=163
@@ -762,10 +810,11 @@ Columnas=5
 Ancho=50
 Alto=50
 NumeroFrames=12
-OffsetX=0
-OffsetY=0
+OffsetX=1
+OffsetY=5
 Velocidad=0.5
 Inicial=11
+Desc=
 
 [ANIMACION64]'Humo meditacion 50
 Grafico=161
@@ -787,9 +836,10 @@ Ancho=128
 Alto=128
 NumeroFrames=15
 OffsetX=0
-OffsetY=0
+OffsetY=30
 Velocidad=0.6
 Inicial=4
+Desc=
 
 [ANIMACION66]'Remover paralisis
 Grafico=149
@@ -798,10 +848,11 @@ Columnas=3
 Ancho=85
 Alto=85
 NumeroFrames=30
-OffsetX=0
-OffsetY=0
+OffsetX=-2
+OffsetY=20
 Velocidad=1
 Inicial=7
+Desc=
 
 [ANIMACION67]'flecha magica
 Grafico=145
@@ -810,9 +861,11 @@ Columnas=4
 Ancho=55
 Alto=108
 NumeroFrames=15
-OffsetX=-18
-OffsetY=10
+OffsetX=-13
+OffsetY=5
 Velocidad=1
+Inicial=1
+Desc=
 
 [ANIMACION68]'Destello mágico
 Grafico=123
@@ -822,9 +875,10 @@ Ancho=16
 Alto=16
 NumeroFrames=8
 OffsetX=0
-OffsetY=0
+OffsetY=-15
 Velocidad=0.7
 Inicial=196
+Desc=
 
 [ANIMACION69]'Envenenar
 Grafico=132
@@ -845,8 +899,10 @@ Ancho=72
 Alto=75
 NumeroFrames=9
 OffsetX=0
-OffsetY=0
+OffsetY=10
 Velocidad=0.7
+Inicial=1
+Desc=
 
 [ANIMACION71]'Fuego divino
 Grafico=135
@@ -857,7 +913,7 @@ Alto=78
 NumeroFrames=7
 OffsetX=0
 OffsetY=0
-Velocidad=1,2
+Velocidad=1.2
 Inicial=9
 Desc=
 [ANIMACION72]'Fuego mágico
@@ -867,10 +923,11 @@ Columnas=4
 Ancho=64
 Alto=64
 NumeroFrames=10
-OffsetX=0
-OffsetY=0
+OffsetX=2
+OffsetY=9
 Velocidad=0.8
 Inicial=9
+Desc=
 
 [ANIMACION73]'Humo meditacion 60
 Grafico=164
@@ -881,7 +938,9 @@ Alto=128
 NumeroFrames=8
 OffsetX=0
 OffsetY=20
-Velocidad=0.4
+Velocidad=0.6
+Inicial=1
+Desc=
 
 [ANIMACION74]'Inicio medi 60
 Grafico=169
@@ -892,8 +951,9 @@ Alto=128
 NumeroFrames=15
 OffsetX=0
 OffsetY=0
-Velocidad=0.4
+Velocidad=0.6
 Inicial=4
+Desc=
 
 [ANIMACION75]'bucle medi 60
 Grafico=166
@@ -1257,6 +1317,9 @@ NumeroFrames=6
 Velocidad=1
 Inicial=1
 Grafico=700
+Desc=
+OffsetX=0
+OffsetY=5
 
 [ANIMACION112]'Dragon_Walk_South
 Filas=3
@@ -1268,6 +1331,8 @@ Velocidad=0.6
 Inicial=1
 Grafico=701
 Desc=Dragon walk south
+OffsetX=0
+OffsetY=5
 
 [ANIMACION113]'Dragon_Walk_North
 Filas=3
@@ -1291,6 +1356,8 @@ Velocidad=0.6
 Inicial=1
 Grafico=703
 Desc=Dragon Walk East
+OffsetX=0
+OffsetY=5
 
 
 [ANIMACION115]'Dragon_Walk_west
@@ -1303,6 +1370,8 @@ Velocidad=0.6
 Inicial=4
 Grafico=704
 Desc=Dragon Walk West
+OffsetX=0
+OffsetY=5
 
 [ANIMACION116]
 Grafico=957
@@ -1478,6 +1547,8 @@ Alto=162
 Velocidad=0.6
 Inicial=1
 Desc=Dragon Ataque East
+OffsetX=0
+OffsetY=5
 [ANIMACION133]
 Grafico=708
 NumeroFrames=6
@@ -1488,6 +1559,8 @@ Alto=157
 Velocidad=0.6
 Inicial=1
 Desc=Dragon Ataque south
+OffsetX=0
+OffsetY=5
 [ANIMACION134]
 Grafico=707
 NumeroFrames=6
@@ -1498,6 +1571,8 @@ Alto=170
 Velocidad=0.6
 Inicial=1
 Desc=Dragon Ataque North
+OffsetX=0
+OffsetY=12
 [ANIMACION135]
 Grafico=709
 NumeroFrames=8
@@ -1908,6 +1983,8 @@ Alto=48
 Velocidad=0.5
 Inicial=1
 Desc=Araña Negra Walk South
+OffsetX=3
+OffsetY=5
 [ANIMACION176]
 Grafico=730
 NumeroFrames=5
@@ -1918,6 +1995,8 @@ Alto=48
 Velocidad=0.5
 Inicial=6
 Desc=Araña Negra Walk North
+OffsetX=0
+OffsetY=5
 [ANIMACION177]
 Grafico=731
 NumeroFrames=5
@@ -1928,6 +2007,8 @@ Alto=48
 Velocidad=0.5
 Inicial=1
 Desc=Araña Negra Walk West
+OffsetX=-5
+OffsetY=0
 [ANIMACION178]
 Grafico=731
 NumeroFrames=5
@@ -1938,6 +2019,8 @@ Alto=48
 Velocidad=0.5
 Inicial=6
 Desc=Araña negra Walk East
+OffsetX=5
+OffsetY=0
 [ANIMACION179]
 Grafico=735
 NumeroFrames=7
@@ -2391,6 +2474,8 @@ Alto=32
 Velocidad=0.5
 Inicial=1
 Desc=Gallo Walk West
+OffsetX=0
+OffsetY=5
 [ANIMACION224]
 Grafico=749
 NumeroFrames=8
@@ -2401,6 +2486,8 @@ Alto=32
 Velocidad=0.5
 Inicial=9
 Desc=Gallo Walk East
+OffsetX=0
+OffsetY=5
 [ANIMACION225]
 Grafico=723
 NumeroFrames=7
@@ -2441,6 +2528,8 @@ Alto=80
 Velocidad=0.5
 Inicial=4
 Desc=Yeti Walk North
+OffsetX=0
+OffsetY=4
 [ANIMACION229]
 Grafico=747
 NumeroFrames=7
@@ -2451,6 +2540,8 @@ Alto=80
 Velocidad=0.5
 Inicial=11
 Desc=Yeti Walk East
+OffsetX=5
+OffsetY=0
 [ANIMACION230]
 Grafico=748
 NumeroFrames=7
@@ -2591,6 +2682,8 @@ Alto=94
 Velocidad=0.8
 Inicial=1
 Desc=Enredar Inicial
+OffsetX=-2
+OffsetY=7
 
 [ANIMACION244]
 Grafico=176
@@ -2602,6 +2695,8 @@ Alto=94
 Velocidad=0.8
 Inicial=13
 Desc=Enredar Final
+OffsetX=-2
+OffsetY=7
 
 [ANIMACION245]
 Grafico=178
@@ -2613,5 +2708,85 @@ Alto=73
 Velocidad=0.8
 Inicial=1
 Desc=Enredado
-OffsetX=4
-OffsetY=-6
+OffsetX=1
+OffsetY=0
+[ANIMACION246]
+Grafico=1003
+NumeroFrames=10
+Columnas=5
+Filas=2
+Ancho=96
+Alto=128
+Velocidad=1
+Inicial=1
+OffsetY=43
+[ANIMACION247]
+Grafico=1003
+NumeroFrames=14
+Columnas=10
+Filas=10
+Ancho=50
+Alto=50
+Velocidad=1
+Inicial=61
+OffsetY=
+[ANIMACION248]
+Grafico=1003
+NumeroFrames=10
+Columnas=9
+Filas=14
+Ancho=52
+Alto=36
+Velocidad=1
+Inicial=108
+Desc=calavera envenenar
+OffsetX=-2
+OffsetY=0
+[ANIMACION249]
+Grafico=750
+NumeroFrames=9
+Columnas=9
+Filas=1
+Ancho=49
+Alto=75
+Velocidad=1
+Inicial=1
+OffsetX=0
+OffsetY=3
+Desc=
+[ANIMACION250]
+Grafico=750
+NumeroFrames=9
+Columnas=9
+Filas=2
+Ancho=49
+Alto=75
+Velocidad=1
+Inicial=10
+OffsetX=0
+OffsetY=3
+Desc=
+[ANIMACION251]
+Grafico=750
+NumeroFrames=8
+Columnas=8
+Filas=8
+Ancho=59
+Alto=75
+Velocidad=1
+Inicial=17
+OffsetX=0
+OffsetY=3
+Desc=
+[ANIMACION252]
+Grafico=750
+NumeroFrames=8
+Columnas=8
+Filas=4
+Ancho=59
+Alto=75
+Velocidad=1
+Inicial=25
+OffsetX=0
+OffsetY=3
+Desc=

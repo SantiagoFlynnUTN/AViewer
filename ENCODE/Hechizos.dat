@@ -102,7 +102,7 @@ PropioMsg=Te has envenenado.
 
 Tipo=2
 WAV=16
-FXgrh=36
+FXgrh=44
 Loops=0
 
 Envenena=1
@@ -130,7 +130,7 @@ PropioMsg=Te has curado algunas heridas.
 
 Tipo=1
 WAV=18
-FXgrh=11
+FXgrh=42
 loops=0
 
 SubeHP=1
@@ -958,7 +958,7 @@ TargetMsg=ha lanzado Maldición sobre ti.
 PropioMsg=Has lanzado Maldición sobre ti.
 Tipo=1
 WAV=84
-FXgrh=37
+FXgrh=43
 SubeFU=2
 MinFU=10
 MaxFU=10
