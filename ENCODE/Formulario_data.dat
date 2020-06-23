@@ -1,5 +1,5 @@
 [INIT]
-NUM=21
+NUM=22
 [FD1]
 Grafico=1100
 X=156
@@ -1174,3 +1174,15 @@ X=111
 Y=150
 NivelDibujo=5
 AlphaValue=160
+
+[FD22]'Fundir
+Grafico=1264
+GraficosEnX=1
+GraficosEnY=1
+Width=256
+Height=256
+X=161
+Y=200
+NivelDibujo=5
+AlphaValue=160
+

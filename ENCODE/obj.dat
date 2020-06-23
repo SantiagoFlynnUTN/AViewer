@@ -1,4 +1,4 @@
-﻿  ------------ OBJTYPES ------------
+﻿----------- OBJTYPES ------------
 otWeapon = 1
 otArmadura = 2
 otLlaves = 3
@@ -81,19 +81,19 @@ otCualquiera = 255
 "MINDEF"
 "MAXDEF"
 
-' Daños
+' Da?s
 "Proyectil"
 "StaffPower"
 "StaffDamageBonus"
 "DanioSoloNPCs"
-"MinDañoMagico"
-"MaxDañoMagico"
+"MinDa?Magico"
+"MaxDa?Magico"
 "MaxHIT"
 "MinHIT"
 "DosManos"
 
-' Daños Efectos
-"Apuñala"
+' Da?s Efectos
+"Apu?la"
 "Envenena"
 "Paraliza"
 
@@ -138,7 +138,7 @@ otCualquiera = 255
 NumOBJs=259
 
 [OBJ1]
-Name=Báculo Mago Agite
+Name=B?ulo Mago Agite
 ObjType=1
 GrhIndex=4285
 AnimAlto=22
@@ -148,8 +148,8 @@ Madera=340
 Piedras=2
 SkCarpinteria=100
 StaffPower=3
-MinDañoMagico=35
-MaxDañoMagico=40
+MinDa?Magico=35
+MaxDa?Magico=40
 MaxHIT=1
 MinHIT=1
 Valor=1
@@ -166,8 +166,8 @@ Madera=250
 Piedras=1
 SkCarpinteria=100
 StaffPower=2
-MinDañoMagico=35
-MaxDañoMagico=40
+MinDa?Magico=35
+MaxDa?Magico=40
 MaxHIT=1
 MinHIT=1
 Valor=1
@@ -203,7 +203,7 @@ CP1=239
 CP2=3
 
 [OBJ5]
-Name=Empuñadura Bardo Agite
+Name=Empu?dura Bardo Agite
 ObjType=1
 GrhIndex=1156
 AnimAlto=50
@@ -214,7 +214,7 @@ LingO=21
 SkHerreria=100
 MaxHIT=5
 MinHIT=4
-Apuñala=1
+Apu?la=1
 Valor=1
 CP1=239
 CP2=3
@@ -236,14 +236,14 @@ CP1=253
 CP2=3
 
 [OBJ7]
-Name=Empuñadura Ase Agite
+Name=Empu?dura Ase Agite
 ObjType=1
 GrhIndex=4296
 AnimAlto=2
 AnimBajo=25
 MaxHIT=5
 MinHIT=4
-Apuñala=1
+Apu?la=1
 Valor=1
 CP1=247
 CP2=3
@@ -359,13 +359,13 @@ MinHIT=1
 Valor=1
 
 [OBJ15]
-Name=Báculo Mago Torneo
+Name=B?ulo Mago Torneo
 ObjType=1
 GrhIndex=4286
 AnimAlto=23
 AnimBajo=42
-MinDañoMagico=55
-MaxDañoMagico=60
+MinDa?Magico=55
+MaxDa?Magico=60
 MaxHIT=1
 MinHIT=1
 Valor=1
@@ -378,8 +378,8 @@ ObjType=1
 GrhIndex=4284
 AnimAlto=14
 AnimBajo=45
-MinDañoMagico=55
-MaxDañoMagico=60
+MinDa?Magico=55
+MaxDa?Magico=60
 MaxHIT=1
 MinHIT=1
 Valor=1
@@ -411,7 +411,7 @@ CP1=239
 CP2=3
 
 [OBJ19]
-Name=Empuñadura Bardo Torneo
+Name=Empu?dura Bardo Torneo
 ObjType=1
 GrhIndex=1157
 AnimAlto=51
@@ -419,7 +419,7 @@ AnimBajo=49
 StaffPower=2
 MaxHIT=7
 MinHIT=6
-Apuñala=1
+Apu?la=1
 Valor=1
 CP1=239
 CP2=3
@@ -436,14 +436,14 @@ Valor=1
 CP1=253
 CP2=3
 [OBJ21]
-Name=Empuñadura Ase Torneo
+Name=Empu?dura Ase Torneo
 ObjType=1
 GrhIndex=4295
 AnimAlto=3
 AnimBajo=26
 MaxHIT=7
 MinHIT=6
-Apuñala=1
+Apu?la=1
 Valor=1
 CP1=247
 CP2=3
@@ -537,14 +537,14 @@ Marfil=252
 NivelProf=1
 TipoCraft=3
 [OBJ28]
-Name=Báculo pt1
+Name=B?ulo pt1
 ObjType=1
 GrhIndex=619
 AnimAlto=1
 AnimBajo=1
 Crucial=1
-MinDañoMagico=2
-MaxDañoMagico=5
+MinDa?Magico=2
+MaxDa?Magico=5
 MaxHIT=1
 MinHIT=1
 Valor=1
@@ -560,7 +560,7 @@ AnimBajo=1
 Crucial=1
 MaxHIT=2
 MinHIT=1
-Apuñala=1
+Apu?la=1
 Valor=1
 CP1=247
 CP2=3
@@ -611,14 +611,14 @@ TipoCraft=3
 NoDecraft=1
 
 [OBJ33]
-Name=Báculo pt2
+Name=B?ulo pt2
 ObjType=1
 GrhIndex=4666
 AnimAlto=1
 AnimBajo=1
 Crucial=1
-MinDañoMagico=10
-MaxDañoMagico=15
+MinDa?Magico=10
+MaxDa?Magico=15
 MaxHIT=1
 MinHIT=1
 Valor=1
@@ -634,7 +634,7 @@ AnimBajo=1
 Crucial=1
 MaxHIT=3
 MinHIT=2
-Apuñala=1
+Apu?la=1
 Valor=1
 CP1=247
 CP2=3
@@ -690,7 +690,7 @@ AnimBajo=1
 Crucial=1
 MaxHIT=2
 MinHIT=1
-Apuñala=1
+Apu?la=1
 Valor=1
 CP1=247
 CP2=3
@@ -829,7 +829,7 @@ CP1=251
 CP2=3
 
 [OBJ47]
-Name=Vestimenta Común Roja
+Name=Vestimenta Com?n Roja
 ObjType=2
 GrhIndex=4663
 AnimAlto=23
@@ -839,7 +839,7 @@ AnimBajoM=25
 Valor=1
 
 [OBJ48]
-Name=Vestimenta Común Verde
+Name=Vestimenta Com?n Verde
 ObjType=2
 GrhIndex=4659
 AnimAlto=24
@@ -1480,7 +1480,7 @@ Valor=1
 CP1=59
 CP2=3
 [OBJ93]
-Name=Vestimenta Común Roja Newbie
+Name=Vestimenta Com?n Roja Newbie
 ObjType=2
 GrhIndex=4663
 AnimAlto=23
@@ -1492,7 +1492,7 @@ Soulbound=1
 Valor=1
 
 [OBJ94]
-Name=Vestimenta Común Verde Newbie
+Name=Vestimenta Com?n Verde Newbie
 ObjType=2
 GrhIndex=4659
 AnimAlto=24
@@ -1504,7 +1504,7 @@ Soulbound=1
 Valor=1
 
 [OBJ95]
-Name=Vestimenta Común Azul Newbie
+Name=Vestimenta Com?n Azul Newbie
 ObjType=2
 GrhIndex=619
 AnimAlto=27
@@ -1515,7 +1515,7 @@ Newbie=1
 Soulbound=1
 Valor=1
 [OBJ96]
-Name=Poción Amarilla
+Name=Poci? Amarilla
 NameP=Pociones Amarillas
 ObjType=4
 GrhIndex=681
@@ -1527,7 +1527,7 @@ DuracionEfecto=1200
 Valor=10
 
 [OBJ97]
-Name=Poción Azul
+Name=Poci? Azul
 NameP=Pociones Azules
 ObjType=4
 GrhIndex=679
@@ -1538,8 +1538,8 @@ MinModificador=20
 Valor=4
 
 [OBJ98]
-Name=Poción Roja
-NameP=Poción Rojas
+Name=Poci? Roja
+NameP=Poci? Rojas
 ObjType=4
 GrhIndex=678
 Crucial=1
@@ -1549,7 +1549,7 @@ MinModificador=18
 Valor=5
 
 [OBJ99]
-Name=Poción Verde
+Name=Poci? Verde
 NameP=Pociones Verdes
 ObjType=4
 GrhIndex=680
@@ -1561,7 +1561,7 @@ DuracionEfecto=1200
 Valor=12
 
 [OBJ100]
-Name=Poción Violeta
+Name=Poci? Violeta
 NameP=Pociones Violetas
 ObjType=4
 GrhIndex=690
@@ -1570,7 +1570,7 @@ TipoPocion=5
 Valor=16
 
 [OBJ101]
-Name=Poción Amarilla
+Name=Poci? Amarilla
 NameP=Pociones Amarillas
 ObjType=4
 GrhIndex=689
@@ -1590,7 +1590,7 @@ ObjType=8
 Log=1
 GrhIndex=677
 [OBJ102]'NEWBIE
-Name=Poción Azul
+Name=Poci? Azul
 NameP=Pociones Azules
 ObjType=4
 GrhIndex=687
@@ -1603,7 +1603,7 @@ MinModificador=20
 Valor=4
 
 [OBJ103]'NEWBIE
-Name=Poción Roja
+Name=Poci? Roja
 NameP=Pociones Rojas
 ObjType=4
 GrhIndex=682
@@ -2313,7 +2313,7 @@ NoSeCae=1
 
 [OBJ172]
 Name=Acta de Fundacion
-NameP=Actas de fundación
+NameP=Actas de fundaci?
 ObjType=8
 Log=1
 GrhIndex=691
@@ -2332,7 +2332,7 @@ Name=Mineral de Hierro
 NameP=Minerales de Hierro
 ObjType=9
 GrhIndex=651
-LingoteIndex=256
+LingoteIndex=198
 Valor=1
 
 [OBJ175]
@@ -2340,7 +2340,7 @@ Name=Mineral de Plata
 NameP=Minerales de Plata
 ObjType=9
 GrhIndex=650
-LingoteIndex=257
+LingoteIndex=199
 Valor=1
 
 [OBJ176]
@@ -2348,7 +2348,7 @@ Name=Mineral de Oro
 NameP=Minerales de Oro
 ObjType=9
 GrhIndex=652
-LingoteIndex=258
+LingoteIndex=200
 Valor=1
 
 [OBJ177]
@@ -2381,7 +2381,7 @@ MinHIT=2
 Valor=1
 
 [OBJ179]
-Name=Galeón
+Name=Gale?
 ObjType=12
 GrhIndex=1155
 AnimAlto=11
@@ -2416,7 +2416,6 @@ MaxHIT=1
 MinHIT=1
 Valor=1
 CP1=123
-
 [OBJ182]
 Name=Flecha Torneo
 ObjType=13
@@ -2508,15 +2507,15 @@ GrhIndex=694
 Crucial=1
 
 [OBJ196]
-Name=Leña
-NameP=Leñas 
+Name=Le?
+NameP=Le?s 
 ObjType=17
 GrhIndex=662
 Valor=1
 
 [OBJ197]
-Name=Leña 2
-NameP=Leñas 2
+Name=Le? 2
+NameP=Le?s 2
 ObjType=17
 GrhIndex=663
 Valor=1
@@ -2585,8 +2584,8 @@ Crucial=1
 Valor=1
 
 [OBJ207]
-Name=Hacha de Leñador
-NameP=Hachas de Leñador
+Name=Hacha de Le?dor
+NameP=Hachas de Le?dor
 ObjType=18
 GrhIndex=668
 Crucial=1
@@ -2595,8 +2594,8 @@ MinHIT=4
 Valor=1
 
 [OBJ208]
-Name=Caña de Pescador
-NameP=Cañas de Pescador
+Name=Ca? de Pescador
+NameP=Ca?s de Pescador
 ObjType=18
 GrhIndex=666
 Crucial=1
@@ -2666,7 +2665,7 @@ ObjType=255
 GrhIndex=646
 Valor=1
 [OBJ217]
-Name=Salmón
+Name=Salm?
 NameP=Salmones
 ObjType=255
 GrhIndex=647
@@ -2704,7 +2703,7 @@ GrhIndex=692
 [OBJ222]
 HechizoIndex=2
 ObjType=10
-Name=Destello Mágico
+Name=Destello M?ico
 Valor=100
 GrhIndex=692
 
@@ -2732,7 +2731,7 @@ GrhIndex=692
 [OBJ226]
 HechizoIndex=6
 ObjType=10
-Name=Flecha Mágica
+Name=Flecha M?ica
 Valor=100
 GrhIndex=692
 
@@ -2746,7 +2745,7 @@ GrhIndex=692
 [OBJ228]
 HechizoIndex=8
 ObjType=10
-Name=Fuego Mágico
+Name=Fuego M?ico
 Valor=100
 GrhIndex=692
 
@@ -2760,7 +2759,7 @@ GrhIndex=692
 [OBJ230]
 HechizoIndex=10
 ObjType=10
-Name=Remover Parálisis
+Name=Remover Par?isis
 Valor=100
 GrhIndex=692
 
@@ -2781,7 +2780,7 @@ GrhIndex=692
 [OBJ233]
 HechizoIndex=13
 ObjType=10
-Name=Regeneración Clerical
+Name=Regeneraci? Clerical
 Valor=100
 GrhIndex=692
 
@@ -2809,7 +2808,7 @@ GrhIndex=692
 [OBJ237]
 HechizoIndex=17
 ObjType=10
-Name=Insurrección Sombría
+Name=Insurrecci? Sombr?
 Valor=100
 GrhIndex=692
 
@@ -2844,28 +2843,28 @@ GrhIndex=692
 [OBJ242]
 HechizoIndex=22
 ObjType=10
-Name=Ráfaga Ardiente
+Name=R?aga Ardiente
 Valor=100
 GrhIndex=692
 
 [OBJ243]
 HechizoIndex=23
 ObjType=10
-Name=Descarga Eléctrica
+Name=Descarga El?trica
 Valor=100
 GrhIndex=692
 
 [OBJ244]
 HechizoIndex=24
 ObjType=10
-Name=Prisión Gélida
+Name=Prisi? G?ida
 Valor=100
 GrhIndex=692
 
 [OBJ245]
 HechizoIndex=25
 ObjType=10
-Name=Apocalípsis
+Name=Apocal?sis
 Valor=100
 GrhIndex=692
 
@@ -2886,7 +2885,7 @@ GrhIndex=692
 [OBJ248]
 HechizoIndex=28
 ObjType=10
-Name=Relámpago
+Name=Rel?pago
 Valor=100
 GrhIndex=692
 
@@ -2914,7 +2913,7 @@ GrhIndex=692
 [OBJ252]
 HechizoIndex=32
 ObjType=10
-Name=Llama de Dragón
+Name=Llama de Drag?
 Valor=100
 GrhIndex=692
 
@@ -2942,7 +2941,7 @@ GrhIndex=692
 [OBJ256]
 HechizoIndex=36
 ObjType=10
-Name=Maldición
+Name=Maldici?
 Valor=100
 GrhIndex=692
 
