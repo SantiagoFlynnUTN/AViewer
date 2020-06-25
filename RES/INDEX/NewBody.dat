@@ -1,5 +1,5 @@
 [INIT]
-Num=106
+Num=113
 
 [1]'Dragon alas grises
 Reposo=0
@@ -907,3 +907,67 @@ Mov2=252 'derecha
 Mov3=249 'sur
 Mov4=251 'izquierda
 Ataque=0
+[107]
+MOV1=236
+MOV2=238
+MOV3=235
+MOV4=237
+DESC=[BAJO] Suprema 
+OverWriteGrafico=963
+OffsetY=-30
+[108]
+MOV1=232
+MOV2=234
+MOV3=231
+MOV4=233
+DESC=[BAJO] Tuni Apoca
+OverWriteGrafico=1004
+OffsetY=-30
+[109]
+MOV1=236
+MOV2=238
+MOV3=235
+MOV4=237
+DESC=[BAJO] Armor Draco Negro
+OverWriteGrafico=1004
+OffsetY=-30
+[110]
+MOV1=86
+MOV2=88
+MOV3=85
+MOV4=87
+DESC=[BAJOS] Armor Blanca
+OverWriteGrafico=1005
+OffsetY=-30
+[111]
+MOV1=86
+MOV2=88
+MOV3=85
+MOV4=87
+DESC=[ALTOS] Tuni Apoca
+OverWriteGrafico=1006
+OffsetY=-39
+[112]
+MOV1=86
+MOV2=88
+MOV3=85
+MOV4=87
+DESC=[ALTOS] Suprema
+OverWriteGrafico=1007
+OffsetY=-39
+[113]
+MOV1=86
+MOV2=88
+MOV3=85
+MOV4=87
+DESC=[ALTOS] Arm Draco Negro
+OverWriteGrafico=1008
+OffsetY=-39
+[114]
+MOV1=86
+MOV2=88
+MOV3=85
+MOV4=87
+DESC=[ALTOS] Armor Blanca
+OverWriteGrafico=1009
+OffsetY=-39

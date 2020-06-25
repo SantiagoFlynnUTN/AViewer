@@ -2711,7 +2711,7 @@ Desc=Enredado
 OffsetX=1
 OffsetY=0
 [ANIMACION246]
-Grafico=1003
+Grafico=180
 NumeroFrames=10
 Columnas=5
 Filas=2
@@ -2721,7 +2721,7 @@ Velocidad=1
 Inicial=1
 OffsetY=43
 [ANIMACION247]
-Grafico=1003
+Grafico=180
 NumeroFrames=14
 Columnas=10
 Filas=10
@@ -2731,7 +2731,7 @@ Velocidad=1
 Inicial=61
 OffsetY=
 [ANIMACION248]
-Grafico=1003
+Grafico=180
 NumeroFrames=10
 Columnas=9
 Filas=14
