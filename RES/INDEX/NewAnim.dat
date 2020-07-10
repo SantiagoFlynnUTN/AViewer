@@ -1,5 +1,5 @@
 [NW_ANIM]
-Num=262
+Num=270
 
 'offsetX= negativo <<<   positivo >>>>
 'offsetY= negativo ^ 	 positivo v
@@ -31,7 +31,7 @@ OffsetY=
 
 
 [ANIMACION3]'Dragon alas grises_Derecha
-Grafico=1136
+Grafico=1536
 Filas=2
 Columnas=2
 Ancho=180
@@ -42,7 +42,7 @@ OffsetX=
 OffsetY=
 
 [ANIMACION4]'Dragon alas grises_Izquierda
-Grafico=1139
+Grafico=1539
 Filas=2
 Columnas=2
 Ancho=180
@@ -53,7 +53,7 @@ OffsetX=
 OffsetY=
 
 [ANIMACION5]'Dragon alas grises_Sur
-Grafico=1145
+Grafico=1545
 Filas=2
 Columnas=2
 Ancho=226
@@ -64,7 +64,7 @@ OffsetX=
 OffsetY=
 
 [ANIMACION6]'Dragon alas grises_Norte
-Grafico=1142
+Grafico=1542
 Filas=2
 Columnas=2
 Ancho=216
@@ -2840,7 +2840,7 @@ Ancho=32
 Alto=64
 Velocidad=1
 Inicial=19
-OffsetX=0
+OffsetX=-1
 OffsetY=0
 TipoAnimacion=1
 Desc=
@@ -2922,3 +2922,95 @@ OffsetX=5
 OffsetY=5
 TipoAnimacion=1
 Desc=
+[ANIMACION263]
+Grafico=901
+NumeroFrames=6
+Columnas=6
+Filas=4
+Ancho=42
+Alto=64
+Velocidad=1
+Inicial=1
+TipoAnimacion=1
+Desc=Movement Shield 42x64 Sur
+[ANIMACION264]
+Grafico=901
+NumeroFrames=6
+Columnas=6
+Filas=4
+Ancho=42
+Alto=64
+Velocidad=1
+Inicial=7
+TipoAnimacion=1
+Desc=Movement Shield 42x64 North
+[ANIMACION265]
+Grafico=901
+NumeroFrames=6
+Columnas=6
+Filas=4
+Ancho=42
+Alto=64
+Velocidad=1
+Inicial=13
+TipoAnimacion=1
+Desc=Movement Shield 42x64 West
+[ANIMACION266]
+Grafico=901
+NumeroFrames=6
+Columnas=6
+Filas=4
+Ancho=42
+Alto=64
+Velocidad=1
+Inicial=19
+TipoAnimacion=1
+Desc=Movement Shield 42x64 East
+[ANIMACION267]
+Grafico=901
+NumeroFrames=6
+Columnas=6
+Filas=4
+Ancho=42
+Alto=64
+Velocidad=1
+Inicial=1
+TipoAnimacion=1
+OffsetY=5
+Desc=Movement Shield 42x64 Sur Dworf
+[ANIMACION268]
+Grafico=901
+NumeroFrames=6
+Columnas=6
+Filas=4
+Ancho=42
+Alto=64
+Velocidad=1
+Inicial=7
+OffsetY=5
+TipoAnimacion=1
+Desc=Movement Shield 42x64 North Dworf
+[ANIMACION269]
+Grafico=901
+NumeroFrames=6
+Columnas=6
+Filas=4
+Ancho=42
+Alto=64
+Velocidad=1
+Inicial=13
+OffsetY=5
+TipoAnimacion=1
+Desc=Movement Shield 42x64 West Dworf
+[ANIMACION270]
+Grafico=901
+NumeroFrames=6
+Columnas=6
+Filas=4
+Ancho=42
+Alto=64
+Velocidad=1
+Inicial=19
+OffsetY=5
+TipoAnimacion=1
+Desc=Movement Shield 42x64 East Dworf
