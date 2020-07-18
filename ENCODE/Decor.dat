@@ -25,6 +25,8 @@ EstadoDefault=0						' Cual es el estado normal de esta decor
 PosAccion=0-0-0			' Posicion si tuviera que hacer algun tipo de accion
 TileH=0					' Dimension Y
 TileW=0					' Dimension X
+TileTransX				' tiles transparentes X 
+TileTransY				' tiles transparentes Y 
 
 ' @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 ' @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -106,6 +108,7 @@ EstadoDefault=0
 PosAccion=0-0-0
 TileH=1
 TileW=1
+TileTransY=0
 
 [DECOR6] ' Yacimiento Calidad Buena Hierro
 MaxHP=0

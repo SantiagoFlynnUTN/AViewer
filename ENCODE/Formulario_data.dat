@@ -2,8 +2,8 @@
 NUM=22
 [FD1]
 Grafico=1100
-X=156
-Y=150
+X=256
+Y=256
 NivelDibujo=5
 NumeroBotones=2
 
