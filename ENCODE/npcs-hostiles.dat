@@ -1,6 +1,6 @@
 'NPCs Hostiles
 [INIT]
-NumNPCs=532
+NumNPCs=535
 
 [NPC500] 'Murcielago
 Name=Murcielago
@@ -663,6 +663,60 @@ PoderEvasion=25
 [NPC532]
 Name=Fantasma Oscuro
 Body=57
+Heading=3
+Movement=2
+Alineacion=2
+Attackable=1
+Hostile=1
+GiveEXP=8
+GiveGLD=10000
+MinHP=1000
+MaxHP=1000
+MaxHIT=18
+MinHIT=1
+DEF=8
+PoderAtaque=8
+PoderEvasion=25
+
+[NPC533]
+Name=Lobo Huargo
+Body=58
+Heading=3
+Movement=2
+Alineacion=2
+Attackable=1
+Hostile=1
+GiveEXP=8
+GiveGLD=10000
+MinHP=1000
+MaxHP=1000
+MaxHIT=18
+MinHIT=1
+DEF=8
+PoderAtaque=8
+PoderEvasion=25
+
+[NPC534]
+Name=Escarabajo Grande
+Body=59
+Heading=3
+Movement=2
+Alineacion=2
+Attackable=1
+Hostile=1
+GiveEXP=8
+GiveGLD=10000
+MinHP=1000
+MaxHP=1000
+MaxHIT=18
+MinHIT=1
+DEF=8
+PoderAtaque=8
+PoderEvasion=25
+
+[NPC535]
+Name=Lobo Gris
+Body=60
 Heading=3
 Movement=2
 Alineacion=2
