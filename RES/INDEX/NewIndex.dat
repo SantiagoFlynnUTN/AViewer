@@ -3309,6 +3309,14 @@ Dinamica=0
 Estatica=0
 OverWriteGrafico=R
 Desc=
+[803]
+Estatica=217
+OverWriteGrafico=348
+Desc=
+[804]
+Estatica=426
+OverWriteGrafico=348
+Desc=cerrado
 Dinamica=0
 [1000]
 Estatica=4
