@@ -7,3 +7,8 @@
 
 # google drive files
 desktop.ini
+
+RES/INDEX/*.ind
+RES/INDEX/*.bin
+RES/OUTPUT/
+OutPut/
