@@ -249,8 +249,8 @@ OverWriteGrafico=347
 Desc=
 Dinamica=0
 [54]
-Estatica=0
-OverWriteGrafico=R
+Estatica=25
+OverWriteGrafico=347
 Desc=
 Dinamica=0
 [55]
@@ -289,8 +289,8 @@ OverWriteGrafico=347
 Desc=
 Dinamica=0
 [62]
-Estatica=0
-OverWriteGrafico=R
+Estatica=40
+OverWriteGrafico=0
 Desc=
 Dinamica=0
 [63]

@@ -37,14 +37,15 @@ Lobo Gris
 Quimera
 Troll
 Oso Pardo
+Mini Escarabajo
 Doroteo
 Hola, bienvenido a la cadena de finanzas Goliath.
 Argal
-�Hola buen amigo! cuento con las mejores frutas de estas comarcas.
+¡Hola buen amigo! cuento con las mejores frutas de estas comarcas.
 Korgan
-Aventurero �Estas preparado?
+Aventurero ¿Estas preparado?
 Padre Valyst
-Hola hijo m�o, soy el Sacerdote de este pueblo.
+Hola hijo mío, soy el Sacerdote de este pueblo.
 Viajero
 Elige un destino a viajar.
 Snape
@@ -54,4 +55,22 @@ Tengo los hechizos mas poderosos de estas tierras
 Snape
 Tengo los hechizos mas poderosos de estas tierras
 Vendedora de Pociones
-�Hola buen amigo! cuento con las mejores pociones de estas comarcas.
+¡Hola buen amigo! cuento con las mejores pociones de estas comarcas.
+Guerrero
+¡Hola buen amigo! cuento con las mejores frutas de estas comarcas.
+Cazador
+¡Hola buen amigo! cuento con las mejores frutas de estas comarcas.
+Paladin
+¡Hola buen amigo! cuento con las mejores frutas de estas comarcas.
+Asesino
+¡Hola buen amigo! cuento con las mejores frutas de estas comarcas.
+Clero
+¡Hola buen amigo! cuento con las mejores frutas de estas comarcas.
+Bardo
+¡Hola buen amigo! cuento con las mejores frutas de estas comarcas.
+Druida
+¡Hola buen amigo! cuento con las mejores frutas de estas comarcas.
+Mago
+¡Hola buen amigo! cuento con las mejores frutas de estas comarcas.
+Items Varios
+Vendo items varios
