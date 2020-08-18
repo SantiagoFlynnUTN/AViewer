@@ -12,7 +12,7 @@
 '4.....Terreno
 
 [INIT]
-NumeroHechizos=41
+NumeroHechizos=47
 
 [HECHIZO1]
 Nombre=Curar Veneno
@@ -93,7 +93,7 @@ Libro=1214
 
 [HECHIZO4]
 Nombre=Envenenar
-Desc=Envenenamiento, puedo provocar la muerte si no se contraresta a tiempo.
+Desc=Envenenamiento, puede provocar la muerte si no se contraresta a tiempo.
 PalabrasMagicas=Serp Xon In
 
 HechizeroMsg=Has envenenado a
@@ -130,7 +130,7 @@ PropioMsg=Te has curado algunas heridas.
 
 Tipo=1
 WAV=18
-FXgrh=42
+FXgrh=50
 loops=0
 
 SubeHP=1
@@ -481,7 +481,7 @@ TargetMsg=ha lanzado celeridad sobre ti.
 PropioMsg=Has lanzado celeridad sobre ti.
 Tipo=1
 WAV=83
-FXgrh=0
+FXgrh=54
 
 SubeAG=1
 MinAG=5
@@ -533,7 +533,7 @@ TargetMsg=ha lanzado fuerza sobre ti.
 PropioMsg=Has lanzado fuerza sobre ti.
 Tipo=1
 WAV=17
-FXgrh=0
+FXgrh=48
 
 SubeFU=1
 MinFU=5
@@ -1041,7 +1041,7 @@ TargetMsg=lanzó Ira de Fuego sobre ti.
 PropioMsg=Has lanzado Ira de Fuego sobre ti.
 Tipo=1
 WAV=78
-FXgrh=10
+FXgrh=52
 Loops=0
 
 NeedStaff=3
@@ -1116,6 +1116,142 @@ StaRequerido= 60
 IgnoraRM=1
 
 
+[HECHIZO42]
+Nombre=Llamarada
+Desc=Solo puede ser aprendido por los divinos asesinos 90 a 95 puntos de daño a la victima.
+PalabrasMagicas=Draggar Flamius
+HechizeroMsg=Has lanzado Llama de Dragón sobre
+TargetMsg=lanzó Llama de Dragón sobre ti.
+PropioMsg=Has lanzado Llama de Dragón sobre ti.
+Tipo=1
+WAV=27
+FXgrh=51
+Loops=0
+SubeHP=2
+MinHP=85
+MaxHP=87
+MinSkill=8
+ManaRequerido=800
+Target=3
+PIJA=1
+StaRequerido= 67
 
 
+[HECHIZO43]
+Nombre=Aliento de Dragón
+Desc=Solo puede ser aprendido por los divinos asesinos 90 a 95 puntos de daño a la victima.
+PalabrasMagicas=Draggar Flamius
+HechizeroMsg=Has lanzado Llama de Dragón sobre
+TargetMsg=lanzó Llama de Dragón sobre ti.
+PropioMsg=Has lanzado Llama de Dragón sobre ti.
+Tipo=1
+WAV=27
+FXgrh=45
+Loops=0
+SubeHP=2
+MinHP=85
+MaxHP=87
+MinSkill=8
+ManaRequerido=800
+Target=3
+PIJA=1
+StaRequerido= 67
+
+
+[HECHIZO44]
+Nombre=Rayo eléctrico
+Desc=Solo puede ser aprendido por los divinos asesinos 90 a 95 puntos de daño a la victima.
+PalabrasMagicas=Draggar Flamius
+HechizeroMsg=Has lanzado Llama de Dragón sobre
+TargetMsg=lanzó Llama de Dragón sobre ti.
+PropioMsg=Has lanzado Llama de Dragón sobre ti.
+Tipo=1
+WAV=27
+FXgrh=46
+Loops=0
+SubeHP=2
+MinHP=85
+MaxHP=87
+MinSkill=8
+ManaRequerido=800
+Target=3
+PIJA=1
+StaRequerido= 67
+
+[HECHIZO45]
+Nombre=Petrificar
+Desc=Inmovilizas durante un corto periodo a la victima.
+PalabrasMagicas=Är Prop s'uo
+
+HechizeroMsg=Has paralizado a
+TargetMsg=te ha inmovilizado.
+PropioMsg=Te has inmovilizado.
+
+Tipo=5
+buff=8
+WAV=16
+FXgrh=47
+loops=0
+
+'Inmoviliza=1
+Paraliza=1
+
+MinSkill=6
+ManaRequerido=170
+
+Target=3
+StaRequerido= 65
+Libro=1208
+
+
+[HECHIZO46]
+Nombre=Curar Veneno Bis
+Desc=Curar heridas mortales, restaura entre 100 y 200 puntos de salud.
+PalabrasMagicas=Sen Corpüs Sanctis
+
+HechizeroMsg=Has sanado a
+TargetMsg=te ha curado algunas heridas.
+PropioMsg=Te has curado algunas heridas.
+
+Tipo=1
+WAV=18
+FXgrh=49
+loops=0
+
+SubeHP=1
+MinHP=140
+MaxHP=150
+    
+MinSkill=1
+ManaRequerido=1600
+
+Target=3
+StaRequerido= 120
+Libro=1214
+
+
+[HECHIZO47]
+Nombre=Curar Heridas Bis
+Desc=Curar heridas mortales, restaura entre 100 y 200 puntos de salud.
+PalabrasMagicas=Sen Corpüs Sanctis
+
+HechizeroMsg=Has sanado a
+TargetMsg=te ha curado algunas heridas.
+PropioMsg=Te has curado algunas heridas.
+
+Tipo=1
+WAV=18
+FXgrh=53
+loops=0
+
+SubeHP=1
+MinHP=140
+MaxHP=150
+    
+MinSkill=1
+ManaRequerido=1600
+
+Target=3
+StaRequerido= 120
+Libro=1214
 

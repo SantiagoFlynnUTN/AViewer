@@ -1,51 +1,51 @@
-BÃ¡culo Mago Agite
+Báculo Mago Agite
 Vara Druida Agite
 Sable Druida Agite
 Espadita Bardo Agite
-EmpuÃ±adura Bardo Agite
+Empuñadura Bardo Agite
 Espada Clero Agite
-EmpuÃ±adura Ase Agite
+Empuñadura Ase Agite
 Espada Pala Agite
-Espada Caza Agite
+Daga Caza
 Manopla Guerre Agite
-Espada Guerre Agite
-Arco Caza Agite
+Espada Guerre Agite eliminar
+Arco Caza Agite 
 Arco Guerre Agite
 Daga Comun Newbie
-BÃ¡culo Mago Torneo
+báculo Mago Torneo
 Vara Druida Torneo
 Sable Druida Torneo
 Espadita Bardo Torneo
-EmpuÃ±adura Bardo Torneo
+Llamarada
 Espada Clero Torneo
-EmpuÃ±adura Ase Torneo
+Empuñadura Ase Torneo
 Espada Pala Torneo
-Espada Caza Torneo
+Aliento de Dragon
 Manopla Guerre Torneo
 Espada Guerre Torneo
 Arco Caza Torneo
 Arco Guerre Torneo
-BÃ¡culo pt1
-Daga pt1
-Espada liviana pt1
-Espada pesada pt1
-Arco pt1
-BÃ¡culo pt2
-Daga pt2
+Rayo Eléctrico
+Daga Comun
+Armadura Pala Agite +1 F falta
+Armadura Caza Agite +1 F falta
+Armadura Guerre Agite +1 F falta
+báculo pt2
+Petrificar
 Espada liviana pt2
 Espada pesada pt2
-Arco pt2
-Espada Mata Bestias
+Arco pt2 falta
+Espada Mata Bestias falta
 Tunica Mago Agite
 Tunica Druida Agite
 Armadura Bardo Agite
 Armadura Clero Agite
 Armadura Ase Agite
-Armadura Pala Agite
-Armadura Caza Agite
-Armadura Guerre Agite
-Vestimenta ComÃºn Roja
-Vestimenta ComÃºn Verde
+Armadura Pala Agite falta
+Armadura Caza Agite falta
+Armadura Guerre Agite falta
+Vestimenta Común Roja
+Vestimenta Común Verde
 Tunica Mago Torneo
 Tunica Druida Torneo
 Armadura Bardo Torneo
@@ -54,9 +54,9 @@ Armadura Ase Torneo
 Armadura Pala Torneo
 Armadura Caza Torneo
 Armadura Guerre Torneo
-Tunica pt1
-Armadura liviana pt1
-Armadura pesada pt1
+Armadura Pala Agite +1 M falta
+Armadura Caza Agite +1 M falta
+Armadura Guerre Agite +1 M falta
 Tunica pt2
 Armadura liviana pt2
 Armadura pesada pt2
@@ -90,37 +90,37 @@ Armadura Pesada Horda 2da
 Armadura Pesada Horda 3ra
 Armadura Pesada Horda 4ta
 Armadura Pesada Horda 5ta
-Vestimenta ComÃºn Roja Newbie
-Vestimenta ComÃºn Verde Newbie
-Vestimenta ComÃºn Azul Newbie
-PociÃ³n Amarilla
-PociÃ³n Azul
-PociÃ³n Roja
-PociÃ³n Verde
-PociÃ³n Violeta
-PociÃ³n Amarilla
-PociÃ³n Azul
-PociÃ³n Roja
+Vestimenta Común Roja Newbie
+Vestimenta Común Verde Newbie
+Vestimenta Común Azul Newbie
+Poción Amarilla
+Poción Azul
+Poción Roja
+Poción Verde
+Poción Violeta
+Poción Amarilla
+Poción Azul
+Poción Roja
 Escudo Tortuga
-Escudo Druida Agite
+Curar Veneno Aodrag
 Escudo Bardo Agite
-Escudo Clero Agite
+Curar Test
 Escudo Ase Agite
 Escudo Pala Agite
 Escudo Caza Agite
-Escudo Guerre Agite
+Escudo Guerre Torneo
 Escudo Druida Torneo
 Escudo Bardo Torneo
 Escudo Clero Torneo
 Escudo Ase Torneo
 Escudo Pala Torneo
 Escudo Caza Torneo
-Escudo Guerre Torneo
-Escudo liviano pt1
-Escudo pesado pt1
-Escudo liviano pt2
-Escudo pesado pt2
-Sombrero Mago Agite
+Tunica Mago Agite +1 M
+Tunica Druida Agite +1 M 
+Armadura Bardo Agite +1 M
+Armadura Clero Agite +1 M
+Armadura Ase Agite +1 M 
+Sombrero Mago Agite 
 Gorro Druida Agite
 Casco Bardo Agite
 Casco Clero Agite
@@ -129,59 +129,59 @@ Casco Pala Agite
 Casco Caza Agite
 Casco Guerre Agite
 Corona Mago Torneo
-Gorro Druida Torneo
-Casco Bardo Torneo
+Sombrero Druida Torneo
+Sombrero Bardo Torneo
 Casco Clero Torneo
 Casco Ase Torneo
 Casco Pala Torneo
 Casco Caza Torneo
 Casco Guerre Torneo
-Gorro Druida pt1
-Casco liviano pt1
-Sombrero pt1
-Casco pesado pt1
-Gorro Druida pt2
+Tunica Mago Agite +1 F
+Tunica Druida Agite +1 F
+Armadura Bardo Agite +1 F
+Armadura Clero Agite +1 F
+Armadura Ase Agite +1 F
 Casco liviano pt2
-Sombrero pt2
-Casco pesado pt2
+Sombrero pt2 
+Casco pesado pt2 
 Anillo +3 Agite
 Anillo +2 Agite
 Anillo +1 Agite
-Anillo +3 Torneo
-Anillo +2 Torneo
-Anillo +1 Torneo
-Anillo +3 pt1
-Anillo +2 pt1
-Anillo +1 pt1
-Anillo +3 pt2
-Anillo +2 pt2
-Anillo +1 pt2
+Anillo Mago
+Anillo Druida
+Anillo Bardo
+Anillo Clero
+Anillo Escencia magica
+Anillo Ase
+Anillo Pala
+Anillo Caza
+Anillo Guerre
 Copa de Oro
 Copa de Plata
 Copa de Bronce
 Medalla de Oro
 Pergamino de la avaricia
 RECICLAR
-RECICLAR
-RECICLAR
-RECICLAR
-RECICLAR
+noble no magicas
+noble semis
+tunica festival
+tunica nueva 1
 Cabeza Rey de la Alianza
 Cabeza Chief de la Horda
 Amuleto de Lider
 Acta de Fundacion
 Pergamino de Regreso
 Mineral de Hierro
-
+Mineral de Plata
 Mineral de Oro
 Barca
 Galera
-GaleÃ³n
+Galeón
 Flecha Agite
 Flecha pt1
 Flecha Torneo
 Flecha Comun
-Flecha pt2
+Flecha pt2 falta
 Gema Plateada
 Gema Azul
 Gema Naranja
@@ -193,8 +193,8 @@ Gema Violeta
 Gema Negra
 Gema Sagrada
 Mapa del Tesoro
-LeÃ±a
-LeÃ±a 2
+Leña
+Leña 2
 Lingote de hierro
 Lingote de plata
 Lingote de oro
@@ -204,8 +204,8 @@ Piel de Oso Polar
 Martillo de Herrero
 Piquete de Minero
 Serrucho
-Hacha de LeÃ±ador
-CaÃ±a de Pescador
+Hacha de Leñador
+Caña de Pescador
 Red de Pesca
 Tijera
 Manzana Roja
@@ -214,6 +214,65 @@ Pollo
 Pescado
 Corvina
 Pez Espada
-SalmÃ³n
+Salmón
 Bloque de Marfil
 Medalla de Plata
+Medalla de Bronce
+Curar Veneno
+Destello Mágico
+Curar Heridas Graves
+Envenenar
+Curar Heridas Mortales
+Flecha Mágica
+Paralizar
+Fuego Mágico
+Inmovilizar
+Remover Parálisis
+Resucitar
+Manto de Hierro
+Regeneración Clerical
+Invisibilidad
+Tormenta de Fuego
+Viento Huracanado
+Insurrección Sombría
+Celeridad
+Torpeza
+Fuerza
+Debilidad
+Ráfaga Ardiente
+Descarga Eléctrica
+Prisión Gélida
+Apocalípsis
+Elemental de Fuego
+Elemental de Agua
+Relámpago
+Teletransportar Kahlimdor
+Remover Invisibilidad
+Teletransportar Anvilmar
+Llama de Dragón
+Infierno
+Mimetismo
+Fuego Divino
+Maldición
+Grito de Guerra
+Burbuja Defensiva
+Ira de Fuego
+arm bardo mag
+arm bardo fis
+druida fis
+druida mag
+pala fis
+pala mag
+mago mag
+mago fis
+guerre magi
+guerre fis
+clero magi
+clero fis
+chaman mag
+chaman fis
+caza mag
+caza fis
+ase fis
+ase mag
+noble mago

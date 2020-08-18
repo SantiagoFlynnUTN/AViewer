@@ -1,5 +1,5 @@
 [Init]
-Numfx=44
+Numfx=54
 Nummeditaciones=38
 
 [FX1]'Burbuja
@@ -242,6 +242,56 @@ Offsety=0
 
 [FX44]'envenenar
 Anim=248
+Offsetx=0
+Offsety=0
+
+[FX45]'aliento dragon'
+Anim=437
+Offsetx=0
+Offsety=0
+
+[FX46]'sun vap (o desca de genio)
+Anim=435
+Offsetx=0
+Offsety=0
+
+[FX47]'petrificar'
+Anim=434
+Offsetx=0
+Offsety=0
+
+[FX48]'fuerza'
+Anim=433
+Offsetx=0
+Offsety=0
+
+[FX49]'curar veneno aodrag '
+Anim=432
+Offsetx=0
+Offsety=0
+
+[FX50]'curar heridas leves aodrag '
+Anim=431
+Offsetx=0
+Offsety=0
+
+[FX51]'llamarada ancha'
+Anim=430
+Offsetx=0
+Offsety=0
+
+[FX52]'llamarada redonda'
+Anim=429
+Offsetx=0
+Offsety=0
+
+[FX53]'med remort 10-19
+Anim=428
+Offsetx=0
+Offsety=0
+
+[FX54]'celeridad?
+Anim=427
 Offsetx=0
 Offsety=0
 

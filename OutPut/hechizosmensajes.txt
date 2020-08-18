@@ -20,7 +20,7 @@ Serp Xon In
 Te has envenenado.
 te ha envenenado.
 Has envenenado a
-Envenenamiento, puedo provocar la muerte si no se contraresta a tiempo.
+Envenenamiento, puede provocar la muerte si no se contraresta a tiempo.
 Envenenar
 Sen Corpüs Sanctis
 Te has curado algunas heridas.
@@ -244,3 +244,39 @@ lanzó Tormenta de Fuego sobre vos.
 Has lanzado Tormenta de Fuego sobre
 Causa 30 a 45 puntos de daño
 Tormenta de Fuego de Elemental
+Draggar Flamius
+Has lanzado Llama de Dragón sobre ti.
+lanzó Llama de Dragón sobre ti.
+Has lanzado Llama de Dragón sobre
+Solo puede ser aprendido por los divinos asesinos 90 a 95 puntos de daño a la victima.
+Llamarada
+Draggar Flamius
+Has lanzado Llama de Dragón sobre ti.
+lanzó Llama de Dragón sobre ti.
+Has lanzado Llama de Dragón sobre
+Solo puede ser aprendido por los divinos asesinos 90 a 95 puntos de daño a la victima.
+Aliento de Dragón
+Draggar Flamius
+Has lanzado Llama de Dragón sobre ti.
+lanzó Llama de Dragón sobre ti.
+Has lanzado Llama de Dragón sobre
+Solo puede ser aprendido por los divinos asesinos 90 a 95 puntos de daño a la victima.
+Rayo eléctrico
+Är Prop s'uo
+Te has inmovilizado.
+te ha inmovilizado.
+Has paralizado a
+Inmovilizas durante un corto periodo a la victima.
+Petrificar
+Sen Corpüs Sanctis
+Te has curado algunas heridas.
+te ha curado algunas heridas.
+Has sanado a
+Curar heridas mortales, restaura entre 100 y 200 puntos de salud.
+Curar Veneno Bis
+Sen Corpüs Sanctis
+Te has curado algunas heridas.
+te ha curado algunas heridas.
+Has sanado a
+Curar heridas mortales, restaura entre 100 y 200 puntos de salud.
+Curar Heridas Bis
