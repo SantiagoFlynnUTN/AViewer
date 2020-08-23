@@ -1,5 +1,5 @@
 [INIT]
-Num=791
+Num=796
 
 [1]'Casco Sur
 Left=0
@@ -3964,3 +3964,28 @@ Left=160
 Top=128
 Width=96
 Height=128
+[792]
+Left=32
+Top=128
+Width=32
+Height=96
+[793]
+Left=64
+Top=128
+Width=32
+Height=96
+[794]
+Left=128
+Top=0
+Width=32
+Height=96
+[795]
+Left=160
+Top=0
+Width=32
+Height=96
+[796]
+Left=224
+Top=128
+Width=32
+Height=96
