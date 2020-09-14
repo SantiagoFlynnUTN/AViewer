@@ -14,6 +14,85 @@ Public Type tCrafts
     Item As Integer
     Version As Byte
 End Type
+Public numero_buffs As Byte
+Public Type tBuffData
+    Duracion As Integer
+    Intervalo As Integer
+    Nombre As String
+    dFX As Byte
+    dEfecto As Byte
+    Tipo As Byte
+    grhindex As Integer
+End Type
+Public buff_data() As tBuffData
+
+Public AuraDATA() As tAura
+Public nAura As Integer
+Public Type tAura
+    grhindex As Integer
+    r As Byte
+    g As Byte
+    b As Byte
+    A As Byte
+    OffsetX As Integer
+    OffsetY As Integer
+    Giratoria As Byte
+    Velocidad As Single
+    Tipo As Byte
+End Type
+Public TotalStreams As Integer
+Public StreamData() As Stream
+Public SPOTLIGHTS_COLORES() As Long
+Public NUM_SPOTLIGHTS_COLORES As Byte
+
+Public NUM_SPOTLIGHTS_ANIMATION As Byte
+Public SPOTLIGHTS_ANIMATION() As Integer
+'RGB Type
+Private Type RGB
+    r As Long
+    g As Long
+    b As Long
+End Type
+ 
+Private Type Stream
+    Name As String
+    NumOfParticles As Long
+    NumTrueParticles As Long
+    NumGrhs As Long
+    id As Long
+    X1 As Long
+    y1 As Long
+    x2 As Long
+    y2 As Long
+    Angle As Long
+    vecx1 As Long
+    vecx2 As Long
+    vecy1 As Long
+    vecy2 As Long
+    life1 As Long
+    life2 As Long
+    friction As Long
+    Spin As Byte
+    spin_speedL As Single
+    spin_speedH As Single
+    AlphaBlend As Byte
+    gravity As Byte
+    grav_strength As Long
+    bounce_strength As Long
+    XMove As Byte
+    YMove As Byte
+    move_x1 As Long
+    move_x2 As Long
+    move_y1 As Long
+    move_y2 As Long
+    grh_list() As Long
+    colortint(0 To 3) As RGB
+    Speed As Single
+    life_counter As Long
+    grh_resize As Boolean
+    grh_resizex As Integer
+    grh_resizey As Integer
+End Type
 
 Public cHerreria() As tCrafts
 Public cSastreria() As tCrafts
@@ -160,6 +239,7 @@ Public Type tNewAnimation
     Velocidad As Single
     TileWidth As Single
     TileHeight As Single
+    TipoAnimacion As Byte
     
     Romboidal As Byte
     Direction As Integer
@@ -254,6 +334,9 @@ Public Type sd
     magicwords As String
     propiomsg As String
     targetmsg As String
+    CasterFx As Integer
+    CasterLoop As Integer
+    
 End Type
 
 Public Spells() As sd
@@ -341,9 +424,9 @@ Private Type tGraphicTextosData
     texto As Integer
     X As Integer
     Y As Integer
-    R As Byte
-    G As Byte
-    B As Byte
+    r As Byte
+    g As Byte
+    b As Byte
     A As Byte
     IniciaVisible As Byte
     Centrar As Byte
@@ -425,7 +508,10 @@ Public Type tDecor
    EstadoDefault  As Byte           ' Cual es el estado default del decor
    TileH          As Byte
    TileW          As Byte
-   
+   OffX           As Integer
+   OffY           As Integer
+   TileTransY     As Byte
+   Sombra       As Byte
 End Type
 Public Cantdecordata As Integer
 Public DecoData() As tDecor
@@ -438,22 +524,22 @@ Public num_Chirimbolos_data As Byte
 Public Chirimbolos_Data() As tChirimbolo_Data
 Public Declare Function getprivateprofilestring Lib "kernel32" Alias "GetPrivateProfileStringA" (ByVal lpApplicationname As String, ByVal lpKeyname As Any, ByVal lpdefault As String, ByVal lpreturnedstring As String, ByVal nsize As Long, ByVal lpFileName As String) As Long
 Public Sub Compilar_NewEstatics()
-Dim S As String
+Dim s As String
 Dim i As Long
 Dim z As Long
 
-S = App.PATH & "\RES\Index\NewEstatics.dat"
+s = App.path & "\RES\Index\NewEstatics.dat"
 
-NumEstatics = Val(GetVar(S, "INIT", "num"))
+NumEstatics = Val(GetVar(s, "INIT", "num"))
 
 If NumEstatics > 0 Then
 ReDim EstaticData(1 To NumEstatics)
 For i = 1 To NumEstatics
     With EstaticData(i)
-        .L = Val(GetVar(S, CStr(i), "Left"))
-        .t = Val(GetVar(S, CStr(i), "Top"))
-        .w = Val(GetVar(S, CStr(i), "Width"))
-        .h = Val(GetVar(S, CStr(i), "Height"))
+        .L = Val(GetVar(s, CStr(i), "Left"))
+        .t = Val(GetVar(s, CStr(i), "Top"))
+        .w = Val(GetVar(s, CStr(i), "Width"))
+        .h = Val(GetVar(s, CStr(i), "Height"))
         .TW = .w / 32
         .TH = .h / 32
     End With
@@ -462,7 +548,7 @@ Next i
 Dim K As Integer
 K = FreeFile
 
-Open App.PATH & "\RES\INDEX\NwEstatics.IND" For Binary Access Write Lock Write As K
+Open App.path & "\RES\INDEX\NwEstatics.IND" For Binary Access Write Lock Write As K
     Put K, , NumEstatics
     For i = 1 To NumEstatics
         With EstaticData(i)
@@ -479,21 +565,21 @@ Close K
 End If
 End Sub
 Public Sub Compilar_NewIndex()
-Dim S As String
+Dim s As String
 Dim i As Long
 Dim z As Long
 
-S = App.PATH & "\RES\Index\NewIndex.dat"
+s = App.path & "\RES\Index\NewIndex.dat"
 
-NumNewIndex = Val(GetVar(S, "INIT", "num"))
+NumNewIndex = Val(GetVar(s, "INIT", "num"))
 
 If NumNewIndex > 0 Then
 ReDim NewIndexData(1 To NumNewIndex)
 For i = 1 To NumNewIndex
     With NewIndexData(i)
-        .Dinamica = Val(GetVar(S, CStr(i), "Dinamica"))
-        .Estatic = Val(GetVar(S, CStr(i), "Estatica"))
-        .OverWriteGrafico = Val(GetVar(S, CStr(i), "OverWriteGrafico"))
+        .Dinamica = Val(GetVar(s, CStr(i), "Dinamica"))
+        .Estatic = Val(GetVar(s, CStr(i), "Estatica"))
+        .OverWriteGrafico = Val(GetVar(s, CStr(i), "OverWriteGrafico"))
     End With
 Next i
 
@@ -501,7 +587,7 @@ Next i
 Dim K As Integer
 K = FreeFile
 
-Open App.PATH & "\RES\INDEX\NwIndex.IND" For Binary Access Write Lock Write As K
+Open App.path & "\RES\INDEX\NwIndex.IND" For Binary Access Write Lock Write As K
     Put K, , NumNewIndex
     For i = 1 To NumNewIndex
         With NewIndexData(i)
@@ -516,10 +602,10 @@ End If
 End Sub
 Sub loadsd()
 Dim t As Long
-ns = Val(GetVar(App.PATH & "\ENCODE\hechizos.dat", "INIT", "NumeroHechizos"))
+ns = Val(GetVar(App.path & "\ENCODE\hechizos.dat", "INIT", "NumeroHechizos"))
 ReDim Spells(1 To ns)
 Dim F As String
-F = App.PATH & "\ENCODE\hechizos.dat"
+F = App.path & "\ENCODE\hechizos.dat"
 Dim i As Integer
 For t = 1 To ns
 Dim p As Byte
@@ -576,6 +662,9 @@ Dim p As Byte
     Spells(t).Skills = Val(GetVar(F, "HECHIZO" & t, "MinSkill"))
     Spells(t).Nombre = GetVar(F, "HECHIZO" & t, "Nombre")
     Spells(t).Libro = Val(GetVar(F, "HECHIZO" & t, "Libro"))
+    Spells(t).CasterFx = Val(GetVar(F, "HECHIZO" & t, "CasterFX"))
+    Spells(t).CasterLoop = Val(GetVar(F, "HECHIZO" & t, "CasterLoop"))
+    
     
     
     
@@ -593,13 +682,13 @@ Sub WriteVar(ByVal file As String, _
       writeprivateprofilestring Main, Var, VALUE, file
 End Sub
 Sub Load_NoblezaData()
-Dim S As String
+Dim s As String
 Dim i As Long
 Dim p As Long
-S = App.PATH & "\ENCODE\Nobleza.dat"
+s = App.path & "\ENCODE\Nobleza.dat"
 
 
-Nobleza_Data.NumItems = Val(GetVar(S, "INIT", "NUM"))
+Nobleza_Data.NumItems = Val(GetVar(s, "INIT", "NUM"))
 
 ReDim Nobleza_Data.Items(1 To Nobleza_Data.NumItems)
 
@@ -609,13 +698,13 @@ For i = 1 To Nobleza_Data.NumItems
 
 With Nobleza_Data.Items(i)
 
-    .NumItems_Requeridos = Val(GetVar(S, "OBJ" & i, "CantItem"))
-    .Numero = Val(GetVar(S, "OBJ" & i, "ObjIndexRecompensa"))
+    .NumItems_Requeridos = Val(GetVar(s, "OBJ" & i, "CantItem"))
+    .Numero = Val(GetVar(s, "OBJ" & i, "ObjIndexRecompensa"))
     ReDim .Items_Requeridos(1 To .NumItems_Requeridos)
     ReDim .cantItems_Requeridos(1 To .NumItems_Requeridos)
     For p = 1 To .NumItems_Requeridos
-        .Items_Requeridos(p) = Val(GetVar(S, "OBJ" & i, "ObjIndex" & p))
-        .cantItems_Requeridos(p) = Val(GetVar(S, "OBJ" & i, "Cantidad" & p))
+        .Items_Requeridos(p) = Val(GetVar(s, "OBJ" & i, "ObjIndex" & p))
+        .cantItems_Requeridos(p) = Val(GetVar(s, "OBJ" & i, "Cantidad" & p))
     Next p
 End With
 Next i
@@ -659,11 +748,11 @@ Sub LoadTables()
    Dim tmpStr As String
    
    For i = 1 To STAT_MAXELV
-      EluTable(i) = CLng(GetVar(App.PATH & "\ENCODE\Tables.dat", "EluTable", CStr(i)))
+      EluTable(i) = CLng(GetVar(App.path & "\ENCODE\Tables.dat", "EluTable", CStr(i)))
    Next i
    
    For i = 1 To STAT_MAXELV
-      StaTable(i) = CInt(GetVar(App.PATH & "\ENCODE\Tables.dat", "StaTable", CStr(i)))
+      StaTable(i) = CInt(GetVar(App.path & "\ENCODE\Tables.dat", "StaTable", CStr(i)))
    Next i
    
       
@@ -671,35 +760,35 @@ End Sub
 
 Sub Load_FD()
 
-Dim S As String
+Dim s As String
 Dim i As Long
 Dim X As Long
-S = App.PATH & "\ENCODE\FORMULARIO_DATA.dat"
+s = App.path & "\ENCODE\FORMULARIO_DATA.dat"
 
-NUM_FD = Val(GetVar(S, "INIT", "NUM"))
+NUM_FD = Val(GetVar(s, "INIT", "NUM"))
 
 ReDim FD(1 To NUM_FD)
 
 For i = 1 To NUM_FD
 
 With FD(i)
-        .TieneSpecial = IIf(Val(GetVar(S, "FD" & i, "Special")) = 1, True, False)
-    .SurfaceNum = Val(GetVar(S, "FD" & i, "Grafico"))
-    .ScreenX = Val(GetVar(S, "FD" & i, "X"))
-    .ScreenY = Val(GetVar(S, "FD" & i, "Y"))
+        .TieneSpecial = IIf(Val(GetVar(s, "FD" & i, "Special")) = 1, True, False)
+    .SurfaceNum = Val(GetVar(s, "FD" & i, "Grafico"))
+    .ScreenX = Val(GetVar(s, "FD" & i, "X"))
+    .ScreenY = Val(GetVar(s, "FD" & i, "Y"))
     
-    .GraficosX = Val(GetVar(S, "FD" & i, "GRAFICOSENX"))
-    .GraficosY = Val(GetVar(S, "FD" & i, "GRAFICOSENY"))
+    .GraficosX = Val(GetVar(s, "FD" & i, "GRAFICOSENX"))
+    .GraficosY = Val(GetVar(s, "FD" & i, "GRAFICOSENY"))
     If .GraficosX = 0 Then .GraficosX = 1
     If .GraficosY = 0 Then .GraficosY = 1
-    .Num_Checks = Val(GetVar(S, "FD" & i, "NumChecks"))
-    .Draw_Stage = Val(GetVar(S, "FD" & i, "NivelDibujo"))
-    .num_Buttons = Val(GetVar(S, "FD" & i, "NumeroBotones"))
-    .AlphaValue = Val(GetVar(S, "FD" & i, "AlphaValue"))
-    .Num_Textos = Val(GetVar(S, "FD" & i, "NumeroTextos"))
-    .Num_TextBox = Val(GetVar(S, "FD" & i, "NumTextBox"))
-    .Height = Val(GetVar(S, "FD" & i, "Height"))
-    .Width = Val(GetVar(S, "FD" & i, "Width"))
+    .Num_Checks = Val(GetVar(s, "FD" & i, "NumChecks"))
+    .Draw_Stage = Val(GetVar(s, "FD" & i, "NivelDibujo"))
+    .num_Buttons = Val(GetVar(s, "FD" & i, "NumeroBotones"))
+    .AlphaValue = Val(GetVar(s, "FD" & i, "AlphaValue"))
+    .Num_Textos = Val(GetVar(s, "FD" & i, "NumeroTextos"))
+    .Num_TextBox = Val(GetVar(s, "FD" & i, "NumTextBox"))
+    .Height = Val(GetVar(s, "FD" & i, "Height"))
+    .Width = Val(GetVar(s, "FD" & i, "Width"))
     
     If .AlphaValue = 0 Then .AlphaValue = 255
     If .num_Buttons > 0 Then
@@ -709,30 +798,30 @@ With FD(i)
         
         With FD(i).Buttons(X)
         
-            .NormalSurfaceNum = Val(GetVar(S, "FD" & i, "Btn_" & X & "_NormalGrafico"))
-            .SelectSurfaceNum = Val(GetVar(S, "FD" & i, "Btn_" & X & "_SelectGrafico"))
-            .PressSurfaceNum = Val(GetVar(S, "FD" & i, "Btn_" & X & "_PressGrafico"))
+            .NormalSurfaceNum = Val(GetVar(s, "FD" & i, "Btn_" & X & "_NormalGrafico"))
+            .SelectSurfaceNum = Val(GetVar(s, "FD" & i, "Btn_" & X & "_SelectGrafico"))
+            .PressSurfaceNum = Val(GetVar(s, "FD" & i, "Btn_" & X & "_PressGrafico"))
             
-            .size.Top = Val(GetVar(S, "FD" & i, "Btn_" & X & "_Top"))
-            .size.Left = Val(GetVar(S, "FD" & i, "Btn_" & X & "_Left"))
-            .size.Right = Val(GetVar(S, "FD" & i, "Btn_" & X & "_Width"))
-            .size.bottom = Val(GetVar(S, "FD" & i, "Btn_" & X & "_Height"))
+            .size.Top = Val(GetVar(s, "FD" & i, "Btn_" & X & "_Top"))
+            .size.Left = Val(GetVar(s, "FD" & i, "Btn_" & X & "_Left"))
+            .size.Right = Val(GetVar(s, "FD" & i, "Btn_" & X & "_Width"))
+            .size.bottom = Val(GetVar(s, "FD" & i, "Btn_" & X & "_Height"))
             
-            .Sound = Val(GetVar(S, "FD" & i, "Btn_" & X & "_Sound"))
-            .HandIco = Val(GetVar(S, "FD" & i, "Btn_" & X & "_Hand"))
-            .Caption = Val(GetVar(S, "FD" & i, "Btn_" & X & "_Caption"))
+            .Sound = Val(GetVar(s, "FD" & i, "Btn_" & X & "_Sound"))
+            .HandIco = Val(GetVar(s, "FD" & i, "Btn_" & X & "_Hand"))
+            .Caption = Val(GetVar(s, "FD" & i, "Btn_" & X & "_Caption"))
             
-            .Normal_Rojo = Val(GetVar(S, "FD" & i, "Btn_" & X & "_NormalRojo"))
-            .Normal_Verde = Val(GetVar(S, "FD" & i, "Btn_" & X & "_NormalVerde"))
-            .Normal_Azul = Val(GetVar(S, "FD" & i, "Btn_" & X & "_NormalAzul"))
+            .Normal_Rojo = Val(GetVar(s, "FD" & i, "Btn_" & X & "_NormalRojo"))
+            .Normal_Verde = Val(GetVar(s, "FD" & i, "Btn_" & X & "_NormalVerde"))
+            .Normal_Azul = Val(GetVar(s, "FD" & i, "Btn_" & X & "_NormalAzul"))
                         
-            .Sel_Rojo = Val(GetVar(S, "FD" & i, "Btn_" & X & "_SelRojo"))
-            .Sel_Verde = Val(GetVar(S, "FD" & i, "Btn_" & X & "_SelVerde"))
-            .Sel_Azul = Val(GetVar(S, "FD" & i, "Btn_" & X & "_SelAzul"))
+            .Sel_Rojo = Val(GetVar(s, "FD" & i, "Btn_" & X & "_SelRojo"))
+            .Sel_Verde = Val(GetVar(s, "FD" & i, "Btn_" & X & "_SelVerde"))
+            .Sel_Azul = Val(GetVar(s, "FD" & i, "Btn_" & X & "_SelAzul"))
             
-            .Press_Rojo = Val(GetVar(S, "FD" & i, "Btn_" & X & "_PressRojo"))
-            .Press_Verde = Val(GetVar(S, "FD" & i, "Btn_" & X & "_PressVerde"))
-            .Press_Azul = Val(GetVar(S, "FD" & i, "Btn_" & X & "_PressAzul"))
+            .Press_Rojo = Val(GetVar(s, "FD" & i, "Btn_" & X & "_PressRojo"))
+            .Press_Verde = Val(GetVar(s, "FD" & i, "Btn_" & X & "_PressVerde"))
+            .Press_Azul = Val(GetVar(s, "FD" & i, "Btn_" & X & "_PressAzul"))
         End With
     Next X
     End If
@@ -741,26 +830,26 @@ With FD(i)
     For X = 1 To .Num_Textos
     
         With FD(i).Textos(X)
-            .texto = Val(GetVar(S, "FD" & i, "Txt_" & X & "_Texto"))
+            .texto = Val(GetVar(s, "FD" & i, "Txt_" & X & "_Texto"))
             
-            .X = Val(GetVar(S, "FD" & i, "Txt_" & X & "_X"))
+            .X = Val(GetVar(s, "FD" & i, "Txt_" & X & "_X"))
             
-            .Y = Val(GetVar(S, "FD" & i, "Txt_" & X & "_Y"))
+            .Y = Val(GetVar(s, "FD" & i, "Txt_" & X & "_Y"))
             
-            .MaxWidth = Val(GetVar(S, "FD" & i, "Txt_" & X & "_MaxWidth"))
-            .IniciaVisible = Val(GetVar(S, "FD" & i, "Txt_" & X & "_IniciaVisible"))
+            .MaxWidth = Val(GetVar(s, "FD" & i, "Txt_" & X & "_MaxWidth"))
+            .IniciaVisible = Val(GetVar(s, "FD" & i, "Txt_" & X & "_IniciaVisible"))
             
             
-            .A = Val(GetVar(S, "FD" & i, "Txt_" & X & "_Alpha"))
+            .A = Val(GetVar(s, "FD" & i, "Txt_" & X & "_Alpha"))
             
-            .R = Val(GetVar(S, "FD" & i, "Txt_" & X & "_Rojo"))
+            .r = Val(GetVar(s, "FD" & i, "Txt_" & X & "_Rojo"))
             
-            .G = Val(GetVar(S, "FD" & i, "Txt_" & X & "_Verde"))
+            .g = Val(GetVar(s, "FD" & i, "Txt_" & X & "_Verde"))
                     
             
-            .B = Val(GetVar(S, "FD" & i, "Txt_" & X & "_Azul"))
+            .b = Val(GetVar(s, "FD" & i, "Txt_" & X & "_Azul"))
             
-            .Centrar = Val(GetVar(S, "FD" & i, "Txt_" & X & "_Centrar"))
+            .Centrar = Val(GetVar(s, "FD" & i, "Txt_" & X & "_Centrar"))
                     
         End With
     Next X
@@ -769,20 +858,20 @@ With FD(i)
         ReDim .TextBox(1 To .Num_TextBox)
         
         For X = 1 To .Num_TextBox
-            .TextBox(X).SurfaceNum = Val(GetVar(S, "FD" & i, "TxtB_" & X & "_Surface"))
-            .TextBox(X).Centrar = Val(GetVar(S, "FD" & i, "TxtB_" & X & "_Centrar"))
-            .TextBox(X).TipoTexto = Val(GetVar(S, "FD" & i, "TxtB_" & X & "_TipoTexto"))
-            .TextBox(X).X = Val(GetVar(S, "FD" & i, "TxtB_" & X & "_x"))
-            .TextBox(X).Y = Val(GetVar(S, "FD" & i, "TxtB_" & X & "_y"))
-            .TextBox(X).OffsetX = Val(GetVar(S, "FD" & i, "TxtB_" & X & "_Offsetx"))
-            .TextBox(X).OffsetY = Val(GetVar(S, "FD" & i, "TxtB_" & X & "_Offsety"))
-            .TextBox(X).IniciaVisible = Val(GetVar(S, "FD" & i, "TxtB_" & X & "_IniciaVisible"))
-            .TextBox(X).fA = Val(GetVar(S, "FD" & i, "TxtB_" & X & "_AFont"))
-            .TextBox(X).fR = Val(GetVar(S, "FD" & i, "TxtB_" & X & "_RFont"))
-            .TextBox(X).fG = Val(GetVar(S, "FD" & i, "TxtB_" & X & "_GFont"))
-            .TextBox(X).fb = Val(GetVar(S, "FD" & i, "TxtB_" & X & "_BFont"))
-            .TextBox(X).w = Val(GetVar(S, "FD" & i, "TxtB_" & X & "_W"))
-            .TextBox(X).h = Val(GetVar(S, "FD" & i, "TxtB_" & X & "_H"))
+            .TextBox(X).SurfaceNum = Val(GetVar(s, "FD" & i, "TxtB_" & X & "_Surface"))
+            .TextBox(X).Centrar = Val(GetVar(s, "FD" & i, "TxtB_" & X & "_Centrar"))
+            .TextBox(X).TipoTexto = Val(GetVar(s, "FD" & i, "TxtB_" & X & "_TipoTexto"))
+            .TextBox(X).X = Val(GetVar(s, "FD" & i, "TxtB_" & X & "_x"))
+            .TextBox(X).Y = Val(GetVar(s, "FD" & i, "TxtB_" & X & "_y"))
+            .TextBox(X).OffsetX = Val(GetVar(s, "FD" & i, "TxtB_" & X & "_Offsetx"))
+            .TextBox(X).OffsetY = Val(GetVar(s, "FD" & i, "TxtB_" & X & "_Offsety"))
+            .TextBox(X).IniciaVisible = Val(GetVar(s, "FD" & i, "TxtB_" & X & "_IniciaVisible"))
+            .TextBox(X).fA = Val(GetVar(s, "FD" & i, "TxtB_" & X & "_AFont"))
+            .TextBox(X).fR = Val(GetVar(s, "FD" & i, "TxtB_" & X & "_RFont"))
+            .TextBox(X).fG = Val(GetVar(s, "FD" & i, "TxtB_" & X & "_GFont"))
+            .TextBox(X).fb = Val(GetVar(s, "FD" & i, "TxtB_" & X & "_BFont"))
+            .TextBox(X).w = Val(GetVar(s, "FD" & i, "TxtB_" & X & "_W"))
+            .TextBox(X).h = Val(GetVar(s, "FD" & i, "TxtB_" & X & "_H"))
             
         Next X
     End If
@@ -790,21 +879,21 @@ With FD(i)
         If .Num_Checks > 0 Then
         ReDim .Checks(1 To .Num_Checks)
         For X = 1 To .Num_Checks
-            .Checks(X).Caption = Val(GetVar(S, "FD" & i, "Chk_" & X & "_Caption"))
-            .Checks(X).X = Val(GetVar(S, "FD" & i, "Chk_" & X & "_X"))
-            .Checks(X).Y = Val(GetVar(S, "FD" & i, "Chk_" & X & "_Y"))
-            .Checks(X).w = Val(GetVar(S, "FD" & i, "Chk_" & X & "_W"))
-            .Checks(X).h = Val(GetVar(S, "FD" & i, "Chk_" & X & "_H"))
-            .Checks(X).min = Val(GetVar(S, "FD" & i, "Chk_" & X & "_MIN"))
-            .Checks(X).max = Val(GetVar(S, "FD" & i, "Chk_" & X & "_MAX"))
-            .Checks(X).Tipo_Check = Val(GetVar(S, "FD" & i, "Chk_" & X & "_TipoCheck"))
-            .Checks(X).CheckSurface = Val(GetVar(S, "FD" & i, "Chk_" & X & "_CheckSurface"))
-            .Checks(X).SurfaceNum = Val(GetVar(S, "FD" & i, "Chk_" & X & "_Grafico"))
-            .Checks(X).IniciaVisible = Val(GetVar(S, "FD" & i, "Chk_" & X & "_IniciaVisible"))
-            .Checks(X).ColorA = Val(GetVar(S, "FD" & i, "Chk_" & X & "_A"))
-            .Checks(X).ColorR = Val(GetVar(S, "FD" & i, "Chk_" & X & "_R"))
-            .Checks(X).ColorG = Val(GetVar(S, "FD" & i, "Chk_" & X & "_G"))
-            .Checks(X).ColorB = Val(GetVar(S, "FD" & i, "Chk_" & X & "_B"))
+            .Checks(X).Caption = Val(GetVar(s, "FD" & i, "Chk_" & X & "_Caption"))
+            .Checks(X).X = Val(GetVar(s, "FD" & i, "Chk_" & X & "_X"))
+            .Checks(X).Y = Val(GetVar(s, "FD" & i, "Chk_" & X & "_Y"))
+            .Checks(X).w = Val(GetVar(s, "FD" & i, "Chk_" & X & "_W"))
+            .Checks(X).h = Val(GetVar(s, "FD" & i, "Chk_" & X & "_H"))
+            .Checks(X).min = Val(GetVar(s, "FD" & i, "Chk_" & X & "_MIN"))
+            .Checks(X).max = Val(GetVar(s, "FD" & i, "Chk_" & X & "_MAX"))
+            .Checks(X).Tipo_Check = Val(GetVar(s, "FD" & i, "Chk_" & X & "_TipoCheck"))
+            .Checks(X).CheckSurface = Val(GetVar(s, "FD" & i, "Chk_" & X & "_CheckSurface"))
+            .Checks(X).SurfaceNum = Val(GetVar(s, "FD" & i, "Chk_" & X & "_Grafico"))
+            .Checks(X).IniciaVisible = Val(GetVar(s, "FD" & i, "Chk_" & X & "_IniciaVisible"))
+            .Checks(X).ColorA = Val(GetVar(s, "FD" & i, "Chk_" & X & "_A"))
+            .Checks(X).ColorR = Val(GetVar(s, "FD" & i, "Chk_" & X & "_R"))
+            .Checks(X).ColorG = Val(GetVar(s, "FD" & i, "Chk_" & X & "_G"))
+            .Checks(X).ColorB = Val(GetVar(s, "FD" & i, "Chk_" & X & "_B"))
         Next X
     End If
     
@@ -824,29 +913,29 @@ Dim i As Long
 
 For i = 1 To MAX_HABILIDADES
 
-    Habilidades(i).Grafico = Val(GetVar(App.PATH & "\ENCODE\Habilidades.dat", "HAB" & i, "Grafico"))
+    Habilidades(i).Grafico = Val(GetVar(App.path & "\ENCODE\Habilidades.dat", "HAB" & i, "Grafico"))
 
 Next i
 
 End Sub
 Public Sub Load_NpcnoHostiles()
 
-Dim S As String
+Dim s As String
 Dim i As Long
-S = App.PATH & "\ENCODE\npcs-hostiles.dat"
+s = App.path & "\ENCODE\npcs-hostiles.dat"
 
-num_npcs_h = Val(GetVar(S, "init", "numnpcs")) + 1
+num_npcs_h = Val(GetVar(s, "init", "numnpcs")) + 1
 
 ReDim hostiles(0 To num_npcs_h)
 For i = 500 To num_npcs_h
 With hostiles(i - 499)
 
-    .Body = Val(GetVar(S, "NPC" & i, "body"))
-    .Head = Val(GetVar(S, "NPC" & i, "Head"))
-    .MAX_HP = Val(GetVar(S, "NPC" & i, "MaxHP"))
-    .Snd1 = Val(GetVar(S, "NPC" & i, "Snd1"))
-    .Snd2 = Val(GetVar(S, "NPC" & i, "Snd2"))
-    .Nombre = GetVar(S, "NPC" & i, "Name")
+    .Body = Val(GetVar(s, "NPC" & i, "body"))
+    .Head = Val(GetVar(s, "NPC" & i, "Head"))
+    .MAX_HP = Val(GetVar(s, "NPC" & i, "MaxHP"))
+    .Snd1 = Val(GetVar(s, "NPC" & i, "Snd1"))
+    .Snd2 = Val(GetVar(s, "NPC" & i, "Snd2"))
+    .Nombre = GetVar(s, "NPC" & i, "Name")
     
     
 End With
@@ -854,11 +943,11 @@ Next i
 End Sub
 Public Sub Load_NpcHostiles()
 
-Dim S As String
+Dim s As String
 Dim i As Long
-S = App.PATH & "\ENCODE\npcs.dat"
+s = App.path & "\ENCODE\npcs.dat"
 
-num_npcs_nh = Val(GetVar(S, "init", "numnpcs"))
+num_npcs_nh = Val(GetVar(s, "init", "numnpcs"))
 
 ReDim nHostiles(1 To num_npcs_nh)
 For i = 1 To num_npcs_nh
@@ -866,56 +955,56 @@ With nHostiles(i)
 
 
     
-        .Body = Val(GetVar(S, "NPC" & i, "body"))
-    .Head = Val(GetVar(S, "NPC" & i, "Head"))
-    .MAX_HP = Val(GetVar(S, "NPC" & i, "MaxHP"))
-    .Nombre = GetVar(S, "NPC" & i, "Name")
-    .Desc = GetVar(S, "NPC" & i, "Desc")
-    .NPCTYPE = Val(GetVar(S, "NPC" & i, "NpcType"))
+        .Body = Val(GetVar(s, "NPC" & i, "body"))
+    .Head = Val(GetVar(s, "NPC" & i, "Head"))
+    .MAX_HP = Val(GetVar(s, "NPC" & i, "MaxHP"))
+    .Nombre = GetVar(s, "NPC" & i, "Name")
+    .Desc = GetVar(s, "NPC" & i, "Desc")
+    .NPCTYPE = Val(GetVar(s, "NPC" & i, "NpcType"))
     
 End With
 Next i
 End Sub
 Public Sub LoadQuest()
-Dim S As String
+Dim s As String
 Dim i As Long
 Dim z As Long
-S = App.PATH & "\ENCODE\Quests.dat"
+s = App.path & "\ENCODE\Quests.dat"
 
-nQuest = Val(GetVar(S, "MAIN", "NUMQUESTS"))
+nQuest = Val(GetVar(s, "MAIN", "NUMQUESTS"))
 ReDim Quests(1 To nQuest)
 
 For i = 1 To nQuest
 
-    Quests(i).Tipo = Val(GetVar(S, CStr(i), "Tipo"))
+    Quests(i).Tipo = Val(GetVar(s, CStr(i), "Tipo"))
     
-    Quests(i).nTargets = Val(GetVar(S, CStr(i), "numero_targets"))
-    Quests(i).Oro = Val(GetVar(S, CStr(i), "recompensa_oro"))
-    Quests(i).Puntos = Val(GetVar(S, CStr(i), "recompensa_puntos"))
-    Quests(i).Exp = Val(GetVar(S, CStr(i), "recompensa_exp"))
-    Quests(i).numritems = Val(GetVar(S, CStr(i), "recompensa_numero_items"))
-    Quests(i).TipoReco = Val(GetVar(S, CStr(i), "recompensa_tipo"))
-    Quests(i).Nombre = GetVar(S, CStr(i), "nombre")
+    Quests(i).nTargets = Val(GetVar(s, CStr(i), "numero_targets"))
+    Quests(i).Oro = Val(GetVar(s, CStr(i), "recompensa_oro"))
+    Quests(i).Puntos = Val(GetVar(s, CStr(i), "recompensa_puntos"))
+    Quests(i).Exp = Val(GetVar(s, CStr(i), "recompensa_exp"))
+    Quests(i).numritems = Val(GetVar(s, CStr(i), "recompensa_numero_items"))
+    Quests(i).TipoReco = Val(GetVar(s, CStr(i), "recompensa_tipo"))
+    Quests(i).Nombre = GetVar(s, CStr(i), "nombre")
     
     
     If Quests(i).numritems > 0 Then
         ReDim Quests(i).Item(1 To Quests(i).numritems)
         ReDim Quests(i).Cant(1 To Quests(i).numritems)
         For z = 1 To Quests(i).numritems
-            Quests(i).Item(z) = Val(GetVar(S, CStr(i), "recompensa_item_tipo" & z))
-            Quests(i).Cant(z) = Val(GetVar(S, CStr(i), "recompensa_item_cant" & z))
+            Quests(i).Item(z) = Val(GetVar(s, CStr(i), "recompensa_item_tipo" & z))
+            Quests(i).Cant(z) = Val(GetVar(s, CStr(i), "recompensa_item_cant" & z))
             
         
         Next z
     End If
-    Quests(i).Desc = GetVar(S, CStr(i), "desc")
+    Quests(i).Desc = GetVar(s, CStr(i), "desc")
     
     If Quests(i).nTargets > 0 Then
     ReDim Quests(i).Targets(1 To Quests(i).nTargets)
     ReDim Quests(i).TargetsCant(1 To Quests(i).nTargets)
     For z = 1 To Quests(i).nTargets
-        Quests(i).Targets(z) = Val(GetVar(S, CStr(i), "target_tipo" & z))
-        Quests(i).TargetsCant(z) = Val(GetVar(S, CStr(i), "target_cant" & z))
+        Quests(i).Targets(z) = Val(GetVar(s, CStr(i), "target_tipo" & z))
+        Quests(i).TargetsCant(z) = Val(GetVar(s, CStr(i), "target_cant" & z))
     Next z
     End If
     
@@ -973,22 +1062,22 @@ Sub LoadMapaData()
 
 Dim i As Integer
 Dim F As Integer
-Dim S As String
+Dim s As String
 F = FreeFile
 
-Open App.PATH & "\ENCODE\Mapadata.txt" For Input As #F
-    Line Input #F, S
+Open App.path & "\ENCODE\Mapadata.txt" For Input As #F
+    Line Input #F, s
     
-    NroMapas = Val(S)
+    NroMapas = Val(s)
     
     ReDim MapaData(1 To NroMapas)
 Do Until EOF(F)
 i = i + 1
 
-    Line Input #F, S
+    Line Input #F, s
     
-    MapaData(i).X = Val(Readfield(1, S, 44))
-    MapaData(i).Y = Val(Readfield(2, S, 44))
+    MapaData(i).X = Val(Readfield(1, s, 44))
+    MapaData(i).Y = Val(Readfield(2, s, 44))
     
 Loop
 Close #F
@@ -1001,7 +1090,7 @@ Dim i As Long
 Dim t As Long
 Dim L As Long
 Dim K As Long
-Dim S As String
+Dim s As String
 
 L = Len(texto)
 
@@ -1011,16 +1100,16 @@ Do Until i = L
     If Asc(mid$(texto, i, 1)) = separador Then
         K = K + 1
         If K = pos Then
-            Readfield = S
+            Readfield = s
             Exit Do
         Else
-            S = vbNullString
+            s = vbNullString
         End If
     Else
-        S = S & mid$(texto, i, 1)
+        s = s & mid$(texto, i, 1)
     End If
 Loop
-Readfield = S
+Readfield = s
 End Function
 
 
@@ -1040,7 +1129,7 @@ Public Sub Compilar_Archivo_Index()
     Dim K As Integer
     K = FreeFile
     Dim p As Integer
-    Open App.PATH & "\RES\OUTPUT\INDEX.BIN" For Binary Access Write Lock Write As K
+    Open App.path & "\RES\OUTPUT\INDEX.BIN" For Binary Access Write Lock Write As K
         For p = 1 To 11
             Put #K, , IXAR(p).St
             Put #K, , IXAR(p).Le
@@ -1056,7 +1145,7 @@ End Sub
 Public Sub Cargar_Archivo_Index()
 
 
-Dim PATH As String
+Dim path As String
 
 Dim i As Integer
 
@@ -1064,12 +1153,12 @@ Dim UltimoS As Long
 Dim UltimoL As Long
 ReDim IXAR(1 To 11)
 
-PATH = App.PATH & "\RES\INDEX\"
+path = App.path & "\RES\INDEX\"
 UltimoS = (8 * 11) - 1
 
 
 i = FreeFile
-Open PATH & "NewFx.BIN" For Binary Access Read Lock Read As i
+Open path & "NewFx.BIN" For Binary Access Read Lock Read As i
     IXAR(1).Le = LOF(i)
     ReDim IXAR(1).Da(0 To IXAR(1).Le - 1)
     Get i, , IXAR(1).Da
@@ -1080,7 +1169,7 @@ UltimoS = IXAR(1).St
 UltimoL = IXAR(1).Le
 
 i = FreeFile
-Open PATH & "NwAnim.IND" For Binary Access Read Lock Read As i
+Open path & "NwAnim.IND" For Binary Access Read Lock Read As i
     IXAR(2).Le = LOF(i)
     ReDim IXAR(2).Da(0 To IXAR(2).Le - 1)
     Get i, , IXAR(2).Da
@@ -1091,7 +1180,7 @@ UltimoS = IXAR(2).St
 UltimoL = IXAR(2).Le
 
 i = FreeFile
-Open PATH & "NwBody.IND" For Binary Access Read Lock Read As i
+Open path & "NwBody.IND" For Binary Access Read Lock Read As i
     IXAR(3).Le = LOF(i)
     ReDim IXAR(3).Da(0 To IXAR(3).Le - 1)
     Get i, , IXAR(3).Da
@@ -1102,7 +1191,7 @@ UltimoS = IXAR(3).St
 UltimoL = IXAR(3).Le
 
 i = FreeFile
-Open PATH & "NwShields.IND" For Binary Access Read Lock Read As i
+Open path & "NwShields.IND" For Binary Access Read Lock Read As i
     IXAR(4).Le = LOF(i)
     If IXAR(4).Le > 0 Then
     ReDim IXAR(4).Da(0 To IXAR(4).Le - 1)
@@ -1115,7 +1204,7 @@ UltimoS = IXAR(4).St
 UltimoL = IXAR(4).Le
 
 i = FreeFile
-Open PATH & "NwWeapons.IND" For Binary Access Read Lock Read As i
+Open path & "NwWeapons.IND" For Binary Access Read Lock Read As i
     IXAR(5).Le = LOF(i)
     If IXAR(5).Le > 0 Then
     ReDim IXAR(5).Da(0 To IXAR(5).Le - 1)
@@ -1128,7 +1217,7 @@ UltimoS = IXAR(5).St
 UltimoL = IXAR(5).Le
 
 i = FreeFile
-Open PATH & "NwIndex.IND" For Binary Access Read Lock Read As i
+Open path & "NwIndex.IND" For Binary Access Read Lock Read As i
     IXAR(6).Le = LOF(i)
     If IXAR(6).Le > 0 Then
     ReDim IXAR(6).Da(0 To IXAR(6).Le - 1)
@@ -1141,7 +1230,7 @@ UltimoS = IXAR(6).St
 UltimoL = IXAR(6).Le
 
 i = FreeFile
-Open PATH & "NwEstatics.IND" For Binary Access Read Lock Read As i
+Open path & "NwEstatics.IND" For Binary Access Read Lock Read As i
     IXAR(7).Le = LOF(i)
     If IXAR(7).Le > 0 Then
     ReDim IXAR(7).Da(0 To IXAR(7).Le - 1)
@@ -1154,7 +1243,7 @@ UltimoS = IXAR(7).St
 UltimoL = IXAR(7).Le
 
 i = FreeFile
-Open PATH & "NwHelmets.IND" For Binary Access Read Lock Read As i
+Open path & "NwHelmets.IND" For Binary Access Read Lock Read As i
     IXAR(8).Le = LOF(i)
     If IXAR(8).Le > 0 Then
     ReDim IXAR(8).Da(0 To IXAR(8).Le - 1)
@@ -1167,7 +1256,7 @@ UltimoS = IXAR(8).St
 UltimoL = IXAR(8).Le
 
 i = FreeFile
-Open PATH & "NwMunicion.IND" For Binary Access Read Lock Read As i
+Open path & "NwMunicion.IND" For Binary Access Read Lock Read As i
     IXAR(9).Le = LOF(i)
     If IXAR(9).Le > 0 Then
     ReDim IXAR(9).Da(0 To IXAR(9).Le - 1)
@@ -1180,7 +1269,7 @@ UltimoS = IXAR(9).St
 UltimoL = IXAR(9).Le
 
 i = FreeFile
-Open PATH & "NwCapas.IND" For Binary Access Read Lock Read As i
+Open path & "NwCapas.IND" For Binary Access Read Lock Read As i
     IXAR(10).Le = LOF(i)
     If IXAR(10).Le > 0 Then
     ReDim IXAR(10).Da(0 To IXAR(10).Le - 1)
@@ -1193,7 +1282,7 @@ UltimoS = IXAR(10).St
 UltimoL = IXAR(10).Le
 
 i = FreeFile
-Open PATH & "NwHeads.IND" For Binary Access Read Lock Read As i
+Open path & "NwHeads.IND" For Binary Access Read Lock Read As i
     IXAR(11).Le = LOF(i)
     If IXAR(11).Le > 0 Then
     ReDim IXAR(11).Da(0 To IXAR(11).Le - 1)
@@ -1209,17 +1298,17 @@ UltimoL = IXAR(11).Le
 End Sub
 Public Sub Compilar_NwANim()
 
-Dim S As String
+Dim s As String
 Dim i As Long
 Dim p As Long
 Dim K As Long
 Dim GrafCounter As Integer
 Dim num_nwanim As Integer
 
-S = App.PATH & "\RES\INDEX\NewAnim.dat"
+s = App.path & "\RES\INDEX\NewAnim.dat"
 
 
-num_nwanim = Val(GetVar(S, "NW_ANIM", "NUM"))
+num_nwanim = Val(GetVar(s, "NW_ANIM", "NUM"))
 
 If num_nwanim < 1 Then Exit Sub
 
@@ -1227,20 +1316,23 @@ ReDim NewAnimationData(1 To num_nwanim)
 
 For i = 1 To num_nwanim
 
+
 With NewAnimationData(i)
-    .Grafico = Val(GetVar(S, "ANIMACION" & i, "Grafico"))
-    .Columnas = Val(GetVar(S, "ANIMACION" & i, "Columnas"))
-    .Filas = Val(GetVar(S, "ANIMACION" & i, "Filas"))
-    .Height = Val(GetVar(S, "ANIMACION" & i, "Alto"))
-    .Width = Val(GetVar(S, "ANIMACION" & i, "Ancho"))
-    .NumFrames = Val(GetVar(S, "ANIMACION" & i, "NumeroFrames"))
-    .Velocidad = Val(GetVar(S, "ANIMACION" & i, "Velocidad"))
+    .Grafico = Val(GetVar(s, "ANIMACION" & i, "Grafico"))
+    .Columnas = Val(GetVar(s, "ANIMACION" & i, "Columnas"))
+    .Filas = Val(GetVar(s, "ANIMACION" & i, "Filas"))
+    .Height = Val(GetVar(s, "ANIMACION" & i, "Alto"))
+    .Width = Val(GetVar(s, "ANIMACION" & i, "Ancho"))
+    .NumFrames = Val(GetVar(s, "ANIMACION" & i, "NumeroFrames"))
+    .Velocidad = Val(GetVar(s, "ANIMACION" & i, "Velocidad"))
     .TileWidth = .Width / 32
     .TileHeight = .Height / 32
-    .Romboidal = Val(GetVar(S, "ANIMACION" & i, "AnimacionRomboidal"))
-    .OffsetX = Val(GetVar(S, "ANIMACION" & i, "OffsetX"))
-    .OffsetY = Val(GetVar(S, "ANIMACION" & i, "OffsetY"))
-    .Initial = Val(GetVar(S, "ANIMACION" & i, "Inicial"))
+    .Romboidal = Val(GetVar(s, "ANIMACION" & i, "AnimacionRomboidal"))
+    .OffsetX = Val(GetVar(s, "ANIMACION" & i, "OffsetX"))
+    .OffsetY = Val(GetVar(s, "ANIMACION" & i, "OffsetY"))
+    .Initial = Val(GetVar(s, "ANIMACION" & i, "Inicial"))
+    .TipoAnimacion = Val(GetVar(s, "ANIMACION" & i, "TipoAnimacion"))
+    
     If .NumFrames > 0 Then
     ReDim .Indice(1 To .NumFrames) As tNewIndice
     GrafCounter = .Grafico
@@ -1266,10 +1358,12 @@ Next i
 Dim z As Integer
 z = FreeFile
 
-Open App.PATH & "\RES\INDEX\NwAnim.IND" For Binary Access Write Lock Write As z
+Open App.path & "\RES\INDEX\NwAnim.IND" For Binary Access Write Lock Write As z
     
     Put z, , num_nwanim
+    
     For p = 1 To num_nwanim
+
         With NewAnimationData(p)
         
             Put z, , .Grafico
@@ -1284,6 +1378,8 @@ Open App.PATH & "\RES\INDEX\NwAnim.IND" For Binary Access Write Lock Write As z
             Put z, , .Romboidal
             Put z, , .OffsetX
             Put z, , .OffsetY
+            Put z, , .TipoAnimacion
+            
             For K = 1 To .NumFrames
             
                 Put z, , .Indice(K).Grafico
@@ -1299,13 +1395,13 @@ Close z
 End Sub
 Public Sub Compilar_NwShield()
 
-Dim S As String
+Dim s As String
 Dim i As Long
 Dim z As Long
 Dim NumNewShields As Integer
-S = App.PATH & "\RES\INDEX\Nwshields.dat"
+s = App.path & "\RES\INDEX\Nwshields.dat"
 
-NumNewShields = Val(GetVar(S, "INIT", "num"))
+NumNewShields = Val(GetVar(s, "INIT", "num"))
 
 If NumNewShields > 0 Then
 ReDim nShieldDATA(1 To NumNewShields)
@@ -1313,11 +1409,11 @@ For i = 1 To NumNewShields
 
     With nShieldDATA(i)
 
-        .Alpha = Val(GetVar(S, CStr(i), "Alpha"))
-        .OverWriteGrafico = Val(GetVar(S, CStr(i), "OverWriteGrafico"))
+        .Alpha = Val(GetVar(s, CStr(i), "Alpha"))
+        .OverWriteGrafico = Val(GetVar(s, CStr(i), "OverWriteGrafico"))
         For z = 1 To 4
         
-            .mMovimiento(z) = Val(GetVar(S, CStr(i), "Mov" & z))
+            .mMovimiento(z) = Val(GetVar(s, CStr(i), "Mov" & z))
         
         Next z
 
@@ -1329,7 +1425,7 @@ Next i
 Dim K As Integer
 K = FreeFile
 
-Open App.PATH & "\RES\INDEX\NwShields.IND" For Binary Access Write Lock Write As K
+Open App.path & "\RES\INDEX\NwShields.IND" For Binary Access Write Lock Write As K
     Put K, , NumNewShields
     For i = 1 To NumNewShields
         With nShieldDATA(i)
@@ -1349,13 +1445,13 @@ End If
 End Sub
 Public Sub Compilar_NwHelmet()
     
-Dim S As String
+Dim s As String
 Dim i As Long
 Dim z As Long
 
-S = App.PATH & "\RES\INDEX\NewHelmets.dat"
+s = App.path & "\RES\INDEX\NewHelmets.dat"
 
-NumNewHelmet = Val(GetVar(S, "INIT", "num"))
+NumNewHelmet = Val(GetVar(s, "INIT", "num"))
 
 If NumNewHelmet > 0 Then
 ReDim NHelmetData(1 To NumNewHelmet)
@@ -1363,14 +1459,14 @@ For i = 1 To NumNewHelmet
 
     With NHelmetData(i)
 
-        .Alpha = Val(GetVar(S, "HELMET" & CStr(i), "Alpha"))
-        .OffsetY = Val(GetVar(S, "HELMET" & CStr(i), "OFFSET_DIBUJO"))
-        .OffsetLat = Val(GetVar(S, "HELMET" & CStr(i), "OFFSET_LAT"))
+        .Alpha = Val(GetVar(s, "HELMET" & CStr(i), "Alpha"))
+        .OffsetY = Val(GetVar(s, "HELMET" & CStr(i), "OFFSET_DIBUJO"))
+        .OffsetLat = Val(GetVar(s, "HELMET" & CStr(i), "OFFSET_LAT"))
         
-        .mMovimiento(1) = Val(GetVar(S, "HELMET" & CStr(i), "NORTH"))
-        .mMovimiento(2) = Val(GetVar(S, "HELMET" & CStr(i), "EAST"))
-                .mMovimiento(3) = Val(GetVar(S, "HELMET" & CStr(i), "SOUTH"))
-                .mMovimiento(4) = Val(GetVar(S, "HELMET" & CStr(i), "WEST"))
+        .mMovimiento(1) = Val(GetVar(s, "HELMET" & CStr(i), "NORTH"))
+        .mMovimiento(2) = Val(GetVar(s, "HELMET" & CStr(i), "EAST"))
+                .mMovimiento(3) = Val(GetVar(s, "HELMET" & CStr(i), "SOUTH"))
+                .mMovimiento(4) = Val(GetVar(s, "HELMET" & CStr(i), "WEST"))
                 
        
     End With
@@ -1381,7 +1477,7 @@ Next i
 Dim K As Integer
 K = FreeFile
 
-Open App.PATH & "\RES\INDEX\NwHelmets.IND" For Binary Access Write Lock Write As K
+Open App.path & "\RES\INDEX\NwHelmets.IND" For Binary Access Write Lock Write As K
     Put K, , NumNewHelmet
     For i = 1 To NumNewHelmet
         With NHelmetData(i)
@@ -1402,13 +1498,13 @@ End If
 End Sub
 Public Sub Compilar_NwWeapons()
 
-Dim S As String
+Dim s As String
 Dim i As Long
 Dim z As Long
 Dim NumNewWeapons As Integer
-S = App.PATH & "\RES\INDEX\NwWeapons.dat"
+s = App.path & "\RES\INDEX\NwWeapons.dat"
 
-NumNewWeapons = Val(GetVar(S, "INIT", "num"))
+NumNewWeapons = Val(GetVar(s, "INIT", "num"))
 
 If NumNewWeapons > 0 Then
 ReDim nWeaponData(1 To NumNewWeapons)
@@ -1416,12 +1512,12 @@ For i = 1 To NumNewWeapons
 
     With nWeaponData(i)
 
-        .Alpha = Val(GetVar(S, CStr(i), "Alpha"))
-        .OverWriteGrafico = Val(GetVar(S, CStr(i), "OverWriteGrafico"))
+        .Alpha = Val(GetVar(s, CStr(i), "Alpha"))
+        .OverWriteGrafico = Val(GetVar(s, CStr(i), "OverWriteGrafico"))
         
         For z = 1 To 4
         
-            .mMovimiento(z) = Val(GetVar(S, CStr(i), "Mov" & z))
+            .mMovimiento(z) = Val(GetVar(s, CStr(i), "Mov" & z))
         
         Next z
 
@@ -1433,7 +1529,7 @@ Next i
 Dim K As Integer
 K = FreeFile
 
-Open App.PATH & "\RES\INDEX\NwWeapons.IND" For Binary Access Write Lock Write As K
+Open App.path & "\RES\INDEX\NwWeapons.IND" For Binary Access Write Lock Write As K
     Put K, , NumNewWeapons
     For i = 1 To NumNewWeapons
         With nWeaponData(i)
@@ -1453,13 +1549,13 @@ End If
 End Sub
 Public Sub Compilar_NwMunicion()
 
-Dim S As String
+Dim s As String
 Dim i As Long
 Dim z As Long
 Dim NumNewM As Integer
-S = App.PATH & "\RES\INDEX\NwMunicion.dat"
+s = App.path & "\RES\INDEX\NwMunicion.dat"
 
-NumNewM = Val(GetVar(S, "INIT", "num"))
+NumNewM = Val(GetVar(s, "INIT", "num"))
 
 If NumNewM > 0 Then
 ReDim nMunicionData(1 To NumNewM)
@@ -1467,12 +1563,12 @@ For i = 1 To NumNewM
 
     With nMunicionData(i)
 
-        .Alpha = Val(GetVar(S, CStr(i), "Alpha"))
-        .OverWriteGrafico = Val(GetVar(S, CStr(i), "OverWriteGrafico"))
+        .Alpha = Val(GetVar(s, CStr(i), "Alpha"))
+        .OverWriteGrafico = Val(GetVar(s, CStr(i), "OverWriteGrafico"))
         
         For z = 1 To 4
         
-            .mMovimiento(z) = Val(GetVar(S, CStr(i), "Mov" & z))
+            .mMovimiento(z) = Val(GetVar(s, CStr(i), "Mov" & z))
         
         Next z
 
@@ -1484,7 +1580,7 @@ End If
 Dim K As Integer
 K = FreeFile
 
-Open App.PATH & "\RES\INDEX\NwMunicion.IND" For Binary Access Write Lock Write As K
+Open App.path & "\RES\INDEX\NwMunicion.IND" For Binary Access Write Lock Write As K
     Put K, , NumNewM
     If NumNewM > 0 Then
     For i = 1 To NumNewM
@@ -1505,13 +1601,13 @@ Close K
 End Sub
 Public Sub Compilar_NwCapa()
 
-Dim S As String
+Dim s As String
 Dim i As Long
 Dim z As Long
 Dim NumNewM As Integer
-S = App.PATH & "\RES\INDEX\NwCapa.dat"
+s = App.path & "\RES\INDEX\NwCapa.dat"
 
-NumNewM = Val(GetVar(S, "INIT", "num"))
+NumNewM = Val(GetVar(s, "INIT", "num"))
 
 If NumNewM > 0 Then
 ReDim nCapaData(1 To NumNewM)
@@ -1519,12 +1615,12 @@ For i = 1 To NumNewM
 
     With nCapaData(i)
 
-        .Alpha = Val(GetVar(S, CStr(i), "Alpha"))
-        .aOverWriteGrafico = Val(GetVar(S, CStr(i), "aOverWriteGrafico"))
-        .pOverWriteGrafico = Val(GetVar(S, CStr(i), "pOverWriteGrafico"))
+        .Alpha = Val(GetVar(s, CStr(i), "Alpha"))
+        .aOverWriteGrafico = Val(GetVar(s, CStr(i), "aOverWriteGrafico"))
+        .pOverWriteGrafico = Val(GetVar(s, CStr(i), "pOverWriteGrafico"))
         For z = 1 To 4
         
-            .mMovimiento(z) = Val(GetVar(S, CStr(i), "Mov" & z))
+            .mMovimiento(z) = Val(GetVar(s, CStr(i), "Mov" & z))
 
         Next z
 
@@ -1537,7 +1633,7 @@ End If
 Dim K As Integer
 K = FreeFile
 
-Open App.PATH & "\RES\INDEX\NwCapa.IND" For Binary Access Write Lock Write As K
+Open App.path & "\RES\INDEX\NwCapa.IND" For Binary Access Write Lock Write As K
     Put K, , NumNewM
     If NumNewM > 0 Then
     For i = 1 To NumNewM
@@ -1559,26 +1655,26 @@ Close K
 End Sub
 Public Sub Compilar_NwHeads()
 
-Dim S As String
+Dim s As String
 Dim i As Long
 Dim z As Long
 Dim NumNewM As Integer
-S = App.PATH & "\RES\INDEX\NewHeads.dat"
+s = App.path & "\RES\INDEX\NewHeads.dat"
 
-NumNewM = Val(GetVar(S, "INIT", "num"))
+NumNewM = Val(GetVar(s, "INIT", "num"))
 
 If NumNewM > 0 Then
 ReDim NHeadData(1 To NumNewM)
 For i = 1 To NumNewM
     With NHeadData(i)
-        .Raza = Val(GetVar(S, "HEAD" & CStr(i), "RAZA"))
-        .OffsetDibujoY = Val(GetVar(S, "HEAD" & CStr(i), "OFFSET_DIBUJO"))
-        .OffsetOjos = Val(GetVar(S, "HEAD" & CStr(i), "OFFSET_OJOS"))
-        .Genero = Val(GetVar(S, "HEAD" & CStr(i), "GENERO"))
-        .Frame(2) = Val(GetVar(S, "HEAD" & CStr(i), "EAST"))
-        .Frame(1) = Val(GetVar(S, "HEAD" & CStr(i), "NORTH"))
-        .Frame(3) = Val(GetVar(S, "HEAD" & CStr(i), "SOUTH"))
-        .Frame(4) = Val(GetVar(S, "HEAD" & CStr(i), "WEST"))
+        .Raza = Val(GetVar(s, "HEAD" & CStr(i), "RAZA"))
+        .OffsetDibujoY = Val(GetVar(s, "HEAD" & CStr(i), "OFFSET_DIBUJO"))
+        .OffsetOjos = Val(GetVar(s, "HEAD" & CStr(i), "OFFSET_OJOS"))
+        .Genero = Val(GetVar(s, "HEAD" & CStr(i), "GENERO"))
+        .Frame(2) = Val(GetVar(s, "HEAD" & CStr(i), "EAST"))
+        .Frame(1) = Val(GetVar(s, "HEAD" & CStr(i), "NORTH"))
+        .Frame(3) = Val(GetVar(s, "HEAD" & CStr(i), "SOUTH"))
+        .Frame(4) = Val(GetVar(s, "HEAD" & CStr(i), "WEST"))
     End With
 Next i
 End If
@@ -1586,7 +1682,7 @@ End If
 Dim K As Integer
 K = FreeFile
 
-Open App.PATH & "\RES\INDEX\NwHeads.IND" For Binary Access Write Lock Write As K
+Open App.path & "\RES\INDEX\NwHeads.IND" For Binary Access Write Lock Write As K
     Put K, , NumNewM
     If NumNewM > 0 Then
     For i = 1 To NumNewM
@@ -1610,13 +1706,13 @@ End Sub
 
 Public Sub Compilar_NwBody()
 
-Dim S As String
+Dim s As String
 Dim i As Long
 Dim z As Long
 Dim NumNewBodys As Integer
-S = App.PATH & "\RES\INDEX\NewBody.dat"
+s = App.path & "\RES\INDEX\NewBody.dat"
 
-NumNewBodys = Val(GetVar(S, "INIT", "num"))
+NumNewBodys = Val(GetVar(s, "INIT", "num"))
 
 If NumNewBodys > 0 Then
 ReDim nBodyData(1 To NumNewBodys)
@@ -1624,37 +1720,37 @@ For i = 1 To NumNewBodys
 
     With nBodyData(i)
 
-        .bAtaque = IIf(Val(GetVar(S, CStr(i), "Ataque")), True, False)
-        .bContinuo = IIf(Val(GetVar(S, CStr(i), "Continuo")), True, False)
-        .bReposo = IIf(Val(GetVar(S, CStr(i), "Reposo")), True, False)
-        .bAtacado = IIf(Val(GetVar(S, CStr(i), "Atacado")), True, False)
-        .bDeath = IIf(Val(GetVar(S, CStr(i), "Muerte")), True, False)
-        .OverWriteGrafico = Val(GetVar(S, CStr(i), "OverWriteGrafico"))
-        .OffsetY = Val(GetVar(S, CStr(i), "OffsetY"))
-        .Capa = Val(GetVar(S, CStr(i), "Capa"))
+        .bAtaque = IIf(Val(GetVar(s, CStr(i), "Ataque")), True, False)
+        .bContinuo = IIf(Val(GetVar(s, CStr(i), "Continuo")), True, False)
+        .bReposo = IIf(Val(GetVar(s, CStr(i), "Reposo")), True, False)
+        .bAtacado = IIf(Val(GetVar(s, CStr(i), "Atacado")), True, False)
+        .bDeath = IIf(Val(GetVar(s, CStr(i), "Muerte")), True, False)
+        .OverWriteGrafico = Val(GetVar(s, CStr(i), "OverWriteGrafico"))
+        .OffsetY = Val(GetVar(s, CStr(i), "OffsetY"))
+        .Capa = Val(GetVar(s, CStr(i), "Capa"))
         If .bAtaque Then
             For z = 1 To 4
-                .Attack(z) = Val(GetVar(S, CStr(i), "Ataque" & z))
+                .Attack(z) = Val(GetVar(s, CStr(i), "Ataque" & z))
                 
 
             Next z
         End If
         If .bAtacado Then
             For z = 1 To 4
-                .Attacked(z) = Val(GetVar(S, CStr(i), "Atacado" & z))
+                .Attacked(z) = Val(GetVar(s, CStr(i), "Atacado" & z))
             Next z
         End If
         
         If .bReposo Then
             For z = 1 To 4
-            .Reposo(z) = Val(GetVar(S, CStr(i), "Reposo" & z))
+            .Reposo(z) = Val(GetVar(s, CStr(i), "Reposo" & z))
         
 
             Next z
         End If
         If .bDeath Then
             For z = 1 To 4
-            .Death(z) = Val(GetVar(S, CStr(i), "Muerte" & z))
+            .Death(z) = Val(GetVar(s, CStr(i), "Muerte" & z))
                 
 
             Next z
@@ -1662,7 +1758,7 @@ For i = 1 To NumNewBodys
 
         For z = 1 To 4
         
-            .mMovement(z) = Val(GetVar(S, CStr(i), "Mov" & z))
+            .mMovement(z) = Val(GetVar(s, CStr(i), "Mov" & z))
         
         Next z
 
@@ -1674,7 +1770,7 @@ Next i
 Dim K As Integer
 K = FreeFile
 
-Open App.PATH & "\RES\INDEX\NwBody.IND" For Binary Access Write Lock Write As K
+Open App.path & "\RES\INDEX\NwBody.IND" For Binary Access Write Lock Write As K
     Put K, , NumNewBodys
     For i = 1 To NumNewBodys
         With nBodyData(i)
@@ -1721,26 +1817,26 @@ End If
 
 End Sub
 Public Sub GenerarFonts()
-Dim S As String
+Dim s As String
 Dim p As Long
 Dim K As Integer
 Dim ll As Long
-S = App.PATH & "\FONTS\"
+s = App.path & "\FONTS\"
 
-nFonts = Val(GetVar(S & "Fonts.dat", "INIT", "numFonts"))
+nFonts = Val(GetVar(s & "Fonts.dat", "INIT", "numFonts"))
 ReDim Fonts(1 To nFonts)
 ll = 2 + nFonts * 10
 For p = 1 To nFonts
 K = FreeFile
 
-    Open S & p & ".dat" For Binary Access Read Lock Read As #K
+    Open s & p & ".dat" For Binary Access Read Lock Read As #K
         Fonts(p).lSize = LOF(K)
         ReDim Fonts(p).Data(0 To Fonts(p).lSize - 1)
         Get K, , Fonts(p).Data
         Fonts(p).lStart = ll
         ll = ll + Fonts(p).lSize
     Close #K
-    Fonts(p).nT = Val(GetVar(S & "Fonts.dat", "FONT" & p, "Textura"))
+    Fonts(p).nT = Val(GetVar(s & "Fonts.dat", "FONT" & p, "Textura"))
 Next p
 For p = 1 To 20
 
@@ -1748,7 +1844,7 @@ For p = 1 To 20
 Next p
 
 K = FreeFile
-Open App.PATH & "\OUTPUT\Fonts.bin" For Binary Access Write Lock Write As #K
+Open App.path & "\OUTPUT\Fonts.bin" For Binary Access Write Lock Write As #K
     Put #K, , nFonts
     For p = 1 To nFonts
         Put #K, , Fonts(p).lStart
@@ -1763,15 +1859,15 @@ MsgBox "Compilación exitosa"
 End Sub
 Public Sub Compilar_NewFx()
 
-Dim S As String
+Dim s As String
 Dim t As Long
-Dim R As Byte
+Dim r As Byte
 Dim V As Byte
 Dim A As Byte
-S = App.PATH & "\RES\INDEX\NewFxs.dat"
+s = App.path & "\RES\INDEX\NewFxs.dat"
 
-Num_Fx = Val(GetVar(S, "INIT", "NumFx"))
-Num_Med = Val(GetVar(S, "INIT", "NumMeditaciones"))
+Num_Fx = Val(GetVar(s, "INIT", "NumFx"))
+Num_Med = Val(GetVar(s, "INIT", "NumMeditaciones"))
 
 
 If Num_Fx > 0 Then ReDim FxData(1 To Num_Fx)
@@ -1784,24 +1880,24 @@ If Num_Fx > 0 Then
         With FxData(t)
 
         
-            .Animacion = Val(GetVar(S, "FX" & t, "Anim"))
-            .OffsetX = Val(GetVar(S, "FX" & t, "OffsetX"))
-            .OffsetY = Val(GetVar(S, "FX" & t, "OffsetY"))
-            .Alpha = Val(GetVar(S, "FX" & t, "Alpha"))
-            .Rombo = Val(GetVar(S, "FX" & t, "Rombo"))
-            .Particula = Val(GetVar(S, "FX" & t, "Particula"))
-            .Life = Val(GetVar(S, "FX" & t, "Life"))
-            R = Val(GetVar(S, "FX" & t, "Rojo"))
-            V = Val(GetVar(S, "FX" & t, "Verde"))
-            A = Val(GetVar(S, "FX" & t, "Azul"))
-            .AnimFinal = Val(GetVar(S, "FX" & t, "AnimFinal"))
-            .AnimInicial = Val(GetVar(S, "FX" & t, "AnimInicial"))
-            .ParaleloInicial = Val(GetVar(S, "FX" & t, "AnimInitParalelo"))
-            .ParaleloStart = Val(GetVar(S, "FX" & t, "InitParaleloStart"))
-            If R = 0 And V = 0 And A = 0 Then
+            .Animacion = Val(GetVar(s, "FX" & t, "Anim"))
+            .OffsetX = Val(GetVar(s, "FX" & t, "OffsetX"))
+            .OffsetY = Val(GetVar(s, "FX" & t, "OffsetY"))
+            .Alpha = Val(GetVar(s, "FX" & t, "Alpha"))
+            .Rombo = Val(GetVar(s, "FX" & t, "Rombo"))
+            .Particula = Val(GetVar(s, "FX" & t, "Particula"))
+            .Life = Val(GetVar(s, "FX" & t, "Life"))
+            r = Val(GetVar(s, "FX" & t, "Rojo"))
+            V = Val(GetVar(s, "FX" & t, "Verde"))
+            A = Val(GetVar(s, "FX" & t, "Azul"))
+            .AnimFinal = Val(GetVar(s, "FX" & t, "AnimFinal"))
+            .AnimInicial = Val(GetVar(s, "FX" & t, "AnimInicial"))
+            .ParaleloInicial = Val(GetVar(s, "FX" & t, "AnimInitParalelo"))
+            .ParaleloStart = Val(GetVar(s, "FX" & t, "InitParaleloStart"))
+            If r = 0 And V = 0 And A = 0 Then
                 .Color = 0
             Else
-                .Color = D3DColorARGB(255, R, V, A)
+                .Color = D3DColorARGB(255, r, V, A)
             End If
         End With
     
@@ -1814,25 +1910,25 @@ If Num_Med > 0 Then
 
         With MedData(t)
             
-            .Animacion = Val(GetVar(S, "MED" & t, "Anim"))
-            .OffsetX = Val(GetVar(S, "MED" & t, "OffsetX"))
-            .OffsetY = Val(GetVar(S, "MED" & t, "OffsetY"))
-            .Alpha = Val(GetVar(S, "MED" & t, "Alpha"))
-            .Rombo = Val(GetVar(S, "MED" & t, "Rombo"))
-            .Particula = Val(GetVar(S, "MED" & t, "Particula"))
-            R = Val(GetVar(S, "MED" & t, "Rojo"))
-            V = Val(GetVar(S, "MED" & t, "Verde"))
-            A = Val(GetVar(S, "MED" & t, "Azul"))
-            .Life = Val(GetVar(S, "MED" & t, "Life"))
-            If R = 0 And V = 0 And A = 0 Then
+            .Animacion = Val(GetVar(s, "MED" & t, "Anim"))
+            .OffsetX = Val(GetVar(s, "MED" & t, "OffsetX"))
+            .OffsetY = Val(GetVar(s, "MED" & t, "OffsetY"))
+            .Alpha = Val(GetVar(s, "MED" & t, "Alpha"))
+            .Rombo = Val(GetVar(s, "MED" & t, "Rombo"))
+            .Particula = Val(GetVar(s, "MED" & t, "Particula"))
+            r = Val(GetVar(s, "MED" & t, "Rojo"))
+            V = Val(GetVar(s, "MED" & t, "Verde"))
+            A = Val(GetVar(s, "MED" & t, "Azul"))
+            .Life = Val(GetVar(s, "MED" & t, "Life"))
+            If r = 0 And V = 0 And A = 0 Then
                 .Color = 0
             Else
-                .Color = D3DColorARGB(255, R, V, A)
+                .Color = D3DColorARGB(255, r, V, A)
             End If
-            .AnimFinal = Val(GetVar(S, "MED" & t, "AnimFinal"))
-            .AnimInicial = Val(GetVar(S, "MED" & t, "AnimInicial"))
-            .ParaleloInicial = Val(GetVar(S, "MED" & t, "AnimInitParalelo"))
-                        .ParaleloStart = Val(GetVar(S, "MED" & t, "InitParaleloStart"))
+            .AnimFinal = Val(GetVar(s, "MED" & t, "AnimFinal"))
+            .AnimInicial = Val(GetVar(s, "MED" & t, "AnimInicial"))
+            .ParaleloInicial = Val(GetVar(s, "MED" & t, "AnimInitParalelo"))
+                        .ParaleloStart = Val(GetVar(s, "MED" & t, "InitParaleloStart"))
         End With
     Next t
 End If
@@ -1842,7 +1938,7 @@ Dim F As Integer
 F = FreeFile
 
 
-Open App.PATH & "\RES\INDEX\NewFX.BIN" For Binary Access Write Lock Write As #F
+Open App.path & "\RES\INDEX\NewFX.BIN" For Binary Access Write Lock Write As #F
     Put #F, , Num_Fx
     Put #F, , Num_Med
     Put #F, , FxData
@@ -1865,7 +1961,7 @@ On Error GoTo ErrHandler
       
       Dim L As String
     
-      L = App.PATH & "\Encode\Decor.dat"
+      L = App.path & "\Encode\Decor.dat"
     
       'obtiene el numero de obj
       Cantdecordata = Val(GetVar(L, "INIT", "NumDecors"))
@@ -1906,6 +2002,11 @@ On Error GoTo ErrHandler
             .EstadoDefault = Val(GetVar(L, "DECOR" & Decor, "EstadoDefault"))
             .TileH = Val(GetVar(L, "DECOR" & Decor, "TileH"))
             .TileW = Val(GetVar(L, "DECOR" & Decor, "TileW"))
+            .OffX = Val(GetVar(L, "DECOR" & Decor, "OffX"))
+            .OffY = Val(GetVar(L, "DECOR" & Decor, "OffY"))
+            .TileTransY = Val(GetVar(L, "DECOR" & Decor, "TileTransY"))
+            .Sombra = Val(GetVar(L, "DECOR" & Decor, "NoSombra"))
+            
                
          
          End With
@@ -1916,86 +2017,86 @@ On Error GoTo ErrHandler
       Exit Sub
       
 ErrHandler:
-   Stop
+   MsgBox "ERROR DECORDATA: " & Err.Description
 End Sub
 Public Sub LoadCraft()
 Dim K As Long
-Dim S As String
+Dim s As String
 
 'Cargamos herreria, sastreria y carpinteria.
-S = App.PATH & "\ENCODE\Herreria.dat"
+s = App.path & "\ENCODE\Herreria.dat"
 
-NumHerr = Val(GetVar(S, "INIT", "NUM"))
+NumHerr = Val(GetVar(s, "INIT", "NUM"))
 ReDim cHerreria(1 To NumHerr)
 For K = 1 To NumHerr
     With cHerreria(K)
-        .Item = Val(GetVar(S, K, "ITEM"))
-        .Tipo = Val(GetVar(S, K, "TIPO"))
-        .ProfesionNivel = Val(GetVar(S, K, "NIVEL"))
-        .Mat1 = Val(GetVar(S, K, "BRONCE"))
-        .Mat2 = Val(GetVar(S, K, "PLATA"))
-        .Mat3 = Val(GetVar(S, K, "ORO"))
-        .Version = Val(GetVar(S, K, "VER"))
+        .Item = Val(GetVar(s, K, "ITEM"))
+        .Tipo = Val(GetVar(s, K, "TIPO"))
+        .ProfesionNivel = Val(GetVar(s, K, "NIVEL"))
+        .Mat1 = Val(GetVar(s, K, "BRONCE"))
+        .Mat2 = Val(GetVar(s, K, "PLATA"))
+        .Mat3 = Val(GetVar(s, K, "ORO"))
+        .Version = Val(GetVar(s, K, "VER"))
     End With
 Next K
-S = App.PATH & "\ENCODE\Sastreria.dat"
-NumSastr = Val(GetVar(S, "INIT", "NUM"))
+s = App.path & "\ENCODE\Sastreria.dat"
+NumSastr = Val(GetVar(s, "INIT", "NUM"))
 ReDim cSastreria(1 To NumSastr)
 For K = 1 To NumSastr
     With cSastreria(K)
-        .Item = Val(GetVar(S, K, "ITEM"))
-        .Tipo = Val(GetVar(S, K, "TIPO"))
-        .ProfesionNivel = Val(GetVar(S, K, "NIVEL"))
-        .Mat1 = Val(GetVar(S, K, "PIEL1"))
-        .Mat2 = Val(GetVar(S, K, "PIEL2"))
-        .Mat3 = Val(GetVar(S, K, "PIEL3"))
-        .Version = Val(GetVar(S, K, "VER"))
+        .Item = Val(GetVar(s, K, "ITEM"))
+        .Tipo = Val(GetVar(s, K, "TIPO"))
+        .ProfesionNivel = Val(GetVar(s, K, "NIVEL"))
+        .Mat1 = Val(GetVar(s, K, "PIEL1"))
+        .Mat2 = Val(GetVar(s, K, "PIEL2"))
+        .Mat3 = Val(GetVar(s, K, "PIEL3"))
+        .Version = Val(GetVar(s, K, "VER"))
     End With
 Next K
-S = App.PATH & "\ENCODE\Carpinteria.dat"
-NumCarp = Val(GetVar(S, "INIT", "NUM"))
+s = App.path & "\ENCODE\Carpinteria.dat"
+NumCarp = Val(GetVar(s, "INIT", "NUM"))
 ReDim cCarpinteria(1 To NumCarp)
 For K = 1 To NumCarp
     With cCarpinteria(K)
-        .Item = Val(GetVar(S, K, "ITEM"))
-        .Tipo = Val(GetVar(S, K, "TIPO"))
-        .ProfesionNivel = Val(GetVar(S, K, "NIVEL"))
-        .Mat1 = Val(GetVar(S, K, "Madera"))
-        .Mat2 = Val(GetVar(S, K, "Madera2"))
-        .Mat3 = Val(GetVar(S, K, "MARFIL"))
-        .Version = Val(GetVar(S, K, "VER"))
+        .Item = Val(GetVar(s, K, "ITEM"))
+        .Tipo = Val(GetVar(s, K, "TIPO"))
+        .ProfesionNivel = Val(GetVar(s, K, "NIVEL"))
+        .Mat1 = Val(GetVar(s, K, "Madera"))
+        .Mat2 = Val(GetVar(s, K, "Madera2"))
+        .Mat3 = Val(GetVar(s, K, "MARFIL"))
+        .Version = Val(GetVar(s, K, "VER"))
     End With
 Next K
 
 End Sub
 Public Sub LoadPremios()
 Dim K As Long
-Dim S As String
+Dim s As String
 Dim J As Long
-S = App.PATH & "\ENCODE\Canje.dat"
+s = App.path & "\ENCODE\Canje.dat"
 
 
 
-NumCanje = Val(GetVar(S, "INIT", "NumItems"))
+NumCanje = Val(GetVar(s, "INIT", "NumItems"))
 ReDim Canjes(1 To NumCanje)
 For K = 1 To NumCanje
 
     With Canjes(K)
     
 
-        .Nombre = GetVar(S, "PREMIO" & K, "Nombre")
-        .Info = GetVar(S, "PREMIO" & K, "Info")
-        .Descuento = Val(GetVar(S, "PREMIO" & K, "Descuento"))
-        .vGema = Val(GetVar(S, "PREMIO" & K, "Valor_Gemas"))
-        .vMM = Val(GetVar(S, "PREMIO" & K, "Valor_MM"))
-        .nItems = Val(GetVar(S, "PREMIO" & K, "NumObjs"))
-        .Tipo = Val(GetVar(S, "PREMIO" & K, "Tipo"))
-        .Version = Val(GetVar(S, "PREMIO" & K, "Version"))
+        .Nombre = GetVar(s, "PREMIO" & K, "Nombre")
+        .Info = GetVar(s, "PREMIO" & K, "Info")
+        .Descuento = Val(GetVar(s, "PREMIO" & K, "Descuento"))
+        .vGema = Val(GetVar(s, "PREMIO" & K, "Valor_Gemas"))
+        .vMM = Val(GetVar(s, "PREMIO" & K, "Valor_MM"))
+        .nItems = Val(GetVar(s, "PREMIO" & K, "NumObjs"))
+        .Tipo = Val(GetVar(s, "PREMIO" & K, "Tipo"))
+        .Version = Val(GetVar(s, "PREMIO" & K, "Version"))
         ReDim .Cant(1 To .nItems)
         ReDim .Items(1 To .nItems)
         For J = 1 To .nItems
-            .Items(J) = Val(Readfield(1, GetVar(S, "PREMIO" & K, "OBJ" & J), Asc("-")))
-            .Cant(J) = Val(Readfield(2, GetVar(S, "PREMIO" & K, "OBJ" & J), Asc("-")))
+            .Items(J) = Val(Readfield(1, GetVar(s, "PREMIO" & K, "OBJ" & J), Asc("-")))
+            .Cant(J) = Val(Readfield(2, GetVar(s, "PREMIO" & K, "OBJ" & J), Asc("-")))
         Next J
 
 
@@ -2005,3 +2106,275 @@ For K = 1 To NumCanje
 Next K
 
 End Sub
+Sub EscribirAuras(ByVal FF As Integer)
+      Dim i As Long
+   On Error GoTo EscribirAuras_Error
+
+2         Put FF, , nAura
+4         For i = 1 To nAura
+6             Put FF, , AuraDATA(i).Tipo
+8             Put FF, , AuraDATA(i).grhindex
+10            Put FF, , AuraDATA(i).Giratoria
+12            Put FF, , AuraDATA(i).Velocidad
+14            Put FF, , AuraDATA(i).OffsetX
+16            Put FF, , AuraDATA(i).OffsetY
+18            Put FF, , AuraDATA(i).A
+20            Put FF, , AuraDATA(i).r
+22            Put FF, , AuraDATA(i).g
+24            Put FF, , AuraDATA(i).b
+          
+          
+26        Next i
+
+    Exit Sub
+
+EscribirAuras_Error:
+
+    MsgBox "Error " & Err.Number & " (" & Err.Description & ") in procedure EscribirAuras in line:" & Erl
+
+End Sub
+Sub CargarAuras() 'sub de testeo
+      Dim path As String
+      Dim i As Long
+   On Error GoTo CargarAuras_Error
+
+2     path = App.path & "\ENCODE\AURA.DAT"
+
+4     nAura = Val(GetVar(path, "INIT", "NumAuras"))
+
+6     ReDim AuraDATA(0 To nAura) As tAura
+
+8     For i = 1 To nAura
+
+10        With AuraDATA(i)
+12            .grhindex = Val(GetVar(path, "Aura" & i, "GrhIndex"))
+14            .r = Val(GetVar(path, "Aura" & i, "Rojo"))
+16            .g = Val(GetVar(path, "Aura" & i, "Verde"))
+18            .b = Val(GetVar(path, "Aura" & i, "Azul"))
+20            .Giratoria = Val(GetVar(path, "Aura" & i, "Giratoria"))
+22            .OffsetX = Val(GetVar(path, "Aura" & i, "OffsetX"))
+24            .OffsetY = Val(GetVar(path, "Aura" & i, "Offset"))
+26            .A = Val(GetVar(path, "Aura" & i, "Alpha"))
+28            .Velocidad = Val(GetVar(path, "Aura" & i, "Vel"))
+30        End With
+
+32    Next i
+
+    Exit Sub
+
+CargarAuras_Error:
+
+    MsgBox "Error " & Err.Number & " (" & Err.Description & ") in procedure CargarAuras in line:" & Erl
+
+End Sub
+Sub CargarParticulas() 'sub de testeo
+       
+      Dim StreamFile As String
+      Dim LoopC As Long
+      Dim i As Long
+      Dim GrhListing As String
+      Dim TempSet As String
+      Dim ColorSet As Long
+
+   On Error GoTo CargarParticulas_Error
+
+2     StreamFile = App.path & "\ENCODE\Particles.ini"
+4     TotalStreams = Val(GetVar(StreamFile, "INIT", "Total"))
+       
+      'resize StreamData array
+6     ReDim StreamData(1 To TotalStreams) As Stream
+       
+          'fill StreamData array with info from Particles.ini
+8         For LoopC = 1 To TotalStreams
+10            StreamData(LoopC).Name = GetVar(StreamFile, Val(LoopC), "Name")
+12            StreamData(LoopC).NumOfParticles = GetVar(StreamFile, Val(LoopC), "NumOfParticles")
+14            StreamData(LoopC).NumTrueParticles = StreamData(LoopC).NumOfParticles
+              
+16            StreamData(LoopC).X1 = GetVar(StreamFile, Val(LoopC), "X1")
+18            StreamData(LoopC).y1 = GetVar(StreamFile, Val(LoopC), "Y1")
+20            StreamData(LoopC).x2 = GetVar(StreamFile, Val(LoopC), "X2")
+22            StreamData(LoopC).y2 = GetVar(StreamFile, Val(LoopC), "Y2")
+24            StreamData(LoopC).Angle = GetVar(StreamFile, Val(LoopC), "Angle")
+26            StreamData(LoopC).vecx1 = GetVar(StreamFile, Val(LoopC), "VecX1")
+28            StreamData(LoopC).vecx2 = GetVar(StreamFile, Val(LoopC), "VecX2")
+30            StreamData(LoopC).vecy1 = GetVar(StreamFile, Val(LoopC), "VecY1")
+32            StreamData(LoopC).vecy2 = GetVar(StreamFile, Val(LoopC), "VecY2")
+34            StreamData(LoopC).life1 = GetVar(StreamFile, Val(LoopC), "Life1")
+36            StreamData(LoopC).life2 = GetVar(StreamFile, Val(LoopC), "Life2")
+38            StreamData(LoopC).friction = GetVar(StreamFile, Val(LoopC), "Friction")
+40            StreamData(LoopC).Spin = GetVar(StreamFile, Val(LoopC), "Spin")
+42            StreamData(LoopC).spin_speedL = GetVar(StreamFile, Val(LoopC), "Spin_SpeedL")
+44            StreamData(LoopC).spin_speedH = GetVar(StreamFile, Val(LoopC), "Spin_SpeedH")
+46            StreamData(LoopC).AlphaBlend = GetVar(StreamFile, Val(LoopC), "AlphaBlend")
+48            StreamData(LoopC).gravity = GetVar(StreamFile, Val(LoopC), "Gravity")
+50            StreamData(LoopC).grav_strength = GetVar(StreamFile, Val(LoopC), "Grav_Strength")
+52            StreamData(LoopC).bounce_strength = GetVar(StreamFile, Val(LoopC), "Bounce_Strength")
+54            StreamData(LoopC).XMove = GetVar(StreamFile, Val(LoopC), "XMove")
+56            StreamData(LoopC).YMove = GetVar(StreamFile, Val(LoopC), "YMove")
+58            StreamData(LoopC).move_x1 = GetVar(StreamFile, Val(LoopC), "move_x1")
+60            StreamData(LoopC).move_x2 = GetVar(StreamFile, Val(LoopC), "move_x2")
+62            StreamData(LoopC).move_y1 = GetVar(StreamFile, Val(LoopC), "move_y1")
+64            StreamData(LoopC).move_y2 = GetVar(StreamFile, Val(LoopC), "move_y2")
+66            StreamData(LoopC).life_counter = GetVar(StreamFile, Val(LoopC), "life_counter")
+68            StreamData(LoopC).Speed = Val(GetVar(StreamFile, Val(LoopC), "Speed"))
+70            StreamData(LoopC).grh_resize = Val(GetVar(StreamFile, Val(LoopC), "resize"))
+72            StreamData(LoopC).grh_resizex = Val(GetVar(StreamFile, Val(LoopC), "rx"))
+74            StreamData(LoopC).grh_resizey = Val(GetVar(StreamFile, Val(LoopC), "ry"))
+76            StreamData(LoopC).NumGrhs = GetVar(StreamFile, Val(LoopC), "NumGrhs")
+             
+78            ReDim StreamData(LoopC).grh_list(1 To StreamData(LoopC).NumGrhs)
+80            GrhListing = GetVar(StreamFile, Val(LoopC), "Grh_List")
+             
+82            For i = 1 To StreamData(LoopC).NumGrhs
+84                StreamData(LoopC).grh_list(i) = Readfield(Str(i), GrhListing, 44)
+86            Next i
+88            StreamData(LoopC).grh_list(i - 1) = StreamData(LoopC).grh_list(i - 1)
+90            For ColorSet = 1 To 4
+92                TempSet = GetVar(StreamFile, Val(LoopC), "ColorSet" & ColorSet)
+94                StreamData(LoopC).colortint(ColorSet - 1).r = Readfield(1, TempSet, 44)
+96                StreamData(LoopC).colortint(ColorSet - 1).g = Readfield(2, TempSet, 44)
+98                StreamData(LoopC).colortint(ColorSet - 1).b = Readfield(3, TempSet, 44)
+100           Next ColorSet
+102       Next LoopC
+
+    Exit Sub
+
+CargarParticulas_Error:
+
+    MsgBox "Error " & Err.Number & " (" & Err.Description & ") in procedure CargarParticulas in line:" & Erl & " en particula : " & LoopC
+       
+End Sub
+Public Sub EscribirParticulas(ByVal FF As Integer)
+      Dim LoopC As Long
+      Dim i As Long
+      Dim ColorSet As Long
+
+
+2     Put FF, , TotalStreams
+       
+          'fill StreamData array with info from Particles.ini
+4         For LoopC = 1 To TotalStreams
+6             Put FF, , StreamData(LoopC).NumOfParticles
+              
+8             Put FF, , StreamData(LoopC).X1
+10            Put FF, , StreamData(LoopC).y1 '= GetVar(StreamFile, Val(loopc), "Y1")
+12            Put FF, , StreamData(LoopC).x2 '= GetVar(StreamFile, Val(loopc), "X2")
+14            Put FF, , StreamData(LoopC).y2 '= GetVar(StreamFile, Val(loopc), "Y2")
+16            Put FF, , StreamData(LoopC).Angle '= GetVar(StreamFile, Val(loopc), "Angle")
+18            Put FF, , StreamData(LoopC).vecx1 '= GetVar(StreamFile, Val(loopc), "VecX1")
+20            Put FF, , StreamData(LoopC).vecx2 '= GetVar(StreamFile, Val(loopc), "VecX2")
+22            Put FF, , StreamData(LoopC).vecy1 '= GetVar(StreamFile, Val(loopc), "VecY1")
+24            Put FF, , StreamData(LoopC).vecy2 '= GetVar(StreamFile, Val(loopc), "VecY2")
+26            Put FF, , StreamData(LoopC).life1 '= GetVar(StreamFile, Val(loopc), "Life1")
+28            Put FF, , StreamData(LoopC).life2 '= GetVar(StreamFile, Val(loopc), "Life2")
+30            Put FF, , StreamData(LoopC).friction '= GetVar(StreamFile, Val(loopc), "Friction")
+32            Put FF, , StreamData(LoopC).Spin '= GetVar(StreamFile, Val(loopc), "Spin")
+34            Put FF, , StreamData(LoopC).spin_speedL '= GetVar(StreamFile, Val(loopc), "Spin_SpeedL")
+36            Put FF, , StreamData(LoopC).spin_speedH '= GetVar(StreamFile, Val(loopc), "Spin_SpeedH")
+38            Put FF, , StreamData(LoopC).AlphaBlend '= GetVar(StreamFile, Val(loopc), "AlphaBlend")
+40            Put FF, , StreamData(LoopC).gravity '= GetVar(StreamFile, Val(loopc), "Gravity")
+42            Put FF, , StreamData(LoopC).grav_strength '= GetVar(StreamFile, Val(loopc), "Grav_Strength")
+44            Put FF, , StreamData(LoopC).bounce_strength '= GetVar(StreamFile, Val(loopc), "Bounce_Strength")
+46            Put FF, , StreamData(LoopC).XMove '= GetVar(StreamFile, Val(loopc), "XMove")
+48            Put FF, , StreamData(LoopC).YMove '= GetVar(StreamFile, Val(loopc), "YMove")
+50            Put FF, , StreamData(LoopC).move_x1 '= GetVar(StreamFile, Val(loopc), "move_x1")
+52            Put FF, , StreamData(LoopC).move_x2 '= GetVar(StreamFile, Val(loopc), "move_x2")
+54            Put FF, , StreamData(LoopC).move_y1 '= GetVar(StreamFile, Val(loopc), "move_y1")
+56            Put FF, , StreamData(LoopC).move_y2 '= GetVar(StreamFile, Val(loopc), "move_y2")
+58            Put FF, , StreamData(LoopC).life_counter '= GetVar(StreamFile, Val(loopc), "life_counter")
+60            Put FF, , StreamData(LoopC).Speed '= Val(GetVar(StreamFile, Val(loopc), "Speed"))
+62            Put FF, , StreamData(LoopC).grh_resize '= Val(GetVar(StreamFile, Val(loopc), "resize"))
+64            Put FF, , StreamData(LoopC).grh_resizex '= Val(GetVar(StreamFile, Val(loopc), "rx"))
+66            Put FF, , StreamData(LoopC).grh_resizey '= Val(GetVar(StreamFile, Val(loopc), "ry"))
+68            Put FF, , StreamData(LoopC).NumGrhs '= GetVar(StreamFile, Val(loopc), "NumGrhs")
+             
+            
+70           For i = 1 To StreamData(LoopC).NumGrhs
+72               Put FF, , StreamData(LoopC).grh_list(i)
+74           Next i
+             
+76            For ColorSet = 1 To 4
+78                Put FF, , StreamData(LoopC).colortint(ColorSet - 1).r
+80                Put FF, , StreamData(LoopC).colortint(ColorSet - 1).g
+82                Put FF, , StreamData(LoopC).colortint(ColorSet - 1).b
+84            Next ColorSet
+86        Next LoopC
+
+End Sub
+Public Sub EscribirBuffdataBin(ByVal FF As Integer)
+
+      Dim i As Long
+
+2         Put FF, , numero_buffs
+          
+4         For i = 1 To numero_buffs
+
+6             Put FF, , buff_data(i).Tipo
+8             Put FF, , buff_data(i).Intervalo
+10            Put FF, , buff_data(i).Duracion
+12            Put FF, , buff_data(i).dFX
+14            Put FF, , buff_data(i).dEfecto
+16            Put FF, , buff_data(i).grhindex
+          
+18        Next i
+End Sub
+Public Sub CargarBuffData()
+      Dim F As String
+      Dim i As Long
+2         F = App.path & "\ENCODE\Buffs.dat"
+4         numero_buffs = Val(GetVar(F, "MAIN", "NUMBUFFS"))
+6         ReDim buff_data(1 To numero_buffs)
+8         For i = 1 To numero_buffs
+              
+10            buff_data(i).Tipo = Val(GetVar(F, CStr(i), "Tipo"))
+12            buff_data(i).Intervalo = Val(GetVar(F, CStr(i), "Intervalo"))
+14            buff_data(i).Duracion = Val(GetVar(F, CStr(i), "Duracion"))
+16            buff_data(i).dFX = Val(GetVar(F, CStr(i), "Fx"))
+18            buff_data(i).dEfecto = Val(GetVar(F, CStr(i), "Efecto"))
+20            buff_data(i).grhindex = Val(GetVar(F, CStr(i), "GrhIndex"))
+              
+22        Next i
+
+End Sub
+Public Sub SPOTLIGHTS_Escribir(ByVal FF As Integer)
+          'CARGA BINARIA DE SPOTLIGHTS DESDE EFECTOS.BIN
+      Dim i As Long
+2         Put FF, , NUM_SPOTLIGHTS_COLORES
+4         For i = 1 To NUM_SPOTLIGHTS_COLORES
+6             Put #FF, , SPOTLIGHTS_COLORES(i)
+8         Next i
+10        Put FF, , NUM_SPOTLIGHTS_ANIMATION
+12        For i = 1 To NUM_SPOTLIGHTS_ANIMATION
+14            Put #FF, , SPOTLIGHTS_ANIMATION(i)
+16        Next i
+End Sub
+Public Sub SPOTLIGHTS_LOADDAT() 'sub de testeo
+      Dim s As String
+      Dim i As Long
+      Dim A As Byte
+      Dim r As Byte
+      Dim g As Byte
+      Dim b As Byte
+2     s = App.path & "\ENCODE\SPOTLIGHTS.DAT"
+4     NUM_SPOTLIGHTS_COLORES = Val(GetVar(s, "COLORES", "NUM_COLORES"))
+6     If NUM_SPOTLIGHTS_COLORES > 0 Then
+8     ReDim SPOTLIGHTS_COLORES(1 To NUM_SPOTLIGHTS_COLORES)
+10        For i = 1 To NUM_SPOTLIGHTS_COLORES
+12            A = Val(GetVar(s, "COLOR" & i, "A"))
+14            r = Val(GetVar(s, "COLOR" & i, "R"))
+16            g = Val(GetVar(s, "COLOR" & i, "G"))
+18            b = Val(GetVar(s, "COLOR" & i, "B"))
+20            SPOTLIGHTS_COLORES(i) = D3DColorARGB(A, r, g, b)
+22        Next i
+24    End If
+
+26    NUM_SPOTLIGHTS_ANIMATION = Val(GetVar(s, "ANIMACIONES", "NUM_ANIM"))
+28    If NUM_SPOTLIGHTS_ANIMATION > 0 Then
+30    ReDim SPOTLIGHTS_ANIMATION(1 To NUM_SPOTLIGHTS_ANIMATION)
+32    For i = 1 To NUM_SPOTLIGHTS_ANIMATION
+34        SPOTLIGHTS_ANIMATION(i) = Val(GetVar(s, "ANIM" & i, "Indice"))
+36    Next i
+38    End If
+
+End Sub
+

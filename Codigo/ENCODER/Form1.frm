@@ -2,7 +2,7 @@ VERSION 5.00
 Begin VB.Form frmMain 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Compilador BinData & Objetos"
-   ClientHeight    =   4080
+   ClientHeight    =   5175
    ClientLeft      =   10575
    ClientTop       =   6225
    ClientWidth     =   6270
@@ -19,8 +19,16 @@ Begin VB.Form frmMain
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   4080
+   ScaleHeight     =   5175
    ScaleWidth      =   6270
+   Begin VB.CommandButton Command10 
+      Caption         =   "Compilar Efectos.bin"
+      Height          =   495
+      Left            =   600
+      TabIndex        =   12
+      Top             =   3240
+      Width           =   2055
+   End
    Begin VB.TextBox Text2 
       Height          =   495
       Left            =   3240
@@ -94,9 +102,9 @@ Begin VB.Form frmMain
    Begin VB.CommandButton Command2 
       Caption         =   "Cerrar"
       Height          =   360
-      Left            =   1080
+      Left            =   960
       TabIndex        =   2
-      Top             =   3480
+      Top             =   4560
       Width           =   990
    End
    Begin VB.CommandButton Command1 
@@ -190,13 +198,14 @@ Private Enum eOBJType
       otCualquiera = 255
 End Enum
 
+
 Private Type ObjData
 
       Name As String 'Nombre del obj
     
       OBJType As Byte 'Tipo enum que determina cuales son las caract del obj
     
-      GrhIndex As Integer ' Indice del grafico que representa el obj
+      grhindex As Integer ' Indice del grafico que representa el obj
       GrhSecundario As Integer
       
       SkSastreria As Byte
@@ -371,8 +380,8 @@ On Error GoTo ErrHandler
    Dim BinFile          As Integer
 
    
-   MasterFilePath = App.PATH & "\ENCODE\" & MasterFileName
-   NameFilePath = App.PATH & "\OUTPUT\" & NameFileName
+   MasterFilePath = App.path & "\ENCODE\" & MasterFileName
+   NameFilePath = App.path & "\OUTPUT\" & NameFileName
    
    If Not FileExist(MasterFilePath) Then
       MsgBox MasterFileName & " no existe"
@@ -438,10 +447,10 @@ On Error GoTo ErrHandler
                   .NoLog = Val(Leer.GetValue("OBJ" & Object, "NoLog"))
                   '07/09/07
                    .Trabajo_Tipo = Val(Leer.GetValue("OBJ" & Object, "TipoTrabajo"))
-                  .GrhIndex = Val(Leer.GetValue("OBJ" & Object, "GrhIndex"))
+                  .grhindex = Val(Leer.GetValue("OBJ" & Object, "GrhIndex"))
                     
-                  If .GrhIndex = 0 Then
-                        .GrhIndex = .GrhIndex
+                  If .grhindex = 0 Then
+                        .grhindex = .grhindex
                   End If
             
                   .OBJType = Val(Leer.GetValue("OBJ" & Object, "ObjType"))
@@ -653,9 +662,7 @@ On Error GoTo ErrHandler
       Exit Function
       
 ErrHandler:
-   Stop
-   Debug.Print Object
-
+MsgBox "ERROR LOADOBJDATA:  " & Err.Description & "_" & Object
 End Function
 
 Private Sub Command1_Click()
@@ -675,13 +682,13 @@ Module1.LoadDecorData
 Module1.LoadPremios
 Module1.LoadCraft
 
-Dim B As Long
+Dim b As Long
 Dim F As Integer
 F = FreeFile
 
 Dim i As Long
-If FileExist(App.PATH & "\OUTPUT\BinData.bin", vbArchive) Then Kill App.PATH & "\OUTPUT\BinData.bin"
-Open App.PATH & "\OUTPUT\BinData.Bin" For Binary Access Write Lock Write As #F
+If FileExist(App.path & "\OUTPUT\BinData.bin", vbArchive) Then Kill App.path & "\OUTPUT\BinData.bin"
+Open App.path & "\OUTPUT\BinData.Bin" For Binary Access Write Lock Write As #F
 
     Put #F, , num_Chirimbolos_data
     For i = 1 To num_Chirimbolos_data
@@ -697,7 +704,7 @@ Open App.PATH & "\OUTPUT\BinData.Bin" For Binary Access Write Lock Write As #F
    Dim BinFile          As Integer
 
    
-   MasterFilePath = App.PATH & "\ENCODE\" & MasterFileName
+   MasterFilePath = App.path & "\ENCODE\" & MasterFileName
 
    If Not FileExist(MasterFilePath) Then
       MsgBox MasterFileName & " no existe"
@@ -709,7 +716,7 @@ Open App.PATH & "\OUTPUT\BinData.Bin" For Binary Access Write Lock Write As #F
          
       Put #F, , CInt(UBound(ObjData))
       For LoopC = 1 To UBound(ObjData)
-         Put #F, , ObjData(LoopC).GrhIndex
+         Put #F, , ObjData(LoopC).grhindex
          Put #F, , ObjData(LoopC).OBJType
          Put #F, , ObjData(LoopC).MaxHIT
          Put #F, , ObjData(LoopC).MinHIT
@@ -753,21 +760,21 @@ Open App.PATH & "\OUTPUT\BinData.Bin" For Binary Access Write Lock Write As #F
       'Next LoopC
 
 
-    For B = 1 To 5
+    For b = 1 To 5
     
-        Put #F, , ModifRaza(B).Fuerza
-        Put #F, , ModifRaza(B).Agilidad
-        Put #F, , ModifRaza(B).Suerte
-        Put #F, , ModifRaza(B).Inteligencia
-        Put #F, , ModifRaza(B).Constitucion
+        Put #F, , ModifRaza(b).Fuerza
+        Put #F, , ModifRaza(b).Agilidad
+        Put #F, , ModifRaza(b).Suerte
+        Put #F, , ModifRaza(b).Inteligencia
+        Put #F, , ModifRaza(b).Constitucion
         
     
-    Next B
+    Next b
     
     Put #F, , NUM_FD
     
-    For B = 1 To NUM_FD
-        With FD(B)
+    For b = 1 To NUM_FD
+        With FD(b)
             Put #F, , .TieneSpecial
             Put #F, , .SurfaceNum
             Put #F, , .GraficosX
@@ -815,9 +822,9 @@ Open App.PATH & "\OUTPUT\BinData.Bin" For Binary Access Write Lock Write As #F
                 Put #F, , .Textos(i).texto
                 Put #F, , .Textos(i).X
                 Put #F, , .Textos(i).Y
-                Put #F, , .Textos(i).R
-                Put #F, , .Textos(i).G
-                Put #F, , .Textos(i).B
+                Put #F, , .Textos(i).r
+                Put #F, , .Textos(i).g
+                Put #F, , .Textos(i).b
                 Put #F, , .Textos(i).A
                 Put #F, , .Textos(i).IniciaVisible
                 Put #F, , .Textos(i).Centrar
@@ -876,117 +883,127 @@ Open App.PATH & "\OUTPUT\BinData.Bin" For Binary Access Write Lock Write As #F
         End With
     
     
-    Next B
+    Next b
    
    ' EluTable
-   For B = 1 To STAT_MAXELV
-      Put #F, , EluTable(B)
-   Next B
+   For b = 1 To STAT_MAXELV
+      Put #F, , EluTable(b)
+   Next b
    
    ' StaTable
-   For B = 1 To STAT_MAXELV
-      Put #F, , StaTable(B)
-   Next B
+   For b = 1 To STAT_MAXELV
+      Put #F, , StaTable(b)
+   Next b
    
-   For B = 1 To MAX_HABILIDADES
+   For b = 1 To MAX_HABILIDADES
    
-    Put #F, , Habilidades(B).Grafico
+    Put #F, , Habilidades(b).Grafico
    
-   Next B
+   Next b
    
    
    Put #F, , ns
    
-   For B = 1 To ns
+   For b = 1 To ns
     
-    Put #F, , Spells(B).fx
-    Put #F, , Spells(B).loops
-    Put #F, , Spells(B).Tipo
-    Put #F, , Spells(B).Sound
-    Put #F, , Spells(B).Manareq
-    Put #F, , Spells(B).Skills
-    Put #F, , Spells(B).Libro
-   Next B
+    Put #F, , Spells(b).fx
+    Put #F, , Spells(b).loops
+    Put #F, , Spells(b).Tipo
+    Put #F, , Spells(b).Sound
+    Put #F, , Spells(b).Manareq
+    Put #F, , Spells(b).Skills
+    Put #F, , Spells(b).Libro
+    Put #F, , Spells(b).CasterFx
+    Put #F, , Spells(b).CasterLoop
+   Next b
    
    Put #F, , num_npcs_h
-   For B = 1 To num_npcs_h
-        Put #F, , hostiles(B).Body
-        Put #F, , hostiles(B).Head
-        Put #F, , hostiles(B).MAX_HP
-        Put #F, , hostiles(B).Snd1
-        Put #F, , hostiles(B).Snd2
-   Next B
+   For b = 1 To num_npcs_h
+        Put #F, , hostiles(b).Body
+        Put #F, , hostiles(b).Head
+        Put #F, , hostiles(b).MAX_HP
+        Put #F, , hostiles(b).Snd1
+        Put #F, , hostiles(b).Snd2
+   Next b
    
    Put #F, , num_npcs_nh
-   For B = 1 To num_npcs_nh
-        Put #F, , nHostiles(B).Body
-        Put #F, , nHostiles(B).Head
-        Put #F, , nHostiles(B).MAX_HP
-        Put #F, , nHostiles(B).NPCTYPE
-   Next B
+   For b = 1 To num_npcs_nh
+        Put #F, , nHostiles(b).Body
+        Put #F, , nHostiles(b).Head
+        Put #F, , nHostiles(b).MAX_HP
+        Put #F, , nHostiles(b).NPCTYPE
+   Next b
    
    Module1.SaveQuests F
    
    Put #F, , NroMapas
-   For B = 1 To NroMapas
-    Put #F, , MapaData(B).X
-    Put #F, , MapaData(B).Y
-   Next B
+   For b = 1 To NroMapas
+    Put #F, , MapaData(b).X
+    Put #F, , MapaData(b).Y
+   Next b
     Put #F, , Cantdecordata
-    For B = 1 To Cantdecordata
-        Put #F, , DecoData(B).DecorType
-        Put #F, , DecoData(B).EstadoDefault
-        Put #F, , DecoData(B).DecorGrh(1)
-        Put #F, , DecoData(B).DecorGrh(2)
-        Put #F, , DecoData(B).DecorGrh(3)
-        Put #F, , DecoData(B).DecorGrh(4)
-        Put #F, , DecoData(B).DecorGrh(5)
+    For b = 1 To Cantdecordata
+        Put #F, , DecoData(b).DecorType
+        Put #F, , DecoData(b).EstadoDefault
+        Put #F, , DecoData(b).DecorGrh(1)
+        Put #F, , DecoData(b).DecorGrh(2)
+        Put #F, , DecoData(b).DecorGrh(3)
+        Put #F, , DecoData(b).DecorGrh(4)
+        Put #F, , DecoData(b).DecorGrh(5)
+        Put #F, , DecoData(b).MaxHP
+        Put #F, , DecoData(b).TileW
+        Put #F, , DecoData(b).TileH
+        Put #F, , DecoData(b).Atacable
+        Put #F, , DecoData(b).OffX
+        Put #F, , DecoData(b).OffY
+        Put #F, , DecoData(b).TileTransY
+        Put #F, , DecoData(b).Sombra
         
-    Next B
+    Next b
     
     Put #F, , NumCanje
-    For B = 1 To NumCanje
-        Put #F, , Canjes(B).Tipo
-        Put #F, , Canjes(B).vGema
-        Put #F, , Canjes(B).vMM
-        Put #F, , Canjes(B).nItems
-        For i = 1 To Canjes(B).nItems
-            Put #F, , Canjes(B).Items(i)
-            Put #F, , Canjes(B).Cant(i)
+    For b = 1 To NumCanje
+        Put #F, , Canjes(b).Tipo
+        Put #F, , Canjes(b).vGema
+        Put #F, , Canjes(b).vMM
+        Put #F, , Canjes(b).nItems
+        For i = 1 To Canjes(b).nItems
+            Put #F, , Canjes(b).Items(i)
+            Put #F, , Canjes(b).Cant(i)
         Next i
-        Put #F, , Canjes(B).Version
-    Next B
+        Put #F, , Canjes(b).Version
+    Next b
     
     Put #F, , NumHerr
-    For B = 1 To NumHerr
-        Put #F, , cHerreria(B).Item
-        Put #F, , cHerreria(B).Tipo
-        Put #F, , cHerreria(B).ProfesionNivel
-        Put #F, , cHerreria(B).Mat1
-        Put #F, , cHerreria(B).Mat2
-        Put #F, , cHerreria(B).Mat3
-        Put #F, , cHerreria(B).Version
-    Next B
+    For b = 1 To NumHerr
+        Put #F, , cHerreria(b).Item
+        Put #F, , cHerreria(b).Tipo
+        Put #F, , cHerreria(b).ProfesionNivel
+        Put #F, , cHerreria(b).Mat1
+        Put #F, , cHerreria(b).Mat2
+        Put #F, , cHerreria(b).Mat3
+        Put #F, , cHerreria(b).Version
+    Next b
     Put #F, , NumSastr
-    For B = 1 To NumSastr
-        Put #F, , cSastreria(B).Item
-        Put #F, , cSastreria(B).Tipo
-        Put #F, , cSastreria(B).ProfesionNivel
-        Put #F, , cSastreria(B).Mat1
-        Put #F, , cSastreria(B).Mat2
-        Put #F, , cSastreria(B).Mat3
-        Put #F, , cSastreria(B).Version
-    Next B
+    For b = 1 To NumSastr
+        Put #F, , cSastreria(b).Item
+        Put #F, , cSastreria(b).Tipo
+        Put #F, , cSastreria(b).ProfesionNivel
+        Put #F, , cSastreria(b).Mat1
+        Put #F, , cSastreria(b).Mat2
+        Put #F, , cSastreria(b).Mat3
+        Put #F, , cSastreria(b).Version
+    Next b
     Put #F, , NumCarp
-    For B = 1 To NumCarp
-        Put #F, , cCarpinteria(B).Item
-        Put #F, , cCarpinteria(B).Tipo
-        Put #F, , cCarpinteria(B).ProfesionNivel
-        Put #F, , cCarpinteria(B).Mat1
-        Put #F, , cCarpinteria(B).Mat2
-        Put #F, , cCarpinteria(B).Mat3
-        Put #F, , cCarpinteria(B).Version
-    Next B
+    For b = 1 To NumCarp
+        Put #F, , cCarpinteria(b).Item
+        Put #F, , cCarpinteria(b).Tipo
+        Put #F, , cCarpinteria(b).ProfesionNivel
+        Put #F, , cCarpinteria(b).Mat1
+        Put #F, , cCarpinteria(b).Mat2
+        Put #F, , cCarpinteria(b).Mat3
+        Put #F, , cCarpinteria(b).Version
+    Next b
 
 Close #F
 
@@ -994,54 +1011,54 @@ Close #F
    Dim xk As Integer
    xk = FreeFile
    
-   Open App.PATH & "\OUTPUT\hechizosmensajes.txt" For Output As xk
+   Open App.path & "\OUTPUT\hechizosmensajes.txt" For Output As xk
    
-    For B = 1 To ns
+    For b = 1 To ns
         
-        Print #xk, Spells(B).magicwords
-        Print #xk, Spells(B).propiomsg
-        Print #xk, Spells(B).targetmsg
-        Print #xk, Spells(B).castermsg
-        Print #xk, Spells(B).Info
-        Print #xk, Spells(B).Nombre
-    Next B
+        Print #xk, Spells(b).magicwords
+        Print #xk, Spells(b).propiomsg
+        Print #xk, Spells(b).targetmsg
+        Print #xk, Spells(b).castermsg
+        Print #xk, Spells(b).Info
+        Print #xk, Spells(b).Nombre
+    Next b
    Close xk
    
    
    xk = FreeFile
    
-   Open App.PATH & "\OUTPUT\npcs.txt" For Output As xk
+   Open App.path & "\OUTPUT\npcs.txt" For Output As xk
    
-    For B = 1 To num_npcs_h - 500
-        Print #xk, hostiles(B).Nombre
-    Next B
-    For B = 1 To num_npcs_nh
-        Print #xk, nHostiles(B).Nombre
-        Print #xk, nHostiles(B).Desc
-    Next B
+    For b = 1 To num_npcs_h - 500
+        Print #xk, hostiles(b).Nombre
+    Next b
+    For b = 1 To num_npcs_nh
+        Print #xk, nHostiles(b).Nombre
+        Print #xk, nHostiles(b).Desc
+    Next b
    Close xk
 
    xk = FreeFile
    
-   Open App.PATH & "\OUTPUT\quests.txt" For Output As xk
+   Open App.path & "\OUTPUT\quests.txt" For Output As xk
    
-    For B = 1 To nQuest
-        Print #xk, Quests(B).Desc & "#"
-        Print #xk, Quests(B).Nombre
+    For b = 1 To nQuest
+        Print #xk, Quests(b).Desc & "#"
+        Print #xk, Quests(b).Nombre
         
-    Next B
+    Next b
 
    Close xk
    
    
    xk = FreeFile
 
-    Open App.PATH & "\OUTPUT\Premios.txt" For Output As xk
+    Open App.path & "\OUTPUT\Premios.txt" For Output As xk
         
-        For B = 1 To NumCanje
-            Print #xk, Canjes(B).Nombre
-            Print #xk, Canjes(B).Info
-        Next B
+        For b = 1 To NumCanje
+            Print #xk, Canjes(b).Nombre
+            Print #xk, Canjes(b).Info
+        Next b
     Close xk
 MsgBox "Compilacion exitosa."
 
@@ -1051,17 +1068,17 @@ ErrHandler:
    MsgBox "Error generando BinData.Bin. Error : " & Err.Description
 End Sub
 Private Sub CargarChirimbolitos()
-Dim S As String
+Dim s As String
 Dim i As Long
-S = App.PATH & "\ENCODE\Chirimbolos.dat"
+s = App.path & "\ENCODE\Chirimbolos.dat"
 
 
-num_Chirimbolos_data = Val(GetVar(S, "INIT", "NUM"))
+num_Chirimbolos_data = Val(GetVar(s, "INIT", "NUM"))
 ReDim Chirimbolos_Data(1 To num_Chirimbolos_data)
 For i = 1 To num_Chirimbolos_data
-    Chirimbolos_Data(i).Graf_Index = Val(GetVar(S, CStr(i), "Graf_Index"))
-    Chirimbolos_Data(i).Tiempo = Val(GetVar(S, CStr(i), "Tiempo"))
-    Chirimbolos_Data(i).Tipo = Val(GetVar(S, CStr(i), "Tipo"))
+    Chirimbolos_Data(i).Graf_Index = Val(GetVar(s, CStr(i), "Graf_Index"))
+    Chirimbolos_Data(i).Tiempo = Val(GetVar(s, CStr(i), "Tiempo"))
+    Chirimbolos_Data(i).Tipo = Val(GetVar(s, CStr(i), "Tipo"))
 
 Next i
 
@@ -1107,6 +1124,39 @@ Sub Load_ModifRaza()
 
 End Sub
 
+Private Sub Command10_Click()
+2        On Error GoTo Command10_Click_Error
+
+4     CargarAuras
+6     CargarParticulas
+8     CargarBuffData
+10    SPOTLIGHTS_LOADDAT
+      Dim FF As Integer
+12    FF = FreeFile
+
+14    If FileExist(App.path & "\RES\OUTPUT\Efectos.bin", vbNormal) Then Kill App.path & "\RES\OUTPUT\Efectos.bin"
+
+16    Open App.path & "\RES\OUTPUT\Efectos.bin" For Binary Access Write Lock Write As #FF
+          ' Escribimos auras.
+18        EscribirAuras FF
+          ' Escribimos particulas
+20        EscribirParticulas FF
+          'Escribimos Buffs
+22        EscribirBuffdataBin FF
+          'Escribimos SpotLights
+24        SPOTLIGHTS_Escribir FF
+26    Close #FF
+
+28    MsgBox "Efectos.Bin compilado exitosamente."
+
+30        Exit Sub
+
+Command10_Click_Error:
+
+32        MsgBox "Error " & Err.Number & " (" & Err.Description & ") in procedure Command10_Click in line:" & Erl
+
+End Sub
+
 Private Sub Command2_Click()
 
    Unload Me
@@ -1132,12 +1182,13 @@ Dim Data() As Byte
 For p = 1 To 160
 
 
-    MapExtra(p).GraficoMiniMapa = Val(GetVar(App.PATH & "\MAPAS\Mapas.dat", "MAPA" & p, "Grafico_mini_Mapa"))
-    MapExtra(p).SombrasAmbientales = Val(GetVar(App.PATH & "\MAPAS\Mapas.dat", "MAPA" & p, "Sombras_Ambientales"))
-    MapExtra(p).MapaGrafico = Val(GetVar(App.PATH & "\MAPAS\Mapas.dat", "MAPA" & p, "MapaGrafico"))
+    MapExtra(p).GraficoMiniMapa = Val(GetVar(App.path & "\MAPAS\Mapas.dat", "MAPA" & p, "Grafico_mini_Mapa"))
+    MapExtra(p).SombrasAmbientales = Val(GetVar(App.path & "\MAPAS\Mapas.dat", "MAPA" & p, "Sombras_Ambientales"))
+    MapExtra(p).MapaGrafico = Val(GetVar(App.path & "\MAPAS\Mapas.dat", "MAPA" & p, "MapaGrafico"))
     
 F = FreeFile
-Open App.PATH & "\MAPAS\" & p & ".map.int" For Binary Access Read Lock Read As #F
+If FileExist(App.path & "\MAPAS\" & p & ".int", vbNormal) Then
+Open App.path & "\MAPAS\" & p & ".int" For Binary Access Read Lock Read As #F
 
     Get #F, , NI(p)
     If NI(p) > 0 Then
@@ -1147,6 +1198,7 @@ Open App.PATH & "\MAPAS\" & p & ".map.int" For Binary Access Read Lock Read As #
         Debug.Print MapExtra(p).INPos(1).X
     End If
 Close #F
+End If
 
 
 Next p
@@ -1154,7 +1206,7 @@ Next p
 F = FreeFile
 Dim nummap As Integer
 nummap = 160
-Open App.PATH & "\INIT\MAPAS.BIN" For Binary Access Write Lock Write As #F
+Open App.path & "\RES\OUTPUT\MAPAS.BIN" For Binary Access Write Lock Write As #F
 
 ReDim Data(0 To (LenB(NI(1)) * 160) - 1)
 
@@ -1185,21 +1237,21 @@ MsgBox "OK"
 End Sub
 
 Private Sub Command6_Click()
-Dim S As String
+Dim s As String
 Dim i As Long
 Dim z As Long
 
-S = App.PATH & "\Index\NewEstatics.dat"
+s = App.path & "\Index\NewEstatics.dat"
 
-NumEstatics = Val(GetVar(S, "INIT", "num"))
+NumEstatics = Val(GetVar(s, "INIT", "num"))
 
 ReDim EstaticData(1 To NumEstatics)
 For i = 1 To NumEstatics
     With EstaticData(i)
-        .L = Val(GetVar(S, CStr(i), "Left"))
-        .t = Val(GetVar(S, CStr(i), "Top"))
-        .w = Val(GetVar(S, CStr(i), "Width"))
-        .h = Val(GetVar(S, CStr(i), "Height"))
+        .L = Val(GetVar(s, CStr(i), "Left"))
+        .t = Val(GetVar(s, CStr(i), "Top"))
+        .w = Val(GetVar(s, CStr(i), "Width"))
+        .h = Val(GetVar(s, CStr(i), "Height"))
         .TW = .w / 32
         .TH = .h / 32
     End With
@@ -1210,11 +1262,11 @@ Dim h As Integer
 Dim t As Integer
 Dim L As Integer
 
-S = frmMain.Text1.Text
-L = Val(Readfield(1, S, Asc("-")))
-t = Val(Readfield(2, S, Asc("-")))
-w = Val(Readfield(3, S, Asc("-")))
-h = Val(Readfield(4, S, Asc("-")))
+s = frmMain.Text1.Text
+L = Val(Readfield(1, s, Asc("-")))
+t = Val(Readfield(2, s, Asc("-")))
+w = Val(Readfield(3, s, Asc("-")))
+h = Val(Readfield(4, s, Asc("-")))
 
 
 
@@ -1237,13 +1289,13 @@ Next i
 If i > NumEstatics Then
 MsgBox "No esta. Se agrego. " & NumEstatics + 1
 NumEstatics = NumEstatics + 1
-S = App.PATH & "\Index\NewEstatics.dat"
-WriteVar S, "INIT", "NUM", NumEstatics
+s = App.path & "\Index\NewEstatics.dat"
+WriteVar s, "INIT", "NUM", NumEstatics
 
-WriteVar S, NumEstatics, "Left", CStr(L)
-WriteVar S, NumEstatics, "Top", CStr(t)
-WriteVar S, NumEstatics, "Width", CStr(w)
-WriteVar S, NumEstatics, "Height", CStr(h)
+WriteVar s, NumEstatics, "Left", CStr(L)
+WriteVar s, NumEstatics, "Top", CStr(t)
+WriteVar s, NumEstatics, "Width", CStr(w)
+WriteVar s, NumEstatics, "Height", CStr(h)
 End If
 
 
@@ -1252,19 +1304,19 @@ End Sub
 
 Private Sub Command7_Click()
 Dim p As Long
-Dim S As String
+Dim s As String
 Dim i As Long
 Dim z As Long
 
-S = App.PATH & "\Index\NewIndex.dat"
+s = App.path & "\Index\NewIndex.dat"
 
-NumNewIndex = Val(GetVar(S, "INIT", "num"))
+NumNewIndex = Val(GetVar(s, "INIT", "num"))
 
 If NumNewIndex > 0 Then
 ReDim NewIndexData(1 To NumNewIndex)
 For i = 1 To NumNewIndex
     With NewIndexData(i)
-        .OverWriteGrafico = Val(GetVar(S, CStr(i), "OverWriteGrafico"))
+        .OverWriteGrafico = Val(GetVar(s, CStr(i), "OverWriteGrafico"))
         If .OverWriteGrafico = Val(frmMain.Text1) Then
             MsgBox i
             Exit For
@@ -1276,36 +1328,36 @@ End If
 End Sub
 
 Private Sub Command8_Click()
-Dim S As String
+Dim s As String
 Dim i As Long
 Dim z As Long
 
-S = App.PATH & "\Index\NewIndex.dat"
+s = App.path & "\Index\NewIndex.dat"
 
-NumNewIndex = Val(GetVar(S, "INIT", "num"))
+NumNewIndex = Val(GetVar(s, "INIT", "num"))
 
 If NumNewIndex > 0 Then
 ReDim NewIndexData(1 To NumNewIndex)
 For i = 1 To NumNewIndex
     With NewIndexData(i)
-        .Dinamica = Val(GetVar(S, CStr(i), "Dinamica"))
-        .Estatic = Val(GetVar(S, CStr(i), "Estatica"))
-        .OverWriteGrafico = Val(GetVar(S, CStr(i), "OverWriteGrafico"))
+        .Dinamica = Val(GetVar(s, CStr(i), "Dinamica"))
+        .Estatic = Val(GetVar(s, CStr(i), "Estatica"))
+        .OverWriteGrafico = Val(GetVar(s, CStr(i), "OverWriteGrafico"))
     End With
 Next i
 End If
-S = App.PATH & "\Index\NewEstatics.dat"
+s = App.path & "\Index\NewEstatics.dat"
 
-NumEstatics = Val(GetVar(S, "INIT", "num"))
+NumEstatics = Val(GetVar(s, "INIT", "num"))
 
 If NumEstatics > 0 Then
 ReDim EstaticData(1 To NumEstatics)
 For i = 1 To NumEstatics
     With EstaticData(i)
-        .L = Val(GetVar(S, CStr(i), "Left"))
-        .t = Val(GetVar(S, CStr(i), "Top"))
-        .w = Val(GetVar(S, CStr(i), "Width"))
-        .h = Val(GetVar(S, CStr(i), "Height"))
+        .L = Val(GetVar(s, CStr(i), "Left"))
+        .t = Val(GetVar(s, CStr(i), "Top"))
+        .w = Val(GetVar(s, CStr(i), "Width"))
+        .h = Val(GetVar(s, CStr(i), "Height"))
         .TW = .w / 32
         .TH = .h / 32
     End With
@@ -1354,12 +1406,12 @@ mg = Val(Readfield(3, frmMain.Text1.Text, Asc("-")))
                         Stop
                     Else
                         NewIndexData(i).Estatic = p
-                        WriteVar App.PATH & "\Index\NewIndex.dat", CStr(i), "Estatica", CStr(p)
+                        WriteVar App.path & "\Index\NewIndex.dat", CStr(i), "Estatica", CStr(p)
                     End If
                 End If
                 If mg > 0 And mg <> NewIndexData(i).OverWriteGrafico Then
                     NewIndexData(i).OverWriteGrafico = mg
-                    WriteVar App.PATH & "\Index\NewIndex.dat", CStr(i), "OverWriteGrafico", CStr(mg)
+                    WriteVar App.path & "\Index\NewIndex.dat", CStr(i), "OverWriteGrafico", CStr(mg)
                 End If
         End If
     Next i

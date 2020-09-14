@@ -262,6 +262,7 @@ PosAccion=0-0-0
 TileH=1
 TileW=3
 OffX=-1
+Sombra=255
 
 [DECOR16] ' Puerta Normal 1 Con Llave
 MaxHP=0
