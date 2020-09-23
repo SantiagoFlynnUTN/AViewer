@@ -1,5 +1,5 @@
 [INIT]
-Num=806
+Num=807
 
 [1]'Casco Sur
 Left=0
@@ -4039,3 +4039,8 @@ Left=RECICLABLE
 Top=0
 Width=0
 Height=0
+[807]
+Left=0
+Top=0
+Width=160
+Height=32

@@ -246,6 +246,7 @@ PosAccion=0-0-0
 TileH=1
 TileW=1
 OffX=0
+Sombra=255
 
 [DECOR15] ' Puerta Normal 2 Sin Llave
 Name=Puerta normal 2 sin llave

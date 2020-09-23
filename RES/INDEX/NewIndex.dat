@@ -1,5 +1,5 @@
 [INIT]
-Num=1230
+Num=1231
 [1]
 Estatica=51
 OverWriteGrafico=32
@@ -4755,4 +4755,8 @@ Desc=
 [1230]
 Estatica=4
 OverWriteGrafico=256
+Desc=
+[1231]
+Estatica=807
+OverWriteGrafico=255
 Desc=
