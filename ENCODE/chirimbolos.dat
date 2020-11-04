@@ -58,19 +58,19 @@ Tiempo=180
 [10]
 Nombre=Seguro Clan
 Tipo=10
-Graf_Index=4153
+Graf_Index=1
 Tiempo=0
 
 [11]
 Nombre=Invisibilidad
 Tipo=11
-Graf_Index=4149
+Graf_Index=1
 Tiempo=0
 
 [12]
 Nombre=Invisibilidad
 Tipo=12
-Graf_Index=4149
+Graf_Index=1
 Tiempo=20
 
 
