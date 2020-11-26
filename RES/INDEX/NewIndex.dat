@@ -5908,13 +5908,13 @@ OverWriteGrafico=R
 Desc=
 Dinamica=0
 [1507]
-Estatica=0
-OverWriteGrafico=R
+Estatica=81
+OverWriteGrafico=41
 Desc=
 Dinamica=0
 [1508]
-Estatica=0
-OverWriteGrafico=R
+Estatica=81
+OverWriteGrafico=42
 Desc=
 Dinamica=0
 [1509]
