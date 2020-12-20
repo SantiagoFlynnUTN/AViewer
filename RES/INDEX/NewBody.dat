@@ -787,15 +787,15 @@ MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
-OffsetY=-29
+OverWriteGrafico=689
+OffsetY=-20
 [84]
 MOV1=254
 MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
+OverWriteGrafico=688
 OffsetY=-29
 [85]
 MOV1=254
@@ -803,15 +803,15 @@ MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
-OffsetY=-29
+OverWriteGrafico=687
+OffsetY=-20
 [86]
 MOV1=254
 MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
+OverWriteGrafico=686
 OffsetY=-29
 [87]
 MOV1=254
@@ -819,15 +819,15 @@ MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
-OffsetY=-29
+OverWriteGrafico=685
+OffsetY=-20
 [88]
 MOV1=254
 MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
+OverWriteGrafico=684
 OffsetY=-29
 [89]
 MOV1=254
@@ -835,15 +835,15 @@ MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
-OffsetY=-29
+OverWriteGrafico=683
+OffsetY=-20
 [90]
 MOV1=254
 MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
+OverWriteGrafico=682
 OffsetY=-29
 [91]
 MOV1=254
@@ -851,15 +851,15 @@ MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
-OffsetY=-29
+OverWriteGrafico=681
+OffsetY=-20
 [92]
 MOV1=254
 MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
+OverWriteGrafico=680
 OffsetY=-29
 [93]
 MOV1=254
@@ -867,15 +867,15 @@ MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
-OffsetY=-29
+OverWriteGrafico=679
+OffsetY=-20
 [94]
 MOV1=254
 MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
+OverWriteGrafico=678
 OffsetY=-29
 [95]
 MOV1=254
@@ -883,15 +883,15 @@ MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
-OffsetY=-29
+OverWriteGrafico=677
+OffsetY=-20
 [96]
 MOV1=254
 MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
+OverWriteGrafico=676
 OffsetY=-29
 [97]
 MOV1=254
@@ -899,15 +899,15 @@ MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
-OffsetY=-29
+OverWriteGrafico=675
+OffsetY=-20
 [98]
 MOV1=254
 MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
+OverWriteGrafico=674
 OffsetY=-29
 [99]
 MOV1=254
@@ -915,15 +915,15 @@ MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
-OffsetY=-29
+OverWriteGrafico=673
+OffsetY=-20
 [100]
 MOV1=254
 MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
+OverWriteGrafico=672
 OffsetY=-29
 [101]
 MOV1=254
@@ -931,15 +931,15 @@ MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
-OffsetY=-29
+OverWriteGrafico=671
+OffsetY=-20
 [102]
 MOV1=254
 MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
+OverWriteGrafico=670
 OffsetY=-29
 [103]
 MOV1=254
@@ -947,15 +947,15 @@ MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
-OffsetY=-29
+OverWriteGrafico=669
+OffsetY=-20
 [104]
 MOV1=254
 MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
+OverWriteGrafico=668
 OffsetY=-29
 [105]
 MOV1=254
@@ -963,32 +963,31 @@ MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
+OverWriteGrafico=667
+OffsetY=-20
+[106]
+MOV1=254
+MOV2=256
+MOV3=253
+MOV4=255
+DESC=Desnudo Humano
+OverWriteGrafico=666
 OffsetY=-29
-[106]'Demonio
-Reposo=0
-Muerte=0
-Continuo=0
-Mov1=250 'norte
-Mov2=252 'derecha
-Mov3=249 'sur
-Mov4=251 'izquierda
-Ataque=0
 [107]
 MOV1=254
 MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
-OffsetY=-29
+OverWriteGrafico=665
+OffsetY=-20
 [108]
 MOV1=254
 MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
+OverWriteGrafico=664
 OffsetY=-29
 [109]
 MOV1=254
@@ -996,15 +995,15 @@ MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
-OffsetY=-29
+OverWriteGrafico=663
+OffsetY=-20
 [110]
 MOV1=254
 MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
+OverWriteGrafico=662
 OffsetY=-29
 [111]
 MOV1=254
@@ -1012,15 +1011,15 @@ MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
-OffsetY=-29
+OverWriteGrafico=661
+OffsetY=-20
 [112]
 MOV1=254
 MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
+OverWriteGrafico=660
 OffsetY=-29
 [113]
 MOV1=254
@@ -1028,15 +1027,15 @@ MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
-OffsetY=-29
+OverWriteGrafico=659
+OffsetY=-20
 [114]
 MOV1=254
 MOV2=256
 MOV3=253
 MOV4=255
 DESC=Desnudo Humano
-OverWriteGrafico=646
+OverWriteGrafico=658
 OffsetY=-29
 [115]
 MOV1=254
